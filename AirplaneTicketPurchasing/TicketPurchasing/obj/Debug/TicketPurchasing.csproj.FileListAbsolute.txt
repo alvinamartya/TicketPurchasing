@@ -1,0 +1,43 @@
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+D:\AAA\TicketPurchasing1\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+D:\AAA\TicketPurchasing1\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
