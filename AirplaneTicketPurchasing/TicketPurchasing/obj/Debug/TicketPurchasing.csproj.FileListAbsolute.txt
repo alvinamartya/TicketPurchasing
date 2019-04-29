@@ -41,3 +41,6 @@ D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.
 D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
 D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
 D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
