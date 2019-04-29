@@ -70,6 +70,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(256, 233);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAmenities_Click);
+            this.panel1.MouseEnter += new System.EventHandler(this.PanelMouseEnter);
+            this.panel1.MouseLeave += new System.EventHandler(this.PanelMouseLeave);
             // 
             // flatLabel1
             // 
@@ -82,6 +85,8 @@
             this.flatLabel1.TabIndex = 1;
             this.flatLabel1.Text = "Amenities";
             this.flatLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAmenities_Click);
+            this.flatLabel1.MouseEnter += new System.EventHandler(this.LableMouseEnter);
             // 
             // pictureBox1
             // 
@@ -92,6 +97,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAmenities_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.PictBoxMouseEnter);
             // 
             // panel2
             // 
@@ -102,6 +109,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(256, 233);
             this.panel2.TabIndex = 7;
+            this.panel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCompanies_Click);
+            this.panel2.MouseEnter += new System.EventHandler(this.PanelMouseEnter);
+            this.panel2.MouseLeave += new System.EventHandler(this.PanelMouseLeave);
             // 
             // flatLabel2
             // 
@@ -114,6 +124,8 @@
             this.flatLabel2.TabIndex = 1;
             this.flatLabel2.Text = "Aircraft Companies";
             this.flatLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCompanies_Click);
+            this.flatLabel2.MouseEnter += new System.EventHandler(this.LableMouseEnter);
             // 
             // pictureBox2
             // 
@@ -124,6 +136,8 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCompanies_Click);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.PictBoxMouseEnter);
             // 
             // panel3
             // 
@@ -134,6 +148,9 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 233);
             this.panel3.TabIndex = 7;
+            this.panel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircraftTypes_Click);
+            this.panel3.MouseEnter += new System.EventHandler(this.PanelMouseEnter);
+            this.panel3.MouseLeave += new System.EventHandler(this.PanelMouseLeave);
             // 
             // flatLabel3
             // 
@@ -146,6 +163,8 @@
             this.flatLabel3.TabIndex = 1;
             this.flatLabel3.Text = "Aicraft Types";
             this.flatLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircraftTypes_Click);
+            this.flatLabel3.MouseEnter += new System.EventHandler(this.LableMouseEnter);
             // 
             // pictureBox3
             // 
@@ -156,6 +175,8 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircraftTypes_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.PictBoxMouseEnter);
             // 
             // panel4
             // 
@@ -166,6 +187,9 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(256, 233);
             this.panel4.TabIndex = 10;
+            this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelEmployees_Click);
+            this.panel4.MouseEnter += new System.EventHandler(this.PanelMouseEnter);
+            this.panel4.MouseLeave += new System.EventHandler(this.PanelMouseLeave);
             // 
             // flatLabel4
             // 
@@ -178,6 +202,8 @@
             this.flatLabel4.TabIndex = 1;
             this.flatLabel4.Text = "Employees";
             this.flatLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelEmployees_Click);
+            this.flatLabel4.MouseEnter += new System.EventHandler(this.LableMouseEnter);
             // 
             // pictureBox4
             // 
@@ -188,6 +214,8 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelEmployees_Click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.PictBoxMouseEnter);
             // 
             // panel5
             // 
@@ -198,6 +226,9 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(256, 233);
             this.panel5.TabIndex = 9;
+            this.panel5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCities_Click);
+            this.panel5.MouseEnter += new System.EventHandler(this.PanelMouseEnter);
+            this.panel5.MouseLeave += new System.EventHandler(this.PanelMouseLeave);
             // 
             // flatLabel5
             // 
@@ -210,6 +241,8 @@
             this.flatLabel5.TabIndex = 1;
             this.flatLabel5.Text = "Cities";
             this.flatLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCities_Click);
+            this.flatLabel5.MouseEnter += new System.EventHandler(this.LableMouseEnter);
             // 
             // pictureBox5
             // 
@@ -220,6 +253,8 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCities_Click);
+            this.pictureBox5.MouseEnter += new System.EventHandler(this.PictBoxMouseEnter);
             // 
             // panel6
             // 
@@ -230,6 +265,9 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(256, 233);
             this.panel6.TabIndex = 8;
+            this.panel6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircrafts_CLick);
+            this.panel6.MouseEnter += new System.EventHandler(this.PanelMouseEnter);
+            this.panel6.MouseLeave += new System.EventHandler(this.PanelMouseLeave);
             // 
             // flatLabel6
             // 
@@ -242,6 +280,8 @@
             this.flatLabel6.TabIndex = 1;
             this.flatLabel6.Text = "Aircrafts";
             this.flatLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircrafts_CLick);
+            this.flatLabel6.MouseEnter += new System.EventHandler(this.LableMouseEnter);
             // 
             // pictureBox6
             // 
@@ -252,6 +292,8 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircrafts_CLick);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.PictBoxMouseEnter);
             // 
             // UclMenuSA
             // 
