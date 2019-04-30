@@ -51,6 +51,7 @@
             this.pnlModify.Name = "pnlModify";
             this.pnlModify.Size = new System.Drawing.Size(292, 285);
             this.pnlModify.TabIndex = 9;
+            this.pnlModify.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // flatLabel2
             // 
@@ -61,18 +62,20 @@
             this.flatLabel2.Name = "flatLabel2";
             this.flatLabel2.Size = new System.Drawing.Size(192, 23);
             this.flatLabel2.TabIndex = 1;
-            this.flatLabel2.Text = "Modify";
+            this.flatLabel2.Text = "Refund";
             this.flatLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(87, 70);
+            this.pictureBox2.Location = new System.Drawing.Point(94, 70);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(103, 93);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pnlPurchase
             // 
@@ -84,6 +87,7 @@
             this.pnlPurchase.Name = "pnlPurchase";
             this.pnlPurchase.Size = new System.Drawing.Size(292, 285);
             this.pnlPurchase.TabIndex = 8;
+            this.pnlPurchase.Click += new System.EventHandler(this.pnlPurchase_Click);
             // 
             // flatLabel1
             // 
@@ -96,6 +100,7 @@
             this.flatLabel1.TabIndex = 1;
             this.flatLabel1.Text = "Purchase";
             this.flatLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel1.Click += new System.EventHandler(this.pnlPurchase_Click);
             // 
             // pictureBox1
             // 
@@ -106,6 +111,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pnlPurchase_Click);
             // 
             // UclMenuAgency
             // 

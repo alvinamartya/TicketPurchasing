@@ -84,3 +84,6 @@ D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.
 D:\Project\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
 D:\Project\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
 D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources

@@ -63,6 +63,7 @@
             this.flatLabel1.TabIndex = 1;
             this.flatLabel1.Text = "Schedules";
             this.flatLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel1.Click += new System.EventHandler(this.pnlSchedules_Click);
             // 
             // pictureBox1
             // 
@@ -73,6 +74,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pnlSchedules_Click);
             // 
             // pnlEmployees
             // 
@@ -96,6 +98,7 @@
             this.flatLabel4.TabIndex = 1;
             this.flatLabel4.Text = "Employees";
             this.flatLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel4.Click += new System.EventHandler(this.pnlEmployees_Click);
             // 
             // pictureBox4
             // 
@@ -106,6 +109,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pnlEmployees_Click);
             // 
             // UclMenuAdmin
             // 

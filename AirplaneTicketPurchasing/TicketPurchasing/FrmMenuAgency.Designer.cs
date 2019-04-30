@@ -41,7 +41,7 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatClose1 = new FlatUI.FlatClose();
-            this.flatLabel1 = new FlatUI.FlatLabel();
+            this.lblTitle = new FlatUI.FlatLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
@@ -51,6 +51,7 @@
             // 
             // pnlContent
             // 
+            this.pnlContent.AutoScroll = true;
             this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(170, 34);
@@ -144,8 +145,9 @@
             this.btnManageCustomer.Name = "btnManageCustomer";
             this.btnManageCustomer.Size = new System.Drawing.Size(170, 37);
             this.btnManageCustomer.TabIndex = 7;
-            this.btnManageCustomer.Text = "Manage Customer";
+            this.btnManageCustomer.Text = "Manage Customers";
             this.btnManageCustomer.UseVisualStyleBackColor = false;
+            this.btnManageCustomer.Click += new System.EventHandler(this.btnManageCustomer_Click);
             // 
             // btnTransaction
             // 
@@ -166,7 +168,7 @@
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
             this.pnlHeader.Controls.Add(this.flatMini1);
             this.pnlHeader.Controls.Add(this.flatClose1);
-            this.pnlHeader.Controls.Add(this.flatLabel1);
+            this.pnlHeader.Controls.Add(this.lblTitle);
             this.pnlHeader.Controls.Add(this.pictureBox1);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
@@ -200,17 +202,17 @@
             this.flatClose1.Text = "flatClose1";
             this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // flatLabel1
+            // lblTitle
             // 
-            this.flatLabel1.AutoSize = true;
-            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel1.Font = new System.Drawing.Font("Sitka Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(47, 1);
-            this.flatLabel1.Name = "flatLabel1";
-            this.flatLabel1.Size = new System.Drawing.Size(101, 30);
-            this.flatLabel1.TabIndex = 1;
-            this.flatLabel1.Text = "FLIGHTSI";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Sitka Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(47, 1);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(101, 30);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "FLIGHTSI";
             // 
             // pictureBox1
             // 
@@ -253,9 +255,9 @@
         private System.Windows.Forms.Panel pnlHeader;
         private FlatUI.FlatMini flatMini1;
         private FlatUI.FlatClose flatClose1;
-        private FlatUI.FlatLabel flatLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLogout;
         public System.Windows.Forms.Panel pnlContent;
+        public FlatUI.FlatLabel lblTitle;
     }
 }

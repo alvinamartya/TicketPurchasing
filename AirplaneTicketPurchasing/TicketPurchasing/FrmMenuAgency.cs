@@ -36,8 +36,20 @@ namespace TicketPurchasing
             }
         }
 
+        private void btnManageCustomer_Click(object sender, EventArgs e)
+        {
+            enableButton();
+            btn = btnManageCustomer;
+            disableButton();
+            UclCustomer uclCustomer = new UclCustomer();
+            addControltoPanel(uclCustomer);
+            lblTitle.Text = "FLIGHTSI - MANAGE [Customers]";
+        }
+
         private void FrmMenuAgency_Load(object sender, EventArgs e)
         {
+            lblTitle.Text = "FLIGHTSI - TRANSACTION";
+            Support.frm = this;
             lblName.Text = Support.name;
             lblPosition.Text = Support.role;
             support.DragandDropForm(this);
@@ -59,6 +71,7 @@ namespace TicketPurchasing
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
+            lblTitle.Text = "FLIGHTSI - TRANSACTION";
             enableButton();
             btn = btnTransaction;
             disableButton();
@@ -68,7 +81,7 @@ namespace TicketPurchasing
         #endregion
 
         #region Method
-        private void addControltoPanel(UserControl control)
+        public void addControltoPanel(UserControl control)
         {
             pnlContent.Controls.Clear();
             pnlContent.Controls.Add(control);
@@ -87,5 +100,6 @@ namespace TicketPurchasing
             btn.BackColor = enableColor;
         }
         #endregion
+
     }
 }

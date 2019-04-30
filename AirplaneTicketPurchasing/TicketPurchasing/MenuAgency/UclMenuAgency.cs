@@ -26,5 +26,19 @@ namespace TicketPurchasing.MenuAgency
             support.panelMouse(pnlPurchase);
             support.panelMouse(pnlModify);
         }
+
+        private void pnlPurchase_Click(object sender, EventArgs e)
+        {
+            UclPurchase purchase = new UclPurchase();
+            ((FrmMenuAgency)Support.frm).addControltoPanel(purchase);
+            ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase]";
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            UclRefund refund = new UclRefund();
+            ((FrmMenuAgency)Support.frm).addControltoPanel(refund);
+            ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Refund]";
+        }
     }
 }

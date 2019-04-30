@@ -74,6 +74,6 @@ namespace TicketPurchasing.MenuSA
             support.panelMouse(pnlCities);
             support.panelMouse(pnlEmployees);
         }
-        
+
     }
 }

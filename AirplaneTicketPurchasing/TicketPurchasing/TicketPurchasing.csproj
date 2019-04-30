@@ -80,11 +80,29 @@
     <Compile Include="MenuAdmin\UclMenuAdmin.Designer.cs">
       <DependentUpon>UclMenuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuAgency\UclCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAgency\UclCustomer.Designer.cs">
+      <DependentUpon>UclCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAgency\UclMenuAgency.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MenuAgency\UclMenuAgency.Designer.cs">
       <DependentUpon>UclMenuAgency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgency\UclPurchase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAgency\UclPurchase.Designer.cs">
+      <DependentUpon>UclPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgency\UclRefund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAgency\UclRefund.Designer.cs">
+      <DependentUpon>UclRefund.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuSA\UclAircraftCompanies.cs">
       <SubType>UserControl</SubType>
@@ -224,8 +242,17 @@
     <EmbeddedResource Include="MenuAdmin\UclMenuAdmin.resx">
       <DependentUpon>UclMenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgency\UclCustomer.resx">
+      <DependentUpon>UclCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuAgency\UclMenuAgency.resx">
       <DependentUpon>UclMenuAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgency\UclPurchase.resx">
+      <DependentUpon>UclPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgency\UclRefund.resx">
+      <DependentUpon>UclRefund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuSA\UclAircraftCompanies.resx">
       <DependentUpon>UclAircraftCompanies.cs</DependentUpon>
