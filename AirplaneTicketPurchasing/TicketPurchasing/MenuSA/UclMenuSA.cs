@@ -27,7 +27,7 @@ namespace TicketPurchasing.MenuSA
         private void PanelMouseEnter(object sender, EventArgs e)
         {
             Panel p = (Panel)sender;
-            Enter = new Thread(() => changeColor(p, p.BackColor, dark));
+            Enter = new Thread(() => changeColor(p, dark));
             Enter.Start();
         }
 
@@ -36,33 +36,12 @@ namespace TicketPurchasing.MenuSA
             if (Enter != null)
                 Enter.Abort();
             Panel p = (Panel)sender;
-            Leave = new Thread(() => changeColor(p, p.BackColor, light));
+            Leave = new Thread(() => changeColor(p, light));
             Leave.Start();
         }
-
-        private Color colorInterpolate(int r, int g, int b, float frac, Color init)
+        private void changeColor(Panel panel, Color color)
         {
-            double newR = r * frac + init.R - 1;
-            double newG = g * frac + init.G - 1;
-            double newB = b * frac + init.B - 1;
-            return Color.FromArgb((int)newR, (int)newG, (int)newB);
-        }
-
-        private void changeColor(Panel panel, Color init, Color end)
-        {
-            //Color start = Color.FromArgb(239, 201, 175);
-            float frac = 0;
-
-            int r = end.R - init.R;
-            int g = end.G - init.G;
-            int b = end.B - init.B;
-
-            for (int i = 0; i < 10; i++)
-            {
-                frac += 0.1F;
-                panel.BackColor = colorInterpolate(r, g, b, frac, init);
-                Thread.Sleep(30);
-            }
+            panel.BackColor = color;
         }
 
         private void PictBoxMouseEnter(object sender, EventArgs e)
