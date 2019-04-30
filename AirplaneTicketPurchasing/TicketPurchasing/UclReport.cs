@@ -12,9 +12,19 @@ namespace TicketPurchasing
 {
     public partial class UclReport : UserControl
     {
+        #region Declaration
+        Support support = new Support();
+        #endregion
+
         public UclReport()
         {
             InitializeComponent();
+        }
+
+        private void UclReport_Load(object sender, EventArgs e)
+        {
+            support.panelMouse(pnlYears);
+            support.panelMouse(pnlMonths);
         }
     }
 }

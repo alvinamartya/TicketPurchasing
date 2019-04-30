@@ -12,9 +12,19 @@ namespace TicketPurchasing.MenuAgency
 {
     public partial class UclMenuAgency : UserControl
     {
+        #region Declaration
+        Support support = new Support();
+        #endregion
+
         public UclMenuAgency()
         {
             InitializeComponent();
+        }
+
+        private void UclMenuAgency_Load(object sender, EventArgs e)
+        {
+            support.panelMouse(pnlPurchase);
+            support.panelMouse(pnlModify);
         }
     }
 }

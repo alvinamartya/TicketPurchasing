@@ -7,58 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading;
+
 
 namespace TicketPurchasing.MenuSA
 {
     public partial class UclMenuSA : UserControl
     {
-        private Color light = Color.FromArgb(239, 201, 175);
-        private Color dark = Color.FromArgb(240, 160, 124);
-        Thread Enter;
-        Thread Leave;
-        Thread WhithinPanel;
+        #region Declaration
+        Support support = new Support();
+        #endregion
 
         public UclMenuSA()
         {
             InitializeComponent();
         }
 
-        private void PanelMouseEnter(object sender, EventArgs e)
-        {
-            Panel p = (Panel)sender;
-            Enter = new Thread(() => changeColor(p, dark));
-            Enter.Start();
-        }
-
-        private void PanelMouseLeave(object sender, EventArgs e)
-        {
-            if (Enter != null)
-                Enter.Abort();
-            Panel p = (Panel)sender;
-            Leave = new Thread(() => changeColor(p, light));
-            Leave.Start();
-        }
-        private void changeColor(Panel panel, Color color)
-        {
-            panel.BackColor = color;
-        }
-
-        private void PictBoxMouseEnter(object sender, EventArgs e)
-        {
-            if (Leave != null)
-                Leave.Abort();
-            var obj = (PictureBox)sender;
-            PanelMouseEnter(obj.Parent, e);
-        }
-
-        private void LableMouseEnter(object sender, EventArgs e)
-        {
-            if (Leave != null)
-                Leave.Abort();
-            var obj = (Label)sender;
-            PanelMouseEnter(obj.Parent, e);
-        }
 
         private void panelAmenities_Click(object sender, MouseEventArgs e)
         {
@@ -101,5 +64,16 @@ namespace TicketPurchasing.MenuSA
             ((FrmMenuAdmin)Support.frm).addControltoPanel(employees);
             ((FrmMenuAdmin)Support.frm).lblTitle.Text = "FLIGHTSI - MANAGE [Employees]";
         }
+
+        private void UclMenuSA_Load(object sender, EventArgs e)
+        {
+            support.panelMouse(pnlAmenities);
+            support.panelMouse(pnlCompanies);
+            support.panelMouse(pnlAircraftTypes);
+            support.panelMouse(pnlAircrafts);
+            support.panelMouse(pnlCities);
+            support.panelMouse(pnlEmployees);
+        }
+        
     }
 }

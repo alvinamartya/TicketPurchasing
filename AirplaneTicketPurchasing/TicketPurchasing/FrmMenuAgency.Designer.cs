@@ -51,6 +51,7 @@
             // 
             // pnlContent
             // 
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(170, 34);
             this.pnlContent.Name = "pnlContent";

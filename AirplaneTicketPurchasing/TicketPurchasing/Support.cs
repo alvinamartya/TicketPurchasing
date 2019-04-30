@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace TicketPurchasing
 {
@@ -13,6 +14,90 @@ namespace TicketPurchasing
         public static string role = "";
         public static string name = "";
         public static Form frm;
+
+     
+        #region Design Form
+        #region Declaration
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
+        private Color light = Color.FromArgb(239, 201, 175);
+        private Color dark = Color.FromArgb(240, 160, 124);
+        Thread Enter;
+        Thread Leave;
+        #endregion
+
+        #region Events
+        private void ctrl_MouseDown(object sender, MouseEventArgs e,Control form)
+        {
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = form.Location;
+        }
+
+        private void ctrl_MouseMove(object sender, MouseEventArgs e, Control form)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                form.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+
+        private void ctrl_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+
+        private void PanelMouseEnter(object sender, EventArgs e)
+        {
+            Panel p = (Panel)sender;
+            Enter = new Thread(() => changeColor(p, dark));
+            Enter.Start();
+        }
+
+        private void PanelMouseLeave(object sender, EventArgs e)
+        {
+            if (Enter != null)
+                Enter.Abort();
+            Panel p = (Panel)sender;
+            Leave = new Thread(() => changeColor(p, light));
+            Leave.Start();
+        }
+        private void changeColor(Panel panel, Color color)
+        {
+            panel.BackColor = color;
+        }
+
+        private void PictBoxMouseEnter(object sender, EventArgs e)
+        {
+            if (Leave != null)
+                Leave.Abort();
+            var obj = (PictureBox)sender;
+            PanelMouseEnter(obj.Parent, e);
+        }
+
+        private void LableMouseEnter(object sender, EventArgs e)
+        {
+            if (Leave != null)
+                Leave.Abort();
+            var obj = (Label)sender;
+            PanelMouseEnter(obj.Parent, e);
+        }
+        #endregion
+
+        #region Method
+        public void panelMouse(Panel panel)
+        {
+            panel.MouseEnter += PanelMouseEnter;
+            panel.MouseLeave += PanelMouseLeave;
+            foreach(Control c in panel.Controls)
+            {
+                if (c is Label) c.MouseEnter += LableMouseEnter;
+                if (c is PictureBox) c.MouseEnter += PictBoxMouseEnter;
+            }
+        }
 
         public void DragandDropForm(Control form)
         {
@@ -25,7 +110,7 @@ namespace TicketPurchasing
                 c.MouseDown += (s2, e2) => ctrl_MouseDown(s2, e2, form);
                 c.MouseMove += (s2, e2) => ctrl_MouseMove(s2, e2, form);
                 c.MouseUp += ctrl_MouseUp;
-                if(c is Panel)
+                if (c is Panel)
                 {
                     foreach (Control cPanel in c.Controls)
                     {
@@ -37,7 +122,7 @@ namespace TicketPurchasing
                         {
                             foreach (Control cUserControl in cPanel.Controls)
                             {
-                                if(!(cUserControl is ComboBox))
+                                if (!(cUserControl is ComboBox))
                                 {
                                     cUserControl.MouseDown += (s2, e2) => ctrl_MouseDown(s2, e2, form);
                                     cUserControl.MouseMove += (s2, e2) => ctrl_MouseMove(s2, e2, form);
@@ -60,33 +145,6 @@ namespace TicketPurchasing
             }
         }
 
-        #region Design Form
-        #region Declaration
-        private bool dragging = false;
-        private Point dragCursorPoint;
-        private Point dragFormPoint;
-        #endregion
-        #region Events
-        private void ctrl_MouseDown(object sender, MouseEventArgs e,Control form)
-        {
-            dragging = true;
-            dragCursorPoint = Cursor.Position;
-            dragFormPoint = form.Location;
-        }
-
-        private void ctrl_MouseMove(object sender, MouseEventArgs e, Control form)
-        {
-            if (dragging)
-            {
-                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
-                form.Location = Point.Add(dragFormPoint, new Size(dif));
-            }
-        }
-
-        private void ctrl_MouseUp(object sender, MouseEventArgs e)
-        {
-            dragging = false;
-        }
         #endregion
         #endregion
     }
