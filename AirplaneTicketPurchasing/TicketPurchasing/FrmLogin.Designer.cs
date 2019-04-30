@@ -143,9 +143,9 @@
             this.txtPassword.HintForeColor = System.Drawing.Color.Empty;
             this.txtPassword.HintText = "";
             this.txtPassword.isPassword = false;
-            this.txtPassword.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
             this.txtPassword.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtPassword.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
             this.txtPassword.LineThickness = 3;
             this.txtPassword.Location = new System.Drawing.Point(33, 270);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
