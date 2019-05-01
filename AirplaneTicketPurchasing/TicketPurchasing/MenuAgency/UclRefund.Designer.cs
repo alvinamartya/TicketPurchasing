@@ -69,7 +69,7 @@
             this.flatLabel2.AutoSize = true;
             this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel2.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel2.ForeColor = System.Drawing.Color.White;
             this.flatLabel2.Location = new System.Drawing.Point(133, 18);
             this.flatLabel2.Name = "flatLabel2";
             this.flatLabel2.Size = new System.Drawing.Size(11, 17);
@@ -81,7 +81,7 @@
             this.flatLabel1.AutoSize = true;
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel1.ForeColor = System.Drawing.Color.White;
             this.flatLabel1.Location = new System.Drawing.Point(9, 18);
             this.flatLabel1.Name = "flatLabel1";
             this.flatLabel1.Size = new System.Drawing.Size(117, 17);
@@ -90,7 +90,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
@@ -123,7 +123,7 @@
             this.flatLabel10.AutoSize = true;
             this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel10.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel10.ForeColor = System.Drawing.Color.White;
             this.flatLabel10.Location = new System.Drawing.Point(118, 34);
             this.flatLabel10.Name = "flatLabel10";
             this.flatLabel10.Size = new System.Drawing.Size(11, 17);
@@ -135,7 +135,7 @@
             this.flatLabel9.AutoSize = true;
             this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel9.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel9.ForeColor = System.Drawing.Color.White;
             this.flatLabel9.Location = new System.Drawing.Point(118, 12);
             this.flatLabel9.Name = "flatLabel9";
             this.flatLabel9.Size = new System.Drawing.Size(11, 17);
@@ -157,7 +157,7 @@
             this.flatLabel6.AutoSize = true;
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel6.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel6.ForeColor = System.Drawing.Color.White;
             this.flatLabel6.Location = new System.Drawing.Point(6, 34);
             this.flatLabel6.Name = "flatLabel6";
             this.flatLabel6.Size = new System.Drawing.Size(81, 17);
@@ -166,7 +166,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
@@ -179,7 +179,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
@@ -205,7 +205,7 @@
             this.flatLabel7.AutoSize = true;
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel7.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
             this.flatLabel7.Location = new System.Drawing.Point(6, 12);
             this.flatLabel7.Name = "flatLabel7";
             this.flatLabel7.Size = new System.Drawing.Size(106, 17);
@@ -219,6 +219,7 @@
             this.groupBox3.Controls.Add(this.panel2);
             this.groupBox3.Controls.Add(this.flatLabel3);
             this.groupBox3.Controls.Add(this.flatLabel4);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(11, 147);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(795, 331);
@@ -276,7 +277,7 @@
             this.flatLabel3.AutoSize = true;
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel3.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel3.ForeColor = System.Drawing.Color.White;
             this.flatLabel3.Location = new System.Drawing.Point(122, 19);
             this.flatLabel3.Name = "flatLabel3";
             this.flatLabel3.Size = new System.Drawing.Size(11, 17);
@@ -288,7 +289,7 @@
             this.flatLabel4.AutoSize = true;
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel4.ForeColor = System.Drawing.Color.White;
             this.flatLabel4.Location = new System.Drawing.Point(14, 19);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(103, 17);
@@ -298,6 +299,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(11, 44);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(795, 97);
@@ -317,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

@@ -63,7 +63,7 @@
             // 
             // pnlAmenities
             // 
-            this.pnlAmenities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlAmenities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlAmenities.Controls.Add(this.flatLabel1);
             this.pnlAmenities.Controls.Add(this.pictureBox1);
             this.pnlAmenities.Location = new System.Drawing.Point(30, 3);
@@ -76,7 +76,7 @@
             // 
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel1.Location = new System.Drawing.Point(31, 153);
             this.flatLabel1.Name = "flatLabel1";
             this.flatLabel1.Size = new System.Drawing.Size(192, 23);
@@ -98,7 +98,7 @@
             // 
             // pnlCompanies
             // 
-            this.pnlCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlCompanies.Controls.Add(this.flatLabel2);
             this.pnlCompanies.Controls.Add(this.pictureBox2);
             this.pnlCompanies.Location = new System.Drawing.Point(292, 3);
@@ -111,7 +111,7 @@
             // 
             this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel2.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel2.Location = new System.Drawing.Point(31, 153);
             this.flatLabel2.Name = "flatLabel2";
             this.flatLabel2.Size = new System.Drawing.Size(192, 23);
@@ -133,7 +133,7 @@
             // 
             // pnlAircraftTypes
             // 
-            this.pnlAircraftTypes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlAircraftTypes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlAircraftTypes.Controls.Add(this.flatLabel3);
             this.pnlAircraftTypes.Controls.Add(this.pictureBox3);
             this.pnlAircraftTypes.Location = new System.Drawing.Point(554, 3);
@@ -146,7 +146,7 @@
             // 
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel3.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel3.Location = new System.Drawing.Point(27, 152);
             this.flatLabel3.Name = "flatLabel3";
             this.flatLabel3.Size = new System.Drawing.Size(192, 23);
@@ -168,7 +168,7 @@
             // 
             // pnlEmployees
             // 
-            this.pnlEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlEmployees.Controls.Add(this.flatLabel4);
             this.pnlEmployees.Controls.Add(this.pictureBox4);
             this.pnlEmployees.Location = new System.Drawing.Point(554, 242);
@@ -181,7 +181,7 @@
             // 
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel4.Location = new System.Drawing.Point(27, 153);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(192, 23);
@@ -203,7 +203,7 @@
             // 
             // pnlCities
             // 
-            this.pnlCities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlCities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlCities.Controls.Add(this.flatLabel5);
             this.pnlCities.Controls.Add(this.pictureBox5);
             this.pnlCities.Location = new System.Drawing.Point(292, 242);
@@ -216,7 +216,7 @@
             // 
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel5.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel5.Location = new System.Drawing.Point(31, 153);
             this.flatLabel5.Name = "flatLabel5";
             this.flatLabel5.Size = new System.Drawing.Size(192, 23);
@@ -238,7 +238,7 @@
             // 
             // pnlAircrafts
             // 
-            this.pnlAircrafts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlAircrafts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlAircrafts.Controls.Add(this.flatLabel6);
             this.pnlAircrafts.Controls.Add(this.pictureBox6);
             this.pnlAircrafts.Location = new System.Drawing.Point(30, 242);
@@ -251,7 +251,7 @@
             // 
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel6.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel6.Location = new System.Drawing.Point(31, 153);
             this.flatLabel6.Name = "flatLabel6";
             this.flatLabel6.Size = new System.Drawing.Size(192, 23);
@@ -275,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.pnlEmployees);
             this.Controls.Add(this.pnlAircraftTypes);
             this.Controls.Add(this.pnlCities);

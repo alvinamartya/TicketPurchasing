@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboRole = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -41,23 +41,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.flatLabel3 = new FlatUI.FlatLabel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.flatLabel4 = new FlatUI.FlatLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.flatLabel8 = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
-            this.flatLabel3 = new FlatUI.FlatLabel();
-            this.flatLabel4 = new FlatUI.FlatLabel();
             this.flatLabel5 = new FlatUI.FlatLabel();
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
@@ -103,19 +103,19 @@
             // 
             this.bunifuCustomDataGrid1.AllowUserToAddRows = false;
             this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -131,6 +131,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.bunifuCustomDataGrid1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(367, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(440, 115);
@@ -142,6 +143,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 136);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(795, 97);
@@ -159,7 +161,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
@@ -184,6 +186,7 @@
             this.groupBox3.Controls.Add(this.btnUpdate);
             this.groupBox3.Controls.Add(this.btnInsert);
             this.groupBox3.Controls.Add(this.flatLabel4);
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 239);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(795, 331);
@@ -192,23 +195,49 @@
             this.groupBox3.Text = "Customer";
             this.groupBox3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(331, 19);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(53, 20);
+            this.button4.TabIndex = 82;
+            this.button4.Text = "Refresh";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(291, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(36, 20);
+            this.button3.TabIndex = 81;
+            this.button3.Text = "Add";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // bunifuCustomDataGrid2
             // 
             this.bunifuCustomDataGrid2.AllowUserToAddRows = false;
             this.bunifuCustomDataGrid2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid2.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid2.DoubleBuffered = true;
             this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
@@ -223,7 +252,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
@@ -243,7 +272,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
@@ -265,7 +294,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
@@ -276,9 +305,21 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
+            // flatLabel3
+            // 
+            this.flatLabel3.AutoSize = true;
+            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel3.ForeColor = System.Drawing.Color.White;
+            this.flatLabel3.Location = new System.Drawing.Point(122, 19);
+            this.flatLabel3.Name = "flatLabel3";
+            this.flatLabel3.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel3.TabIndex = 66;
+            this.flatLabel3.Text = ":";
+            // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
@@ -291,7 +332,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
@@ -301,6 +342,18 @@
             this.btnInsert.TabIndex = 75;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
+            // 
+            // flatLabel4
+            // 
+            this.flatLabel4.AutoSize = true;
+            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel4.ForeColor = System.Drawing.Color.White;
+            this.flatLabel4.Location = new System.Drawing.Point(14, 19);
+            this.flatLabel4.Name = "flatLabel4";
+            this.flatLabel4.Size = new System.Drawing.Size(103, 17);
+            this.flatLabel4.TabIndex = 65;
+            this.flatLabel4.Text = "Customer Name";
             // 
             // groupBox4
             // 
@@ -317,7 +370,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
@@ -330,7 +383,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
@@ -340,32 +393,6 @@
             this.button1.TabIndex = 81;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(291, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(36, 20);
-            this.button3.TabIndex = 81;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(331, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 20);
-            this.button4.TabIndex = 82;
-            this.button4.Text = "Refresh";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // flatLabel8
             // 
@@ -382,43 +409,19 @@
             this.flatLabel7.AutoSize = true;
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel7.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
             this.flatLabel7.Location = new System.Drawing.Point(6, 12);
             this.flatLabel7.Name = "flatLabel7";
             this.flatLabel7.Size = new System.Drawing.Size(113, 17);
             this.flatLabel7.TabIndex = 81;
             this.flatLabel7.Text = "Total Transaction: ";
             // 
-            // flatLabel3
-            // 
-            this.flatLabel3.AutoSize = true;
-            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel3.ForeColor = System.Drawing.Color.Black;
-            this.flatLabel3.Location = new System.Drawing.Point(122, 19);
-            this.flatLabel3.Name = "flatLabel3";
-            this.flatLabel3.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel3.TabIndex = 66;
-            this.flatLabel3.Text = ":";
-            // 
-            // flatLabel4
-            // 
-            this.flatLabel4.AutoSize = true;
-            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.Black;
-            this.flatLabel4.Location = new System.Drawing.Point(14, 19);
-            this.flatLabel4.Name = "flatLabel4";
-            this.flatLabel4.Size = new System.Drawing.Size(103, 17);
-            this.flatLabel4.TabIndex = 65;
-            this.flatLabel4.Text = "Customer Name";
-            // 
             // flatLabel5
             // 
             this.flatLabel5.AutoSize = true;
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel5.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel5.ForeColor = System.Drawing.Color.White;
             this.flatLabel5.Location = new System.Drawing.Point(117, 84);
             this.flatLabel5.Name = "flatLabel5";
             this.flatLabel5.Size = new System.Drawing.Size(11, 17);
@@ -430,7 +433,7 @@
             this.flatLabel6.AutoSize = true;
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel6.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel6.ForeColor = System.Drawing.Color.White;
             this.flatLabel6.Location = new System.Drawing.Point(9, 84);
             this.flatLabel6.Name = "flatLabel6";
             this.flatLabel6.Size = new System.Drawing.Size(98, 17);
@@ -442,7 +445,7 @@
             this.flatLabel1.AutoSize = true;
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel1.ForeColor = System.Drawing.Color.White;
             this.flatLabel1.Location = new System.Drawing.Point(117, 57);
             this.flatLabel1.Name = "flatLabel1";
             this.flatLabel1.Size = new System.Drawing.Size(11, 17);
@@ -454,7 +457,7 @@
             this.flatLabel2.AutoSize = true;
             this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel2.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel2.ForeColor = System.Drawing.Color.White;
             this.flatLabel2.Location = new System.Drawing.Point(9, 57);
             this.flatLabel2.Name = "flatLabel2";
             this.flatLabel2.Size = new System.Drawing.Size(70, 17);
@@ -466,7 +469,7 @@
             this.flatLabel13.AutoSize = true;
             this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel13.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel13.ForeColor = System.Drawing.Color.White;
             this.flatLabel13.Location = new System.Drawing.Point(117, 30);
             this.flatLabel13.Name = "flatLabel13";
             this.flatLabel13.Size = new System.Drawing.Size(11, 17);
@@ -478,7 +481,7 @@
             this.flatLabel14.AutoSize = true;
             this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel14.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel14.ForeColor = System.Drawing.Color.White;
             this.flatLabel14.Location = new System.Drawing.Point(9, 30);
             this.flatLabel14.Name = "flatLabel14";
             this.flatLabel14.Size = new System.Drawing.Size(92, 17);
@@ -489,7 +492,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnLogin);

@@ -38,9 +38,8 @@ namespace TicketPurchasing
 
         private void btnManageCustomer_Click(object sender, EventArgs e)
         {
-            enableButton();
+            buttonSelected(sender);
             btn = btnManageCustomer;
-            disableButton();
             UclCustomer uclCustomer = new UclCustomer();
             addControltoPanel(uclCustomer);
             lblTitle.Text = "FLIGHTSI - MANAGE [Customers]";
@@ -57,14 +56,12 @@ namespace TicketPurchasing
 
             UclMenuAgency menuagency = new UclMenuAgency();
             addControltoPanel(menuagency);
-            disableButton();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            enableButton();
+            buttonSelected(sender);
             btn = btnReport;
-            disableButton();
             UclReport uclReport = new UclReport();
             addControltoPanel(uclReport);
         }
@@ -72,9 +69,8 @@ namespace TicketPurchasing
         private void btnTransaction_Click(object sender, EventArgs e)
         {
             lblTitle.Text = "FLIGHTSI - TRANSACTION";
-            enableButton();
+            buttonSelected(sender);
             btn = btnTransaction;
-            disableButton();
             UclMenuAgency menuagency = new UclMenuAgency();
             addControltoPanel(menuagency);
         }
@@ -88,16 +84,10 @@ namespace TicketPurchasing
             support.DragandDropForm(this);
         }
 
-        private void disableButton()
+        private void buttonSelected(object b)
         {
-            Color disableColor = Color.FromArgb(215, 180, 157);
-            btn.BackColor = disableColor;
-        }
-
-        private void enableButton()
-        {
-            Color enableColor = Color.FromArgb(239, 201, 175);
-            btn.BackColor = enableColor;
+            Button btn = (Button)b;
+            pnlButtonSelected.Top = btn.Top;
         }
         #endregion
 

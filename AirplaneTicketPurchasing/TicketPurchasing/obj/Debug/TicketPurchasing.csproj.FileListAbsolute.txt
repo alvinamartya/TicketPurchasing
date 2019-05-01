@@ -112,3 +112,7 @@ D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properti
 D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
 D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
 D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources

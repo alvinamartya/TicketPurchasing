@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flatMini1 = new FlatUI.FlatMini();
-            this.flatClose1 = new FlatUI.FlatClose();
-            this.flatLabel1 = new FlatUI.FlatLabel();
             this.txtUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.flatMini1 = new FlatUI.FlatMini();
+            this.flatClose1 = new FlatUI.FlatClose();
+            this.flatLabel1 = new FlatUI.FlatLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -53,7 +53,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.panel1.Controls.Add(this.flatMini1);
             this.panel1.Controls.Add(this.flatClose1);
             this.panel1.Controls.Add(this.flatLabel1);
@@ -63,6 +63,76 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 34);
             this.panel1.TabIndex = 0;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtUsername.ForeColor = System.Drawing.Color.White;
+            this.txtUsername.HintForeColor = System.Drawing.Color.Empty;
+            this.txtUsername.HintText = "";
+            this.txtUsername.isPassword = false;
+            this.txtUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.txtUsername.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.txtUsername.LineThickness = 3;
+            this.txtUsername.Location = new System.Drawing.Point(33, 221);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(255, 31);
+            this.txtUsername.TabIndex = 2;
+            this.txtUsername.Text = "Username";
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsername.OnValueChanged += new System.EventHandler(this.txtUsername_OnValueChanged);
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(94, 66);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(133, 111);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
+            this.txtPassword.HintForeColor = System.Drawing.Color.Empty;
+            this.txtPassword.HintText = "";
+            this.txtPassword.isPassword = false;
+            this.txtPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.txtPassword.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.txtPassword.LineThickness = 3;
+            this.txtPassword.Location = new System.Drawing.Point(33, 270);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(255, 31);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.OnValueChanged += new System.EventHandler(this.txtPassword_OnValueChanged);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLogin.Location = new System.Drawing.Point(115, 341);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(91, 37);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // flatMini1
             // 
@@ -102,81 +172,11 @@
             this.flatLabel1.TabIndex = 1;
             this.flatLabel1.Text = "FLIGHTSI";
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtUsername.ForeColor = System.Drawing.Color.Black;
-            this.txtUsername.HintForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.HintText = "";
-            this.txtUsername.isPassword = false;
-            this.txtUsername.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
-            this.txtUsername.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
-            this.txtUsername.LineThickness = 3;
-            this.txtUsername.Location = new System.Drawing.Point(33, 221);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(255, 31);
-            this.txtUsername.TabIndex = 2;
-            this.txtUsername.Text = "Username";
-            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtUsername.OnValueChanged += new System.EventHandler(this.txtUsername_OnValueChanged);
-            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
-            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(94, 66);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 111);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.HintForeColor = System.Drawing.Color.Empty;
-            this.txtPassword.HintText = "";
-            this.txtPassword.isPassword = false;
-            this.txtPassword.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
-            this.txtPassword.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
-            this.txtPassword.LineThickness = 3;
-            this.txtPassword.Location = new System.Drawing.Point(33, 270);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(255, 31);
-            this.txtPassword.TabIndex = 4;
-            this.txtPassword.Text = "Password";
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPassword.OnValueChanged += new System.EventHandler(this.txtPassword_OnValueChanged);
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.Location = new System.Drawing.Point(115, 341);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(91, 37);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(320, 407);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);

@@ -43,7 +43,7 @@
             // 
             // pnlSchedules
             // 
-            this.pnlSchedules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlSchedules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlSchedules.Controls.Add(this.flatLabel1);
             this.pnlSchedules.Controls.Add(this.pictureBox1);
             this.pnlSchedules.Location = new System.Drawing.Point(101, 97);
@@ -56,7 +56,7 @@
             // 
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel1.Location = new System.Drawing.Point(49, 167);
             this.flatLabel1.Name = "flatLabel1";
             this.flatLabel1.Size = new System.Drawing.Size(192, 23);
@@ -78,7 +78,7 @@
             // 
             // pnlEmployees
             // 
-            this.pnlEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlEmployees.Controls.Add(this.flatLabel4);
             this.pnlEmployees.Controls.Add(this.pictureBox4);
             this.pnlEmployees.Location = new System.Drawing.Point(441, 97);
@@ -91,7 +91,7 @@
             // 
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.flatLabel4.Location = new System.Drawing.Point(49, 167);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(192, 23);
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.pnlEmployees);
             this.Controls.Add(this.pnlSchedules);
             this.Name = "UclMenuAdmin";

@@ -21,8 +21,8 @@ namespace TicketPurchasing
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
-        private Color light = Color.FromArgb(239, 201, 175);
-        private Color dark = Color.FromArgb(240, 160, 124);
+        private Color light = Color.FromArgb(46, 47, 48);
+        private Color dark = Color.FromArgb(36, 37, 38);
         Thread Enter;
         Thread Leave;
         #endregion

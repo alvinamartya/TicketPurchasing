@@ -46,14 +46,13 @@ namespace TicketPurchasing
 
             lblTitle.Text = "FLIGHTSI - MANAGE";
             btn = btnManage;
-            disableButton();
+            buttonSeleted(btn);
         }
 
         private void btnManage_Click(object sender, EventArgs e)
         {
-            enableButton();
             btn = btnManage;
-            disableButton();
+            buttonSeleted(btn);
             lblTitle.Text = "FLIGHTSI - MANAGE";
             if (Support.role.Equals("Super Admin"))
             {
@@ -80,9 +79,8 @@ namespace TicketPurchasing
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            enableButton();
             btn = btnReport;
-            disableButton();
+            buttonSeleted(btn);
             lblTitle.Text = "FLIGHTSI - REPORT";
             UclReport uclReport = new UclReport();
             addControltoPanel(uclReport);
@@ -90,16 +88,9 @@ namespace TicketPurchasing
         #endregion
 
         #region Method
-        private void disableButton()
+        private void buttonSeleted(Button b)
         {
-            Color disableColor = Color.FromArgb(215, 180, 157);
-            btn.BackColor = disableColor;
-        }
-
-        private void enableButton()
-        {
-            Color enableColor = Color.FromArgb(239, 201, 175);
-            btn.BackColor = enableColor;
+            pnlButtonSelected.Top = b.Top;
         }
 
         public void addControltoPanel(UserControl control)

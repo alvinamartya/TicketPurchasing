@@ -108,7 +108,7 @@
             this.flatLabel2.AutoSize = true;
             this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel2.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel2.ForeColor = System.Drawing.Color.White;
             this.flatLabel2.Location = new System.Drawing.Point(353, 234);
             this.flatLabel2.Name = "flatLabel2";
             this.flatLabel2.Size = new System.Drawing.Size(11, 17);
@@ -120,7 +120,7 @@
             this.flatLabel1.AutoSize = true;
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel1.ForeColor = System.Drawing.Color.White;
             this.flatLabel1.Location = new System.Drawing.Point(245, 234);
             this.flatLabel1.Name = "flatLabel1";
             this.flatLabel1.Size = new System.Drawing.Size(20, 17);
@@ -141,7 +141,7 @@
             this.flatLabel13.AutoSize = true;
             this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel13.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel13.ForeColor = System.Drawing.Color.White;
             this.flatLabel13.Location = new System.Drawing.Point(352, 260);
             this.flatLabel13.Name = "flatLabel13";
             this.flatLabel13.Size = new System.Drawing.Size(11, 17);
@@ -153,7 +153,7 @@
             this.flatLabel14.AutoSize = true;
             this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel14.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel14.ForeColor = System.Drawing.Color.White;
             this.flatLabel14.Location = new System.Drawing.Point(244, 260);
             this.flatLabel14.Name = "flatLabel14";
             this.flatLabel14.Size = new System.Drawing.Size(50, 17);
@@ -174,7 +174,7 @@
             this.flatLabel3.AutoSize = true;
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel3.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel3.ForeColor = System.Drawing.Color.White;
             this.flatLabel3.Location = new System.Drawing.Point(352, 287);
             this.flatLabel3.Name = "flatLabel3";
             this.flatLabel3.Size = new System.Drawing.Size(11, 17);
@@ -186,7 +186,7 @@
             this.flatLabel4.AutoSize = true;
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel4.ForeColor = System.Drawing.Color.White;
             this.flatLabel4.Location = new System.Drawing.Point(244, 287);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(92, 17);
@@ -207,7 +207,7 @@
             this.flatLabel5.AutoSize = true;
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel5.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel5.ForeColor = System.Drawing.Color.White;
             this.flatLabel5.Location = new System.Drawing.Point(352, 314);
             this.flatLabel5.Name = "flatLabel5";
             this.flatLabel5.Size = new System.Drawing.Size(11, 17);
@@ -219,7 +219,7 @@
             this.flatLabel6.AutoSize = true;
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel6.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel6.ForeColor = System.Drawing.Color.White;
             this.flatLabel6.Location = new System.Drawing.Point(244, 314);
             this.flatLabel6.Name = "flatLabel6";
             this.flatLabel6.Size = new System.Drawing.Size(70, 17);
@@ -240,7 +240,7 @@
             this.flatLabel7.AutoSize = true;
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel7.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
             this.flatLabel7.Location = new System.Drawing.Point(352, 341);
             this.flatLabel7.Name = "flatLabel7";
             this.flatLabel7.Size = new System.Drawing.Size(11, 17);
@@ -252,7 +252,7 @@
             this.flatLabel8.AutoSize = true;
             this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel8.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel8.ForeColor = System.Drawing.Color.White;
             this.flatLabel8.Location = new System.Drawing.Point(244, 341);
             this.flatLabel8.Name = "flatLabel8";
             this.flatLabel8.Size = new System.Drawing.Size(98, 17);
@@ -264,7 +264,7 @@
             this.flatLabel9.AutoSize = true;
             this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel9.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel9.ForeColor = System.Drawing.Color.White;
             this.flatLabel9.Location = new System.Drawing.Point(353, 367);
             this.flatLabel9.Name = "flatLabel9";
             this.flatLabel9.Size = new System.Drawing.Size(11, 17);
@@ -276,7 +276,7 @@
             this.flatLabel10.AutoSize = true;
             this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel10.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel10.ForeColor = System.Drawing.Color.White;
             this.flatLabel10.Location = new System.Drawing.Point(245, 367);
             this.flatLabel10.Name = "flatLabel10";
             this.flatLabel10.Size = new System.Drawing.Size(99, 17);
@@ -304,7 +304,7 @@
             this.flatLabel11.AutoSize = true;
             this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel11.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel11.ForeColor = System.Drawing.Color.White;
             this.flatLabel11.Location = new System.Drawing.Point(353, 393);
             this.flatLabel11.Name = "flatLabel11";
             this.flatLabel11.Size = new System.Drawing.Size(11, 17);
@@ -316,7 +316,7 @@
             this.flatLabel12.AutoSize = true;
             this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel12.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel12.ForeColor = System.Drawing.Color.White;
             this.flatLabel12.Location = new System.Drawing.Point(245, 393);
             this.flatLabel12.Name = "flatLabel12";
             this.flatLabel12.Size = new System.Drawing.Size(36, 17);
@@ -328,7 +328,7 @@
             this.flatLabel15.AutoSize = true;
             this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel15.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel15.ForeColor = System.Drawing.Color.White;
             this.flatLabel15.Location = new System.Drawing.Point(370, 393);
             this.flatLabel15.Name = "flatLabel15";
             this.flatLabel15.Size = new System.Drawing.Size(27, 17);
@@ -347,7 +347,7 @@
             this.flatLabel16.AutoSize = true;
             this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel16.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel16.ForeColor = System.Drawing.Color.White;
             this.flatLabel16.Location = new System.Drawing.Point(353, 419);
             this.flatLabel16.Name = "flatLabel16";
             this.flatLabel16.Size = new System.Drawing.Size(11, 17);
@@ -359,7 +359,7 @@
             this.flatLabel17.AutoSize = true;
             this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel17.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel17.ForeColor = System.Drawing.Color.White;
             this.flatLabel17.Location = new System.Drawing.Point(245, 419);
             this.flatLabel17.Name = "flatLabel17";
             this.flatLabel17.Size = new System.Drawing.Size(71, 17);
@@ -371,7 +371,7 @@
             this.flatLabel18.AutoSize = true;
             this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel18.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel18.ForeColor = System.Drawing.Color.White;
             this.flatLabel18.Location = new System.Drawing.Point(419, 419);
             this.flatLabel18.Name = "flatLabel18";
             this.flatLabel18.Size = new System.Drawing.Size(43, 17);
@@ -383,7 +383,7 @@
             this.flatLabel19.AutoSize = true;
             this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel19.ForeColor = System.Drawing.Color.Black;
+            this.flatLabel19.ForeColor = System.Drawing.Color.White;
             this.flatLabel19.Location = new System.Drawing.Point(517, 419);
             this.flatLabel19.Name = "flatLabel19";
             this.flatLabel19.Size = new System.Drawing.Size(54, 17);
@@ -399,7 +399,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
@@ -412,7 +412,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
@@ -425,7 +425,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
@@ -438,7 +438,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
@@ -451,7 +451,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.Control;
@@ -466,7 +466,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);

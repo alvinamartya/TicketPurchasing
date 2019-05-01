@@ -35,6 +35,7 @@
             this.lblTitle = new FlatUI.FlatLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlNavbar = new System.Windows.Forms.Panel();
+            this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.lblPosition = new FlatUI.FlatLabel();
             this.lblName = new FlatUI.FlatLabel();
             this.foto = new System.Windows.Forms.PictureBox();
@@ -50,7 +51,7 @@
             // 
             // pnlHeader
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(167)))), ((int)(((byte)(129)))));
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.pnlHeader.Controls.Add(this.flatMini1);
             this.pnlHeader.Controls.Add(this.flatClose1);
             this.pnlHeader.Controls.Add(this.lblTitle);
@@ -109,7 +110,8 @@
             // 
             // pnlNavbar
             // 
-            this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.pnlNavbar.Controls.Add(this.pnlButtonSelected);
             this.pnlNavbar.Controls.Add(this.lblPosition);
             this.pnlNavbar.Controls.Add(this.lblName);
             this.pnlNavbar.Controls.Add(this.foto);
@@ -122,11 +124,19 @@
             this.pnlNavbar.Size = new System.Drawing.Size(170, 479);
             this.pnlNavbar.TabIndex = 3;
             // 
+            // pnlButtonSelected
+            // 
+            this.pnlButtonSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.pnlButtonSelected.Location = new System.Drawing.Point(12, 202);
+            this.pnlButtonSelected.Name = "pnlButtonSelected";
+            this.pnlButtonSelected.Size = new System.Drawing.Size(5, 37);
+            this.pnlButtonSelected.TabIndex = 12;
+            // 
             // lblPosition
             // 
             this.lblPosition.BackColor = System.Drawing.Color.Transparent;
             this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.Black;
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.lblPosition.Location = new System.Drawing.Point(12, 153);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(152, 18);
@@ -138,7 +148,7 @@
             // 
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.Black;
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.lblName.Location = new System.Drawing.Point(12, 135);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(152, 18);
@@ -158,10 +168,10 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.ForeColor = System.Drawing.Color.Black;
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.btnLogout.Location = new System.Drawing.Point(0, 274);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(170, 37);
@@ -172,10 +182,10 @@
             // 
             // btnReport
             // 
-            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.btnReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.ForeColor = System.Drawing.Color.Black;
+            this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.btnReport.Location = new System.Drawing.Point(0, 239);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(170, 37);
@@ -186,10 +196,10 @@
             // 
             // btnManage
             // 
-            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(201)))), ((int)(((byte)(175)))));
+            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.btnManage.FlatAppearance.BorderSize = 0;
             this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.ForeColor = System.Drawing.Color.Black;
+            this.btnManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
             this.btnManage.Location = new System.Drawing.Point(0, 202);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(170, 37);
@@ -201,7 +211,7 @@
             // pnlContent
             // 
             this.pnlContent.AutoScroll = true;
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(216)))), ((int)(((byte)(220)))));
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(170, 34);
             this.pnlContent.Name = "pnlContent";
@@ -246,5 +256,6 @@
         private FlatUI.FlatLabel lblPosition;
         private System.Windows.Forms.Panel pnlContent;
         public FlatUI.FlatLabel lblTitle;
+        private System.Windows.Forms.Panel pnlButtonSelected;
     }
 }
