@@ -44,7 +44,7 @@
             // pnlModify
             // 
             this.pnlModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.pnlModify.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlModify.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlModify.Controls.Add(this.flatLabel2);
             this.pnlModify.Controls.Add(this.pictureBox2);
             this.pnlModify.Location = new System.Drawing.Point(441, 97);
@@ -80,7 +80,7 @@
             // pnlPurchase
             // 
             this.pnlPurchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.pnlPurchase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPurchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlPurchase.Controls.Add(this.flatLabel1);
             this.pnlPurchase.Controls.Add(this.pictureBox1);
             this.pnlPurchase.Location = new System.Drawing.Point(101, 97);

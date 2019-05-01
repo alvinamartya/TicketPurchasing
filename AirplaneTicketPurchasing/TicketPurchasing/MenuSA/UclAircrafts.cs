@@ -47,7 +47,7 @@ namespace TicketPurchasing.MenuSA
         private void groupBox1_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
-            DrawGroupBox(box, e.Graphics, Color.Black, Color.Gray);
+            DrawGroupBox(box, e.Graphics, Color.White, Color.Gray);
         }
         #endregion
     }

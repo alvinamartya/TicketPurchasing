@@ -45,7 +45,7 @@ namespace TicketPurchasing.MenuAgency
         private void groupBox3_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
-            DrawGroupBox(box, e.Graphics, Color.Black, Color.Gray);
+            DrawGroupBox(box, e.Graphics, Color.White, Color.Gray);
         }
     }
 }

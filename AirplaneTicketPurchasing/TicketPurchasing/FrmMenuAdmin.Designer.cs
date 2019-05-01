@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuAdmin));
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatClose1 = new FlatUI.FlatClose();
             this.lblTitle = new FlatUI.FlatLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlNavbar = new System.Windows.Forms.Panel();
             this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.lblPosition = new FlatUI.FlatLabel();
@@ -44,6 +45,7 @@
             this.btnManage = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
@@ -52,15 +54,36 @@
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.pnlHeader.Controls.Add(this.panel2);
             this.pnlHeader.Controls.Add(this.flatMini1);
             this.pnlHeader.Controls.Add(this.flatClose1);
             this.pnlHeader.Controls.Add(this.lblTitle);
-            this.pnlHeader.Controls.Add(this.pictureBox1);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1005, 34);
             this.pnlHeader.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(41, 34);
+            this.panel2.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // flatMini1
             // 
@@ -99,14 +122,6 @@
             this.lblTitle.Size = new System.Drawing.Size(101, 30);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "FLIGHTSI";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // pnlNavbar
             // 
@@ -234,6 +249,7 @@
             this.Load += new System.EventHandler(this.FrmMenuSA_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlNavbar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.foto)).EndInit();
@@ -246,7 +262,6 @@
         private System.Windows.Forms.Panel pnlHeader;
         private FlatUI.FlatMini flatMini1;
         private FlatUI.FlatClose flatClose1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlNavbar;
         private System.Windows.Forms.PictureBox foto;
         private System.Windows.Forms.Button btnReport;
@@ -257,5 +272,7 @@
         private System.Windows.Forms.Panel pnlContent;
         public FlatUI.FlatLabel lblTitle;
         private System.Windows.Forms.Panel pnlButtonSelected;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
