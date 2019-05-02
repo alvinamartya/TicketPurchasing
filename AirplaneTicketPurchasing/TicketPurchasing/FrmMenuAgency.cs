@@ -38,8 +38,8 @@ namespace TicketPurchasing
 
         private void btnManageCustomer_Click(object sender, EventArgs e)
         {
-            buttonSelected(sender);
             btn = btnManageCustomer;
+            buttonSelected();
             UclCustomer uclCustomer = new UclCustomer();
             addControltoPanel(uclCustomer);
             lblTitle.Text = "FLIGHTSI - MANAGE [Customers]";
@@ -47,7 +47,7 @@ namespace TicketPurchasing
 
         private void FrmMenuAgency_Load(object sender, EventArgs e)
         {
-            lblTitle.Text = "FLIGHTSI - TRANSACTION";
+            lblTitle.Text = "FLIGHTSI - DASHBOARD";
             Support.frm = this;
             lblName.Text = Support.name;
             lblPosition.Text = Support.role;
@@ -60,19 +60,30 @@ namespace TicketPurchasing
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            buttonSelected(sender);
             btn = btnReport;
+            buttonSelected();
             UclReport uclReport = new UclReport();
             addControltoPanel(uclReport);
+            lblTitle.Text = "FLIGHTSI - REPORT";
         }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            lblTitle.Text = "FLIGHTSI - TRANSACTION";
-            buttonSelected(sender);
-            btn = btnTransaction;
+            btn = btnTransac;
+            buttonSelected();
             UclMenuAgency menuagency = new UclMenuAgency();
             addControltoPanel(menuagency);
+            lblTitle.Text = "FLIGHTSI - TRANSACTION";
+        }
+
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            btn = btnDashboard;
+            buttonSelected();
+            UclDashboard ucldashboard = new UclDashboard();
+            addControltoPanel(ucldashboard);
+            lblTitle.Text = "FLIGHTSI - DASHBOARD";
         }
         #endregion
 
@@ -84,20 +95,10 @@ namespace TicketPurchasing
             support.DragandDropForm(this);
         }
 
-        private void buttonSelected(object b)
+        private void buttonSelected()
         {
-            Button btn = (Button)b;
             pnlButtonSelected.Top = btn.Top;
         }
         #endregion
-
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            buttonSelected(sender);
-            btn = btnDashboard;
-            UclDashboard ucldashboard = new UclDashboard();
-            addControltoPanel(ucldashboard);
-            lblTitle.Text = "FLIGHTSI - MANAGE [Dashboard]";
-        }
     }
 }

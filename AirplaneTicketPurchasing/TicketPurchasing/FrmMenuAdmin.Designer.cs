@@ -32,19 +32,19 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flatMini1 = new FlatUI.FlatMini();
-            this.flatClose1 = new FlatUI.FlatClose();
-            this.lblTitle = new FlatUI.FlatLabel();
             this.pnlNavbar = new System.Windows.Forms.Panel();
-            this.btnManage = new System.Windows.Forms.Button();
             this.pnlButtonSelected = new System.Windows.Forms.Panel();
-            this.lblPosition = new FlatUI.FlatLabel();
-            this.lblName = new FlatUI.FlatLabel();
             this.foto = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnManage = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblPosition = new FlatUI.FlatLabel();
+            this.lblName = new FlatUI.FlatLabel();
+            this.flatMini1 = new FlatUI.FlatMini();
+            this.flatClose1 = new FlatUI.FlatClose();
+            this.lblTitle = new FlatUI.FlatLabel();
             this.pnlHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,48 +86,9 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // flatMini1
-            // 
-            this.flatMini1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatMini1.BackColor = System.Drawing.Color.White;
-            this.flatMini1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.flatMini1.Font = new System.Drawing.Font("Marlett", 12F);
-            this.flatMini1.Location = new System.Drawing.Point(956, 7);
-            this.flatMini1.Name = "flatMini1";
-            this.flatMini1.Size = new System.Drawing.Size(18, 18);
-            this.flatMini1.TabIndex = 4;
-            this.flatMini1.Text = "flatMini1";
-            this.flatMini1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // flatClose1
-            // 
-            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatClose1.BackColor = System.Drawing.Color.White;
-            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
-            this.flatClose1.Location = new System.Drawing.Point(980, 7);
-            this.flatClose1.Name = "flatClose1";
-            this.flatClose1.Size = new System.Drawing.Size(18, 18);
-            this.flatClose1.TabIndex = 2;
-            this.flatClose1.Text = "flatClose1";
-            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Sitka Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(42, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(101, 30);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "FLIGHTSI";
-            // 
             // pnlNavbar
             // 
             this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.pnlNavbar.Controls.Add(this.btnManage);
             this.pnlNavbar.Controls.Add(this.pnlButtonSelected);
             this.pnlNavbar.Controls.Add(this.lblPosition);
             this.pnlNavbar.Controls.Add(this.lblName);
@@ -135,25 +96,12 @@
             this.pnlNavbar.Controls.Add(this.btnLogout);
             this.pnlNavbar.Controls.Add(this.btnReport);
             this.pnlNavbar.Controls.Add(this.btnDashboard);
+            this.pnlNavbar.Controls.Add(this.btnManage);
             this.pnlNavbar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNavbar.Location = new System.Drawing.Point(0, 34);
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Size = new System.Drawing.Size(170, 479);
             this.pnlNavbar.TabIndex = 3;
-            // 
-            // btnManage
-            // 
-            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnManage.Location = new System.Drawing.Point(0, 239);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(170, 37);
-            this.btnManage.TabIndex = 13;
-            this.btnManage.Text = "Manage";
-            this.btnManage.UseVisualStyleBackColor = false;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // pnlButtonSelected
             // 
@@ -162,30 +110,6 @@
             this.pnlButtonSelected.Name = "pnlButtonSelected";
             this.pnlButtonSelected.Size = new System.Drawing.Size(5, 37);
             this.pnlButtonSelected.TabIndex = 12;
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblPosition.Location = new System.Drawing.Point(12, 153);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(152, 18);
-            this.lblPosition.TabIndex = 10;
-            this.lblPosition.Text = "Super Admin";
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblName.Location = new System.Drawing.Point(12, 135);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(152, 18);
-            this.lblName.TabIndex = 9;
-            this.lblName.Text = "Alvin Amartya Azro";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // foto
             // 
@@ -237,6 +161,21 @@
             this.btnDashboard.TabIndex = 6;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnManage
+            // 
+            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnManage.Location = new System.Drawing.Point(0, 239);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(170, 37);
+            this.btnManage.TabIndex = 13;
+            this.btnManage.Text = "Manage";
+            this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // pnlContent
             // 
@@ -247,6 +186,68 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(835, 479);
             this.pnlContent.TabIndex = 4;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblPosition.Location = new System.Drawing.Point(12, 153);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(152, 18);
+            this.lblPosition.TabIndex = 10;
+            this.lblPosition.Text = "Super Admin";
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblName.Location = new System.Drawing.Point(12, 135);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(152, 18);
+            this.lblName.TabIndex = 9;
+            this.lblName.Text = "Alvin Amartya Azro";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flatMini1
+            // 
+            this.flatMini1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatMini1.BackColor = System.Drawing.Color.White;
+            this.flatMini1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.flatMini1.Font = new System.Drawing.Font("Marlett", 12F);
+            this.flatMini1.Location = new System.Drawing.Point(956, 7);
+            this.flatMini1.Name = "flatMini1";
+            this.flatMini1.Size = new System.Drawing.Size(18, 18);
+            this.flatMini1.TabIndex = 4;
+            this.flatMini1.Text = "flatMini1";
+            this.flatMini1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // flatClose1
+            // 
+            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatClose1.BackColor = System.Drawing.Color.White;
+            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
+            this.flatClose1.Location = new System.Drawing.Point(980, 7);
+            this.flatClose1.Name = "flatClose1";
+            this.flatClose1.Size = new System.Drawing.Size(18, 18);
+            this.flatClose1.TabIndex = 2;
+            this.flatClose1.Text = "flatClose1";
+            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Sitka Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(42, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(101, 30);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "FLIGHTSI";
             // 
             // FrmMenuAdmin
             // 

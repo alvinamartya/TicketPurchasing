@@ -31,11 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuAgency));
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlNavbar = new System.Windows.Forms.Panel();
-            this.btnTransaction = new System.Windows.Forms.Button();
             this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.lblPosition = new FlatUI.FlatLabel();
-            this.lblName = new FlatUI.FlatLabel();
             this.foto = new System.Windows.Forms.PictureBox();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnManageCustomer = new System.Windows.Forms.Button();
@@ -43,6 +40,9 @@
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnTransac = new System.Windows.Forms.Button();
+            this.lblPosition = new FlatUI.FlatLabel();
+            this.lblName = new FlatUI.FlatLabel();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatClose1 = new FlatUI.FlatClose();
             this.lblTitle = new FlatUI.FlatLabel();
@@ -66,7 +66,6 @@
             // pnlNavbar
             // 
             this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.pnlNavbar.Controls.Add(this.btnTransaction);
             this.pnlNavbar.Controls.Add(this.pnlButtonSelected);
             this.pnlNavbar.Controls.Add(this.btnLogout);
             this.pnlNavbar.Controls.Add(this.lblPosition);
@@ -75,25 +74,12 @@
             this.pnlNavbar.Controls.Add(this.btnReport);
             this.pnlNavbar.Controls.Add(this.btnManageCustomer);
             this.pnlNavbar.Controls.Add(this.btnDashboard);
+            this.pnlNavbar.Controls.Add(this.btnTransac);
             this.pnlNavbar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNavbar.Location = new System.Drawing.Point(0, 34);
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Size = new System.Drawing.Size(170, 479);
             this.pnlNavbar.TabIndex = 6;
-            // 
-            // btnTransaction
-            // 
-            this.btnTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.btnTransaction.FlatAppearance.BorderSize = 0;
-            this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnTransaction.Location = new System.Drawing.Point(0, 238);
-            this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.Size = new System.Drawing.Size(170, 37);
-            this.btnTransaction.TabIndex = 14;
-            this.btnTransaction.Text = "Transaction";
-            this.btnTransaction.UseVisualStyleBackColor = false;
-            this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
             // 
             // pnlButtonSelected
             // 
@@ -116,28 +102,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblPosition.Location = new System.Drawing.Point(12, 153);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(152, 18);
-            this.lblPosition.TabIndex = 10;
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblName.Location = new System.Drawing.Point(12, 135);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(152, 18);
-            this.lblName.TabIndex = 9;
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // foto
             // 
@@ -225,6 +189,42 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnTransac
+            // 
+            this.btnTransac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnTransac.FlatAppearance.BorderSize = 0;
+            this.btnTransac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnTransac.Location = new System.Drawing.Point(0, 238);
+            this.btnTransac.Name = "btnTransac";
+            this.btnTransac.Size = new System.Drawing.Size(170, 37);
+            this.btnTransac.TabIndex = 14;
+            this.btnTransac.Text = "Transaction";
+            this.btnTransac.UseVisualStyleBackColor = false;
+            this.btnTransac.Click += new System.EventHandler(this.btnTransaction_Click);
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblPosition.Location = new System.Drawing.Point(12, 153);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(152, 18);
+            this.lblPosition.TabIndex = 10;
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblName.Location = new System.Drawing.Point(12, 135);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(152, 18);
+            this.lblName.TabIndex = 9;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // flatMini1
             // 
             this.flatMini1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,6 +303,6 @@
         private System.Windows.Forms.Panel pnlButtonSelected;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnTransaction;
+        private System.Windows.Forms.Button btnTransac;
     }
 }

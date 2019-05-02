@@ -27,15 +27,7 @@ namespace TicketPurchasing.MenuSA
         private void UclAmenities_Load(object sender, EventArgs e)
         {
             clear();
-            enableFrm(false);
-        }
-
-        private void btnInsert_EnabledChanged(object sender, EventArgs e)
-        {
-            if(((Button)sender).Enabled == false)
-            {
-                ((Button)sender).ForeColor = Color.Gray;
-            }
+            //enableFrm(false);
         }
         #endregion
 
@@ -51,11 +43,11 @@ namespace TicketPurchasing.MenuSA
             txtName.Enabled = value;
             txtQty.Enabled = value;
             cboUnit.Enabled = value;
-            btnSave.Enabled = value;
-            btnCancel.Enabled = value;
-            btnInsert.Enabled = !value;
-            btnUpdate.Enabled = !value;
-            btnDelete.Enabled = !value;
+            btnSave.Visible = value;
+            btnCancel.Visible = value;
+            btnInsert.Visible = !value;
+            btnUpdate.Visible = !value;
+            btnDelete.Visible = !value;
         }
         #endregion
     }

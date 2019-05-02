@@ -31,25 +31,16 @@ namespace TicketPurchasing
             lblName.Text = Support.name;
             lblPosition.Text = Support.role;
             support.DragandDropForm(this);
-            if(Support.role.Equals("Super Admin"))
-            {
-                UclMenuSA menuSA = new UclMenuSA();
-                addControltoPanel(menuSA);
-            }
-            else
-            {
-                UclMenuAdmin menuAdmin = new UclMenuAdmin();
-                addControltoPanel(menuAdmin);
-            }
-
-            lblTitle.Text = "FLIGHTSI - MANAGE";
+            UclDashboard dashboard = new UclDashboard();
+            addControltoPanel(dashboard);
+            lblTitle.Text = "FLIGHTSI - DASHBOARDS";
             btn = btnDashboard;
             buttonSeleted(btn);
         }
 
         private void btnManage_Click(object sender, EventArgs e)
         {
-            btn = btnDashboard;
+            btn = btnManage;
             buttonSeleted(btn);
             lblTitle.Text = "FLIGHTSI - MANAGE";
             if (Support.role.Equals("Super Admin"))
@@ -97,5 +88,14 @@ namespace TicketPurchasing
             support.DragandDropForm(this);
         }
         #endregion
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            btn = btnDashboard;
+            buttonSeleted(btn);
+            lblTitle.Text = "FLIGHTSI - DASHBOARD";
+            UclDashboard uclReport = new UclDashboard();
+            addControltoPanel(uclReport);
+        }
     }
 }

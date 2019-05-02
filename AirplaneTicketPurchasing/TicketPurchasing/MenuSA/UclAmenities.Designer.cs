@@ -223,7 +223,6 @@
             this.btnInsert.TabIndex = 20;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
             // 
             // txtName
             // 
@@ -269,7 +268,6 @@
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
             // 
             // btnDelete
             // 
@@ -283,7 +281,6 @@
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
             // 
             // btnCancel
             // 
@@ -297,7 +294,6 @@
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
             // 
             // btnSave
             // 
@@ -311,7 +307,6 @@
             this.btnSave.TabIndex = 31;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
             // 
             // amenitiesTableAdapter
             // 
