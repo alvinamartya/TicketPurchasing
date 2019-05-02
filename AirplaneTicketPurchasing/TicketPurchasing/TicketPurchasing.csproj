@@ -36,9 +36,12 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\app gas\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,6 +106,12 @@
     </Compile>
     <Compile Include="MenuAgency\UclRefund.Designer.cs">
       <DependentUpon>UclRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgency\UclTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAgency\UclTicket.Designer.cs">
+      <DependentUpon>UclTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuSA\UclAircraftCompanies.cs">
       <SubType>UserControl</SubType>
@@ -227,6 +236,18 @@
     <Compile Include="UclReport.Designer.cs">
       <DependentUpon>UclReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="UclReportMonths.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UclReportMonths.Designer.cs">
+      <DependentUpon>UclReportMonths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UclReportYears.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UclReportYears.Designer.cs">
+      <DependentUpon>UclReportYears.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAgency\UclRefund.resx">
       <DependentUpon>UclRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgency\UclTicket.resx">
+      <DependentUpon>UclTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuSA\UclAircraftCompanies.resx">
       <DependentUpon>UclAircraftCompanies.cs</DependentUpon>
@@ -286,6 +310,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UclReport.resx">
       <DependentUpon>UclReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UclReportMonths.resx">
+      <DependentUpon>UclReportMonths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UclReportYears.resx">
+      <DependentUpon>UclReportYears.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

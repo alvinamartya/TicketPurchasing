@@ -50,6 +50,7 @@
             this.pnlMonths.Name = "pnlMonths";
             this.pnlMonths.Size = new System.Drawing.Size(292, 285);
             this.pnlMonths.TabIndex = 11;
+            this.pnlMonths.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // flatLabel2
             // 
@@ -62,6 +63,7 @@
             this.flatLabel2.TabIndex = 1;
             this.flatLabel2.Text = "Months";
             this.flatLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox2
             // 
@@ -72,6 +74,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pnlYears
             // 
@@ -82,6 +85,7 @@
             this.pnlYears.Name = "pnlYears";
             this.pnlYears.Size = new System.Drawing.Size(292, 285);
             this.pnlYears.TabIndex = 10;
+            this.pnlYears.Click += new System.EventHandler(this.pnlYears_Click);
             // 
             // flatLabel1
             // 
@@ -94,6 +98,7 @@
             this.flatLabel1.TabIndex = 1;
             this.flatLabel1.Text = "Years";
             this.flatLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel1.Click += new System.EventHandler(this.pnlYears_Click);
             // 
             // pictureBox1
             // 
@@ -104,6 +109,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pnlYears_Click);
             // 
             // UclReport
             // 

@@ -57,7 +57,7 @@ namespace TicketPurchasing
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            txtUsername.ForeColor = Color.Black;
+            txtUsername.ForeColor = Color.White;
             filledUsername = true;
             if (username.Equals(""))
             {
@@ -67,7 +67,7 @@ namespace TicketPurchasing
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            txtPassword.ForeColor = Color.Black;
+            txtPassword.ForeColor = Color.White;
             filledPassword = true;
             if (password.Equals(""))
             {

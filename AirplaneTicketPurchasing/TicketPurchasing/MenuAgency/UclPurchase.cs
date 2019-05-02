@@ -44,7 +44,14 @@ namespace TicketPurchasing.MenuAgency
         private void groupBox1_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
-            DrawGroupBox(box, e.Graphics, Color.Black, Color.Gray);
+            DrawGroupBox(box, e.Graphics, Color.White, Color.Gray);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UclTicket ticket = new UclTicket();
+            ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
+            ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
         }
     }
 }

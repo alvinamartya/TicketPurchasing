@@ -40,5 +40,6 @@ namespace TicketPurchasing.MenuAgency
             ((FrmMenuAgency)Support.frm).addControltoPanel(refund);
             ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Refund]";
         }
+
     }
 }

@@ -11,23 +11,25 @@ namespace TicketPurchasing
 {
     class Support
     {
+        // general variables
         public static string role = "";
         public static string name = "";
         public static Form frm;
-
-     
         #region Design Form
         #region Declaration
+        // variable for drag and drop application
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
+
+        // variable for change color when position mouse in up of panel
         private Color light = Color.FromArgb(46, 47, 48);
         private Color dark = Color.FromArgb(36, 37, 38);
         Thread Enter;
         Thread Leave;
         #endregion
-
         #region Events
+        // event for drag and drop application
         private void ctrl_MouseDown(object sender, MouseEventArgs e,Control form)
         {
             dragging = true;
@@ -50,6 +52,7 @@ namespace TicketPurchasing
         }
 
 
+        //event for change color when position mouse in up of panel
         private void PanelMouseEnter(object sender, EventArgs e)
         {
             Panel p = (Panel)sender;
@@ -86,7 +89,6 @@ namespace TicketPurchasing
             PanelMouseEnter(obj.Parent, e);
         }
         #endregion
-
         #region Method
         public void panelMouse(Panel panel)
         {
