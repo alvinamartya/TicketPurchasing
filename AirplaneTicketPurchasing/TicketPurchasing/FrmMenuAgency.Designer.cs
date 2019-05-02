@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuAgency));
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlNavbar = new System.Windows.Forms.Panel();
+            this.btnTransaction = new System.Windows.Forms.Button();
             this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblPosition = new FlatUI.FlatLabel();
@@ -38,7 +39,7 @@
             this.foto = new System.Windows.Forms.PictureBox();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnManageCustomer = new System.Windows.Forms.Button();
-            this.btnTransaction = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,6 +66,7 @@
             // pnlNavbar
             // 
             this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.pnlNavbar.Controls.Add(this.btnTransaction);
             this.pnlNavbar.Controls.Add(this.pnlButtonSelected);
             this.pnlNavbar.Controls.Add(this.btnLogout);
             this.pnlNavbar.Controls.Add(this.lblPosition);
@@ -72,12 +74,26 @@
             this.pnlNavbar.Controls.Add(this.foto);
             this.pnlNavbar.Controls.Add(this.btnReport);
             this.pnlNavbar.Controls.Add(this.btnManageCustomer);
-            this.pnlNavbar.Controls.Add(this.btnTransaction);
+            this.pnlNavbar.Controls.Add(this.btnDashboard);
             this.pnlNavbar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNavbar.Location = new System.Drawing.Point(0, 34);
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Size = new System.Drawing.Size(170, 479);
             this.pnlNavbar.TabIndex = 6;
+            // 
+            // btnTransaction
+            // 
+            this.btnTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnTransaction.FlatAppearance.BorderSize = 0;
+            this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnTransaction.Location = new System.Drawing.Point(0, 238);
+            this.btnTransaction.Name = "btnTransaction";
+            this.btnTransaction.Size = new System.Drawing.Size(170, 37);
+            this.btnTransaction.TabIndex = 14;
+            this.btnTransaction.Text = "Transaction";
+            this.btnTransaction.UseVisualStyleBackColor = false;
+            this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
             // 
             // pnlButtonSelected
             // 
@@ -93,7 +109,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnLogout.Location = new System.Drawing.Point(0, 309);
+            this.btnLogout.Location = new System.Drawing.Point(0, 345);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(170, 37);
             this.btnLogout.TabIndex = 11;
@@ -139,7 +155,7 @@
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 274);
+            this.btnReport.Location = new System.Drawing.Point(0, 310);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(170, 37);
             this.btnReport.TabIndex = 8;
@@ -153,7 +169,7 @@
             this.btnManageCustomer.FlatAppearance.BorderSize = 0;
             this.btnManageCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnManageCustomer.Location = new System.Drawing.Point(0, 239);
+            this.btnManageCustomer.Location = new System.Drawing.Point(0, 275);
             this.btnManageCustomer.Name = "btnManageCustomer";
             this.btnManageCustomer.Size = new System.Drawing.Size(170, 37);
             this.btnManageCustomer.TabIndex = 7;
@@ -161,19 +177,19 @@
             this.btnManageCustomer.UseVisualStyleBackColor = false;
             this.btnManageCustomer.Click += new System.EventHandler(this.btnManageCustomer_Click);
             // 
-            // btnTransaction
+            // btnDashboard
             // 
-            this.btnTransaction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.btnTransaction.FlatAppearance.BorderSize = 0;
-            this.btnTransaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnTransaction.Location = new System.Drawing.Point(0, 202);
-            this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.Size = new System.Drawing.Size(170, 37);
-            this.btnTransaction.TabIndex = 6;
-            this.btnTransaction.Text = "Transaction";
-            this.btnTransaction.UseVisualStyleBackColor = false;
-            this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnDashboard.Location = new System.Drawing.Point(0, 202);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(170, 37);
+            this.btnDashboard.TabIndex = 6;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // pnlHeader
             // 
@@ -277,7 +293,7 @@
         private System.Windows.Forms.PictureBox foto;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnManageCustomer;
-        private System.Windows.Forms.Button btnTransaction;
+        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel pnlHeader;
         private FlatUI.FlatMini flatMini1;
         private FlatUI.FlatClose flatClose1;
@@ -287,5 +303,6 @@
         private System.Windows.Forms.Panel pnlButtonSelected;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnTransaction;
     }
 }

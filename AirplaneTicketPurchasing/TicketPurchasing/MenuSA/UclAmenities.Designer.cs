@@ -28,82 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.flatLabel1 = new FlatUI.FlatLabel();
-            this.flatLabel2 = new FlatUI.FlatLabel();
+            this.DgvAmenities = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amenitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.amenitiesDataSet = new TicketPurchasing.AmenitiesDataSet();
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
             this.flatLabel5 = new FlatUI.FlatLabel();
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
             this.flatLabel8 = new FlatUI.FlatLabel();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtQty = new System.Windows.Forms.NumericUpDown();
+            this.cboUnit = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.amenitiesTableAdapter = new TicketPurchasing.AmenitiesDataSetTableAdapters.AmenitiesTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.flatLabel21 = new FlatUI.FlatLabel();
+            this.flatLabel22 = new FlatUI.FlatLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAmenities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amenitiesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amenitiesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQty)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuCustomDataGrid1
+            // DgvAmenities
             // 
-            this.bunifuCustomDataGrid1.AllowUserToAddRows = false;
-            this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
+            this.DgvAmenities.AllowUserToAddRows = false;
+            this.DgvAmenities.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DgvAmenities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvAmenities.AutoGenerateColumns = false;
+            this.DgvAmenities.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DgvAmenities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgvAmenities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(32, 16);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.ReadOnly = true;
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(770, 199);
-            this.bunifuCustomDataGrid1.TabIndex = 0;
+            this.DgvAmenities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvAmenities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvAmenities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.qtyDataGridViewTextBoxColumn,
+            this.unitDataGridViewTextBoxColumn});
+            this.DgvAmenities.DataSource = this.amenitiesBindingSource;
+            this.DgvAmenities.DoubleBuffered = true;
+            this.DgvAmenities.EnableHeadersVisualStyles = false;
+            this.DgvAmenities.HeaderBgColor = System.Drawing.Color.DarkCyan;
+            this.DgvAmenities.HeaderForeColor = System.Drawing.Color.White;
+            this.DgvAmenities.Location = new System.Drawing.Point(32, 50);
+            this.DgvAmenities.Name = "DgvAmenities";
+            this.DgvAmenities.ReadOnly = true;
+            this.DgvAmenities.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DgvAmenities.Size = new System.Drawing.Size(770, 165);
+            this.DgvAmenities.TabIndex = 0;
             // 
-            // flatLabel1
+            // iDDataGridViewTextBoxColumn
             // 
-            this.flatLabel1.AutoSize = true;
-            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(279, 241);
-            this.flatLabel1.Name = "flatLabel1";
-            this.flatLabel1.Size = new System.Drawing.Size(20, 17);
-            this.flatLabel1.TabIndex = 1;
-            this.flatLabel1.Text = "ID";
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // flatLabel2
+            // nameDataGridViewTextBoxColumn
             // 
-            this.flatLabel2.AutoSize = true;
-            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel2.ForeColor = System.Drawing.Color.White;
-            this.flatLabel2.Location = new System.Drawing.Point(356, 241);
-            this.flatLabel2.Name = "flatLabel2";
-            this.flatLabel2.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel2.TabIndex = 3;
-            this.flatLabel2.Text = ":";
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qtyDataGridViewTextBoxColumn
+            // 
+            this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
+            this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
+            this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
+            this.qtyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amenitiesBindingSource
+            // 
+            this.amenitiesBindingSource.DataMember = "Amenities";
+            this.amenitiesBindingSource.DataSource = this.amenitiesDataSet;
+            // 
+            // amenitiesDataSet
+            // 
+            this.amenitiesDataSet.DataSetName = "AmenitiesDataSet";
+            this.amenitiesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // flatLabel3
             // 
@@ -111,7 +145,7 @@
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(356, 268);
+            this.flatLabel3.Location = new System.Drawing.Point(356, 255);
             this.flatLabel3.Name = "flatLabel3";
             this.flatLabel3.Size = new System.Drawing.Size(11, 17);
             this.flatLabel3.TabIndex = 12;
@@ -123,7 +157,7 @@
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(279, 268);
+            this.flatLabel4.Location = new System.Drawing.Point(279, 255);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(43, 17);
             this.flatLabel4.TabIndex = 11;
@@ -135,7 +169,7 @@
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel5.ForeColor = System.Drawing.Color.White;
-            this.flatLabel5.Location = new System.Drawing.Point(356, 293);
+            this.flatLabel5.Location = new System.Drawing.Point(356, 280);
             this.flatLabel5.Name = "flatLabel5";
             this.flatLabel5.Size = new System.Drawing.Size(11, 17);
             this.flatLabel5.TabIndex = 15;
@@ -147,7 +181,7 @@
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel6.ForeColor = System.Drawing.Color.White;
-            this.flatLabel6.Location = new System.Drawing.Point(279, 293);
+            this.flatLabel6.Location = new System.Drawing.Point(279, 280);
             this.flatLabel6.Name = "flatLabel6";
             this.flatLabel6.Size = new System.Drawing.Size(28, 17);
             this.flatLabel6.TabIndex = 14;
@@ -159,7 +193,7 @@
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(356, 320);
+            this.flatLabel7.Location = new System.Drawing.Point(356, 307);
             this.flatLabel7.Name = "flatLabel7";
             this.flatLabel7.Size = new System.Drawing.Size(11, 17);
             this.flatLabel7.TabIndex = 18;
@@ -171,59 +205,117 @@
             this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel8.ForeColor = System.Drawing.Color.White;
-            this.flatLabel8.Location = new System.Drawing.Point(279, 320);
+            this.flatLabel8.Location = new System.Drawing.Point(279, 307);
             this.flatLabel8.Name = "flatLabel8";
             this.flatLabel8.Size = new System.Drawing.Size(31, 17);
             this.flatLabel8.TabIndex = 17;
             this.flatLabel8.Text = "Unit";
             // 
-            // btnLogin
+            // btnInsert
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.Location = new System.Drawing.Point(248, 371);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(109, 34);
-            this.btnLogin.TabIndex = 20;
-            this.btnLogin.Text = "Insert";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnInsert.FlatAppearance.BorderSize = 0;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnInsert.Location = new System.Drawing.Point(248, 371);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(109, 34);
+            this.btnInsert.TabIndex = 20;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(374, 242);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 24;
+            this.txtName.Location = new System.Drawing.Point(374, 255);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(182, 20);
+            this.txtName.TabIndex = 25;
             // 
-            // textBox2
+            // txtQty
             // 
-            this.textBox2.Location = new System.Drawing.Point(374, 268);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 20);
-            this.textBox2.TabIndex = 25;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(374, 294);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.txtQty.Location = new System.Drawing.Point(374, 281);
+            this.txtQty.Maximum = new decimal(new int[] {
             276447232,
             23283,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(103, 20);
-            this.numericUpDown2.TabIndex = 27;
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(103, 20);
+            this.txtQty.TabIndex = 27;
             // 
-            // comboBox1
+            // cboUnit
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(374, 320);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 21);
-            this.comboBox1.TabIndex = 28;
+            this.cboUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUnit.FormattingEnabled = true;
+            this.cboUnit.Items.AddRange(new object[] {
+            "Kilogram",
+            "Piece",
+            "Package"});
+            this.cboUnit.Location = new System.Drawing.Point(374, 307);
+            this.cboUnit.Name = "cboUnit";
+            this.cboUnit.Size = new System.Drawing.Size(182, 21);
+            this.cboUnit.TabIndex = 28;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnUpdate.Location = new System.Drawing.Point(363, 371);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(109, 34);
+            this.btnUpdate.TabIndex = 29;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDelete.Location = new System.Drawing.Point(478, 371);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(109, 34);
+            this.btnDelete.TabIndex = 30;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.Location = new System.Drawing.Point(420, 411);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(109, 34);
+            this.btnCancel.TabIndex = 32;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(305, 411);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(109, 34);
+            this.btnSave.TabIndex = 31;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.EnabledChanged += new System.EventHandler(this.btnInsert_EnabledChanged);
+            // 
+            // amenitiesTableAdapter
+            // 
+            this.amenitiesTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -231,79 +323,75 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(363, 371);
+            this.button1.Location = new System.Drawing.Point(258, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 34);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Update";
+            this.button1.Size = new System.Drawing.Size(69, 25);
+            this.button1.TabIndex = 91;
+            this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // textBox8
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(478, 371);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 34);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = false;
+            this.textBox8.Location = new System.Drawing.Point(103, 21);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(149, 20);
+            this.textBox8.TabIndex = 90;
             // 
-            // button3
+            // flatLabel21
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(420, 411);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 34);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = false;
+            this.flatLabel21.AutoSize = true;
+            this.flatLabel21.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel21.ForeColor = System.Drawing.Color.White;
+            this.flatLabel21.Location = new System.Drawing.Point(86, 21);
+            this.flatLabel21.Name = "flatLabel21";
+            this.flatLabel21.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel21.TabIndex = 89;
+            this.flatLabel21.Text = ":";
             // 
-            // button4
+            // flatLabel22
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(305, 411);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(109, 34);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "Save";
-            this.button4.UseVisualStyleBackColor = false;
+            this.flatLabel22.AutoSize = true;
+            this.flatLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel22.ForeColor = System.Drawing.Color.White;
+            this.flatLabel22.Location = new System.Drawing.Point(33, 21);
+            this.flatLabel22.Name = "flatLabel22";
+            this.flatLabel22.Size = new System.Drawing.Size(47, 17);
+            this.flatLabel22.TabIndex = 88;
+            this.flatLabel22.Text = "Search";
             // 
             // UclAmenities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.flatLabel21);
+            this.Controls.Add(this.flatLabel22);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.cboUnit);
+            this.Controls.Add(this.txtQty);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.flatLabel7);
             this.Controls.Add(this.flatLabel8);
             this.Controls.Add(this.flatLabel5);
             this.Controls.Add(this.flatLabel6);
             this.Controls.Add(this.flatLabel3);
             this.Controls.Add(this.flatLabel4);
-            this.Controls.Add(this.flatLabel2);
-            this.Controls.Add(this.flatLabel1);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.DgvAmenities);
             this.Name = "UclAmenities";
             this.Size = new System.Drawing.Size(835, 479);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.Load += new System.EventHandler(this.UclAmenities_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvAmenities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amenitiesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.amenitiesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,23 +399,31 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private FlatUI.FlatLabel flatLabel1;
-        private FlatUI.FlatLabel flatLabel2;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvAmenities;
         private FlatUI.FlatLabel flatLabel3;
         private FlatUI.FlatLabel flatLabel4;
         private FlatUI.FlatLabel flatLabel5;
         private FlatUI.FlatLabel flatLabel6;
         private FlatUI.FlatLabel flatLabel7;
         private FlatUI.FlatLabel flatLabel8;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.NumericUpDown txtQty;
+        private System.Windows.Forms.ComboBox cboUnit;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.BindingSource amenitiesBindingSource;
+        private AmenitiesDataSet amenitiesDataSet;
+        private AmenitiesDataSetTableAdapters.AmenitiesTableAdapter amenitiesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox8;
+        private FlatUI.FlatLabel flatLabel21;
+        private FlatUI.FlatLabel flatLabel22;
     }
 }

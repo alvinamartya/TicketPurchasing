@@ -52,10 +52,10 @@ namespace TicketPurchasing
             lblName.Text = Support.name;
             lblPosition.Text = Support.role;
             support.DragandDropForm(this);
-            btn = btnTransaction;
+            btn = btnDashboard;
 
-            UclMenuAgency menuagency = new UclMenuAgency();
-            addControltoPanel(menuagency);
+            UclDashboard dashboard = new UclDashboard();
+            addControltoPanel(dashboard);
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -91,5 +91,13 @@ namespace TicketPurchasing
         }
         #endregion
 
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            buttonSelected(sender);
+            btn = btnDashboard;
+            UclDashboard ucldashboard = new UclDashboard();
+            addControltoPanel(ucldashboard);
+            lblTitle.Text = "FLIGHTSI - MANAGE [Dashboard]";
+        }
     }
 }

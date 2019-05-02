@@ -31,9 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flatLabel2 = new FlatUI.FlatLabel();
-            this.flatLabel1 = new FlatUI.FlatLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flatLabel13 = new FlatUI.FlatLabel();
             this.flatLabel14 = new FlatUI.FlatLabel();
@@ -64,6 +61,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.flatLabel22 = new FlatUI.FlatLabel();
+            this.flatLabel23 = new FlatUI.FlatLabel();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,49 +90,18 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(20, 18);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(20, 45);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(770, 199);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(770, 172);
             this.bunifuCustomDataGrid1.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(370, 234);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 33;
-            // 
-            // flatLabel2
-            // 
-            this.flatLabel2.AutoSize = true;
-            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel2.ForeColor = System.Drawing.Color.White;
-            this.flatLabel2.Location = new System.Drawing.Point(353, 234);
-            this.flatLabel2.Name = "flatLabel2";
-            this.flatLabel2.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel2.TabIndex = 32;
-            this.flatLabel2.Text = ":";
-            // 
-            // flatLabel1
-            // 
-            this.flatLabel1.AutoSize = true;
-            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(245, 234);
-            this.flatLabel1.Name = "flatLabel1";
-            this.flatLabel1.Size = new System.Drawing.Size(20, 17);
-            this.flatLabel1.TabIndex = 31;
-            this.flatLabel1.Text = "ID";
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(370, 260);
+            this.comboBox1.Location = new System.Drawing.Point(370, 238);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 21);
             this.comboBox1.TabIndex = 53;
@@ -142,7 +112,7 @@
             this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel13.ForeColor = System.Drawing.Color.White;
-            this.flatLabel13.Location = new System.Drawing.Point(352, 260);
+            this.flatLabel13.Location = new System.Drawing.Point(352, 238);
             this.flatLabel13.Name = "flatLabel13";
             this.flatLabel13.Size = new System.Drawing.Size(11, 17);
             this.flatLabel13.TabIndex = 52;
@@ -154,7 +124,7 @@
             this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel14.ForeColor = System.Drawing.Color.White;
-            this.flatLabel14.Location = new System.Drawing.Point(244, 260);
+            this.flatLabel14.Location = new System.Drawing.Point(244, 238);
             this.flatLabel14.Name = "flatLabel14";
             this.flatLabel14.Size = new System.Drawing.Size(50, 17);
             this.flatLabel14.TabIndex = 51;
@@ -164,7 +134,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(370, 287);
+            this.comboBox2.Location = new System.Drawing.Point(370, 265);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(182, 21);
             this.comboBox2.TabIndex = 56;
@@ -175,7 +145,7 @@
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(352, 287);
+            this.flatLabel3.Location = new System.Drawing.Point(352, 265);
             this.flatLabel3.Name = "flatLabel3";
             this.flatLabel3.Size = new System.Drawing.Size(11, 17);
             this.flatLabel3.TabIndex = 55;
@@ -187,7 +157,7 @@
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(244, 287);
+            this.flatLabel4.Location = new System.Drawing.Point(244, 265);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(92, 17);
             this.flatLabel4.TabIndex = 54;
@@ -197,7 +167,7 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(370, 314);
+            this.comboBox3.Location = new System.Drawing.Point(370, 292);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(182, 21);
             this.comboBox3.TabIndex = 59;
@@ -208,7 +178,7 @@
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel5.ForeColor = System.Drawing.Color.White;
-            this.flatLabel5.Location = new System.Drawing.Point(352, 314);
+            this.flatLabel5.Location = new System.Drawing.Point(352, 292);
             this.flatLabel5.Name = "flatLabel5";
             this.flatLabel5.Size = new System.Drawing.Size(11, 17);
             this.flatLabel5.TabIndex = 58;
@@ -220,7 +190,7 @@
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel6.ForeColor = System.Drawing.Color.White;
-            this.flatLabel6.Location = new System.Drawing.Point(244, 314);
+            this.flatLabel6.Location = new System.Drawing.Point(244, 292);
             this.flatLabel6.Name = "flatLabel6";
             this.flatLabel6.Size = new System.Drawing.Size(70, 17);
             this.flatLabel6.TabIndex = 57;
@@ -230,7 +200,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "dddd, dd MMMM yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(370, 341);
+            this.dateTimePicker1.Location = new System.Drawing.Point(370, 319);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 62;
@@ -241,7 +211,7 @@
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(352, 341);
+            this.flatLabel7.Location = new System.Drawing.Point(352, 319);
             this.flatLabel7.Name = "flatLabel7";
             this.flatLabel7.Size = new System.Drawing.Size(11, 17);
             this.flatLabel7.TabIndex = 61;
@@ -253,7 +223,7 @@
             this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel8.ForeColor = System.Drawing.Color.White;
-            this.flatLabel8.Location = new System.Drawing.Point(244, 341);
+            this.flatLabel8.Location = new System.Drawing.Point(244, 319);
             this.flatLabel8.Name = "flatLabel8";
             this.flatLabel8.Size = new System.Drawing.Size(98, 17);
             this.flatLabel8.TabIndex = 60;
@@ -265,7 +235,7 @@
             this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(353, 367);
+            this.flatLabel9.Location = new System.Drawing.Point(353, 345);
             this.flatLabel9.Name = "flatLabel9";
             this.flatLabel9.Size = new System.Drawing.Size(11, 17);
             this.flatLabel9.TabIndex = 64;
@@ -277,7 +247,7 @@
             this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(245, 367);
+            this.flatLabel10.Location = new System.Drawing.Point(245, 345);
             this.flatLabel10.Name = "flatLabel10";
             this.flatLabel10.Size = new System.Drawing.Size(99, 17);
             this.flatLabel10.TabIndex = 63;
@@ -285,7 +255,7 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(370, 367);
+            this.maskedTextBox1.Location = new System.Drawing.Point(370, 345);
             this.maskedTextBox1.Mask = "00:00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(43, 20);
@@ -294,7 +264,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(403, 393);
+            this.textBox2.Location = new System.Drawing.Point(403, 371);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(131, 20);
             this.textBox2.TabIndex = 68;
@@ -305,7 +275,7 @@
             this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel11.ForeColor = System.Drawing.Color.White;
-            this.flatLabel11.Location = new System.Drawing.Point(353, 393);
+            this.flatLabel11.Location = new System.Drawing.Point(353, 371);
             this.flatLabel11.Name = "flatLabel11";
             this.flatLabel11.Size = new System.Drawing.Size(11, 17);
             this.flatLabel11.TabIndex = 67;
@@ -317,7 +287,7 @@
             this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel12.ForeColor = System.Drawing.Color.White;
-            this.flatLabel12.Location = new System.Drawing.Point(245, 393);
+            this.flatLabel12.Location = new System.Drawing.Point(245, 371);
             this.flatLabel12.Name = "flatLabel12";
             this.flatLabel12.Size = new System.Drawing.Size(36, 17);
             this.flatLabel12.TabIndex = 66;
@@ -329,7 +299,7 @@
             this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(370, 393);
+            this.flatLabel15.Location = new System.Drawing.Point(370, 371);
             this.flatLabel15.Name = "flatLabel15";
             this.flatLabel15.Size = new System.Drawing.Size(27, 17);
             this.flatLabel15.TabIndex = 69;
@@ -337,7 +307,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(370, 419);
+            this.textBox3.Location = new System.Drawing.Point(370, 397);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(43, 20);
             this.textBox3.TabIndex = 72;
@@ -348,7 +318,7 @@
             this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(353, 419);
+            this.flatLabel16.Location = new System.Drawing.Point(353, 397);
             this.flatLabel16.Name = "flatLabel16";
             this.flatLabel16.Size = new System.Drawing.Size(11, 17);
             this.flatLabel16.TabIndex = 71;
@@ -360,7 +330,7 @@
             this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel17.ForeColor = System.Drawing.Color.White;
-            this.flatLabel17.Location = new System.Drawing.Point(245, 419);
+            this.flatLabel17.Location = new System.Drawing.Point(245, 397);
             this.flatLabel17.Name = "flatLabel17";
             this.flatLabel17.Size = new System.Drawing.Size(71, 17);
             this.flatLabel17.TabIndex = 70;
@@ -372,7 +342,7 @@
             this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel18.ForeColor = System.Drawing.Color.White;
-            this.flatLabel18.Location = new System.Drawing.Point(419, 419);
+            this.flatLabel18.Location = new System.Drawing.Point(419, 397);
             this.flatLabel18.Name = "flatLabel18";
             this.flatLabel18.Size = new System.Drawing.Size(43, 17);
             this.flatLabel18.TabIndex = 73;
@@ -384,7 +354,7 @@
             this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(517, 419);
+            this.flatLabel19.Location = new System.Drawing.Point(517, 397);
             this.flatLabel19.Name = "flatLabel19";
             this.flatLabel19.Size = new System.Drawing.Size(54, 17);
             this.flatLabel19.TabIndex = 75;
@@ -392,7 +362,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(468, 419);
+            this.textBox4.Location = new System.Drawing.Point(468, 397);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(43, 20);
             this.textBox4.TabIndex = 74;
@@ -403,7 +373,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(410, 500);
+            this.button3.Location = new System.Drawing.Point(410, 478);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 34);
             this.button3.TabIndex = 80;
@@ -416,7 +386,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(295, 500);
+            this.button4.Location = new System.Drawing.Point(295, 478);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(109, 34);
             this.button4.TabIndex = 79;
@@ -429,7 +399,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(468, 460);
+            this.button2.Location = new System.Drawing.Point(468, 438);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 34);
             this.button2.TabIndex = 78;
@@ -442,7 +412,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(353, 460);
+            this.button1.Location = new System.Drawing.Point(353, 438);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 34);
             this.button1.TabIndex = 77;
@@ -455,18 +425,66 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.Control;
-            this.button5.Location = new System.Drawing.Point(238, 460);
+            this.button5.Location = new System.Drawing.Point(238, 438);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(109, 34);
             this.button5.TabIndex = 76;
             this.button5.Text = "Insert";
             this.button5.UseVisualStyleBackColor = false;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.SystemColors.Control;
+            this.button6.Location = new System.Drawing.Point(244, 14);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(69, 25);
+            this.button6.TabIndex = 91;
+            this.button6.Text = "Search";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(89, 16);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(149, 20);
+            this.textBox8.TabIndex = 90;
+            // 
+            // flatLabel22
+            // 
+            this.flatLabel22.AutoSize = true;
+            this.flatLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel22.ForeColor = System.Drawing.Color.White;
+            this.flatLabel22.Location = new System.Drawing.Point(72, 16);
+            this.flatLabel22.Name = "flatLabel22";
+            this.flatLabel22.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel22.TabIndex = 89;
+            this.flatLabel22.Text = ":";
+            // 
+            // flatLabel23
+            // 
+            this.flatLabel23.AutoSize = true;
+            this.flatLabel23.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel23.ForeColor = System.Drawing.Color.White;
+            this.flatLabel23.Location = new System.Drawing.Point(19, 16);
+            this.flatLabel23.Name = "flatLabel23";
+            this.flatLabel23.Size = new System.Drawing.Size(47, 17);
+            this.flatLabel23.TabIndex = 88;
+            this.flatLabel23.Text = "Search";
+            // 
             // UclManageSchedules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.flatLabel22);
+            this.Controls.Add(this.flatLabel23);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
@@ -497,12 +515,9 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.flatLabel13);
             this.Controls.Add(this.flatLabel14);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.flatLabel2);
-            this.Controls.Add(this.flatLabel1);
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Name = "UclManageSchedules";
-            this.Size = new System.Drawing.Size(808, 552);
+            this.Size = new System.Drawing.Size(808, 529);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -512,9 +527,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.TextBox textBox1;
-        private FlatUI.FlatLabel flatLabel2;
-        private FlatUI.FlatLabel flatLabel1;
         private System.Windows.Forms.ComboBox comboBox1;
         private FlatUI.FlatLabel flatLabel13;
         private FlatUI.FlatLabel flatLabel14;
@@ -545,5 +557,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox8;
+        private FlatUI.FlatLabel flatLabel22;
+        private FlatUI.FlatLabel flatLabel23;
     }
 }

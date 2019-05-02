@@ -36,13 +36,14 @@
             this.flatClose1 = new FlatUI.FlatClose();
             this.lblTitle = new FlatUI.FlatLabel();
             this.pnlNavbar = new System.Windows.Forms.Panel();
+            this.btnManage = new System.Windows.Forms.Button();
             this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.lblPosition = new FlatUI.FlatLabel();
             this.lblName = new FlatUI.FlatLabel();
             this.foto = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.btnManage = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -126,18 +127,33 @@
             // pnlNavbar
             // 
             this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.pnlNavbar.Controls.Add(this.btnManage);
             this.pnlNavbar.Controls.Add(this.pnlButtonSelected);
             this.pnlNavbar.Controls.Add(this.lblPosition);
             this.pnlNavbar.Controls.Add(this.lblName);
             this.pnlNavbar.Controls.Add(this.foto);
             this.pnlNavbar.Controls.Add(this.btnLogout);
             this.pnlNavbar.Controls.Add(this.btnReport);
-            this.pnlNavbar.Controls.Add(this.btnManage);
+            this.pnlNavbar.Controls.Add(this.btnDashboard);
             this.pnlNavbar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNavbar.Location = new System.Drawing.Point(0, 34);
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Size = new System.Drawing.Size(170, 479);
             this.pnlNavbar.TabIndex = 3;
+            // 
+            // btnManage
+            // 
+            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnManage.Location = new System.Drawing.Point(0, 239);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(170, 37);
+            this.btnManage.TabIndex = 13;
+            this.btnManage.Text = "Manage";
+            this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // pnlButtonSelected
             // 
@@ -187,7 +203,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnLogout.Location = new System.Drawing.Point(0, 274);
+            this.btnLogout.Location = new System.Drawing.Point(0, 311);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(170, 37);
             this.btnLogout.TabIndex = 8;
@@ -201,7 +217,7 @@
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 239);
+            this.btnReport.Location = new System.Drawing.Point(0, 276);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(170, 37);
             this.btnReport.TabIndex = 7;
@@ -209,19 +225,18 @@
             this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
-            // btnManage
+            // btnDashboard
             // 
-            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnManage.Location = new System.Drawing.Point(0, 202);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(170, 37);
-            this.btnManage.TabIndex = 6;
-            this.btnManage.Text = "Manage";
-            this.btnManage.UseVisualStyleBackColor = false;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnDashboard.Location = new System.Drawing.Point(0, 202);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(170, 37);
+            this.btnDashboard.TabIndex = 6;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
             // 
             // pnlContent
             // 
@@ -232,7 +247,6 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(835, 479);
             this.pnlContent.TabIndex = 4;
-            this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint);
             // 
             // FrmMenuAdmin
             // 
@@ -265,7 +279,7 @@
         private System.Windows.Forms.Panel pnlNavbar;
         private System.Windows.Forms.PictureBox foto;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnLogout;
         private FlatUI.FlatLabel lblName;
         private FlatUI.FlatLabel lblPosition;
@@ -274,5 +288,6 @@
         private System.Windows.Forms.Panel pnlButtonSelected;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnManage;
     }
 }

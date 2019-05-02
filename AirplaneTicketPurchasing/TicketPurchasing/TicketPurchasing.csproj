@@ -39,9 +39,11 @@
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmenitiesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmenitiesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs" />
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +157,7 @@
     <Compile Include="MenuSA\UclMenuSA.Designer.cs">
       <DependentUpon>UclMenuSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Parameter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Saneki\FlatAlertBox.cs">
@@ -224,6 +233,12 @@
     <Compile Include="Saneki\Helpers.cs" />
     <Compile Include="Saneki\MouseState.cs" />
     <Compile Include="Support.cs" />
+    <Compile Include="UclDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UclDashboard.Designer.cs">
+      <DependentUpon>UclDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UclEmployees.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -235,18 +250,6 @@
     </Compile>
     <Compile Include="UclReport.Designer.cs">
       <DependentUpon>UclReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UclReportMonths.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UclReportMonths.Designer.cs">
-      <DependentUpon>UclReportMonths.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UclReportYears.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UclReportYears.Designer.cs">
-      <DependentUpon>UclReportYears.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -305,18 +308,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UclDashboard.resx">
+      <DependentUpon>UclDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UclEmployees.resx">
       <DependentUpon>UclEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UclReport.resx">
       <DependentUpon>UclReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UclReportMonths.resx">
-      <DependentUpon>UclReportMonths.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UclReportYears.resx">
-      <DependentUpon>UclReportYears.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="AmenitiesDataSet.xsc">
+      <DependentUpon>AmenitiesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AmenitiesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmenitiesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AmenitiesDataSet.xss">
+      <DependentUpon>AmenitiesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

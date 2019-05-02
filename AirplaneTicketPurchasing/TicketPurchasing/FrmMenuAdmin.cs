@@ -18,14 +18,12 @@ namespace TicketPurchasing
         private Button btn;
         Support support = new Support();
         #endregion
-
         #region Constructor
         public FrmMenuAdmin()
         {
             InitializeComponent();
         }
         #endregion
-
         #region Events
         private void FrmMenuSA_Load(object sender, EventArgs e)
         {
@@ -45,13 +43,13 @@ namespace TicketPurchasing
             }
 
             lblTitle.Text = "FLIGHTSI - MANAGE";
-            btn = btnManage;
+            btn = btnDashboard;
             buttonSeleted(btn);
         }
 
         private void btnManage_Click(object sender, EventArgs e)
         {
-            btn = btnManage;
+            btn = btnDashboard;
             buttonSeleted(btn);
             lblTitle.Text = "FLIGHTSI - MANAGE";
             if (Support.role.Equals("Super Admin"))
@@ -86,7 +84,6 @@ namespace TicketPurchasing
             addControltoPanel(uclReport);
         }
         #endregion
-
         #region Method
         private void buttonSeleted(Button b)
         {
@@ -100,10 +97,5 @@ namespace TicketPurchasing
             support.DragandDropForm(this);
         }
         #endregion
-
-        private void pnlContent_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

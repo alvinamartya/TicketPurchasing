@@ -10,16 +10,22 @@ using System.Windows.Forms;
 
 namespace TicketPurchasing
 {
-    public partial class UclReportMonths : UserControl
+    public partial class UclDashboard : UserControl
     {
-        public UclReportMonths()
+        #region Declaration
+        #endregion
+        
+        #region Constructor
+        public UclDashboard()
         {
             InitializeComponent();
         }
+        #endregion
 
-        private void UclReportMonths_Load(object sender, EventArgs e)
-        {
+        #region Method
 
-        }
+        #endregion
+
+
     }
 }

@@ -118,5 +118,4 @@ C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketP
 C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
 D:\Project\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclTicket.resources
-D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReportMonths.resources
-D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReportYears.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclDashboard.resources

@@ -12,10 +12,6 @@ namespace TicketPurchasing
 {
     public partial class UclReport : UserControl
     {
-        #region Declaration
-        Support support = new Support();
-        #endregion
-
         public UclReport()
         {
             InitializeComponent();
@@ -23,38 +19,60 @@ namespace TicketPurchasing
 
         private void UclReport_Load(object sender, EventArgs e)
         {
-            support.panelMouse(pnlYears);
-            support.panelMouse(pnlMonths);
+            cboReport.SelectedIndex = 0;
         }
 
-        private void pnlYears_Click(object sender, EventArgs e)
+        private void cboReport_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UclReportYears reportYears = new UclReportYears();
-            if (Support.frm is FrmMenuAgency)
+            changeReport(cboReport.Text);
+        }
+
+        #region Method
+        private void changeReport(string report)
+        {
+            if (report.Equals("Period"))
             {
-                ((FrmMenuAgency)Support.frm).addControltoPanel(reportYears);
-                ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - REPORT [Years]";
+                txtStartDatePeriod.Visible = true;
+                txtEndPeriodDate.Visible = true;
+                cboStartPeriod.Visible = false;
+                cboEndPeriod.Visible = false;
+                lblEndPeriod.Visible = true;
+                btnShow.Location = new Point(358, 73);
+                lblStartPeriod.Text = "Start Period";
+                lblEndPeriod.Text = "End Period";
+                lblEndPeriod.Visible = true;
+                flatLabel1.Visible = true;
+                dataReport.Size = new Size(794, 356);
+                dataReport.Location = new Point(19, 104);
+            }
+            else if (report.Equals("Year"))
+            {
+                txtStartDatePeriod.Visible = false;
+                txtEndPeriodDate.Visible = false;
+                cboStartPeriod.Visible = true;
+                cboEndPeriod.Visible = false;
+                lblEndPeriod.Visible = false;
+                flatLabel1.Visible = false;
+                btnShow.Location = new Point(301, 47);
+                dataReport.Size = new Size(794, 385);
+                dataReport.Location = new Point(19, 75);
             }
             else
             {
-                ((FrmMenuAdmin)Support.frm).addControltoPanel(reportYears);
-                ((FrmMenuAdmin)Support.frm).lblTitle.Text = "FLIGHTSI - REPORT [Years]";
+                txtStartDatePeriod.Visible = false;
+                txtEndPeriodDate.Visible = false;
+                cboStartPeriod.Visible = true;
+                cboEndPeriod.Visible = true;
+                lblEndPeriod.Visible = true;
+                btnShow.Location = new Point(301, 72);
+                lblStartPeriod.Text = "Month";
+                lblEndPeriod.Text = "Year";
+                lblEndPeriod.Visible = true;
+                flatLabel1.Visible = true;
+                dataReport.Size = new Size(794, 356);
+                dataReport.Location = new Point(19, 104);
             }
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            UclReportMonths reportMonths = new UclReportMonths();
-            if (Support.frm is FrmMenuAgency)
-            {
-                ((FrmMenuAgency)Support.frm).addControltoPanel(reportMonths);
-                ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - REPORT [Months]";
-            }
-            else
-            {
-                ((FrmMenuAdmin)Support.frm).addControltoPanel(reportMonths);
-                ((FrmMenuAdmin)Support.frm).lblTitle.Text = "FLIGHTSI - REPORT [Months]";
-            }
-        }
+        #endregion
     }
 }

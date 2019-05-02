@@ -124,7 +124,7 @@ namespace TicketPurchasing
                         {
                             foreach (Control cUserControl in cPanel.Controls)
                             {
-                                if (!(cUserControl is ComboBox))
+                                if (!(cUserControl is ComboBox) && !(cUserControl is TextBox))
                                 {
                                     cUserControl.MouseDown += (s2, e2) => ctrl_MouseDown(s2, e2, form);
                                     cUserControl.MouseMove += (s2, e2) => ctrl_MouseMove(s2, e2, form);
