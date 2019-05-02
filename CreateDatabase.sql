@@ -9,12 +9,12 @@ CREATE TABLE CabinTypes (ID int IDENTITY NOT NULL, Name nvarchar(100) NULL, PRIM
 CREATE TABLE Cities (ID nchar(5) NOT NULL, Name nvarchar(100) NULL, CountryID int NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Countries (ID int IDENTITY NOT NULL, Name nvarchar(100) NULL, PRIMARY KEY (ID));
 CREATE TABLE Customers (ID nchar(5) NOT NULL, Name nvarchar(255) NULL, IdentityNumber nvarchar(50) NULL, PassportNumber nvarchar(20) NULL, DateofBirth date NULL, Sex nchar(1) NULL, Address nvarchar(255) NULL, TelpNumber nvarchar(15) NULL, Email nvarchar(100) NULL, CountryID int NOT NULL, PRIMARY KEY (ID));
-CREATE TABLE DetailTickets (ID int IDENTITY NOT NULL, SeatNumber int NULL, Price money NULL, TicketID nchar(6) NOT NULL, CustomerID nchar(5) NOT NULL, CabinTypeID int NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE DetailTickets (ID int IDENTITY NOT NULL, SeatNumber int NULL, Price money NULL, TicketID nchar(14) NOT NULL, CustomerID nchar(5) NOT NULL, CabinTypeID int NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Employees (ID nchar(5) NOT NULL, Name nvarchar(100) NULL, Username nvarchar(20) NULL, Password nvarchar(16) NULL, Photo nvarchar(255) NULL, DateofBirth date NULL, Sex nchar(1) NULL, Address nvarchar(255) NULL, TelpNumber nvarchar(15) NULL, Role nvarchar(20) NULL, Status nchar(1) NULL, PRIMARY KEY (ID));
-CREATE TABLE RefundDetails (ID int IDENTITY NOT NULL, DateTime datetime NULL, TotalRefund money NULL, RefundID int NOT NULL, TicketID nchar(6) NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE RefundDetails (ID int IDENTITY NOT NULL, DateTime datetime NULL, TotalRefund money NULL, RefundID int NOT NULL, TicketID nchar(14) NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Refunds (ID int IDENTITY NOT NULL, Hours int NULL, Reduced money NULL, PRIMARY KEY (ID));
 CREATE TABLE Schedules (ID nchar(5) NOT NULL, DepartureDate date NULL, DepartureTime time NULL, Price money NULL, FlightTime int NULL, DepartureCityID nchar(5) NOT NULL, ArrivalCityID nchar(5) NOT NULL, AircraftID nchar(5) NOT NULL, PRIMARY KEY (ID));
-CREATE TABLE Tickets (ID nchar(6) NOT NULL, TransactionDate date NULL, BookingRef nchar(6) NULL, Status nchar(1) NULL, EmployeeID nchar(5) NOT NULL, ScheduleID nchar(5) NOT NULL, PRIMARY KEY (ID));
+CREATE TABLE Tickets (ID nchar(14) NOT NULL, TransactionDate date NULL, BookingRef nchar(6) NULL, Status nchar(1) NULL, EmployeeID nchar(5) NOT NULL, ScheduleID nchar(5) NOT NULL, PRIMARY KEY (ID));
 ALTER TABLE RefundDetails ADD CONSTRAINT FKRefundDeta275374 FOREIGN KEY (RefundID) REFERENCES Refunds (ID);
 ALTER TABLE RefundDetails ADD CONSTRAINT FKRefundDeta502401 FOREIGN KEY (TicketID) REFERENCES Tickets (ID);
 ALTER TABLE Tickets ADD CONSTRAINT FKTickets972020 FOREIGN KEY (EmployeeID) REFERENCES Employees (ID);
