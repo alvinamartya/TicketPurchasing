@@ -74,6 +74,15 @@ namespace TicketPurchasing
             UclReport uclReport = new UclReport();
             addControltoPanel(uclReport);
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            btn = btnDashboard;
+            buttonSeleted(btn);
+            lblTitle.Text = "FLIGHTSI - DASHBOARD";
+            UclDashboard uclReport = new UclDashboard();
+            addControltoPanel(uclReport);
+        }
         #endregion
         #region Method
         private void buttonSeleted(Button b)
@@ -88,14 +97,5 @@ namespace TicketPurchasing
             support.DragandDropForm(this);
         }
         #endregion
-
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            btn = btnDashboard;
-            buttonSeleted(btn);
-            lblTitle.Text = "FLIGHTSI - DASHBOARD";
-            UclDashboard uclReport = new UclDashboard();
-            addControltoPanel(uclReport);
-        }
     }
 }

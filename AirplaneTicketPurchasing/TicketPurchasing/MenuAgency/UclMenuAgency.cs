@@ -16,11 +16,13 @@ namespace TicketPurchasing.MenuAgency
         Support support = new Support();
         #endregion
 
+        #region Constructor
         public UclMenuAgency()
         {
             InitializeComponent();
         }
-
+        #endregion
+        #region Events
         private void UclMenuAgency_Load(object sender, EventArgs e)
         {
             support.panelMouse(pnlPurchase);
@@ -40,6 +42,6 @@ namespace TicketPurchasing.MenuAgency
             ((FrmMenuAgency)Support.frm).addControltoPanel(refund);
             ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Refund]";
         }
-
+        #endregion
     }
 }

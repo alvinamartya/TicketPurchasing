@@ -16,12 +16,13 @@ namespace TicketPurchasing.MenuAdmin
         Support support = new Support();
         #endregion
 
-        
+        #region Constructor
         public UclMenuAdmin()
         {
             InitializeComponent();
         }
-
+        #endregion
+        #region Events
         private void UclMenuAdmin_Load(object sender, EventArgs e)
         {
             support.panelMouse(pnlSchedules);
@@ -41,5 +42,6 @@ namespace TicketPurchasing.MenuAdmin
             ((FrmMenuAdmin)Support.frm).addControltoPanel(employees);
             ((FrmMenuAdmin)Support.frm).lblTitle.Text = "FLIGHTSI - MANAGE [Employees]";
         }
+        #endregion
     }
 }

@@ -12,11 +12,12 @@ namespace TicketPurchasing.MenuAgency
 {
     public partial class UclRefund : UserControl
     {
+        #region Constructor
         public UclRefund()
         {
             InitializeComponent();
         }
-
+        #endregion
 
         #region Method
         private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor)
@@ -42,10 +43,12 @@ namespace TicketPurchasing.MenuAgency
         }
         #endregion
 
+        #region Events
         private void groupBox3_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
             DrawGroupBox(box, e.Graphics, Color.White, Color.Gray);
         }
+        #endregion
     }
 }

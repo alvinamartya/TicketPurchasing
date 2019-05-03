@@ -104,6 +104,7 @@
             this.Controls.Add(this.chart1);
             this.Name = "UclDashboard";
             this.Size = new System.Drawing.Size(835, 479);
+            this.Load += new System.EventHandler(this.UclDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();

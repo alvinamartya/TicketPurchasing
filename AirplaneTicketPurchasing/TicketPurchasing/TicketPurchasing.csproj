@@ -55,11 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmenitiesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AmenitiesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -251,6 +246,7 @@
     <Compile Include="UclReport.Designer.cs">
       <DependentUpon>UclReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,17 +313,6 @@
     <EmbeddedResource Include="UclReport.resx">
       <DependentUpon>UclReport.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="AmenitiesDataSet.xsc">
-      <DependentUpon>AmenitiesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AmenitiesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AmenitiesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AmenitiesDataSet.xss">
-      <DependentUpon>AmenitiesDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

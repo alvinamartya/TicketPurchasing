@@ -47,10 +47,16 @@ namespace TicketPurchasing
 
         #endregion
 
+        #region Events
         private void groupBox2_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
             DrawGroupBox(box, e.Graphics, Color.White, Color.Gray);
+        }
+        #endregion
+
+        private void UclDashboard_Load(object sender, EventArgs e)
+        {
         }
     }
 }

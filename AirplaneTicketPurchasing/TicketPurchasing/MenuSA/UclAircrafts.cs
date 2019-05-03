@@ -16,8 +16,6 @@ namespace TicketPurchasing.MenuSA
         {
             InitializeComponent();
         }
-
-
         #region Method
         private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor)
         {
@@ -42,7 +40,6 @@ namespace TicketPurchasing.MenuSA
         }
 
         #endregion
-
         #region Events
         private void groupBox1_Paint(object sender, PaintEventArgs e)
         {

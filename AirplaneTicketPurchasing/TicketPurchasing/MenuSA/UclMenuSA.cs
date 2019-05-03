@@ -17,12 +17,14 @@ namespace TicketPurchasing.MenuSA
         Support support = new Support();
         #endregion
 
+        #region Constructor
         public UclMenuSA()
         {
             InitializeComponent();
         }
+        #endregion
 
-
+        #region Events
         private void panelAmenities_Click(object sender, MouseEventArgs e)
         {
             UclAmenities amenities = new UclAmenities();
@@ -74,6 +76,6 @@ namespace TicketPurchasing.MenuSA
             support.panelMouse(pnlCities);
             support.panelMouse(pnlEmployees);
         }
-
+        #endregion
     }
 }

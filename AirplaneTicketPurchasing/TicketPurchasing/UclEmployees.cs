@@ -12,11 +12,14 @@ namespace TicketPurchasing
 {
     public partial class UclEmployees : UserControl
     {
+        #region Constructor
         public UclEmployees()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Events
         private void UclEmployees_Load(object sender, EventArgs e)
         {
             if (Support.role.Equals("Admin"))
@@ -34,5 +37,6 @@ namespace TicketPurchasing
                 txtAddress.Size = new Size(182, 43);
             }
         }
+        #endregion
     }
 }

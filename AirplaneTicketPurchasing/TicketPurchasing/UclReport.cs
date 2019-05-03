@@ -12,11 +12,14 @@ namespace TicketPurchasing
 {
     public partial class UclReport : UserControl
     {
+        #region Constructor
         public UclReport()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Events
         private void UclReport_Load(object sender, EventArgs e)
         {
             cboReport.SelectedIndex = 0;
@@ -26,6 +29,7 @@ namespace TicketPurchasing
         {
             changeReport(cboReport.Text);
         }
+        #endregion
 
         #region Method
         private void changeReport(string report)

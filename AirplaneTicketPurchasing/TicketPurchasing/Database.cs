@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace TicketPurchasing
 {
@@ -14,9 +15,33 @@ namespace TicketPurchasing
         private string connectionString = ConfigurationManager.ConnectionStrings["TicketPurchasing"].ConnectionString;
         private SqlConnection sqlCon;
 
-        public void executeQuery(string sp,List<Parameter> param)
+        public int executeQuery(string sp,List<Parameter> param,string process)
         {
-
+            try
+            {
+                sqlCon = new SqlConnection(connectionString);
+                sqlCon.Open();
+                SqlCommand sqlCmd = new SqlCommand(sp, sqlCon);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                foreach(Parameter item in param)
+                {
+                    sqlCmd.Parameters.AddWithValue(item.Key, item.Value);
+                }
+                return sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(process + " data is failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (sqlCon != null)
+                {
+                    sqlCon.Close();
+                }
+            }
+            return 0;
         }
 
         public string autoGenerateID(string firstLetter, string sp, int length)
@@ -48,5 +73,32 @@ namespace TicketPurchasing
 
             return firstLetter + num.ToString().PadLeft(length - firstLetter.ToString().Length, '0');
         }
+
+        public DataSet getDataFromDatabase(string sp)
+        {
+            DataSet result = new DataSet();
+            try
+            {
+                sqlCon = new SqlConnection(connectionString);
+                sqlCon.Open();
+                SqlDataAdapter sqlAdp = new SqlDataAdapter(sp,sqlCon);
+                sqlAdp.Fill(result);
+                sqlCon.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (sqlCon != null)
+                {
+                    sqlCon.Close();
+                }
+            }
+
+            return result;
+        } 
     }
 }

@@ -11,6 +11,12 @@ namespace TicketPurchasing
         private string key;
         private string value;
 
+        public Parameter(string key, string value)
+        {
+            this.key = key;
+            this.value = value;
+        }
+
         public string Key { get { return key; } set { key = value; } }
         public string Value { get { return value; } set { this.value = value; } }
     }

@@ -12,10 +12,12 @@ namespace TicketPurchasing.MenuAgency
 {
     public partial class UclPurchase : UserControl
     {
+        #region Constructor
         public UclPurchase()
         {
             InitializeComponent();
         }
+        #endregion
 
         #region Method
         private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor)
@@ -41,6 +43,7 @@ namespace TicketPurchasing.MenuAgency
         }
         #endregion
 
+        #region Events
         private void groupBox1_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
@@ -53,5 +56,6 @@ namespace TicketPurchasing.MenuAgency
             ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
             ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
         }
+        #endregion
     }
 }
