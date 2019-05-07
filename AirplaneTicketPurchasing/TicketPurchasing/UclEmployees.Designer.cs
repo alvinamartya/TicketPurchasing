@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.DgvEmployees = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDateofBirth = new System.Windows.Forms.DateTimePicker();
             this.rbMale = new System.Windows.Forms.RadioButton();
@@ -48,7 +48,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pathDialog = new System.Windows.Forms.OpenFileDialog();
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel20 = new FlatUI.FlatLabel();
             this.flatLabel17 = new FlatUI.FlatLabel();
@@ -68,41 +68,43 @@
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txsSearch = new System.Windows.Forms.TextBox();
             this.flatLabel21 = new FlatUI.FlatLabel();
             this.flatLabel22 = new FlatUI.FlatLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuCustomDataGrid1
+            // DgvEmployees
             // 
-            this.bunifuCustomDataGrid1.AllowUserToAddRows = false;
-            this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(18, 47);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.ReadOnly = true;
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(770, 170);
-            this.bunifuCustomDataGrid1.TabIndex = 2;
+            this.DgvEmployees.AllowUserToAddRows = false;
+            this.DgvEmployees.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.DgvEmployees.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DgvEmployees.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DgvEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.DgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvEmployees.DoubleBuffered = true;
+            this.DgvEmployees.EnableHeadersVisualStyles = false;
+            this.DgvEmployees.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.DgvEmployees.HeaderForeColor = System.Drawing.Color.Black;
+            this.DgvEmployees.Location = new System.Drawing.Point(18, 47);
+            this.DgvEmployees.Name = "DgvEmployees";
+            this.DgvEmployees.ReadOnly = true;
+            this.DgvEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DgvEmployees.Size = new System.Drawing.Size(770, 170);
+            this.DgvEmployees.TabIndex = 2;
+            this.DgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmployees_CellClick);
             // 
             // txtName
             // 
@@ -163,6 +165,9 @@
             // 
             this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboRole.FormattingEnabled = true;
+            this.cboRole.Items.AddRange(new object[] {
+            "Admin",
+            "Agency"});
             this.cboRole.Location = new System.Drawing.Point(186, 389);
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(182, 21);
@@ -184,9 +189,9 @@
             // 
             // photo
             // 
-            this.photo.Location = new System.Drawing.Point(533, 316);
+            this.photo.Location = new System.Drawing.Point(541, 314);
             this.photo.Name = "photo";
-            this.photo.Size = new System.Drawing.Size(192, 105);
+            this.photo.Size = new System.Drawing.Size(166, 142);
             this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.photo.TabIndex = 61;
             this.photo.TabStop = false;
@@ -203,6 +208,7 @@
             this.btnBrowser.TabIndex = 60;
             this.btnBrowser.Text = "...";
             this.btnBrowser.UseVisualStyleBackColor = false;
+            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
             // 
             // txtPhoto
             // 
@@ -218,7 +224,7 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(417, 476);
+            this.btnCancel.Location = new System.Drawing.Point(417, 464);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 34);
             this.btnCancel.TabIndex = 66;
@@ -231,12 +237,13 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(302, 476);
+            this.btnSave.Location = new System.Drawing.Point(302, 464);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 34);
             this.btnSave.TabIndex = 65;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -244,12 +251,13 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(475, 436);
+            this.btnDelete.Location = new System.Drawing.Point(475, 464);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 34);
             this.btnDelete.TabIndex = 64;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -257,12 +265,13 @@
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Location = new System.Drawing.Point(360, 436);
+            this.btnUpdate.Location = new System.Drawing.Point(360, 464);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 34);
             this.btnUpdate.TabIndex = 63;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
@@ -270,16 +279,17 @@
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsert.Location = new System.Drawing.Point(245, 436);
+            this.btnInsert.Location = new System.Drawing.Point(245, 464);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(109, 34);
             this.btnInsert.TabIndex = 62;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // openFileDialog1
+            // pathDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.pathDialog.FileName = "openFileDialog1";
             // 
             // flatLabel19
             // 
@@ -509,13 +519,14 @@
             this.button1.TabIndex = 91;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox8
+            // txsSearch
             // 
-            this.textBox8.Location = new System.Drawing.Point(85, 18);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(149, 20);
-            this.textBox8.TabIndex = 90;
+            this.txsSearch.Location = new System.Drawing.Point(85, 18);
+            this.txsSearch.Name = "txsSearch";
+            this.txsSearch.Size = new System.Drawing.Size(149, 20);
+            this.txsSearch.TabIndex = 90;
             // 
             // flatLabel21
             // 
@@ -541,13 +552,17 @@
             this.flatLabel22.TabIndex = 88;
             this.flatLabel22.Text = "Search";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // UclEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txsSearch);
             this.Controls.Add(this.flatLabel21);
             this.Controls.Add(this.flatLabel22);
             this.Controls.Add(this.btnCancel);
@@ -585,11 +600,11 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.flatLabel3);
             this.Controls.Add(this.flatLabel4);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.DgvEmployees);
             this.Name = "UclEmployees";
-            this.Size = new System.Drawing.Size(808, 524);
+            this.Size = new System.Drawing.Size(808, 506);
             this.Load += new System.EventHandler(this.UclEmployees_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -598,7 +613,7 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid DgvEmployees;
         private System.Windows.Forms.TextBox txtName;
         private FlatUI.FlatLabel flatLabel3;
         private FlatUI.FlatLabel flatLabel4;
@@ -634,10 +649,11 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog pathDialog;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txsSearch;
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatLabel flatLabel22;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

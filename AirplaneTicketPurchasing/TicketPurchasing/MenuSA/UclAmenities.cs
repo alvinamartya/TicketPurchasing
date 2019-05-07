@@ -189,7 +189,7 @@ namespace TicketPurchasing.MenuSA
         private void refreshDatagrid(string search)
         {
             createTable();
-            DataSet data = database.getDataFromDatabase("sp_view_amenities");
+            DataSet data = database.getDataFromDatabase("sp_view_amenities",null);
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
                 dataRow => new {
                     ID = dataRow.Field<string>("ID"),

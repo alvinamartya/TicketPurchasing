@@ -57,7 +57,7 @@ namespace TicketPurchasing.MenuSA
         {
             int x = 1;
             createTable();
-            DataSet data = database.getDataFromDatabase("sp_view_aircraftcompanies");
+            DataSet data = database.getDataFromDatabase("sp_view_aircraftcompanies",null);
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
                 dataRow => new {
                     ID = dataRow.Field<string>("ID"),

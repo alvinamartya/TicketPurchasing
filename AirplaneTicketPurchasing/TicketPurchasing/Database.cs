@@ -74,30 +74,41 @@ namespace TicketPurchasing
             return firstLetter + num.ToString().PadLeft(length - firstLetter.ToString().Length, '0');
         }
 
-        public DataSet getDataFromDatabase(string sp)
+        public DataSet getDataFromDatabase(string sp, string role)
         {
             DataSet result = new DataSet();
-            try
+            sqlCon = new SqlConnection(connectionString);
+            sqlCon.Open();
+            if (role == null)
             {
-                sqlCon = new SqlConnection(connectionString);
-                sqlCon.Open();
-                SqlDataAdapter sqlAdp = new SqlDataAdapter(sp,sqlCon);
-                sqlAdp.Fill(result);
-                sqlCon.Close();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                if (sqlCon != null)
+                try
                 {
+                    SqlDataAdapter sqlAdp = new SqlDataAdapter(sp, sqlCon);
+                    sqlAdp.Fill(result);
                     sqlCon.Close();
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(ex.Message);
+                }
             }
-
+            else
+            {
+                try
+                {
+                    SqlCommand comm = new SqlCommand("sp_view_employees", sqlCon);
+                    comm.Parameters.AddWithValue("@Role", role);
+                    comm.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter sqlAdp = new SqlDataAdapter(comm);
+                    sqlAdp.Fill(result);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            sqlCon.Close();
             return result;
         } 
     }

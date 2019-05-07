@@ -299,7 +299,7 @@ namespace TicketPurchasing.MenuSA
         private void refreshDatagrid(string search)
         {
             createTable();
-            DataSet data = database.getDataFromDatabase("sp_view_aircrafttype");
+            DataSet data = database.getDataFromDatabase("sp_view_aircrafttype",null);
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
                 dataRow => new {
                     ID = dataRow.Field<string>("ID"),
@@ -377,19 +377,19 @@ namespace TicketPurchasing.MenuSA
         private void refreshDatagridDetails()
         {
             createTableDetails();
-            DataSet data = database.getDataFromDatabase("");
-            var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
-                dataRow => new {
-                    ID = dataRow.Field<string>("ID"),
-                    Name = dataRow.Field<string>("Name"),
-                    Qty = dataRow.Field<int>("Qty"),
-                    Unit = dataRow.Field<string>("Unit")
-                }).ToList();
+            //DataSet data = database.getDataFromDatabase("");
+            //var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
+            //    dataRow => new {
+            //        ID = dataRow.Field<string>("ID"),
+            //        Name = dataRow.Field<string>("Name"),
+            //        Qty = dataRow.Field<int>("Qty"),
+            //        Unit = dataRow.Field<string>("Unit")
+            //    }).ToList();
 
-            foreach (var item in convertDataSetToList)
-            {
-                DgvAircraftTypeDetail.Rows.Add(item.ID, item.Name, item.Qty, item.Unit);
-            }
+            //foreach (var item in convertDataSetToList)
+            //{
+            //    DgvAircraftTypeDetail.Rows.Add(item.ID, item.Name, item.Qty, item.Unit);
+            //}
         }
         #endregion
         #endregion
