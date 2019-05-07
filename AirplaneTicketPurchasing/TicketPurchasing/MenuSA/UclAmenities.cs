@@ -13,12 +13,11 @@ namespace TicketPurchasing.MenuSA
     public partial class UclAmenities : UserControl
     {
         #region declaration
-        Database database = new Database();
-        DataGridViewRow row = null;
-        bool isUpdate = false;
-        string search = "";
-        string message = "";
-        Validation valid = new Validation();
+        private DataGridViewRow row = null;
+        private Database database = new Database();
+        private Validation valid = new Validation();
+        private string message = "";
+        private bool isUpdate = false;
         #endregion
 
         #region Constructor
@@ -73,6 +72,7 @@ namespace TicketPurchasing.MenuSA
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();
                         enableFrm(false);
+                        refreshDatagrid(txtSearch.Text);
                     }
                 }
             }
@@ -123,7 +123,7 @@ namespace TicketPurchasing.MenuSA
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
                     enableFrm(false);
-  
+                    refreshDatagrid(txtSearch.Text);
                 }
             }
             else
@@ -181,13 +181,13 @@ namespace TicketPurchasing.MenuSA
             DgvAmenities.Columns.Add("name", "Name");
             DgvAmenities.Columns.Add("qty", "Qty");
             DgvAmenities.Columns.Add("unit", "Unit");
+            DgvAmenities.Columns[0].Visible = false;
             DgvAmenities.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             DgvAmenities.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void refreshDatagrid(string search)
         {
-            int x = 1;
             createTable();
             DataSet data = database.getDataFromDatabase("sp_view_amenities");
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
@@ -202,8 +202,8 @@ namespace TicketPurchasing.MenuSA
             if(search != "")
             {
                 convertDataSetToList = convertDataSetToList.Where(z =>
-                    z.ID.Contains(search) || z.Name.Contains(search) ||
-                    z.Qty.ToString().Contains(search) || z.Unit.Contains(search)
+                    z.Name.ToLower().Contains(search.ToLower()) || z.Qty.ToString().ToLower().Contains(search.ToLower()) || 
+                    z.Unit.ToLower().Contains(search.ToLower())
                 ).ToList();
             }
 

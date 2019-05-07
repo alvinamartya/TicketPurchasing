@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace TicketPurchasing
 {
@@ -90,6 +91,7 @@ namespace TicketPurchasing
         }
         #endregion
         #region Method
+        // method for design panel
         public void panelMouse(Panel panel)
         {
             panel.MouseEnter += PanelMouseEnter;
@@ -101,6 +103,7 @@ namespace TicketPurchasing
             }
         }
 
+        // drag and drop all controls in form
         public void DragandDropForm(Control form)
         {
             form.MouseDown += (s2, e2) => ctrl_MouseDown(s2, e2, form);
@@ -124,7 +127,8 @@ namespace TicketPurchasing
                         {
                             foreach (Control cUserControl in cPanel.Controls)
                             {
-                                if (!(cUserControl is ComboBox) && !(cUserControl is TextBox))
+                                if (!(cUserControl is ComboBox) && !(cUserControl is TextBox) && 
+                                    !(cUserControl is DateTimePicker) && !(cUserControl is MaskedTextBox))
                                 {
                                     cUserControl.MouseDown += (s2, e2) => ctrl_MouseDown(s2, e2, form);
                                     cUserControl.MouseMove += (s2, e2) => ctrl_MouseMove(s2, e2, form);
@@ -145,6 +149,24 @@ namespace TicketPurchasing
                     }
                 }
             }
+        }
+
+        // convert image to byte array
+        public byte[] imgToByteArray(Image img)
+        {
+            using (MemoryStream mStream = new MemoryStream())
+            {
+                img.Save(mStream, img.RawFormat);
+                return mStream.ToArray();
+            }
+        }
+
+        // convert from byte array to image
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
         #endregion

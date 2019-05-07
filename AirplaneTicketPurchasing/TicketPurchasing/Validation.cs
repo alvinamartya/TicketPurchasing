@@ -15,5 +15,12 @@ namespace TicketPurchasing
             if (regex.IsMatch(input)) return true;
             return false;
         }
+
+        public bool regexNumberic(string input)
+        {
+            Regex regex = new Regex("^[0-9]+$");
+            if (regex.IsMatch(input)) return true;
+            return false;
+        }
     }
 }
