@@ -23,16 +23,12 @@ namespace TicketPurchasing.MenuSA
         private string message = "";
         private bool isUpdate = false;
         #endregion
-
         #region Constructor
         public UclAircraftCompanies()
         {
             InitializeComponent();
         }
         #endregion
-
-    
-
         #region Method
         private void createTable()
         {
@@ -110,6 +106,7 @@ namespace TicketPurchasing.MenuSA
             btnInsert.Visible = !value;
             btnUpdate.Visible = !value;
             btnDelete.Visible = !value;
+            photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
         }
 
         private bool validation()
@@ -126,7 +123,6 @@ namespace TicketPurchasing.MenuSA
             return result;
         }
         #endregion
-
         #region Events
         private void UclAircraftCompanies_Load(object sender, EventArgs e)
         {

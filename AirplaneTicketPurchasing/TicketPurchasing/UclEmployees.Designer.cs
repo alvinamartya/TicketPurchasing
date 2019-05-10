@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvEmployees = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDateofBirth = new System.Windows.Forms.DateTimePicker();
@@ -48,7 +48,10 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.pathDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txsSearch = new System.Windows.Forms.TextBox();
+            this.flatLabel21 = new FlatUI.FlatLabel();
+            this.flatLabel22 = new FlatUI.FlatLabel();
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel20 = new FlatUI.FlatLabel();
             this.flatLabel17 = new FlatUI.FlatLabel();
@@ -67,11 +70,6 @@
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txsSearch = new System.Windows.Forms.TextBox();
-            this.flatLabel21 = new FlatUI.FlatLabel();
-            this.flatLabel22 = new FlatUI.FlatLabel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.SuspendLayout();
@@ -80,19 +78,19 @@
             // 
             this.DgvEmployees.AllowUserToAddRows = false;
             this.DgvEmployees.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvEmployees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvEmployees.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DgvEmployees.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvEmployees.DoubleBuffered = true;
             this.DgvEmployees.EnableHeadersVisualStyles = false;
@@ -102,13 +100,14 @@
             this.DgvEmployees.Name = "DgvEmployees";
             this.DgvEmployees.ReadOnly = true;
             this.DgvEmployees.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvEmployees.Size = new System.Drawing.Size(770, 170);
             this.DgvEmployees.TabIndex = 2;
             this.DgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvEmployees_CellClick);
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(186, 239);
+            this.txtName.Location = new System.Drawing.Point(185, 239);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(182, 20);
             this.txtName.TabIndex = 33;
@@ -117,7 +116,7 @@
             // 
             this.txtDateofBirth.CustomFormat = "dddd, dd MMMM yyyy";
             this.txtDateofBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDateofBirth.Location = new System.Drawing.Point(186, 265);
+            this.txtDateofBirth.Location = new System.Drawing.Point(185, 265);
             this.txtDateofBirth.Name = "txtDateofBirth";
             this.txtDateofBirth.Size = new System.Drawing.Size(200, 20);
             this.txtDateofBirth.TabIndex = 37;
@@ -126,7 +125,7 @@
             // 
             this.rbMale.AutoSize = true;
             this.rbMale.ForeColor = System.Drawing.Color.White;
-            this.rbMale.Location = new System.Drawing.Point(186, 291);
+            this.rbMale.Location = new System.Drawing.Point(185, 291);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(48, 17);
             this.rbMale.TabIndex = 40;
@@ -138,7 +137,7 @@
             // 
             this.rbFemale.AutoSize = true;
             this.rbFemale.ForeColor = System.Drawing.Color.White;
-            this.rbFemale.Location = new System.Drawing.Point(258, 292);
+            this.rbFemale.Location = new System.Drawing.Point(257, 292);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(59, 17);
             this.rbFemale.TabIndex = 41;
@@ -148,14 +147,14 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(186, 314);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(185, 314);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(182, 20);
             this.txtPhoneNumber.TabIndex = 44;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(186, 340);
+            this.txtAddress.Location = new System.Drawing.Point(185, 340);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(182, 43);
@@ -168,30 +167,31 @@
             this.cboRole.Items.AddRange(new object[] {
             "Admin",
             "Agency"});
-            this.cboRole.Location = new System.Drawing.Point(186, 389);
+            this.cboRole.Location = new System.Drawing.Point(185, 389);
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(182, 21);
             this.cboRole.TabIndex = 50;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(533, 235);
+            this.txtUsername.Location = new System.Drawing.Point(532, 235);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(182, 20);
             this.txtUsername.TabIndex = 53;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(533, 261);
+            this.txtPassword.Location = new System.Drawing.Point(532, 261);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(182, 20);
             this.txtPassword.TabIndex = 56;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // photo
             // 
-            this.photo.Location = new System.Drawing.Point(541, 314);
+            this.photo.Location = new System.Drawing.Point(532, 318);
             this.photo.Name = "photo";
-            this.photo.Size = new System.Drawing.Size(166, 142);
+            this.photo.Size = new System.Drawing.Size(182, 140);
             this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.photo.TabIndex = 61;
             this.photo.TabStop = false;
@@ -202,7 +202,7 @@
             this.btnBrowser.FlatAppearance.BorderSize = 0;
             this.btnBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBrowser.Location = new System.Drawing.Point(731, 290);
+            this.btnBrowser.Location = new System.Drawing.Point(720, 290);
             this.btnBrowser.Name = "btnBrowser";
             this.btnBrowser.Size = new System.Drawing.Size(29, 20);
             this.btnBrowser.TabIndex = 60;
@@ -212,10 +212,10 @@
             // 
             // txtPhoto
             // 
-            this.txtPhoto.Location = new System.Drawing.Point(533, 290);
+            this.txtPhoto.Location = new System.Drawing.Point(532, 290);
             this.txtPhoto.Name = "txtPhoto";
             this.txtPhoto.ReadOnly = true;
-            this.txtPhoto.Size = new System.Drawing.Size(192, 20);
+            this.txtPhoto.Size = new System.Drawing.Size(182, 20);
             this.txtPhoto.TabIndex = 59;
             // 
             // btnCancel
@@ -224,12 +224,13 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(417, 464);
+            this.btnCancel.Location = new System.Drawing.Point(408, 483);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 34);
             this.btnCancel.TabIndex = 66;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -237,7 +238,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(302, 464);
+            this.btnSave.Location = new System.Drawing.Point(293, 483);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 34);
             this.btnSave.TabIndex = 65;
@@ -251,7 +252,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(475, 464);
+            this.btnDelete.Location = new System.Drawing.Point(466, 483);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 34);
             this.btnDelete.TabIndex = 64;
@@ -265,7 +266,7 @@
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Location = new System.Drawing.Point(360, 464);
+            this.btnUpdate.Location = new System.Drawing.Point(351, 483);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 34);
             this.btnUpdate.TabIndex = 63;
@@ -279,7 +280,7 @@
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsert.Location = new System.Drawing.Point(245, 464);
+            this.btnInsert.Location = new System.Drawing.Point(236, 483);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(109, 34);
             this.btnInsert.TabIndex = 62;
@@ -287,239 +288,19 @@
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // pathDialog
+            // btnSearch
             // 
-            this.pathDialog.FileName = "openFileDialog1";
-            // 
-            // flatLabel19
-            // 
-            this.flatLabel19.AutoSize = true;
-            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(516, 290);
-            this.flatLabel19.Name = "flatLabel19";
-            this.flatLabel19.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel19.TabIndex = 58;
-            this.flatLabel19.Text = ":";
-            // 
-            // flatLabel20
-            // 
-            this.flatLabel20.AutoSize = true;
-            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel20.ForeColor = System.Drawing.Color.White;
-            this.flatLabel20.Location = new System.Drawing.Point(438, 290);
-            this.flatLabel20.Name = "flatLabel20";
-            this.flatLabel20.Size = new System.Drawing.Size(42, 17);
-            this.flatLabel20.TabIndex = 57;
-            this.flatLabel20.Text = "Photo";
-            // 
-            // flatLabel17
-            // 
-            this.flatLabel17.AutoSize = true;
-            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel17.ForeColor = System.Drawing.Color.White;
-            this.flatLabel17.Location = new System.Drawing.Point(515, 261);
-            this.flatLabel17.Name = "flatLabel17";
-            this.flatLabel17.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel17.TabIndex = 55;
-            this.flatLabel17.Text = ":";
-            // 
-            // flatLabel18
-            // 
-            this.flatLabel18.AutoSize = true;
-            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel18.ForeColor = System.Drawing.Color.White;
-            this.flatLabel18.Location = new System.Drawing.Point(438, 261);
-            this.flatLabel18.Name = "flatLabel18";
-            this.flatLabel18.Size = new System.Drawing.Size(64, 17);
-            this.flatLabel18.TabIndex = 54;
-            this.flatLabel18.Text = "Password";
-            // 
-            // flatLabel15
-            // 
-            this.flatLabel15.AutoSize = true;
-            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(515, 235);
-            this.flatLabel15.Name = "flatLabel15";
-            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel15.TabIndex = 52;
-            this.flatLabel15.Text = ":";
-            // 
-            // flatLabel16
-            // 
-            this.flatLabel16.AutoSize = true;
-            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(438, 235);
-            this.flatLabel16.Name = "flatLabel16";
-            this.flatLabel16.Size = new System.Drawing.Size(67, 17);
-            this.flatLabel16.TabIndex = 51;
-            this.flatLabel16.Text = "Username";
-            // 
-            // flatLabel13
-            // 
-            this.flatLabel13.AutoSize = true;
-            this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel13.ForeColor = System.Drawing.Color.White;
-            this.flatLabel13.Location = new System.Drawing.Point(168, 389);
-            this.flatLabel13.Name = "flatLabel13";
-            this.flatLabel13.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel13.TabIndex = 49;
-            this.flatLabel13.Text = ":";
-            // 
-            // flatLabel14
-            // 
-            this.flatLabel14.AutoSize = true;
-            this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel14.ForeColor = System.Drawing.Color.White;
-            this.flatLabel14.Location = new System.Drawing.Point(60, 389);
-            this.flatLabel14.Name = "flatLabel14";
-            this.flatLabel14.Size = new System.Drawing.Size(34, 17);
-            this.flatLabel14.TabIndex = 48;
-            this.flatLabel14.Text = "Role";
-            // 
-            // flatLabel11
-            // 
-            this.flatLabel11.AutoSize = true;
-            this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel11.ForeColor = System.Drawing.Color.White;
-            this.flatLabel11.Location = new System.Drawing.Point(168, 340);
-            this.flatLabel11.Name = "flatLabel11";
-            this.flatLabel11.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel11.TabIndex = 46;
-            this.flatLabel11.Text = ":";
-            // 
-            // flatLabel12
-            // 
-            this.flatLabel12.AutoSize = true;
-            this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel12.ForeColor = System.Drawing.Color.White;
-            this.flatLabel12.Location = new System.Drawing.Point(60, 340);
-            this.flatLabel12.Name = "flatLabel12";
-            this.flatLabel12.Size = new System.Drawing.Size(56, 17);
-            this.flatLabel12.TabIndex = 45;
-            this.flatLabel12.Text = "Address";
-            // 
-            // flatLabel9
-            // 
-            this.flatLabel9.AutoSize = true;
-            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(168, 314);
-            this.flatLabel9.Name = "flatLabel9";
-            this.flatLabel9.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel9.TabIndex = 43;
-            this.flatLabel9.Text = ":";
-            // 
-            // flatLabel10
-            // 
-            this.flatLabel10.AutoSize = true;
-            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(60, 314);
-            this.flatLabel10.Name = "flatLabel10";
-            this.flatLabel10.Size = new System.Drawing.Size(96, 17);
-            this.flatLabel10.TabIndex = 42;
-            this.flatLabel10.Text = "Phone Number";
-            // 
-            // flatLabel7
-            // 
-            this.flatLabel7.AutoSize = true;
-            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(168, 291);
-            this.flatLabel7.Name = "flatLabel7";
-            this.flatLabel7.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel7.TabIndex = 39;
-            this.flatLabel7.Text = ":";
-            // 
-            // flatLabel8
-            // 
-            this.flatLabel8.AutoSize = true;
-            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel8.ForeColor = System.Drawing.Color.White;
-            this.flatLabel8.Location = new System.Drawing.Point(60, 291);
-            this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(28, 17);
-            this.flatLabel8.TabIndex = 38;
-            this.flatLabel8.Text = "Sex";
-            // 
-            // flatLabel5
-            // 
-            this.flatLabel5.AutoSize = true;
-            this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel5.ForeColor = System.Drawing.Color.White;
-            this.flatLabel5.Location = new System.Drawing.Point(168, 265);
-            this.flatLabel5.Name = "flatLabel5";
-            this.flatLabel5.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel5.TabIndex = 35;
-            this.flatLabel5.Text = ":";
-            // 
-            // flatLabel6
-            // 
-            this.flatLabel6.AutoSize = true;
-            this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel6.ForeColor = System.Drawing.Color.White;
-            this.flatLabel6.Location = new System.Drawing.Point(60, 265);
-            this.flatLabel6.Name = "flatLabel6";
-            this.flatLabel6.Size = new System.Drawing.Size(81, 17);
-            this.flatLabel6.TabIndex = 34;
-            this.flatLabel6.Text = "Date of Birth";
-            // 
-            // flatLabel3
-            // 
-            this.flatLabel3.AutoSize = true;
-            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(168, 239);
-            this.flatLabel3.Name = "flatLabel3";
-            this.flatLabel3.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel3.TabIndex = 32;
-            this.flatLabel3.Text = ":";
-            // 
-            // flatLabel4
-            // 
-            this.flatLabel4.AutoSize = true;
-            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(60, 239);
-            this.flatLabel4.Name = "flatLabel4";
-            this.flatLabel4.Size = new System.Drawing.Size(43, 17);
-            this.flatLabel4.TabIndex = 31;
-            this.flatLabel4.Text = "Name";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(240, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 25);
-            this.button1.TabIndex = 91;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.Location = new System.Drawing.Point(240, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(69, 25);
+            this.btnSearch.TabIndex = 91;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txsSearch
             // 
@@ -552,16 +333,228 @@
             this.flatLabel22.TabIndex = 88;
             this.flatLabel22.Text = "Search";
             // 
-            // openFileDialog1
+            // flatLabel19
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.flatLabel19.AutoSize = true;
+            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel19.ForeColor = System.Drawing.Color.White;
+            this.flatLabel19.Location = new System.Drawing.Point(515, 290);
+            this.flatLabel19.Name = "flatLabel19";
+            this.flatLabel19.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel19.TabIndex = 58;
+            this.flatLabel19.Text = ":";
+            // 
+            // flatLabel20
+            // 
+            this.flatLabel20.AutoSize = true;
+            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel20.ForeColor = System.Drawing.Color.White;
+            this.flatLabel20.Location = new System.Drawing.Point(437, 290);
+            this.flatLabel20.Name = "flatLabel20";
+            this.flatLabel20.Size = new System.Drawing.Size(42, 17);
+            this.flatLabel20.TabIndex = 57;
+            this.flatLabel20.Text = "Photo";
+            // 
+            // flatLabel17
+            // 
+            this.flatLabel17.AutoSize = true;
+            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel17.ForeColor = System.Drawing.Color.White;
+            this.flatLabel17.Location = new System.Drawing.Point(514, 261);
+            this.flatLabel17.Name = "flatLabel17";
+            this.flatLabel17.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel17.TabIndex = 55;
+            this.flatLabel17.Text = ":";
+            // 
+            // flatLabel18
+            // 
+            this.flatLabel18.AutoSize = true;
+            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel18.ForeColor = System.Drawing.Color.White;
+            this.flatLabel18.Location = new System.Drawing.Point(437, 261);
+            this.flatLabel18.Name = "flatLabel18";
+            this.flatLabel18.Size = new System.Drawing.Size(64, 17);
+            this.flatLabel18.TabIndex = 54;
+            this.flatLabel18.Text = "Password";
+            // 
+            // flatLabel15
+            // 
+            this.flatLabel15.AutoSize = true;
+            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel15.ForeColor = System.Drawing.Color.White;
+            this.flatLabel15.Location = new System.Drawing.Point(514, 235);
+            this.flatLabel15.Name = "flatLabel15";
+            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel15.TabIndex = 52;
+            this.flatLabel15.Text = ":";
+            // 
+            // flatLabel16
+            // 
+            this.flatLabel16.AutoSize = true;
+            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel16.ForeColor = System.Drawing.Color.White;
+            this.flatLabel16.Location = new System.Drawing.Point(437, 235);
+            this.flatLabel16.Name = "flatLabel16";
+            this.flatLabel16.Size = new System.Drawing.Size(67, 17);
+            this.flatLabel16.TabIndex = 51;
+            this.flatLabel16.Text = "Username";
+            // 
+            // flatLabel13
+            // 
+            this.flatLabel13.AutoSize = true;
+            this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel13.ForeColor = System.Drawing.Color.White;
+            this.flatLabel13.Location = new System.Drawing.Point(167, 389);
+            this.flatLabel13.Name = "flatLabel13";
+            this.flatLabel13.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel13.TabIndex = 49;
+            this.flatLabel13.Text = ":";
+            // 
+            // flatLabel14
+            // 
+            this.flatLabel14.AutoSize = true;
+            this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel14.ForeColor = System.Drawing.Color.White;
+            this.flatLabel14.Location = new System.Drawing.Point(59, 389);
+            this.flatLabel14.Name = "flatLabel14";
+            this.flatLabel14.Size = new System.Drawing.Size(34, 17);
+            this.flatLabel14.TabIndex = 48;
+            this.flatLabel14.Text = "Role";
+            // 
+            // flatLabel11
+            // 
+            this.flatLabel11.AutoSize = true;
+            this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel11.ForeColor = System.Drawing.Color.White;
+            this.flatLabel11.Location = new System.Drawing.Point(167, 340);
+            this.flatLabel11.Name = "flatLabel11";
+            this.flatLabel11.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel11.TabIndex = 46;
+            this.flatLabel11.Text = ":";
+            // 
+            // flatLabel12
+            // 
+            this.flatLabel12.AutoSize = true;
+            this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel12.ForeColor = System.Drawing.Color.White;
+            this.flatLabel12.Location = new System.Drawing.Point(59, 340);
+            this.flatLabel12.Name = "flatLabel12";
+            this.flatLabel12.Size = new System.Drawing.Size(56, 17);
+            this.flatLabel12.TabIndex = 45;
+            this.flatLabel12.Text = "Address";
+            // 
+            // flatLabel9
+            // 
+            this.flatLabel9.AutoSize = true;
+            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel9.ForeColor = System.Drawing.Color.White;
+            this.flatLabel9.Location = new System.Drawing.Point(167, 314);
+            this.flatLabel9.Name = "flatLabel9";
+            this.flatLabel9.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel9.TabIndex = 43;
+            this.flatLabel9.Text = ":";
+            // 
+            // flatLabel10
+            // 
+            this.flatLabel10.AutoSize = true;
+            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel10.ForeColor = System.Drawing.Color.White;
+            this.flatLabel10.Location = new System.Drawing.Point(59, 314);
+            this.flatLabel10.Name = "flatLabel10";
+            this.flatLabel10.Size = new System.Drawing.Size(96, 17);
+            this.flatLabel10.TabIndex = 42;
+            this.flatLabel10.Text = "Phone Number";
+            // 
+            // flatLabel7
+            // 
+            this.flatLabel7.AutoSize = true;
+            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
+            this.flatLabel7.Location = new System.Drawing.Point(167, 291);
+            this.flatLabel7.Name = "flatLabel7";
+            this.flatLabel7.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel7.TabIndex = 39;
+            this.flatLabel7.Text = ":";
+            // 
+            // flatLabel8
+            // 
+            this.flatLabel8.AutoSize = true;
+            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel8.ForeColor = System.Drawing.Color.White;
+            this.flatLabel8.Location = new System.Drawing.Point(59, 291);
+            this.flatLabel8.Name = "flatLabel8";
+            this.flatLabel8.Size = new System.Drawing.Size(28, 17);
+            this.flatLabel8.TabIndex = 38;
+            this.flatLabel8.Text = "Sex";
+            // 
+            // flatLabel5
+            // 
+            this.flatLabel5.AutoSize = true;
+            this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel5.ForeColor = System.Drawing.Color.White;
+            this.flatLabel5.Location = new System.Drawing.Point(167, 265);
+            this.flatLabel5.Name = "flatLabel5";
+            this.flatLabel5.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel5.TabIndex = 35;
+            this.flatLabel5.Text = ":";
+            // 
+            // flatLabel6
+            // 
+            this.flatLabel6.AutoSize = true;
+            this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel6.ForeColor = System.Drawing.Color.White;
+            this.flatLabel6.Location = new System.Drawing.Point(59, 265);
+            this.flatLabel6.Name = "flatLabel6";
+            this.flatLabel6.Size = new System.Drawing.Size(81, 17);
+            this.flatLabel6.TabIndex = 34;
+            this.flatLabel6.Text = "Date of Birth";
+            // 
+            // flatLabel3
+            // 
+            this.flatLabel3.AutoSize = true;
+            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel3.ForeColor = System.Drawing.Color.White;
+            this.flatLabel3.Location = new System.Drawing.Point(167, 239);
+            this.flatLabel3.Name = "flatLabel3";
+            this.flatLabel3.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel3.TabIndex = 32;
+            this.flatLabel3.Text = ":";
+            // 
+            // flatLabel4
+            // 
+            this.flatLabel4.AutoSize = true;
+            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel4.ForeColor = System.Drawing.Color.White;
+            this.flatLabel4.Location = new System.Drawing.Point(59, 239);
+            this.flatLabel4.Name = "flatLabel4";
+            this.flatLabel4.Size = new System.Drawing.Size(43, 17);
+            this.flatLabel4.TabIndex = 31;
+            this.flatLabel4.Text = "Name";
             // 
             // UclEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txsSearch);
             this.Controls.Add(this.flatLabel21);
             this.Controls.Add(this.flatLabel22);
@@ -602,7 +595,7 @@
             this.Controls.Add(this.flatLabel4);
             this.Controls.Add(this.DgvEmployees);
             this.Name = "UclEmployees";
-            this.Size = new System.Drawing.Size(808, 506);
+            this.Size = new System.Drawing.Size(808, 536);
             this.Load += new System.EventHandler(this.UclEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
@@ -649,11 +642,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.OpenFileDialog pathDialog;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txsSearch;
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatLabel flatLabel22;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

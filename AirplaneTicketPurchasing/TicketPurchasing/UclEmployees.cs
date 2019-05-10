@@ -25,7 +25,8 @@ namespace TicketPurchasing
         private bool isUpdate = false;
         private string connectionString = ConfigurationManager.ConnectionStrings["TicketPurchasing"].ConnectionString;
         private SqlConnection sqlCon;
-        #endregion Declaration
+        private OpenFileDialog pathDialog = new OpenFileDialog();
+        #endregion
 
         #region Constructor
         public UclEmployees()
@@ -35,9 +36,26 @@ namespace TicketPurchasing
         #endregion
 
         #region Events
+        private void btnBrowser_Click(object sender, EventArgs e)
+        {
+            pathDialog.FileName = "";
+            pathDialog.Filter = "Image Files|*.JPG;*.JPEG;*.PNG";
+            if (pathDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtPhoto.Text = pathDialog.FileName;
+                photo.ImageLocation = pathDialog.FileName;
+                base64string = "";
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            refreshDatagrid(txsSearch.Text);
+        }
+
         private void UclEmployees_Load(object sender, EventArgs e)
         {
-            
+            clear();
             if (Support.role.Equals("Admin"))
             {
                 flatLabel14.Visible = false;
@@ -58,51 +76,46 @@ namespace TicketPurchasing
             createTable();
             refreshDatagrid(txsSearch.Text);
         }
+
         private void DgvEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             row = DgvEmployees.CurrentRow;
-            if (!isUpdate)
+            if (isUpdate)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtUsername.Text = row.Cells[2].Value.ToString();
                 txtPassword.Text = row.Cells[3].Value.ToString();
-                txtDateofBirth.Value = Convert.ToDateTime(row.Cells[4].Value.ToString());
-                if (row.Cells[5].Value.ToString() == "M")
+                
+                string[] dayArray = row.Cells[4].Value.ToString().Split('-');
+                Console.WriteLine(row.Cells[4].Value.ToString());
+                DateTime date = new DateTime(Convert.ToInt32(dayArray[2]), Convert.ToInt32(dayArray[1]), Convert.ToInt32(dayArray[0]));
+                txtDateofBirth.Value = date;
+
+                if (row.Cells[5].Value.ToString() == "Male")
                     rbMale.Checked = true;
                 else
                     rbFemale.Checked = true;
                 txtAddress.Text = row.Cells[6].Value.ToString();
                 txtPhoneNumber.Text = row.Cells[7].Value.ToString();
-                cboRole.SelectedText = row.Cells[8].Value.ToString();
+                cboRole.Text = row.Cells[8].Value.ToString();
 
-                if(row.Cells[9].Value.ToString() != "")
+                if (row.Cells[9].Value.ToString() != "")
                 {
                     base64string = row.Cells[9].Value.ToString();
                     string extension = base64string.Substring(base64string.IndexOf('/'),
-                        base64string.IndexOf(';') - base64string.IndexOf('/'));
+                                                 base64string.IndexOf(';') - base64string.IndexOf('/'));
                     txtPhoto.Text = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
                     string path = base64string.Substring(base64string.IndexOf(',') + 2,
                         base64string.Length - (base64string.IndexOf(',') + 2));
                     byte[] image = Convert.FromBase64String(path);
                     photo.Image = support.byteArrayToImage(image);
-                }else
-                {
-                    txtPhoto.Text = null;
-                    photo.Image = null;
                 }
-                
-            }
-        }
+                else
+                {
+                    txtPhoto.Text = "";
+                    photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+                }
 
-        private void btnBrowser_Click(object sender, EventArgs e)
-        {
-            pathDialog.FileName = "";
-            pathDialog.Filter = "Image Files|*.JPG;*.JPEG;*.PNG";
-            if (pathDialog.ShowDialog() == DialogResult.OK)
-            {
-                txtPhoto.Text = pathDialog.FileName;
-                photo.ImageLocation = pathDialog.FileName;
-                base64string = "";
             }
         }
 
@@ -160,7 +173,7 @@ namespace TicketPurchasing
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
                     enableFrm(false);
-                    refreshDatagrid(null);
+                    refreshDatagrid("");
                 }
             }
             catch (Exception ex)
@@ -171,19 +184,23 @@ namespace TicketPurchasing
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            enableFrm(true);
             clear();
+            isUpdate = false;
+            enableFrm(true);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            isUpdate = true;
-            enableFrm(true);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            refreshDatagrid(txsSearch.Text);
+            if(row != null)
+            {
+                isUpdate = true;
+                enableFrm(true);
+            }
+            else
+            {
+                MessageBox.Show("No Employee Selected", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -201,35 +218,42 @@ namespace TicketPurchasing
                         MessageBox.Show("Data deleted", "Information",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }else
+            }
+            else
             {
                 MessageBox.Show("No Employee Selected", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             clear();
             enableFrm(false);
-            refreshDatagrid(null);
+            refreshDatagrid("");
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clear();
+            enableFrm(false);
         }
         #endregion
 
-        #region Methods
 
+        #region Methods
         // enable and disable form
         private void clear()
         {
-            txtName.Text = null;
-            txtDateofBirth.Text = null;
+            txtName.Clear();
+            txtDateofBirth.Value = DateTime.Now;
             rbFemale.Checked = false;
             rbMale.Checked = false;
-            txtPhoneNumber.Text = null;
-            txtAddress.Text = null;
-            cboRole.SelectedText = null;
-            txtUsername.Text = null;
-            txtPassword.Text = null;
-            photo.Image = null;
-            txtPhoto.Text = null;
-            isUpdate = false;
-            pathDialog = null;
+            txtPhoneNumber.Clear();
+            txtAddress.Clear();
+            cboRole.SelectedIndex = 0;
+            txtUsername.Clear();
+            txtPassword.Clear();
+            photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+            txtPhoto.Clear();
+            isUpdate = true;
+            row = null;
         }
         private void enableFrm(bool value)
         {
@@ -264,13 +288,18 @@ namespace TicketPurchasing
             DgvEmployees.Columns.Add("number", "Phone Number");
             DgvEmployees.Columns.Add("role", "Role");
             DgvEmployees.Columns.Add("photo", "Photo");
+            DgvEmployees.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DgvEmployees.Columns[0].Visible = false;
             DgvEmployees.Columns[9].Visible = false;
+            DgvEmployees.Columns[3].Visible = false;
+            DgvEmployees.HeaderForeColor = Color.White;
+            DgvEmployees.HeaderBgColor = Color.Teal;
         }
 
         private void refreshDatagrid(string search)
         {
             DgvEmployees.Rows.Clear();
-            string role = Support.role.ToLower().Replace(" ","");
+            string role = Support.role.ToLower().Replace(" ", "");
             DataSet data = database.getDataFromDatabase("sp_view_employees", role);
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
                 dataRow => new
@@ -287,17 +316,20 @@ namespace TicketPurchasing
                     Role = dataRow.Field<string>("Role")
                 }).ToList();
 
-            if(search != "")
+            if (search != "")
             {
-                //not yet implemented
+                convertDataSetToList = convertDataSetToList.Where(x => x.Name.Contains(search) || x.Username.Contains(search) ||
+                x.DateofBirth.ToString().Contains(search) || x.Sex.Contains(search) || x.Address.Contains(search) ||
+                x.TelpNumber.Contains(search)).ToList();
             }
 
             foreach (var item in convertDataSetToList)
             {
-                DgvEmployees.Rows.Add(item.ID, item.Name, item.Username, item.Password, 
-                    item.DateofBirth.ToString("dd-MM-yyyy"), item.Sex, item.Address, item.TelpNumber, item.Role, item.Photo);
+                string sex = item.Sex == "M" ? "Male" : "Female";
+                DgvEmployees.Rows.Add(item.ID, item.Name, item.Username, item.Password,
+                    item.DateofBirth.ToString("dd-MM-yyyy"), sex, item.Address, item.TelpNumber, item.Role, item.Photo);
             }
         }
-        #endregion Methods  
+        #endregion
     }
 }

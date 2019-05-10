@@ -134,9 +134,9 @@ namespace TicketPurchasing.MenuSA
 
         private void DgvAmenities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            row = DgvAmenities.CurrentRow;
             if (isUpdate)
             {
-                row = DgvAmenities.CurrentRow;
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtQty.Value = Convert.ToInt32(row.Cells[2].Value.ToString());
                 cboUnit.SelectedItem = row.Cells[3].Value.ToString();
