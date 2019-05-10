@@ -115,13 +115,7 @@ namespace TicketPurchasing.MenuSA
             if (!isUpdate&&!isInserting)
             {
                 txtName.Text = row.Cells[2].Value.ToString();
-                var items = cbCountry.Items;
-                foreach (var item in items)
-                    if (item.ToString() == (row.Cells[1].Value.ToString()))
-                    {
-                        cbCountry.SelectedItem = item;
-                        break;
-                    }
+                cbCountry.Text = row.Cells[1].Value.ToString();
             }
         }
 
