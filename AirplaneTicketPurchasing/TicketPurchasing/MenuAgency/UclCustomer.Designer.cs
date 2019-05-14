@@ -30,22 +30,26 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.cboRole = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dgvCustomers = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtIdentity = new System.Windows.Forms.TextBox();
+            this.txtPassport = new System.Windows.Forms.TextBox();
+            this.cbCountry = new System.Windows.Forms.ComboBox();
+            this.txtDate = new System.Windows.Forms.DateTimePicker();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.flatLabel21 = new FlatUI.FlatLabel();
+            this.flatLabel22 = new FlatUI.FlatLabel();
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel20 = new FlatUI.FlatLabel();
             this.flatLabel17 = new FlatUI.FlatLabel();
@@ -64,22 +68,18 @@
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.flatLabel21 = new FlatUI.FlatLabel();
-            this.flatLabel22 = new FlatUI.FlatLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuCustomDataGrid1
+            // dgvCustomers
             // 
-            this.bunifuCustomDataGrid1.AllowUserToAddRows = false;
-            this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
+            this.dgvCustomers.AllowUserToAddRows = false;
+            this.dgvCustomers.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCustomers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCustomers.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,103 +87,301 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(32, 42);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.ReadOnly = true;
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(770, 174);
-            this.bunifuCustomDataGrid1.TabIndex = 3;
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomers.DoubleBuffered = true;
+            this.dgvCustomers.EnableHeadersVisualStyles = false;
+            this.dgvCustomers.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgvCustomers.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.dgvCustomers.Location = new System.Drawing.Point(32, 42);
+            this.dgvCustomers.Name = "dgvCustomers";
+            this.dgvCustomers.ReadOnly = true;
+            this.dgvCustomers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCustomers.Size = new System.Drawing.Size(770, 174);
+            this.dgvCustomers.TabIndex = 3;
+            this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Location = new System.Drawing.Point(160, 230);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 20);
-            this.textBox2.TabIndex = 39;
+            this.txtName.Location = new System.Drawing.Point(160, 230);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(182, 20);
+            this.txtName.TabIndex = 39;
             // 
-            // textBox3
+            // txtIdentity
             // 
-            this.textBox3.Location = new System.Drawing.Point(160, 256);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 20);
-            this.textBox3.TabIndex = 42;
+            this.txtIdentity.Location = new System.Drawing.Point(160, 256);
+            this.txtIdentity.Name = "txtIdentity";
+            this.txtIdentity.Size = new System.Drawing.Size(182, 20);
+            this.txtIdentity.TabIndex = 42;
             // 
-            // textBox4
+            // txtPassport
             // 
-            this.textBox4.Location = new System.Drawing.Point(160, 282);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(182, 20);
-            this.textBox4.TabIndex = 45;
+            this.txtPassport.Location = new System.Drawing.Point(160, 282);
+            this.txtPassport.Name = "txtPassport";
+            this.txtPassport.Size = new System.Drawing.Size(182, 20);
+            this.txtPassport.TabIndex = 45;
             // 
-            // cboRole
+            // cbCountry
             // 
-            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRole.FormattingEnabled = true;
-            this.cboRole.Location = new System.Drawing.Point(160, 308);
-            this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(182, 21);
-            this.cboRole.TabIndex = 53;
+            this.cbCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCountry.FormattingEnabled = true;
+            this.cbCountry.Items.AddRange(new object[] {
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua & Deps",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaijan",
+            "Bahamas",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei",
+            "Bulgaria",
+            "Burkina",
+            "Burundi",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Cape Verde",
+            "Central African Rep",
+            "Chad",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros",
+            "Congo",
+            "Congo {Democratic Rep}",
+            "Costa Rica",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "East Timor",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Ethiopia",
+            "Fiji",
+            "Finland",
+            "France",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Honduras",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland {Republic}",
+            "Israel",
+            "Italy",
+            "Ivory Coast",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kiribati",
+            "Korea North",
+            "Korea South",
+            "Kosovo",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macedonia",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Marshall Islands",
+            "Mauritania",
+            "Mauritius",
+            "Mexico",
+            "Micronesia",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar, {Burma}",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Netherlands",
+            "New Zealand",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Palau",
+            "Panama",
+            "Papua New Guinea",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Qatar",
+            "Romania",
+            "Russian Federation",
+            "Rwanda",
+            "St Kitts & Nevis",
+            "St Lucia",
+            "Saint Vincent & the Grenadines",
+            "Samoa",
+            "San Marino",
+            "Sao Tome & Principe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Solomon Islands",
+            "Somalia",
+            "South Africa",
+            "South Sudan",
+            "Spain",
+            "Sri Lanka",
+            "Sudan",
+            "Suriname",
+            "Swaziland",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Taiwan",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "Togo",
+            "Tonga",
+            "Trinidad & Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Tuvalu",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
+            "United Kingdom",
+            "United States",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Vatican City",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"});
+            this.cbCountry.Location = new System.Drawing.Point(160, 308);
+            this.cbCountry.Name = "cbCountry";
+            this.cbCountry.Size = new System.Drawing.Size(182, 21);
+            this.cbCountry.TabIndex = 53;
             // 
-            // dateTimePicker1
+            // txtDate
             // 
-            this.dateTimePicker1.CustomFormat = "dddd, dd MMMM yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(160, 335);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 56;
+            this.txtDate.CustomFormat = "dddd, dd MMMM yyyy";
+            this.txtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtDate.Location = new System.Drawing.Point(160, 335);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(200, 20);
+            this.txtDate.TabIndex = 56;
             // 
-            // radioButton2
+            // rbFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(649, 230);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 60;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.ForeColor = System.Drawing.Color.White;
+            this.rbFemale.Location = new System.Drawing.Point(649, 230);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(59, 17);
+            this.rbFemale.TabIndex = 60;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Female";
+            this.rbFemale.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(577, 229);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 59;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbMale.AutoSize = true;
+            this.rbMale.ForeColor = System.Drawing.Color.White;
+            this.rbMale.Location = new System.Drawing.Point(577, 229);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(48, 17);
+            this.rbMale.TabIndex = 59;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Male";
+            this.rbMale.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtPhone
             // 
-            this.textBox5.Location = new System.Drawing.Point(577, 252);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(182, 20);
-            this.textBox5.TabIndex = 63;
+            this.txtPhone.Location = new System.Drawing.Point(577, 252);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(182, 20);
+            this.txtPhone.TabIndex = 63;
             // 
-            // textBox6
+            // txtEmail
             // 
-            this.textBox6.Location = new System.Drawing.Point(577, 278);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(182, 20);
-            this.textBox6.TabIndex = 66;
+            this.txtEmail.Location = new System.Drawing.Point(577, 278);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(182, 20);
+            this.txtEmail.TabIndex = 66;
             // 
-            // textBox7
+            // txtAddress
             // 
-            this.textBox7.Location = new System.Drawing.Point(577, 304);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(182, 51);
-            this.textBox7.TabIndex = 69;
+            this.txtAddress.Location = new System.Drawing.Point(577, 304);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(182, 51);
+            this.txtAddress.TabIndex = 69;
             // 
             // btnCancel
             // 
@@ -210,6 +408,7 @@
             this.btnSave.TabIndex = 73;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -223,6 +422,7 @@
             this.btnDelete.TabIndex = 72;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -236,6 +436,7 @@
             this.btnUpdate.TabIndex = 71;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
@@ -249,6 +450,51 @@
             this.btnInsert.TabIndex = 70;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(100, 14);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(149, 20);
+            this.txtSearch.TabIndex = 86;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.Location = new System.Drawing.Point(255, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(69, 25);
+            this.btnSearch.TabIndex = 87;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // flatLabel21
+            // 
+            this.flatLabel21.AutoSize = true;
+            this.flatLabel21.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel21.ForeColor = System.Drawing.Color.White;
+            this.flatLabel21.Location = new System.Drawing.Point(83, 14);
+            this.flatLabel21.Name = "flatLabel21";
+            this.flatLabel21.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel21.TabIndex = 85;
+            this.flatLabel21.Text = ":";
+            // 
+            // flatLabel22
+            // 
+            this.flatLabel22.AutoSize = true;
+            this.flatLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel22.ForeColor = System.Drawing.Color.White;
+            this.flatLabel22.Location = new System.Drawing.Point(30, 14);
+            this.flatLabel22.Name = "flatLabel22";
+            this.flatLabel22.Size = new System.Drawing.Size(47, 17);
+            this.flatLabel22.TabIndex = 84;
+            this.flatLabel22.Text = "Search";
             // 
             // flatLabel19
             // 
@@ -466,57 +712,13 @@
             this.flatLabel4.TabIndex = 37;
             this.flatLabel4.Text = "Name";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(100, 14);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(149, 20);
-            this.textBox8.TabIndex = 86;
-            // 
-            // flatLabel21
-            // 
-            this.flatLabel21.AutoSize = true;
-            this.flatLabel21.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel21.ForeColor = System.Drawing.Color.White;
-            this.flatLabel21.Location = new System.Drawing.Point(83, 14);
-            this.flatLabel21.Name = "flatLabel21";
-            this.flatLabel21.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel21.TabIndex = 85;
-            this.flatLabel21.Text = ":";
-            // 
-            // flatLabel22
-            // 
-            this.flatLabel22.AutoSize = true;
-            this.flatLabel22.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel22.ForeColor = System.Drawing.Color.White;
-            this.flatLabel22.Location = new System.Drawing.Point(30, 14);
-            this.flatLabel22.Name = "flatLabel22";
-            this.flatLabel22.Size = new System.Drawing.Size(47, 17);
-            this.flatLabel22.TabIndex = 84;
-            this.flatLabel22.Text = "Search";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(255, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 25);
-            this.button1.TabIndex = 87;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // UclCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.flatLabel21);
             this.Controls.Add(this.flatLabel22);
             this.Controls.Add(this.btnCancel);
@@ -524,38 +726,39 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.flatLabel19);
             this.Controls.Add(this.flatLabel20);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.flatLabel17);
             this.Controls.Add(this.flatLabel18);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.flatLabel15);
             this.Controls.Add(this.flatLabel16);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbFemale);
+            this.Controls.Add(this.rbMale);
             this.Controls.Add(this.flatLabel11);
             this.Controls.Add(this.flatLabel12);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.flatLabel9);
             this.Controls.Add(this.flatLabel10);
-            this.Controls.Add(this.cboRole);
+            this.Controls.Add(this.cbCountry);
             this.Controls.Add(this.flatLabel13);
             this.Controls.Add(this.flatLabel14);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtPassport);
             this.Controls.Add(this.flatLabel7);
             this.Controls.Add(this.flatLabel8);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtIdentity);
             this.Controls.Add(this.flatLabel5);
             this.Controls.Add(this.flatLabel6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.flatLabel3);
             this.Controls.Add(this.flatLabel4);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.dgvCustomers);
             this.Name = "UclCustomer";
             this.Size = new System.Drawing.Size(835, 461);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            this.Load += new System.EventHandler(this.UclCustomer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,33 +766,33 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.TextBox textBox2;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvCustomers;
+        private System.Windows.Forms.TextBox txtName;
         private FlatUI.FlatLabel flatLabel3;
         private FlatUI.FlatLabel flatLabel4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtIdentity;
         private FlatUI.FlatLabel flatLabel5;
         private FlatUI.FlatLabel flatLabel6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPassport;
         private FlatUI.FlatLabel flatLabel7;
         private FlatUI.FlatLabel flatLabel8;
-        private System.Windows.Forms.ComboBox cboRole;
+        private System.Windows.Forms.ComboBox cbCountry;
         private FlatUI.FlatLabel flatLabel13;
         private FlatUI.FlatLabel flatLabel14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txtDate;
         private FlatUI.FlatLabel flatLabel9;
         private FlatUI.FlatLabel flatLabel10;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbFemale;
+        private System.Windows.Forms.RadioButton rbMale;
         private FlatUI.FlatLabel flatLabel11;
         private FlatUI.FlatLabel flatLabel12;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPhone;
         private FlatUI.FlatLabel flatLabel15;
         private FlatUI.FlatLabel flatLabel16;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtEmail;
         private FlatUI.FlatLabel flatLabel17;
         private FlatUI.FlatLabel flatLabel18;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtAddress;
         private FlatUI.FlatLabel flatLabel19;
         private FlatUI.FlatLabel flatLabel20;
         private System.Windows.Forms.Button btnCancel;
@@ -597,9 +800,9 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtSearch;
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatLabel flatLabel22;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
