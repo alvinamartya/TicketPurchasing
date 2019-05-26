@@ -18,7 +18,7 @@ namespace TicketPurchasing.MenuSA
         private Database database = new Database();
         private Validation valid = new Validation();
         private string message = "";
-        private bool isUpdate = false, isInserting=false;
+        private bool isUpdate = false, isInserting = false, isEnable = false;
 
         public UclCities()
         {
@@ -43,6 +43,7 @@ namespace TicketPurchasing.MenuSA
             btnInsert.Visible = !value;
             btnUpdate.Visible = !value;
             btnDelete.Visible = !value;
+            isEnable = value;
         }
 
         private void createTable()
@@ -50,11 +51,13 @@ namespace TicketPurchasing.MenuSA
             DgvCities.Rows.Clear();
             DgvCities.Columns.Clear();
             DgvCities.Columns.Add("id", "ID");
-            DgvCities.Columns.Add("country", "Country");
             DgvCities.Columns.Add("name", "Name");
+            DgvCities.Columns.Add("country", "Country");
             DgvCities.Columns[0].Visible = false;
             DgvCities.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             DgvCities.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            DgvCities.HeaderBgColor = Color.Teal;
+            DgvCities.HeaderForeColor = Color.White;
         }
 
         private void refreshDatagrid(string s)
@@ -65,8 +68,8 @@ namespace TicketPurchasing.MenuSA
                 dataRow => new
                 {
                     ID = dataRow.Field<string>("ID"),
-                    Country = dataRow.Field<string>("Country"),
-                    Name = dataRow.Field<string>("Name")
+                    Name = dataRow.Field<string>("Name"),
+                    Country = dataRow.Field<string>("Country")
                 }).ToList();
             if (s != null)
             {
@@ -78,7 +81,7 @@ namespace TicketPurchasing.MenuSA
 
             foreach (var item in convertDataSetToList)
             {
-                DgvCities.Rows.Add(item.ID, item.Country, item.Name);
+                DgvCities.Rows.Add(item.ID, item.Name, item.Country);
             }
         }
 
@@ -114,8 +117,8 @@ namespace TicketPurchasing.MenuSA
             row = DgvCities.CurrentRow;
             if (!isUpdate&&!isInserting)
             {
-                txtName.Text = row.Cells[2].Value.ToString();
-                cbCountry.Text = row.Cells[1].Value.ToString();
+                txtName.Text = row.Cells[1].Value.ToString();
+                cbCountry.Text = row.Cells[2].Value.ToString();
             }
         }
 
@@ -144,6 +147,12 @@ namespace TicketPurchasing.MenuSA
                 MessageBox.Show("Ensure you have selected cities", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clear();
+            enableFrm(false);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -94,6 +94,7 @@
             this.dgvCustomers.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.dgvCustomers.HeaderForeColor = System.Drawing.Color.SeaGreen;
             this.dgvCustomers.Location = new System.Drawing.Point(32, 42);
+            this.dgvCustomers.MultiSelect = false;
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
             this.dgvCustomers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

@@ -76,6 +76,7 @@
             this.DgvAmenities.HeaderBgColor = System.Drawing.Color.DarkCyan;
             this.DgvAmenities.HeaderForeColor = System.Drawing.Color.White;
             this.DgvAmenities.Location = new System.Drawing.Point(32, 50);
+            this.DgvAmenities.MultiSelect = false;
             this.DgvAmenities.Name = "DgvAmenities";
             this.DgvAmenities.ReadOnly = true;
             this.DgvAmenities.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

@@ -17,7 +17,7 @@ namespace TicketPurchasing.MenuSA
         private Database database = new Database();
         private Validation valid = new Validation();
         private string message = "";
-        private bool isUpdate = false;
+        private bool isUpdate = false,isEnable = false;
         #endregion
 
         #region Constructor
@@ -135,7 +135,7 @@ namespace TicketPurchasing.MenuSA
         private void DgvAmenities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             row = DgvAmenities.CurrentRow;
-            if (isUpdate)
+            if (isUpdate&&!isEnable)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtQty.Value = Convert.ToInt32(row.Cells[2].Value.ToString());
@@ -171,6 +171,7 @@ namespace TicketPurchasing.MenuSA
             btnInsert.Visible = !value;
             btnUpdate.Visible = !value;
             btnDelete.Visible = !value;
+            isEnable = value;
         }
 
         private void createTable()

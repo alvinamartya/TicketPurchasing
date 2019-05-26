@@ -20,7 +20,6 @@ namespace TicketPurchasing
         private DataGridViewRow row = null;
         private Database database = new Database();
         private Validation valid = new Validation();
-        private const string defaultbase64string = "data:image/";
         private string base64string = "";
         private bool isUpdate = false;
         private string connectionString = ConfigurationManager.ConnectionStrings["TicketPurchasing"].ConnectionString;
@@ -127,7 +126,7 @@ namespace TicketPurchasing
             if (base64string == "" && photo.Image != null)
             {
                 byte[] image = support.imgToByteArray(photo.Image);
-                base64string = defaultbase64string + Path.GetExtension(txtPhoto.Text).Remove(0, 1) +
+                base64string = Class.MIME.GetMimeType(Path.GetExtension(txtPhoto.Text)) +
                     ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
             }
 
@@ -300,7 +299,9 @@ namespace TicketPurchasing
         {
             DgvEmployees.Rows.Clear();
             string role = Support.role.ToLower().Replace(" ", "");
-            DataSet data = database.getDataFromDatabase("sp_view_employees", role);
+            List<Parameter> param = new List<Parameter>();
+            param.Add(new Parameter("@Role", role));
+            DataSet data = database.getDataFromDatabase("sp_view_employees",param);
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
                 dataRow => new
                 {

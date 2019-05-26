@@ -55,7 +55,6 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.txtTotalSeats = new System.Windows.Forms.NumericUpDown();
             this.flatLabel21 = new FlatUI.FlatLabel();
             this.flatLabel22 = new FlatUI.FlatLabel();
             this.flatLabel11 = new FlatUI.FlatLabel();
@@ -64,11 +63,11 @@
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
+            this.txtTotalSeat = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAircraftType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAircraftTypeDetail)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalSeats)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvAircraftType
@@ -94,12 +93,14 @@
             this.DgvAircraftType.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.DgvAircraftType.HeaderForeColor = System.Drawing.Color.SeaGreen;
             this.DgvAircraftType.Location = new System.Drawing.Point(26, 43);
+            this.DgvAircraftType.MultiSelect = false;
             this.DgvAircraftType.Name = "DgvAircraftType";
             this.DgvAircraftType.ReadOnly = true;
             this.DgvAircraftType.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DgvAircraftType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvAircraftType.Size = new System.Drawing.Size(782, 198);
             this.DgvAircraftType.TabIndex = 2;
+            this.DgvAircraftType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAircraftType_CellClick);
             // 
             // txtMakeModel
             // 
@@ -169,6 +170,7 @@
             this.DgvAircraftTypeDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvAircraftTypeDetail.Size = new System.Drawing.Size(225, 117);
             this.DgvAircraftTypeDetail.TabIndex = 0;
+            this.DgvAircraftTypeDetail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAircraftTypeDetail_CellClick);
             // 
             // groupBox1
             // 
@@ -393,6 +395,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -400,18 +403,6 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(149, 20);
             this.txtSearch.TabIndex = 0;
-            // 
-            // txtTotalSeats
-            // 
-            this.txtTotalSeats.Location = new System.Drawing.Point(131, 308);
-            this.txtTotalSeats.Maximum = new decimal(new int[] {
-            276447232,
-            23283,
-            0,
-            0});
-            this.txtTotalSeats.Name = "txtTotalSeats";
-            this.txtTotalSeats.Size = new System.Drawing.Size(96, 20);
-            this.txtTotalSeats.TabIndex = 5;
             // 
             // flatLabel21
             // 
@@ -509,12 +500,20 @@
             this.flatLabel4.TabIndex = 37;
             this.flatLabel4.Text = "Name";
             // 
+            // txtTotalSeat
+            // 
+            this.txtTotalSeat.Enabled = false;
+            this.txtTotalSeat.Location = new System.Drawing.Point(130, 307);
+            this.txtTotalSeat.Name = "txtTotalSeat";
+            this.txtTotalSeat.Size = new System.Drawing.Size(114, 20);
+            this.txtTotalSeat.TabIndex = 90;
+            // 
             // UclAircraftTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.txtTotalSeats);
+            this.Controls.Add(this.txtTotalSeat);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.flatLabel21);
@@ -542,7 +541,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvAircraftTypeDetail)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalSeats)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,6 +579,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatLabel flatLabel22;
-        private System.Windows.Forms.NumericUpDown txtTotalSeats;
+        private System.Windows.Forms.TextBox txtTotalSeat;
     }
 }

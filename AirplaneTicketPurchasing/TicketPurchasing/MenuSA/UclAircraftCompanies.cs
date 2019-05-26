@@ -18,10 +18,9 @@ namespace TicketPurchasing.MenuSA
         private Database database = new Database();
         private Validation valid = new Validation();
         private Support support = new Support();
-        private const string defaultbase64string = "data:image/";
         private string base64string = "";
         private string message = "";
-        private bool isUpdate = false;
+        private bool isUpdate = false,isEnable = false;
         #endregion
         #region Constructor
         public UclAircraftCompanies()
@@ -106,6 +105,7 @@ namespace TicketPurchasing.MenuSA
             btnInsert.Visible = !value;
             btnUpdate.Visible = !value;
             btnDelete.Visible = !value;
+            isEnable = value;
             photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
         }
 
@@ -200,8 +200,7 @@ namespace TicketPurchasing.MenuSA
                 if(base64string == "")
                 {
                     byte[] image = support.imgToByteArray(photo.Image);
-                    base64string = defaultbase64string + Path.GetExtension(txtPathPhoto.Text).Remove(0, 1) +
-                        ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
+                    base64string = Class.MIME.GetMimeType(Path.GetExtension(txtPathPhoto.Text)) + ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
                 }
 
                 int x = 0;
@@ -255,7 +254,7 @@ namespace TicketPurchasing.MenuSA
 
         private void DgvCompanies_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (isUpdate)
+            if (isUpdate&&!isEnable)
             {
                 row = DgvCompanies.CurrentRow;
                 txtName.Text = row.Cells[1].Value.ToString();
