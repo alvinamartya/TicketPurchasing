@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TicketPurchasing.MenuAgency;
@@ -15,7 +16,8 @@ namespace TicketPurchasing
     {
         #region Declaration
         private Button btn;
-        Support support = new Support();
+        private Support support = new Support();
+        private Database database = new Database();
         #endregion
 
         #region Constructor
@@ -47,15 +49,28 @@ namespace TicketPurchasing
 
         private void FrmMenuAgency_Load(object sender, EventArgs e)
         {
-            lblTitle.Text = "FLIGHTSI - DASHBOARD";
+            List<Parameter> param = new List<Parameter>();
+            param.Add(new Parameter("@Username", Thread.CurrentPrincipal.Identity.Name));
+            DataSet dataProfile = database.getDataFromDatabase("sp_login_getProfile", param);
             Support.frm = this;
-            lblName.Text = Support.name;
-            lblPosition.Text = Support.role;
+            lblName.Text = dataProfile.Tables[0].Rows[0][0].ToString().ToUpper();
+            lblPosition.Text = "Agency";
+
+            lblTitle.Text = "FLIGHTSI - DASHBOARD";
             support.DragandDropForm(this);
             btn = btnDashboard;
 
             UclDashboard dashboard = new UclDashboard();
             addControltoPanel(dashboard);
+
+            // photo
+            string base64string = dataProfile.Tables[0].Rows[0][1].ToString();
+            string extension = base64string.Substring(base64string.IndexOf('/'),
+                                         base64string.IndexOf(';') - base64string.IndexOf('/'));
+            string path = base64string.Substring(base64string.IndexOf(',') + 2,
+                base64string.Length - (base64string.IndexOf(',') + 2));
+            byte[] image = Convert.FromBase64String(path);
+            photo.Image = support.byteArrayToImage(image);
         }
 
         private void btnReport_Click(object sender, EventArgs e)

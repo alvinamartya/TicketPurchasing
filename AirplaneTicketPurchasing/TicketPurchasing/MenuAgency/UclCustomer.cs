@@ -16,6 +16,9 @@ namespace TicketPurchasing.MenuAgency
         private DataGridViewRow row = null;
         private Database database = new Database();
         bool isUpdate = false;
+        bool isEditted = false;
+        private string message = "";
+        private Validation valid = new Validation();
 
         public UclCustomer()
         {
@@ -30,7 +33,7 @@ namespace TicketPurchasing.MenuAgency
             txtName.Clear();
             txtIdentity.Clear();
             txtPassport.Clear();
-            cbCountry.SelectedItem = null;
+            cbCountry.SelectedIndex = 0;
             rbFemale.Checked = false;
             rbMale.Checked = false;
             txtPhone.Clear();
@@ -43,9 +46,9 @@ namespace TicketPurchasing.MenuAgency
         {
             btnSave.Visible = value;
             btnCancel.Visible = value;
-            btnInsert.Enabled = !value;
-            btnUpdate.Enabled = !value;
-            btnDelete.Enabled = !value;
+            btnInsert.Visible = !value;
+            btnUpdate.Visible = !value;
+            btnDelete.Visible = !value;
             txtName.Enabled = value;
             txtIdentity.Enabled = value;
             txtPassport.Enabled = value;
@@ -56,6 +59,7 @@ namespace TicketPurchasing.MenuAgency
             txtPhone.Enabled = value;
             txtEmail.Enabled = value;
             txtAddress.Enabled = value;
+            isEditted = value;
         }
 
         private void createTable()
@@ -111,14 +115,16 @@ namespace TicketPurchasing.MenuAgency
 
         private void UclCustomer_Load(object sender, EventArgs e)
         {
+            clear();
             enableFrm(false);
             createTable();
             refreshDatagrid(txtSearch.Text);
+            isEditted = false;
         }
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!isUpdate)
+            if (!isUpdate && !isEditted)
             {
                 row = dgvCustomers.CurrentRow;
                 txtName.Text = row.Cells[1].Value.ToString();
@@ -138,6 +144,62 @@ namespace TicketPurchasing.MenuAgency
             }
         }
 
+        private bool validation()
+        {
+            DateTime firstDate = new DateTime(txtDate.Value.Year, txtDate.Value.Month, txtDate.Value.Day);
+            DateTime secondDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
+            bool result = false;
+            if (txtName.Text == "" || txtAddress.Text == "" ||
+                (rbMale.Checked == false && rbFemale.Checked == false)) message = "Ensure you have filled all fiels";
+            else if (!valid.regexAlphabetic(txtName.Text)) message = "Ensure name must alphabetic";
+            else if (firstDate >= secondDate) message = "Ensure date of birth must less than today";
+            else
+            {
+                result = true;
+                if(txtIdentity.Text != "")
+                {
+                    if (!valid.regexNumberic(txtIdentity.Text)) {
+                        message = "Ensure identity number must numberic";
+                        result = false;
+                    }
+                }
+                    
+                if (txtPassport.Text != "")
+                {
+                    if (!valid.regexAlphaNumberic(txtPassport.Text.ToUpper())){
+                        message = "Ensure passport number must alpha numberic";
+                        result = false;
+                    }
+                }
+                    
+                if (txtPhone.Text != "")
+                {
+                    if (!valid.regexNumberic(txtPhone.Text))
+                    {
+                        message = "Ensur phone number must numberic";
+                        result = false;
+                    }
+                    else if (txtPhone.Text.Length < 10 || txtPhone.Text.Length > 15)
+                    {
+                        message = "Ensure phone numbe must between 10 and 15";
+                        result = false;
+                    }
+                }
+
+                if(txtEmail.Text != "")
+                {
+                    if (!valid.regexEmail(txtEmail.Text))
+                    {
+                        message = "Ensur phone number must numberic";
+                        result = false;
+                    }
+
+                }   
+            }
+            return result;
+        }
+
         private void btnInsert_Click(object sender, EventArgs e)
         {
             clear();
@@ -153,56 +215,61 @@ namespace TicketPurchasing.MenuAgency
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int result = 0;
-            string process = "";
-            string gender = rbMale.Checked == true ? "M" : "F";
-            try
+            if (validation())
             {
-                if (!isUpdate)
+                int result = 0;
+                string process = "";
+                string gender = rbMale.Checked == true ? "M" : "F";
+                try
                 {
-                    List<Parameter> param = new List<Parameter>();
-                    param.Add(new Parameter("@ID", database.autoGenerateID("M", "sp_last_customers", 5)));
-                    param.Add(new Parameter("@Name", txtName.Text));
-                    param.Add(new Parameter("@IdentityNumber", txtIdentity.Text));
-                    param.Add(new Parameter("@PassportNumber", txtPassport.Text));
-                    param.Add(new Parameter("@DateofBirth", txtDate.Value.ToString("yyyy-MM-dd")));
-                    param.Add(new Parameter("@Sex", gender));
-                    param.Add(new Parameter("@Address", txtAddress.Text));
-                    param.Add(new Parameter("@TelpNumber", txtPhone.Text));
-                    param.Add(new Parameter("@Email", txtEmail.Text));
-                    param.Add(new Parameter("@Country", cbCountry.Text));
-                    result = database.executeQuery("sp_insert_customers", param, "Add");
-                    process = "Insertion";
+                    if (!isUpdate)
+                    {
+                        List<Parameter> param = new List<Parameter>();
+                        param.Add(new Parameter("@ID", database.autoGenerateID("M", "sp_last_customers", 5)));
+                        param.Add(new Parameter("@Name", txtName.Text));
+                        param.Add(new Parameter("@IdentityNumber", txtIdentity.Text));
+                        param.Add(new Parameter("@PassportNumber", txtPassport.Text));
+                        param.Add(new Parameter("@DateofBirth", txtDate.Value.ToString("yyyy-MM-dd")));
+                        param.Add(new Parameter("@Sex", gender));
+                        param.Add(new Parameter("@Address", txtAddress.Text));
+                        param.Add(new Parameter("@TelpNumber", txtPhone.Text));
+                        param.Add(new Parameter("@Email", txtEmail.Text));
+                        param.Add(new Parameter("@Country", cbCountry.Text));
+                        result = database.executeQuery("sp_insert_customers", param, "Add");
+                        process = "Insertion";
+                    }
+                    else
+                    {
+                        List<Parameter> param = new List<Parameter>();
+                        param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
+                        param.Add(new Parameter("@Name", txtName.Text));
+                        param.Add(new Parameter("@IdentityNumber", txtIdentity.Text));
+                        param.Add(new Parameter("@PassportNumber", txtPassport.Text));
+                        param.Add(new Parameter("@DateofBirth", txtDate.Value.ToString("yyyy-MM-dd")));
+                        param.Add(new Parameter("@Sex", gender));
+                        param.Add(new Parameter("@Address", txtAddress.Text));
+                        param.Add(new Parameter("@TelpNumber", txtPhone.Text));
+                        param.Add(new Parameter("@Email", txtEmail.Text));
+                        param.Add(new Parameter("@Country", cbCountry.Text));
+                        result = database.executeQuery("sp_update_customers", param, "Update");
+                        process = "Update";
+                    }
+                    if (result == 1)
+                    {
+                        MessageBox.Show(process + " successful", "Information",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clear();
+                        enableFrm(false);
+                        refreshDatagrid(null);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    List<Parameter> param = new List<Parameter>();
-                    param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
-                    param.Add(new Parameter("@Name", txtName.Text));
-                    param.Add(new Parameter("@IdentityNumber", txtIdentity.Text));
-                    param.Add(new Parameter("@PassportNumber", txtPassport.Text));
-                    param.Add(new Parameter("@DateofBirth", txtDate.Value.ToString("yyyy-MM-dd")));
-                    param.Add(new Parameter("@Sex", gender));
-                    param.Add(new Parameter("@Address", txtAddress.Text));
-                    param.Add(new Parameter("@TelpNumber", txtPhone.Text));
-                    param.Add(new Parameter("@Email", txtEmail.Text));
-                    param.Add(new Parameter("@Country", cbCountry.Text));
-                    result = database.executeQuery("sp_update_customers", param, "Update");
-                    process = "Update";
-                }
-                if (result == 1)
-                {
-                    MessageBox.Show(process + " successful", "Information",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clear();
-                    enableFrm(false);
-                    refreshDatagrid(null);
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            else
+                MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -229,6 +296,17 @@ namespace TicketPurchasing.MenuAgency
             clear();
             enableFrm(false);
             refreshDatagrid("");
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clear();
+            enableFrm(false);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            refreshDatagrid(txtSearch.Text);
         }
     }
 }

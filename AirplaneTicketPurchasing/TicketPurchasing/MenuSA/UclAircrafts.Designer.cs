@@ -71,7 +71,6 @@
             this.dgvAircrafts = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.cboType = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.flatLabel21 = new FlatUI.FlatLabel();
             this.flatLabel22 = new FlatUI.FlatLabel();
@@ -619,26 +618,13 @@
             this.cboType.Size = new System.Drawing.Size(160, 21);
             this.cboType.TabIndex = 3;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSearch.Location = new System.Drawing.Point(245, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(69, 25);
-            this.btnSearch.TabIndex = 91;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(90, 17);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(149, 20);
+            this.txtSearch.Size = new System.Drawing.Size(170, 20);
             this.txtSearch.TabIndex = 90;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // flatLabel21
             // 
@@ -741,7 +727,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.flatLabel21);
             this.Controls.Add(this.flatLabel22);
@@ -822,7 +807,6 @@
         private System.Windows.Forms.Button btnInsertDetail;
         private FlatUI.FlatLabel flatLabel15;
         private System.Windows.Forms.NumericUpDown txtPrice;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatLabel flatLabel22;

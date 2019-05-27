@@ -33,21 +33,21 @@
             this.pnlNavbar = new System.Windows.Forms.Panel();
             this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.foto = new System.Windows.Forms.PictureBox();
+            this.lblPosition = new FlatUI.FlatLabel();
+            this.lblName = new FlatUI.FlatLabel();
+            this.photo = new System.Windows.Forms.PictureBox();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnManageCustomer = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnTransac = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnTransac = new System.Windows.Forms.Button();
-            this.lblPosition = new FlatUI.FlatLabel();
-            this.lblName = new FlatUI.FlatLabel();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatClose1 = new FlatUI.FlatClose();
             this.lblTitle = new FlatUI.FlatLabel();
             this.pnlNavbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,7 +70,7 @@
             this.pnlNavbar.Controls.Add(this.btnLogout);
             this.pnlNavbar.Controls.Add(this.lblPosition);
             this.pnlNavbar.Controls.Add(this.lblName);
-            this.pnlNavbar.Controls.Add(this.foto);
+            this.pnlNavbar.Controls.Add(this.photo);
             this.pnlNavbar.Controls.Add(this.btnReport);
             this.pnlNavbar.Controls.Add(this.btnManageCustomer);
             this.pnlNavbar.Controls.Add(this.btnDashboard);
@@ -103,15 +103,37 @@
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // foto
+            // lblPosition
             // 
-            this.foto.Image = ((System.Drawing.Image)(resources.GetObject("foto.Image")));
-            this.foto.Location = new System.Drawing.Point(19, 10);
-            this.foto.Name = "foto";
-            this.foto.Size = new System.Drawing.Size(133, 115);
-            this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.foto.TabIndex = 0;
-            this.foto.TabStop = false;
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblPosition.Location = new System.Drawing.Point(12, 153);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(152, 18);
+            this.lblPosition.TabIndex = 10;
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblName.Location = new System.Drawing.Point(12, 135);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(152, 18);
+            this.lblName.TabIndex = 9;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // photo
+            // 
+            this.photo.Image = ((System.Drawing.Image)(resources.GetObject("photo.Image")));
+            this.photo.Location = new System.Drawing.Point(19, 10);
+            this.photo.Name = "photo";
+            this.photo.Size = new System.Drawing.Size(133, 115);
+            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.photo.TabIndex = 0;
+            this.photo.TabStop = false;
             // 
             // btnReport
             // 
@@ -155,6 +177,20 @@
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
+            // btnTransac
+            // 
+            this.btnTransac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnTransac.FlatAppearance.BorderSize = 0;
+            this.btnTransac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTransac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnTransac.Location = new System.Drawing.Point(0, 238);
+            this.btnTransac.Name = "btnTransac";
+            this.btnTransac.Size = new System.Drawing.Size(170, 37);
+            this.btnTransac.TabIndex = 14;
+            this.btnTransac.Text = "Transaction";
+            this.btnTransac.UseVisualStyleBackColor = false;
+            this.btnTransac.Click += new System.EventHandler(this.btnTransaction_Click);
+            // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
@@ -188,42 +224,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnTransac
-            // 
-            this.btnTransac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.btnTransac.FlatAppearance.BorderSize = 0;
-            this.btnTransac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTransac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnTransac.Location = new System.Drawing.Point(0, 238);
-            this.btnTransac.Name = "btnTransac";
-            this.btnTransac.Size = new System.Drawing.Size(170, 37);
-            this.btnTransac.TabIndex = 14;
-            this.btnTransac.Text = "Transaction";
-            this.btnTransac.UseVisualStyleBackColor = false;
-            this.btnTransac.Click += new System.EventHandler(this.btnTransaction_Click);
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblPosition.Location = new System.Drawing.Point(12, 153);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(152, 18);
-            this.lblPosition.TabIndex = 10;
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblName.Location = new System.Drawing.Point(12, 135);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(152, 18);
-            this.lblName.TabIndex = 9;
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flatMini1
             // 
@@ -277,7 +277,7 @@
             this.Text = "FrmMenuAgency";
             this.Load += new System.EventHandler(this.FrmMenuAgency_Load);
             this.pnlNavbar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -290,7 +290,7 @@
         private System.Windows.Forms.Panel pnlNavbar;
         private FlatUI.FlatLabel lblPosition;
         private FlatUI.FlatLabel lblName;
-        private System.Windows.Forms.PictureBox foto;
+        private System.Windows.Forms.PictureBox photo;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnManageCustomer;
         private System.Windows.Forms.Button btnDashboard;

@@ -337,12 +337,6 @@ namespace TicketPurchasing.MenuSA
 
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            refreshDatagridAircrafts(txtSearch.Text);
-        }
-
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
             clear();
@@ -417,6 +411,11 @@ namespace TicketPurchasing.MenuSA
         private void btnSaveDetails_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            refreshDatagridAircrafts(txtSearch.Text);
         }
 
         private void dgvAircraftAmenities_CellClick(object sender, DataGridViewCellEventArgs e)

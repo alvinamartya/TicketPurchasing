@@ -7,14 +7,14 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace TicketPurchasing
 {
     class Support
     {
         // general variables
-        public static string role = "";
-        public static string name = "";
         public static Form frm;
         #region Design Form
         #region Declaration
@@ -147,7 +147,6 @@ namespace TicketPurchasing
             Image returnImage = Image.FromStream(ms);
             return returnImage;
         }
-
         #endregion
         #endregion
     }

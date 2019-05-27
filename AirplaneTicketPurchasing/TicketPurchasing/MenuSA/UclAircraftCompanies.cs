@@ -90,6 +90,7 @@ namespace TicketPurchasing.MenuSA
             base64string = "";
             isUpdate = true;
             row = null;
+            photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
         }
 
         // enable and disable form
@@ -106,14 +107,13 @@ namespace TicketPurchasing.MenuSA
             btnUpdate.Visible = !value;
             btnDelete.Visible = !value;
             isEnable = value;
-            photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
         }
 
         private bool validation()
         {
             bool result = false;
             if (txtName.Text == "" || txtPhone.Text == "" || txtCompanyCode.Text == "" || txtAddress.Text == "" ||
-                txtPathPhoto.Text == "" || txtPathPhoto.Text == "") message = "Ensure you have filled all fields";
+                txtPathPhoto.Text == "") message = "Ensure you have filled all fields";
             else if (!valid.regexAlphabetic(txtName.Text)) message = "Ensure name must alphabetic";
             else if (!valid.regexAlphabetic(txtCompanyCode.Text)) message = "Ensure IATA must alphabetic";
             else if (!valid.regexNumberic(txtPhone.Text)) message = "Ensure telp number must numberic";
@@ -274,10 +274,11 @@ namespace TicketPurchasing.MenuSA
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             refreshDatagrid(txtSearch.Text);
         }
+        
         #endregion
     }
 }

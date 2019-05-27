@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Threading;
 
 namespace TicketPurchasing
 {
@@ -25,6 +26,8 @@ namespace TicketPurchasing
         private string connectionString = ConfigurationManager.ConnectionStrings["TicketPurchasing"].ConnectionString;
         private SqlConnection sqlCon;
         private OpenFileDialog pathDialog = new OpenFileDialog();
+        private string message = "";
+        private string role = "";
         #endregion
 
         #region Constructor
@@ -47,15 +50,11 @@ namespace TicketPurchasing
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            refreshDatagrid(txsSearch.Text);
-        }
-
         private void UclEmployees_Load(object sender, EventArgs e)
         {
             clear();
-            if (Support.role.Equals("Admin"))
+            role = getRole(Thread.CurrentPrincipal.Identity.Name);
+            if (role.Equals("Admin"))
             {
                 flatLabel14.Visible = false;
                 flatLabel13.Visible = false;
@@ -118,67 +117,93 @@ namespace TicketPurchasing
             }
         }
 
+        private void txsSearch_TextChanged(object sender, EventArgs e)
+        {
+            refreshDatagrid(txsSearch.Text);
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            int result = 0;
-            string process = "";
-            string gender = rbMale.Checked == true ? "M" : "F";
-            if (base64string == "" && photo.Image != null)
+            if (validation())
             {
-                byte[] image = support.imgToByteArray(photo.Image);
-                base64string = Class.MIME.GetMimeType(Path.GetExtension(txtPhoto.Text)) +
-                    ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
-            }
+                int result = 0;
+                string process = "";
+                string gender = rbMale.Checked == true ? "M" : "F";
+                if (base64string == "" && photo.Image != null)
+                {
+                    byte[] image = support.imgToByteArray(photo.Image);
+                    base64string = Class.MIME.GetMimeType(Path.GetExtension(txtPhoto.Text)) +
+                        ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
+                }
 
-            try
-            {
-                if (!isUpdate)
+                try
                 {
-                    List<Parameter> param = new List<Parameter>();
-                    param.Add(new Parameter("@ID", database.autoGenerateID("E", "sp_last_employees", 5)));
-                    param.Add(new Parameter("@Name", txtName.Text));
-                    param.Add(new Parameter("@Username", txtUsername.Text));
-                    param.Add(new Parameter("@Password", txtPassword.Text));
-                    param.Add(new Parameter("@Photo", base64string));
-                    param.Add(new Parameter("@DateofBirth", txtDateofBirth.Value.ToString("yyyy-MM-dd")));
-                    param.Add(new Parameter("@Sex", gender));
-                    param.Add(new Parameter("@Address", txtAddress.Text));
-                    param.Add(new Parameter("@TelpNumber", txtPhoneNumber.Text));
-                    param.Add(new Parameter("@Role", cboRole.SelectedItem.ToString().ToLower()));
-                    param.Add(new Parameter("@Status", "A"));
-                    result = database.executeQuery("sp_insert_employee", param, "Add");
-                    process = "Insertion";
+                    if (!isUpdate)
+                    {
+                        List<Parameter> param = new List<Parameter>();
+                        param.Add(new Parameter("@ID", database.autoGenerateID("E", "sp_last_employees", 5)));
+                        param.Add(new Parameter("@Name", txtName.Text));
+                        param.Add(new Parameter("@Username", txtUsername.Text));
+                        param.Add(new Parameter("@Password", txtPassword.Text));
+                        param.Add(new Parameter("@Photo", base64string));
+                        param.Add(new Parameter("@DateofBirth", txtDateofBirth.Value.ToString("yyyy-MM-dd")));
+                        param.Add(new Parameter("@Sex", gender));
+                        param.Add(new Parameter("@Address", txtAddress.Text));
+                        param.Add(new Parameter("@TelpNumber", txtPhoneNumber.Text));
+                        param.Add(new Parameter("@Role", cboRole.SelectedItem.ToString().ToLower()));
+                        param.Add(new Parameter("@Status", "A"));
+                        result = database.executeQuery("sp_insert_employee", param, "Add");
+                        process = "Insertion";
+                    }
+                    else
+                    {
+                        List<Parameter> param = new List<Parameter>();
+                        param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
+                        param.Add(new Parameter("@Name", txtName.Text));
+                        param.Add(new Parameter("@Username", txtUsername.Text));
+                        param.Add(new Parameter("@Password", txtPassword.Text));
+                        param.Add(new Parameter("@Photo", base64string));
+                        param.Add(new Parameter("@DateofBirth", txtDateofBirth.Value.ToString("yyyy-MM-dd")));
+                        param.Add(new Parameter("@Sex", gender));
+                        param.Add(new Parameter("@Address", txtAddress.Text));
+                        param.Add(new Parameter("@TelpNumber", txtPhoneNumber.Text));
+                        param.Add(new Parameter("@Role", cboRole.SelectedItem.ToString().ToLower()));
+                        param.Add(new Parameter("@Status", "A"));
+                        result = database.executeQuery("sp_update_employees", param, "Update");
+                        process = "Update";
+                    }
+                    if (result == 1)
+                    {
+                        MessageBox.Show(process + " successful", "Information",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clear();
+                        enableFrm(false);
+                        refreshDatagrid("");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    List<Parameter> param = new List<Parameter>();
-                    param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
-                    param.Add(new Parameter("@Name", txtName.Text));
-                    param.Add(new Parameter("@Username", txtUsername.Text));
-                    param.Add(new Parameter("@Password", txtPassword.Text));
-                    param.Add(new Parameter("@Photo", base64string));
-                    param.Add(new Parameter("@DateofBirth", txtDateofBirth.Value.ToString("yyyy-MM-dd")));
-                    param.Add(new Parameter("@Sex", gender));
-                    param.Add(new Parameter("@Address", txtAddress.Text));
-                    param.Add(new Parameter("@TelpNumber", txtPhoneNumber.Text));
-                    param.Add(new Parameter("@Role", cboRole.SelectedItem.ToString().ToLower()));
-                    param.Add(new Parameter("@Status", "A"));
-                    result = database.executeQuery("sp_update_employees", param, "Update");
-                    process = "Update";
-                }
-                if (result == 1)
-                {
-                    MessageBox.Show(process + " successful", "Information",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clear();
-                    enableFrm(false);
-                    refreshDatagrid("");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            else
+                MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+        }
+
+        private bool validation()
+        {
+            bool result = false;
+            if (txtName.Text == "" || txtPhoneNumber.Text == "" ||
+                txtAddress.Text == "" || txtUsername.Text == "" ||
+                txtPassword.Text == "" || txtPhoto.Text == "" ||
+                (rbMale.Checked == false && rbFemale.Checked == false)) message = "Ensure you have filled all fiels";
+            else if (!valid.regexAlphabetic(txtName.Text)) message = "Ensure name must alphabetic";
+            else if (!valid.regexAddress(txtAddress.Text)) message = "Ensure address must alphabetic, numberic, and point symbol";
+            else if (!valid.regexPassword(txtPassword.Text)) message = "Ensure password must cosists of upper case, lower case and numberic";
+            else if ((DateTime.Now.Year - txtDateofBirth.Value.Year) < 17) message = "Ensure your age must bigger than 17 years old";
+            else result = true;
+            return result;
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -298,9 +323,9 @@ namespace TicketPurchasing
         private void refreshDatagrid(string search)
         {
             DgvEmployees.Rows.Clear();
-            string role = Support.role.ToLower().Replace(" ", "");
+            string dataRole = role == "admin" ? "admin" : "sa";
             List<Parameter> param = new List<Parameter>();
-            param.Add(new Parameter("@Role", role));
+            param.Add(new Parameter("@Role", dataRole));
             DataSet data = database.getDataFromDatabase("sp_view_employees",param);
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
                 dataRow => new
@@ -320,8 +345,8 @@ namespace TicketPurchasing
             if (search != "")
             {
                 convertDataSetToList = convertDataSetToList.Where(x => x.Name.Contains(search) || x.Username.Contains(search) ||
-                x.DateofBirth.ToString().Contains(search) || x.Sex.Contains(search) || x.Address.Contains(search) ||
-                x.TelpNumber.Contains(search)).ToList();
+                x.DateofBirth.ToString().Contains(search) || x.Address.Contains(search) ||
+                x.TelpNumber.Contains(search) || x.Role.Contains(search)).ToList();
             }
 
             foreach (var item in convertDataSetToList)
@@ -331,6 +356,25 @@ namespace TicketPurchasing
                     item.DateofBirth.ToString("dd-MM-yyyy"), sex, item.Address, item.TelpNumber, item.Role, item.Photo);
             }
         }
+
+        private string getRole(string username)
+        {
+            string result = "";
+            try
+            {
+                List<Parameter> param = new List<Parameter>();
+                param.Add(new Parameter("@Username", username));
+                DataSet data = database.getDataFromDatabase("sp_login_getrole", param);
+                result = data.Tables[0].Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
+        }
         #endregion
+
+
     }
 }

@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,12 +14,13 @@ namespace TicketPurchasing
 {
     public partial class FrmLogin : Form
     {
-        #region declaration
+        #region Declaration
         private string username = "";
         private bool filledUsername = false;
         private string password = "";
         private bool filledPassword = false;
-        Support support = new Support();
+        private Support support = new Support();
+        private Database database = new Database();
         #endregion
         #region Constructor
         public FrmLogin()
@@ -89,32 +92,79 @@ namespace TicketPurchasing
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Support.name = "Alvin Amartya Azro";
-            if (username.Equals("sa") && password.Equals("sa"))
+            if (isAuthentic(txtUsername.Text, txtPassword.Text))
             {
-                Support.role = "Super Admin";
-                FrmMenuAdmin menuAdmin = new FrmMenuAdmin();
-                menuAdmin.Show();
+                GenericIdentity myIdentity = new GenericIdentity(txtUsername.Text);
+                DataSet getAllRoles = database.getDataFromDatabase("sp_login_getallroles", null);
+                string[] myRole = new string[getAllRoles.Tables[0].Rows.Count];
+                for(int i =0; i< getAllRoles.Tables[0].Rows.Count; i++)
+                {
+                    myRole[i] = getAllRoles.Tables[0].Rows[i][0].ToString();
+                }
+
+                // membuat generic principal
+                GenericPrincipal myPrincipal = new GenericPrincipal(myIdentity, myRole);
+
+                // simpan dalam thread principal
+                Thread.CurrentPrincipal = myPrincipal;
+                string role = getRole(txtUsername.Text);
+
+                if(role == "sa")
+                {
+                    FrmMenuAdmin menuAdmin = new FrmMenuAdmin();
+                    menuAdmin.Show();
+                }
+                else if(role == "admin")
+                {
+                    FrmMenuAdmin menuAdmin = new FrmMenuAdmin();
+                    menuAdmin.Show();
+                }
+                else
+                {
+                    FrmMenuAgency menuAgency = new FrmMenuAgency();
+                    menuAgency.Show();
+                }
                 this.Hide();
             }
-            else if (username.Equals("admin") && password.Equals("admin"))
+        }
+
+        private bool isAuthentic(string username, string password)
+        {
+            bool autentik = false;
+
+            try
             {
-                Support.role = "Admin";
-                FrmMenuAdmin menuAdmin = new FrmMenuAdmin();
-                menuAdmin.Show();
-                this.Hide();
+                List<Parameter> param = new List<Parameter>();
+                param.Add(new Parameter("@Username", username));
+                DataSet ds = database.getDataFromDatabase("sp_login_authentication", param);
+                if (ds.Tables[0].Rows[0][0].ToString() != password)
+                    MessageBox.Show("Your password incorrect", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else autentik = true;
             }
-            else if (username.Equals("agency") && password.Equals("agency"))
+            catch (Exception ex)
             {
-                Support.role = "Agency";
-                FrmMenuAgency menuAgency = new FrmMenuAgency();
-                menuAgency.Show();
-                this.Hide();
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Your username incorrect", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
+
+            return autentik;
+        }
+
+        private string getRole(string username)
+        {
+            string result = "";
+            try
             {
-                MessageBox.Show("Username or password wrong", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                List<Parameter> param = new List<Parameter>();
+                param.Add(new Parameter("@Username", username));
+                DataSet data = database.getDataFromDatabase("sp_login_getrole",param);
+                result = data.Tables[0].Rows[0][0].ToString();
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return result;
         }
         #endregion
     }

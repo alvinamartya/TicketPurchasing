@@ -142,11 +142,7 @@ namespace TicketPurchasing.MenuSA
                 cboUnit.SelectedItem = row.Cells[3].Value.ToString();
             }
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            refreshDatagrid(txtSearch.Text);
-        }
+        
         #endregion
 
         #region method
@@ -212,6 +208,11 @@ namespace TicketPurchasing.MenuSA
             {
                 DgvAmenities.Rows.Add(item.ID, item.Name, item.Qty, item.Unit);
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            refreshDatagrid(txtSearch.Text);
         }
 
         private bool validation()
