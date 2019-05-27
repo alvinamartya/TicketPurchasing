@@ -32,6 +32,8 @@ namespace TicketPurchasing.MenuSA
             cbCountry.SelectedItem = null;
             txtName.Text = null;
             txtSearch.Text = null;
+            isUpdate = false;
+            if (isInserting) isInserting = false;
         }
 
         private void enableFrm(bool value)
@@ -93,7 +95,6 @@ namespace TicketPurchasing.MenuSA
         private void btnInsert_Click(object sender, EventArgs e)
         {
             clear();
-            isUpdate = false;
             isInserting = true;
             enableFrm(true);
         }

@@ -41,8 +41,8 @@ namespace TicketPurchasing.MenuAgency
 
         private void enableFrm(bool value)
         {
-            btnSave.Enabled = value;
-            btnCancel.Enabled = value;
+            btnSave.Visible = value;
+            btnCancel.Visible = value;
             btnInsert.Enabled = !value;
             btnUpdate.Enabled = !value;
             btnDelete.Enabled = !value;
