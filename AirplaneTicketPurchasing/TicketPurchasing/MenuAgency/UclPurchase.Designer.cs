@@ -374,7 +374,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(619, 8);
+            this.button2.Location = new System.Drawing.Point(619, 10);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 28);
             this.button2.TabIndex = 83;
@@ -387,7 +387,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(705, 8);
+            this.button1.Location = new System.Drawing.Point(705, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 28);
             this.button1.TabIndex = 81;

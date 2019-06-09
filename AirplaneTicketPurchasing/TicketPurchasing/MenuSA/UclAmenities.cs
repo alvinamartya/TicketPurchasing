@@ -219,7 +219,7 @@ namespace TicketPurchasing.MenuSA
         {
             bool result = false;
             if (txtName.Text == "" || txtQty.Value == 0) message = "Ensure you have filled all fields";
-            else if (!valid.regexAlphabetic(txtName.Text)) message = "Ensure name must alphabetic";
+            else if (!valid.regexAlphaNumberic(txtName.Text)) message = "Ensure name must alpha numberic";
             else if (txtQty.Value < 0) message = "Ensure qty must bigger than now";
             else result = true;
             return result;

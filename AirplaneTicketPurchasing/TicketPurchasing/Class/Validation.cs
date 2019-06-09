@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace TicketPurchasing
 {
@@ -55,6 +58,20 @@ namespace TicketPurchasing
             Regex regex = new Regex("^[A-Za-z0-9._ ]+[@][A-Za-z0-9._ ]+[.][A-Za-z0-9._ ]+$");
             if (regex.IsMatch(input)) return true;
             return false;
+        }
+
+        public bool validateImage(string path)
+        {
+            try
+            {
+                Image img = Image.FromFile(path);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                Console.Write(ex.Message);
+                return false;
+            }
         }
     }
 }

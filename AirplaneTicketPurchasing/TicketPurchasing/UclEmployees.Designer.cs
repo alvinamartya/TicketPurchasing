@@ -483,9 +483,9 @@
             this.flatLabel8.ForeColor = System.Drawing.Color.White;
             this.flatLabel8.Location = new System.Drawing.Point(59, 291);
             this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(28, 17);
+            this.flatLabel8.Size = new System.Drawing.Size(51, 17);
             this.flatLabel8.TabIndex = 38;
-            this.flatLabel8.Text = "Sex";
+            this.flatLabel8.Text = "Gender";
             // 
             // flatLabel5
             // 

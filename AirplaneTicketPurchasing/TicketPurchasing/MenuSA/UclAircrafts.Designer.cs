@@ -28,45 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnCancelAmenities = new System.Windows.Forms.Button();
             this.btnSaveAmenities = new System.Windows.Forms.Button();
             this.btnDeleteAmenities = new System.Windows.Forms.Button();
             this.dgvAircraftAmenities = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.flatLabel19 = new FlatUI.FlatLabel();
-            this.flatLabel20 = new FlatUI.FlatLabel();
             this.cboAmenities = new System.Windows.Forms.ComboBox();
             this.btnInsertAmenities = new System.Windows.Forms.Button();
             this.btnCancelDetails = new System.Windows.Forms.Button();
             this.dgvAircraftDetails = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnSaveDetails = new System.Windows.Forms.Button();
-            this.flatLabel18 = new FlatUI.FlatLabel();
             this.btnDeleteDetails = new System.Windows.Forms.Button();
-            this.flatLabel17 = new FlatUI.FlatLabel();
-            this.flatLabel8 = new FlatUI.FlatLabel();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
             this.cboCabinType = new System.Windows.Forms.ComboBox();
-            this.flatLabel7 = new FlatUI.FlatLabel();
-            this.flatLabel16 = new FlatUI.FlatLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.flatLabel10 = new FlatUI.FlatLabel();
-            this.flatLabel15 = new FlatUI.FlatLabel();
-            this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.btnInsertDetail = new System.Windows.Forms.Button();
-            this.flatLabel9 = new FlatUI.FlatLabel();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.txtName = new System.Windows.Forms.TextBox();
             this.dgvAircrafts = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.cboCompany = new System.Windows.Forms.ComboBox();
@@ -76,16 +65,25 @@
             this.flatLabel22 = new FlatUI.FlatLabel();
             this.flatLabel11 = new FlatUI.FlatLabel();
             this.flatLabel12 = new FlatUI.FlatLabel();
+            this.flatLabel19 = new FlatUI.FlatLabel();
+            this.flatLabel20 = new FlatUI.FlatLabel();
+            this.flatLabel18 = new FlatUI.FlatLabel();
+            this.flatLabel17 = new FlatUI.FlatLabel();
+            this.flatLabel8 = new FlatUI.FlatLabel();
+            this.flatLabel7 = new FlatUI.FlatLabel();
+            this.flatLabel16 = new FlatUI.FlatLabel();
+            this.flatLabel10 = new FlatUI.FlatLabel();
+            this.flatLabel15 = new FlatUI.FlatLabel();
+            this.flatLabel9 = new FlatUI.FlatLabel();
             this.flatLabel5 = new FlatUI.FlatLabel();
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAircraftAmenities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAircraftDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAircrafts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,6 +113,7 @@
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -128,6 +127,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -159,6 +159,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btnCancelDetails);
             this.groupBox1.Controls.Add(this.dgvAircraftDetails);
@@ -174,10 +175,8 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.flatLabel10);
             this.groupBox1.Controls.Add(this.flatLabel15);
-            this.groupBox1.Controls.Add(this.txtPrice);
             this.groupBox1.Controls.Add(this.btnInsertDetail);
             this.groupBox1.Controls.Add(this.flatLabel9);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(308, 220);
             this.groupBox1.Name = "groupBox1";
@@ -186,6 +185,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Aircraft Details";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(343, 45);
+            this.txtPrice.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(120, 20);
+            this.txtPrice.TabIndex = 9;
+            this.txtPrice.ThousandsSeparator = true;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // groupBox3
             // 
@@ -246,60 +259,39 @@
             this.btnDeleteAmenities.TabIndex = 4;
             this.btnDeleteAmenities.Text = "Delete";
             this.btnDeleteAmenities.UseVisualStyleBackColor = false;
+            this.btnDeleteAmenities.Click += new System.EventHandler(this.btnDeleteAmenities_Click);
             // 
             // dgvAircraftAmenities
             // 
             this.dgvAircraftAmenities.AllowUserToAddRows = false;
             this.dgvAircraftAmenities.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvAircraftAmenities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAircraftAmenities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAircraftAmenities.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvAircraftAmenities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAircraftAmenities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAircraftAmenities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAircraftAmenities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAircraftAmenities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAircraftAmenities.DoubleBuffered = true;
             this.dgvAircraftAmenities.EnableHeadersVisualStyles = false;
             this.dgvAircraftAmenities.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.dgvAircraftAmenities.HeaderForeColor = System.Drawing.Color.SeaGreen;
             this.dgvAircraftAmenities.Location = new System.Drawing.Point(8, 18);
+            this.dgvAircraftAmenities.MultiSelect = false;
             this.dgvAircraftAmenities.Name = "dgvAircraftAmenities";
             this.dgvAircraftAmenities.ReadOnly = true;
             this.dgvAircraftAmenities.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvAircraftAmenities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAircraftAmenities.Size = new System.Drawing.Size(225, 79);
             this.dgvAircraftAmenities.TabIndex = 0;
             this.dgvAircraftAmenities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAircraftAmenities_CellClick);
-            // 
-            // flatLabel19
-            // 
-            this.flatLabel19.AutoSize = true;
-            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(237, 18);
-            this.flatLabel19.Name = "flatLabel19";
-            this.flatLabel19.Size = new System.Drawing.Size(64, 17);
-            this.flatLabel19.TabIndex = 1;
-            this.flatLabel19.Text = "Amenities";
-            // 
-            // flatLabel20
-            // 
-            this.flatLabel20.AutoSize = true;
-            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel20.ForeColor = System.Drawing.Color.White;
-            this.flatLabel20.Location = new System.Drawing.Point(324, 18);
-            this.flatLabel20.Name = "flatLabel20";
-            this.flatLabel20.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel20.TabIndex = 2;
-            this.flatLabel20.Text = ":";
             // 
             // cboAmenities
             // 
@@ -342,30 +334,33 @@
             // 
             this.dgvAircraftDetails.AllowUserToAddRows = false;
             this.dgvAircraftDetails.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvAircraftDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAircraftDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAircraftDetails.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvAircraftDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAircraftDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAircraftDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAircraftDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAircraftDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAircraftDetails.DoubleBuffered = true;
             this.dgvAircraftDetails.EnableHeadersVisualStyles = false;
             this.dgvAircraftDetails.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.dgvAircraftDetails.HeaderForeColor = System.Drawing.Color.SeaGreen;
             this.dgvAircraftDetails.Location = new System.Drawing.Point(8, 18);
+            this.dgvAircraftDetails.MultiSelect = false;
             this.dgvAircraftDetails.Name = "dgvAircraftDetails";
             this.dgvAircraftDetails.ReadOnly = true;
             this.dgvAircraftDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvAircraftDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAircraftDetails.Size = new System.Drawing.Size(225, 94);
             this.dgvAircraftDetails.TabIndex = 0;
+            this.dgvAircraftDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAircraftDetails_CellClick);
             // 
             // btnSaveDetails
             // 
@@ -381,18 +376,6 @@
             this.btnSaveDetails.UseVisualStyleBackColor = false;
             this.btnSaveDetails.Click += new System.EventHandler(this.btnSaveDetails_Click);
             // 
-            // flatLabel18
-            // 
-            this.flatLabel18.AutoSize = true;
-            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel18.ForeColor = System.Drawing.Color.White;
-            this.flatLabel18.Location = new System.Drawing.Point(237, 18);
-            this.flatLabel18.Name = "flatLabel18";
-            this.flatLabel18.Size = new System.Drawing.Size(72, 17);
-            this.flatLabel18.TabIndex = 1;
-            this.flatLabel18.Text = "Cabin Type";
-            // 
             // btnDeleteDetails
             // 
             this.btnDeleteDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
@@ -405,30 +388,7 @@
             this.btnDeleteDetails.TabIndex = 5;
             this.btnDeleteDetails.Text = "Delete";
             this.btnDeleteDetails.UseVisualStyleBackColor = false;
-            // 
-            // flatLabel17
-            // 
-            this.flatLabel17.AutoSize = true;
-            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel17.ForeColor = System.Drawing.Color.White;
-            this.flatLabel17.Location = new System.Drawing.Point(324, 18);
-            this.flatLabel17.Name = "flatLabel17";
-            this.flatLabel17.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel17.TabIndex = 2;
-            this.flatLabel17.Text = ":";
-            // 
-            // flatLabel8
-            // 
-            this.flatLabel8.AutoSize = true;
-            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel8.ForeColor = System.Drawing.Color.White;
-            this.flatLabel8.Location = new System.Drawing.Point(237, 18);
-            this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(72, 17);
-            this.flatLabel8.TabIndex = 1;
-            this.flatLabel8.Text = "Cabin Type";
+            this.btnDeleteDetails.Click += new System.EventHandler(this.btnDeleteDetails_Click);
             // 
             // btnUpdateDetails
             // 
@@ -457,30 +417,6 @@
             this.cboCabinType.Size = new System.Drawing.Size(120, 21);
             this.cboCabinType.TabIndex = 1;
             // 
-            // flatLabel7
-            // 
-            this.flatLabel7.AutoSize = true;
-            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(324, 18);
-            this.flatLabel7.Name = "flatLabel7";
-            this.flatLabel7.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel7.TabIndex = 2;
-            this.flatLabel7.Text = ":";
-            // 
-            // flatLabel16
-            // 
-            this.flatLabel16.AutoSize = true;
-            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(237, 44);
-            this.flatLabel16.Name = "flatLabel16";
-            this.flatLabel16.Size = new System.Drawing.Size(36, 17);
-            this.flatLabel16.TabIndex = 4;
-            this.flatLabel16.Text = "Price";
-            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -489,42 +425,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 1;
-            // 
-            // flatLabel10
-            // 
-            this.flatLabel10.AutoSize = true;
-            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(237, 44);
-            this.flatLabel10.Name = "flatLabel10";
-            this.flatLabel10.Size = new System.Drawing.Size(36, 17);
-            this.flatLabel10.TabIndex = 4;
-            this.flatLabel10.Text = "Price";
-            // 
-            // flatLabel15
-            // 
-            this.flatLabel15.AutoSize = true;
-            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(324, 44);
-            this.flatLabel15.Name = "flatLabel15";
-            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel15.TabIndex = 5;
-            this.flatLabel15.Text = ":";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(342, 45);
-            this.txtPrice.Maximum = new decimal(new int[] {
-            276447232,
-            23283,
-            0,
-            0});
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(120, 20);
-            this.txtPrice.TabIndex = 2;
             // 
             // btnInsertDetail
             // 
@@ -540,30 +440,6 @@
             this.btnInsertDetail.UseVisualStyleBackColor = false;
             this.btnInsertDetail.Click += new System.EventHandler(this.btnInsertDetail_Click);
             // 
-            // flatLabel9
-            // 
-            this.flatLabel9.AutoSize = true;
-            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(324, 44);
-            this.flatLabel9.Name = "flatLabel9";
-            this.flatLabel9.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel9.TabIndex = 5;
-            this.flatLabel9.Text = ":";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(342, 45);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            276447232,
-            23283,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown2.TabIndex = 2;
-            // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(133, 229);
@@ -575,30 +451,33 @@
             // 
             this.dgvAircrafts.AllowUserToAddRows = false;
             this.dgvAircrafts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvAircrafts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAircrafts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvAircrafts.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvAircrafts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAircrafts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAircrafts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAircrafts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvAircrafts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAircrafts.DoubleBuffered = true;
             this.dgvAircrafts.EnableHeadersVisualStyles = false;
             this.dgvAircrafts.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.dgvAircrafts.HeaderForeColor = System.Drawing.Color.SeaGreen;
             this.dgvAircrafts.Location = new System.Drawing.Point(25, 46);
+            this.dgvAircrafts.MultiSelect = false;
             this.dgvAircrafts.Name = "dgvAircrafts";
             this.dgvAircrafts.ReadOnly = true;
             this.dgvAircrafts.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvAircrafts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAircrafts.Size = new System.Drawing.Size(765, 168);
             this.dgvAircrafts.TabIndex = 60;
+            this.dgvAircrafts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAircrafts_CellClick);
             // 
             // cboCompany
             // 
@@ -673,6 +552,126 @@
             this.flatLabel12.Size = new System.Drawing.Size(35, 17);
             this.flatLabel12.TabIndex = 12;
             this.flatLabel12.Text = "Type";
+            // 
+            // flatLabel19
+            // 
+            this.flatLabel19.AutoSize = true;
+            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel19.ForeColor = System.Drawing.Color.White;
+            this.flatLabel19.Location = new System.Drawing.Point(237, 18);
+            this.flatLabel19.Name = "flatLabel19";
+            this.flatLabel19.Size = new System.Drawing.Size(64, 17);
+            this.flatLabel19.TabIndex = 1;
+            this.flatLabel19.Text = "Amenities";
+            // 
+            // flatLabel20
+            // 
+            this.flatLabel20.AutoSize = true;
+            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel20.ForeColor = System.Drawing.Color.White;
+            this.flatLabel20.Location = new System.Drawing.Point(324, 18);
+            this.flatLabel20.Name = "flatLabel20";
+            this.flatLabel20.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel20.TabIndex = 2;
+            this.flatLabel20.Text = ":";
+            // 
+            // flatLabel18
+            // 
+            this.flatLabel18.AutoSize = true;
+            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel18.ForeColor = System.Drawing.Color.White;
+            this.flatLabel18.Location = new System.Drawing.Point(237, 18);
+            this.flatLabel18.Name = "flatLabel18";
+            this.flatLabel18.Size = new System.Drawing.Size(72, 17);
+            this.flatLabel18.TabIndex = 1;
+            this.flatLabel18.Text = "Cabin Type";
+            // 
+            // flatLabel17
+            // 
+            this.flatLabel17.AutoSize = true;
+            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel17.ForeColor = System.Drawing.Color.White;
+            this.flatLabel17.Location = new System.Drawing.Point(324, 18);
+            this.flatLabel17.Name = "flatLabel17";
+            this.flatLabel17.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel17.TabIndex = 2;
+            this.flatLabel17.Text = ":";
+            // 
+            // flatLabel8
+            // 
+            this.flatLabel8.AutoSize = true;
+            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel8.ForeColor = System.Drawing.Color.White;
+            this.flatLabel8.Location = new System.Drawing.Point(237, 18);
+            this.flatLabel8.Name = "flatLabel8";
+            this.flatLabel8.Size = new System.Drawing.Size(72, 17);
+            this.flatLabel8.TabIndex = 1;
+            this.flatLabel8.Text = "Cabin Type";
+            // 
+            // flatLabel7
+            // 
+            this.flatLabel7.AutoSize = true;
+            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
+            this.flatLabel7.Location = new System.Drawing.Point(324, 18);
+            this.flatLabel7.Name = "flatLabel7";
+            this.flatLabel7.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel7.TabIndex = 2;
+            this.flatLabel7.Text = ":";
+            // 
+            // flatLabel16
+            // 
+            this.flatLabel16.AutoSize = true;
+            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel16.ForeColor = System.Drawing.Color.White;
+            this.flatLabel16.Location = new System.Drawing.Point(237, 44);
+            this.flatLabel16.Name = "flatLabel16";
+            this.flatLabel16.Size = new System.Drawing.Size(36, 17);
+            this.flatLabel16.TabIndex = 4;
+            this.flatLabel16.Text = "Price";
+            // 
+            // flatLabel10
+            // 
+            this.flatLabel10.AutoSize = true;
+            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel10.ForeColor = System.Drawing.Color.White;
+            this.flatLabel10.Location = new System.Drawing.Point(237, 44);
+            this.flatLabel10.Name = "flatLabel10";
+            this.flatLabel10.Size = new System.Drawing.Size(36, 17);
+            this.flatLabel10.TabIndex = 4;
+            this.flatLabel10.Text = "Price";
+            // 
+            // flatLabel15
+            // 
+            this.flatLabel15.AutoSize = true;
+            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel15.ForeColor = System.Drawing.Color.White;
+            this.flatLabel15.Location = new System.Drawing.Point(324, 44);
+            this.flatLabel15.Name = "flatLabel15";
+            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel15.TabIndex = 5;
+            this.flatLabel15.Text = ":";
+            // 
+            // flatLabel9
+            // 
+            this.flatLabel9.AutoSize = true;
+            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel9.ForeColor = System.Drawing.Color.White;
+            this.flatLabel9.Location = new System.Drawing.Point(324, 44);
+            this.flatLabel9.Name = "flatLabel9";
+            this.flatLabel9.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel9.TabIndex = 5;
+            this.flatLabel9.Text = ":";
             // 
             // flatLabel5
             // 
@@ -751,12 +750,11 @@
             this.Load += new System.EventHandler(this.UclAircrafts_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAircraftAmenities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAircraftDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAircrafts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -777,7 +775,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private FlatUI.FlatLabel flatLabel10;
         private FlatUI.FlatLabel flatLabel9;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
         private FlatUI.FlatLabel flatLabel5;
         private FlatUI.FlatLabel flatLabel6;
         private System.Windows.Forms.TextBox txtName;
@@ -806,9 +803,9 @@
         private FlatUI.FlatLabel flatLabel16;
         private System.Windows.Forms.Button btnInsertDetail;
         private FlatUI.FlatLabel flatLabel15;
-        private System.Windows.Forms.NumericUpDown txtPrice;
         private System.Windows.Forms.TextBox txtSearch;
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatLabel flatLabel22;
+        private System.Windows.Forms.NumericUpDown txtPrice;
     }
 }

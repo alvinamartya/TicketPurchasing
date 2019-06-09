@@ -268,16 +268,17 @@ namespace TicketPurchasing.MenuSA
                 }
                 else
                 {
+                    if (row2.Cells[1].Value.ToString() != cboCabinType.Text)
+                    {
+                        MessageBox.Show("Prohibited from changing cabin type", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     AircraftType aircrafttype = listAircraftTypes.Where(z => z.Cabin.Equals(cboCabinType.Text)).FirstOrDefault();
                     if(aircrafttype != null)
                     {
                         aircrafttype.Seat = Convert.ToInt32(txtSeat.Value);
                         aircrafttype.Cabin = cboCabinType.Text;
-                    }
-                    else if(row2.Cells[1].Value.ToString() != cboCabinType.Text)
-                    {
-                        MessageBox.Show("Prohibited from changing cabin type", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
                     }
                     else
                         listAircraftTypes.Add(new AircraftType(

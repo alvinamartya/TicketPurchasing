@@ -15,13 +15,15 @@ namespace TicketPurchasing.MenuSA
     {
         #region Declaration
         private Database database = new Database();
+        private Validation valid = new Validation();
         private List<string> aircraftTypeid = new List<string>();
         private List<string> aircraftamenitiesid = new List<string>();
-        private List<AircraftDetails> detailType = new List<AircraftDetails>();
+        private List<AircraftDetails> detailTypes = new List<AircraftDetails>();
         private List<AircraftAmenities> amenities = new List<AircraftAmenities>();
-        private bool isUpdate = false, isUpdateAircraftDetails = false, isEdittedAmenities = false;
+        private bool isUpdate = true, isUpdateAircraftDetails = true, isEdittedAmenities = false, isEdittedDetail = false, isEdittedAircraft = false;
         private DataGridViewRow row,row2,row3;
         private string message = "";
+
         #endregion
         #region Constructor
         public UclAircrafts()
@@ -110,20 +112,19 @@ namespace TicketPurchasing.MenuSA
             txtName.Clear();
             isUpdate = true;
             row = null;
-
-
             createTableAircraftsDetails();
             clearAircraftDetails();
             enableFrmAircraftDetails(false);
             enableEdittedAircraftDetails(false);
-
-
+            dgvAircraftAmenities.Rows.Clear();
         }
 
         private bool validation()
         {
             bool result = false;
             if (txtName.Text == "") message = "Ensure you have filled aircraft name";
+            else if (dgvAircraftDetails.RowCount <= 0) message = "Ensure you have filled aircraft details";
+            else if (isEdittedDetail == true) message = "Ensure does not have process in aircraft details";
             else result = true;
             return result;
         }
@@ -140,6 +141,7 @@ namespace TicketPurchasing.MenuSA
             btnSave.Visible = value;
             btnCancel.Visible = value;
             isUpdate = value;
+            isEdittedAircraft = value;
         }
         #endregion
         #region Aircraft Details
@@ -151,8 +153,10 @@ namespace TicketPurchasing.MenuSA
             dgvAircraftDetails.Columns.Add("id", "ID");
             dgvAircraftDetails.Columns.Add("cabin", "Cabin");
             dgvAircraftDetails.Columns.Add("price", "Price");
+            dgvAircraftDetails.Columns.Add("pricecurrency", "Price");
             dgvAircraftDetails.Columns[0].Visible = false;
             dgvAircraftDetails.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvAircraftDetails.Columns[2].Visible = false;
             dgvAircraftDetails.ForeColor = Color.Black;
             dgvAircraftDetails.HeaderForeColor = Color.White;
             dgvAircraftDetails.HeaderBgColor = Color.Teal;
@@ -167,17 +171,27 @@ namespace TicketPurchasing.MenuSA
             var convertDataSetToList = data.Tables[0].AsEnumerable().Select(
                 dataRow => new
                 {
-                    ID = dataRow.Field<string>("ID"),
+                    ID = dataRow.Field<int>("ID"),
                     CabinType = dataRow.Field<string>("CabinType"),
-                    Price = dataRow.Field<int>("Price")
+                    Price = dataRow.Field<decimal>("Price")
                 }).ToList();
 
             foreach (var item in convertDataSetToList)
             {
-                dgvAircraftDetails.Rows.Add(item.ID, item.CabinType, item.Price);
+                dgvAircraftDetails.Rows.Add(item.ID, item.CabinType, item.Price.ToString().Replace(".0000",""), Convert.ToDouble(item.Price.ToString().Replace(".0000", "")).ToString("N"));
             }
         }
         #endregion
+        private bool validationdetail()
+        {
+            bool result = false;
+            if (txtPrice.Value <= 0) message = "Ensure price must greater than 0";
+            else if (dgvAircraftAmenities.Rows.Count <= 0) message = "Ensure you have add amenities for this cabin type";
+            else if (isEdittedAmenities) message = "Ensure does not have process in amenities";
+            else result = true;
+            return result;
+        }
+
         private void clearAircraftDetails()
         {
             cboCabinType.SelectedIndex = 0;
@@ -186,12 +200,13 @@ namespace TicketPurchasing.MenuSA
             row2 = null;
             enableFrmAircraftsAmenities(false);
             enableEdittedAircraftsAmenities(false);
+            enableFrmAircraftDetails(false);
         }
 
         private bool validationAircraftDetails()
         {
             bool result = false;
-            if (txtPrice.Value<=0) message = "Ensure price must bigger than 0";
+            if (txtPrice.Value <= 0) message = "Ensure price must bigger than 0";
             else result = true;
             return result;
         }
@@ -206,6 +221,7 @@ namespace TicketPurchasing.MenuSA
             btnDeleteDetails.Visible = !value;
             btnSaveDetails.Visible = value;
             btnCancelDetails.Visible = value;
+            isEdittedDetail = value;
         }
 
         private void enableEdittedAircraftDetails(bool value)
@@ -234,7 +250,7 @@ namespace TicketPurchasing.MenuSA
 
         private void refreshDatagridAircraftsAmenities(string id,string cabintype)
         {
-            createTableAircraftsDetails();
+            createTableAircraftsAmenities();
             List<Parameter> param = new List<Parameter>();
             param.Add(new Parameter("@AircraftID", id));
             param.Add(new Parameter("@CabinType", cabintype));
@@ -249,7 +265,8 @@ namespace TicketPurchasing.MenuSA
 
             foreach (var item in convertDataSetToList)
             {
-                dgvAircraftDetails.Rows.Add(item.ID, item.AmenitiesID,item.Amenities);
+                AircraftAmenities amenity = amenities.Where(x => x.ID == item.ID).FirstOrDefault();
+                if(amenity == null) dgvAircraftAmenities.Rows.Add(item.ID, item.AmenitiesID,item.Amenities);
             }
         }
         #endregion
@@ -361,6 +378,7 @@ namespace TicketPurchasing.MenuSA
             enableFrmAircraftDetails(true);
             enableEdittedAircraftsAmenities(true);
             isUpdateAircraftDetails = false;
+            createTableAircraftsAmenities();
         }
 
         private void btnUpdateDetails_Click(object sender, EventArgs e)
@@ -370,31 +388,136 @@ namespace TicketPurchasing.MenuSA
                 enableFrmAircraftDetails(true);
                 enableEdittedAircraftsAmenities(true);
             }
+            else
+                MessageBox.Show("Ensure you have selected detail", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void btnSaveDetails_Click(object sender, EventArgs e)
+        {
+            if (validationdetail())
+            {
+                string process = "";
+                if (!isUpdateAircraftDetails)
+                {
+
+                    DataGridViewRow hasDataDetail = dgvAircraftDetails.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == cboCabinType.Text).FirstOrDefault();
+                    if (hasDataDetail != null)
+                    {
+                        MessageBox.Show(cboCabinType.Text + " is exists in database!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    AircraftDetails detail = detailTypes.Where(z => z.Cabin.Equals(cboCabinType.Text)).FirstOrDefault();
+                    if (detail != null)
+                    {
+                        detail.Price = Convert.ToDouble(txtPrice.Value);
+                        if (detail.ID > 0) detail.Status = 2;
+                        else detail.Status = 1;
+                        dgvAircraftDetails.Rows.Add(detail.ID, detail.Cabin, detail.Price, Convert.ToDouble(detail.Price).ToString("N"));
+                    }
+                    else
+                    {
+                        detailTypes.Add(new AircraftDetails(cboCabinType.Text, Convert.ToDouble(txtPrice.Value), 1));
+                        dgvAircraftDetails.Rows.Add("", cboCabinType.Text, Convert.ToDouble(txtPrice.Value), Convert.ToDouble(txtPrice.Value).ToString("N"));
+                    }
+
+                    process = "Add";
+                }
+                else
+                {
+                    if (row2.Cells[1].Value.ToString() != cboCabinType.Text)
+                    {
+                        MessageBox.Show("Prohibited from changing cabin type", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    AircraftDetails detail = detailTypes.Where(z => z.Cabin.Equals(cboCabinType.Text)).FirstOrDefault();
+                    if (detail != null)
+                    {
+                        detail.Price = Convert.ToDouble(txtPrice.Value);
+                        detail.Cabin = cboCabinType.Text;
+                    }
+                    else
+                        detailTypes.Add(new AircraftDetails(
+                            Convert.ToInt32(row2.Cells[0].Value.ToString()),
+                            cboCabinType.Text,
+                            Convert.ToDouble(txtPrice.Value), 2));
+
+                    row2.Cells[1].Value = cboCabinType.Text;
+                    row2.Cells[2].Value = Convert.ToDouble(txtPrice.Value);
+                    row2.Cells[3].Value = Convert.ToDouble(txtPrice.Value).ToString("N");
+                    process = "Edit";
+                }
+
+                List<AircraftAmenities> aircraftamenities = amenities.Where(z => z.Cabin == "temp").ToList();
+                if(aircraftamenities.Count > 0)
+                {
+                    foreach (AircraftAmenities item in aircraftamenities) item.Cabin = cboCabinType.Text;
+                }
+
+                foreach (AircraftAmenities item in amenities) Console.WriteLine("amenities: " + item.Amenities + "; cabin: " + item.Cabin + "; status" + item.Status);
+
+
+                MessageBox.Show(process + " data has been success", "Information",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearAircraftDetails();
+                createTableAircraftsAmenities();
+            }
+            else
+            {
+                MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            refreshDatagridAircrafts(txtSearch.Text);
+        }
+
+        private void btnCancelDetails_Click(object sender, EventArgs e)
+        {
+            clearAircraftsAmenities();
+            clearAircraftDetails();
+            createTableAircraftsAmenities();
+            enableFrmAircraftDetails(false);
+            List<AircraftAmenities> aircraftamenities = amenities.Where(z => z.Cabin == "temp").ToList();
+            if(aircraftamenities.Count() > 0)
+            {
+                foreach (AircraftAmenities item in aircraftamenities) amenities.Remove(item);
+            }
+        }
+
+        #endregion
+        #region Amenities
         private void btnSaveAmenities_Click(object sender, EventArgs e)
         {
             if (validationAircraftsAmenities())
             {
+                string cabin = "temp";
+                if (isUpdateAircraftDetails)
+                {
+                    cabin = cboCabinType.Text;
+                }
+
                 DataGridViewRow hasDataAmenities = dgvAircraftAmenities.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == aircraftamenitiesid[cboAmenities.SelectedIndex]).FirstOrDefault();
                 if (hasDataAmenities != null)
                 {
-                    MessageBox.Show(cboAmenities.Text + " is exists in database!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(cboAmenities.Text + " already available!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                AircraftAmenities aircraftamenities = amenities.Where(z => 
+                AircraftAmenities aircraftamenities = amenities.Where(z =>
                 z.AmenitiesID.Equals(aircraftamenitiesid[cboAmenities.SelectedIndex]) &&
-                z.Cabin == cboCabinType.Text).FirstOrDefault();
+                z.Cabin == cabin && z.Status == 2).FirstOrDefault();
                 if (aircraftamenities != null)
                 {
-                    if (aircraftamenities.ID > 0) aircraftamenities.Status = 2;
-                    else aircraftamenities.Status = 1;
+                    if (aircraftamenities.ID > 0) aircraftamenities.Status = 1;
                     dgvAircraftAmenities.Rows.Add(aircraftamenities.ID, aircraftamenities.AmenitiesID, aircraftamenities.Amenities);
                 }
                 else
                 {
-                    amenities.Add(new AircraftAmenities(aircraftamenitiesid[cboAmenities.SelectedIndex], cboAmenities.Text,cboCabinType.Text, 1));
+                    amenities.Add(new AircraftAmenities(aircraftamenitiesid[cboAmenities.SelectedIndex], cboAmenities.Text, cabin, 1));
                     dgvAircraftAmenities.Rows.Add("", aircraftamenitiesid[cboAmenities.SelectedIndex], cboAmenities.Text);
                 }
                 MessageBox.Show("Add data has been success", "Information",
@@ -408,33 +531,218 @@ namespace TicketPurchasing.MenuSA
             }
         }
 
-        private void btnSaveDetails_Click(object sender, EventArgs e)
+        private void btnDeleteDetails_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            refreshDatagridAircrafts(txtSearch.Text);
-        }
-
-        private void dgvAircraftAmenities_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!isEdittedAmenities)
+            if (row2 != null)
             {
-                row3 = dgvAircraftAmenities.CurrentRow;
-                cboAmenities.SelectedIndex = aircraftamenitiesid.FindIndex(x => x.Equals(row3.Cells[1].Value.ToString()));
+                if (MessageBox.Show("Are you sure?", "Delete Data",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    AircraftDetails item = detailTypes.Where(z => z.Cabin == cboCabinType.Text).FirstOrDefault();
+                    if (item != null)
+                    {
+                        if (item.Status == 2) item.Status = 3;
+                    }
+                    else
+                    {
+                        detailTypes.Add(new AircraftDetails(
+                            Convert.ToInt32(row2.Cells[0].Value.ToString()),
+                            cboCabinType.Text,
+                            Convert.ToDouble(txtPrice.Value), 3));
+                    }
+
+
+                    List<Parameter> param2 = new List<Parameter>();
+                    param2.Add(new Parameter("@AircraftID", row.Cells[0].Value.ToString()));
+                    param2.Add(new Parameter("@CabinType", row2.Cells[1].Value.ToString()));
+                    DataSet getAmenitiesFromDatabase = database.getDataFromDatabase("sp_data_aircraftamenities", param2);
+                    if(getAmenitiesFromDatabase.Tables.Count > 0)
+                    {
+                        for(int i = 0; i < getAmenitiesFromDatabase.Tables[0].Rows.Count; i++)
+                        {
+                            Console.WriteLine(getAmenitiesFromDatabase.Tables[0].Rows[i][0].ToString());
+                            amenities.Add(new AircraftAmenities(Convert.ToInt32(getAmenitiesFromDatabase.Tables[0].Rows[i][0].ToString()), getAmenitiesFromDatabase.Tables[0].Rows[i][1].ToString(), getAmenitiesFromDatabase.Tables[0].Rows[i][2].ToString(), row2.Cells[1].Value.ToString(), 2));
+                        }
+                    }
+
+                    List<AircraftAmenities> deleteAmenities = amenities.Where(x => x.Cabin == row2.Cells[1].Value.ToString() && x.Status != 2).ToList();
+                    Console.WriteLine("Count: " + deleteAmenities.Count);
+                    foreach (AircraftAmenities x in deleteAmenities) x.Status = 2;
+                    List<AircraftAmenities> deletedAmenities = amenities.Where(x => x.Cabin == row2.Cells[1].Value.ToString() && x.Status == 2).ToList();
+                    foreach (AircraftAmenities x in deletedAmenities) Console.WriteLine("amenities: " + x.Amenities + "; cabin: " + x.Cabin);
+                    dgvAircraftDetails.Rows.Remove(row2);
+                    createTableAircraftsAmenities();
+                    MessageBox.Show("Delete data has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearAircraftDetails();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ensure you have selected detail", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void btnCancelDetails_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            clearAircraftDetails();
-            enableFrmAircraftDetails(false);
+            string id = "";
+            if (validation())
+            {
+                int x = 0;
+                string process = "";
+                if (!isUpdate)
+                {
+                    List<Parameter> param = new List<Parameter>();
+                    id = database.autoGenerateID("A", "sp_last_aircraft", 5);
+                    param.Add(new Parameter("@ID", id));
+                    param.Add(new Parameter("@Name", txtName.Text));
+                    param.Add(new Parameter("@AircraftCompany", cboCompany.SelectedValue.ToString()));
+                    param.Add(new Parameter("@AircraftTypeID", aircraftTypeid[cboType.SelectedIndex]));
+                    param.Add(new Parameter("@Status", "A"));
+                    x = database.executeQuery("sp_insert_aircraft", param, "Add");
+                    process = "Add";
+                }
+                else
+                {
+                    id = row.Cells[0].Value.ToString();
+                    List<Parameter> param = new List<Parameter>();
+                    param.Add(new Parameter("@ID", id));
+                    param.Add(new Parameter("@Name", txtName.Text));
+                    param.Add(new Parameter("@AircraftCompany", cboCompany.SelectedValue.ToString()));
+                    param.Add(new Parameter("@AircraftTypeID", aircraftTypeid[cboType.SelectedIndex]));
+                    x = database.executeQuery("sp_update_aircraft", param, "Update");
+                    process = "Update";
+                }
+
+                if (x == 1)
+                {
+                    foreach (AircraftAmenities item in amenities)
+                    {
+                        List<Parameter> param2 = new List<Parameter>();
+                        int y = 0;
+                        if (item.Status == 2)
+                        {
+                            if(item.ID > 0)
+                            {
+                                param2.Add(new Parameter("@ID", item.ID.ToString()));
+                                y = database.executeQuery("sp_delete_aircraftamenities", param2, "Delete");
+                            }
+                        }
+                        else
+                        {
+                            param2.Add(new Parameter("@AmenitiesID", item.AmenitiesID));
+                            param2.Add(new Parameter("@CabinType", item.Cabin));
+                            param2.Add(new Parameter("@AircraftID", id));
+                            y = database.executeQuery("sp_insert_aircraftamenities", param2, "Add");
+                        }
+                    }
+
+                    foreach (AircraftDetails item in detailTypes)
+                    {
+                         List<Parameter> param2 = new List<Parameter>();
+                        int y = 0;
+                        if (item.Status == 2)
+                        {
+                            param2.Add(new Parameter("@ID", item.ID.ToString()));
+                            param2.Add(new Parameter("@CabinType", item.Cabin));
+                            param2.Add(new Parameter("@Price", item.Price.ToString()));
+                            y = database.executeQuery("sp_update_aircraftdetail", param2, "Update");
+                        }
+                        else if (item.Status == 1)
+                        {
+                            param2.Add(new Parameter("@AircraftID", id));
+                            param2.Add(new Parameter("@CabinType", item.Cabin));
+                            param2.Add(new Parameter("@Price", item.Price.ToString()));
+                            y = database.executeQuery("sp_insert_aircraftdetail", param2, "Add");
+                        }
+                        else
+                        {
+                            param2.Add(new Parameter("@ID", item.ID.ToString()));
+                            y = database.executeQuery("sp_delete_aircraftdetail", param2, "Delete");
+                        }
+                    }
+
+                    MessageBox.Show(process + " data has been success", "Information",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clear();
+                    enableFrm(false);
+                    refreshDatagridAircrafts(txtSearch.Text);
+                }
+            }
+            else
+            {
+                MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
-        #endregion
-        #region Amenities
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (row != null)
+            {
+                if (MessageBox.Show("Are you sure?", "Delete Data",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    List<Parameter> param = new List<Parameter>();
+                    param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
+                    int x = database.executeQuery("sp_delete_aircraft", param, "Delete");
+                    if (x == 1)
+                    {
+                        MessageBox.Show("Delete data has been success", "Information",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clear();
+                        enableFrm(false);
+                        refreshDatagridAircrafts(txtSearch.Text);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ensure you have selected aircraft type", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || (int)e.KeyChar == (int)Keys.Back)
+            {
+                SendKeys.Send("{ENTER}");
+                txtPrice.Select();
+                SendKeys.Send("{END}");
+            }
+        }
+
+        private void dgvAircraftDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(!isEdittedDetail && isUpdateAircraftDetails)
+            {
+                row2 = dgvAircraftDetails.CurrentRow;
+                if (row != null) refreshDatagridAircraftsAmenities(row.Cells[0].Value.ToString(), row2.Cells[1].Value.ToString());
+                cboCabinType.Text = row2.Cells[1].Value.ToString();
+                txtPrice.Value = Convert.ToDecimal(row2.Cells[2].Value.ToString());
+                if (amenities.Count > 0)
+                {
+                    foreach (AircraftAmenities item in amenities.Where(x=>x.Status == 1 && x.Cabin == row2.Cells[1].Value.ToString()))
+                    {
+                        DataGridViewRow amenitieRow = dgvAircraftAmenities.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == item.AmenitiesID).FirstOrDefault();
+                        if (amenitieRow == null) dgvAircraftAmenities.Rows.Add("", item.AmenitiesID, item.Amenities);
+                    }
+                }
+            }
+        }
+
+        private void dgvAircrafts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(!isEdittedAircraft)
+            {
+                row = dgvAircrafts.CurrentRow;
+                refreshDatagridAircraftsDetails(row.Cells[0].Value.ToString());
+                txtName.Text = row.Cells[1].Value.ToString();
+                cboCompany.SelectedValue = row.Cells[2].Value.ToString();
+                cboType.SelectedValue = aircraftTypeid.FindIndex(x => x == row.Cells[4].Value.ToString());
+            }
+        }
+
         private void btnInsertAmenities_Click(object sender, EventArgs e)
         {
             clearAircraftsAmenities();
@@ -446,8 +754,39 @@ namespace TicketPurchasing.MenuSA
             clearAircraftsAmenities();
             enableFrmAircraftsAmenities(false);
         }
-        #endregion
-        #endregion
 
+        private void btnDeleteAmenities_Click(object sender, EventArgs e)
+        {
+            if (row3 != null)
+            {
+               if(MessageBox.Show("Are you sure?","Delete Amenities",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    AircraftAmenities aircraftamenities = amenities.Where(z => z.Cabin == "temp" && z.AmenitiesID == aircraftamenitiesid[cboAmenities.SelectedIndex]).FirstOrDefault();
+                    AircraftAmenities aircraftamenities2 = amenities.Where(z => z.Cabin == cboCabinType.Text && z.AmenitiesID == aircraftamenitiesid[cboAmenities.SelectedIndex]).FirstOrDefault();
+                    if (aircraftamenities != null) amenities.Remove(aircraftamenities);
+                    else if (aircraftamenities2 != null) aircraftamenities2.Status = 2;
+                    else
+                    {
+                        amenities.Add(new AircraftAmenities(Convert.ToInt32(row3.Cells[0].Value.ToString()), row3.Cells[1].Value.ToString(), row3.Cells[2].Value.ToString(), row2.Cells[1].Value.ToString(), 2));
+                    }
+                    dgvAircraftAmenities.Rows.Remove(row3);
+                    clearAircraftsAmenities();
+                    MessageBox.Show("Delete amenities has been success!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+                MessageBox.Show("Ensure you have selected amenities", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void dgvAircraftAmenities_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!isEdittedAmenities)
+            {
+                row3 = dgvAircraftAmenities.CurrentRow;
+                cboAmenities.SelectedIndex = aircraftamenitiesid.FindIndex(x => x.Equals(row3.Cells[1].Value.ToString()));
+            }
+        }
+        #endregion
+        #endregion
     }
 }

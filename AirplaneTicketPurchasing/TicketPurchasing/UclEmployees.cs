@@ -44,9 +44,18 @@ namespace TicketPurchasing
             pathDialog.Filter = "Image Files|*.JPG;*.JPEG;*.PNG";
             if (pathDialog.ShowDialog() == DialogResult.OK)
             {
-                txtPhoto.Text = pathDialog.FileName;
-                photo.ImageLocation = pathDialog.FileName;
-                base64string = "";
+                string pathPhoto = pathDialog.FileName;
+                if (valid.validateImage(pathPhoto))
+                {
+                    photo.ImageLocation = pathPhoto;
+                    txtPhoto.Text = pathPhoto;
+                    base64string = "";
+                }
+                else
+                {
+                    MessageBox.Show("Ensure you have selected valid image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    photo.ImageLocation = null;
+                }
             }
         }
 
