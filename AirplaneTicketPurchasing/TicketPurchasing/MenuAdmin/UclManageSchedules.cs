@@ -16,5 +16,12 @@ namespace TicketPurchasing.MenuAdmin
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string date = txtDateTime.Value.ToString("yyyy-MM-dd");
+            string time = txtDateTime.Value.ToString("hh:mm");
+            Console.WriteLine("Date: " + date + " time: " + time);
+        }
     }
 }
