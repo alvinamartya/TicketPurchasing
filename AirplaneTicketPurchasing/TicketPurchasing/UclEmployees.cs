@@ -22,7 +22,7 @@ namespace TicketPurchasing
         private Database database = new Database();
         private Validation valid = new Validation();
         private string base64string = "";
-        private bool isUpdate = false;
+        private bool isUpdate = false, isInserting = false;
         private string connectionString = ConfigurationManager.ConnectionStrings["TicketPurchasing"].ConnectionString;
         private SqlConnection sqlCon;
         private OpenFileDialog pathDialog = new OpenFileDialog();
@@ -87,7 +87,7 @@ namespace TicketPurchasing
         private void DgvEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             row = DgvEmployees.CurrentRow;
-            if (isUpdate)
+            if (!isUpdate&&!isInserting)
             {
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtUsername.Text = row.Cells[2].Value.ToString();
@@ -218,7 +218,7 @@ namespace TicketPurchasing
         private void btnInsert_Click(object sender, EventArgs e)
         {
             clear();
-            isUpdate = false;
+            isInserting = true;
             enableFrm(true);
         }
 
@@ -269,7 +269,6 @@ namespace TicketPurchasing
         }
         #endregion
 
-
         #region Methods
         // enable and disable form
         private void clear()
@@ -285,7 +284,7 @@ namespace TicketPurchasing
             txtPassword.Clear();
             photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
             txtPhoto.Clear();
-            isUpdate = true;
+            isUpdate = false; isInserting = false;
             row = null;
         }
         private void enableFrm(bool value)
