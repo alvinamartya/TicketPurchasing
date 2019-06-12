@@ -38,8 +38,6 @@
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.cboRole = new System.Windows.Forms.ComboBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.photo = new System.Windows.Forms.PictureBox();
             this.btnBrowser = new System.Windows.Forms.Button();
             this.txtPhoto = new System.Windows.Forms.TextBox();
@@ -53,10 +51,6 @@
             this.flatLabel22 = new FlatUI.FlatLabel();
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel20 = new FlatUI.FlatLabel();
-            this.flatLabel17 = new FlatUI.FlatLabel();
-            this.flatLabel18 = new FlatUI.FlatLabel();
-            this.flatLabel15 = new FlatUI.FlatLabel();
-            this.flatLabel16 = new FlatUI.FlatLabel();
             this.flatLabel13 = new FlatUI.FlatLabel();
             this.flatLabel14 = new FlatUI.FlatLabel();
             this.flatLabel11 = new FlatUI.FlatLabel();
@@ -171,24 +165,9 @@
             this.cboRole.Size = new System.Drawing.Size(182, 21);
             this.cboRole.TabIndex = 50;
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(532, 235);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(182, 20);
-            this.txtUsername.TabIndex = 53;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(532, 261);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(182, 20);
-            this.txtPassword.TabIndex = 56;
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
             // photo
             // 
-            this.photo.Location = new System.Drawing.Point(532, 318);
+            this.photo.Location = new System.Drawing.Point(533, 267);
             this.photo.Name = "photo";
             this.photo.Size = new System.Drawing.Size(182, 140);
             this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -201,7 +180,7 @@
             this.btnBrowser.FlatAppearance.BorderSize = 0;
             this.btnBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBrowser.Location = new System.Drawing.Point(720, 290);
+            this.btnBrowser.Location = new System.Drawing.Point(721, 239);
             this.btnBrowser.Name = "btnBrowser";
             this.btnBrowser.Size = new System.Drawing.Size(29, 20);
             this.btnBrowser.TabIndex = 60;
@@ -211,7 +190,7 @@
             // 
             // txtPhoto
             // 
-            this.txtPhoto.Location = new System.Drawing.Point(532, 290);
+            this.txtPhoto.Location = new System.Drawing.Point(533, 239);
             this.txtPhoto.Name = "txtPhoto";
             this.txtPhoto.ReadOnly = true;
             this.txtPhoto.Size = new System.Drawing.Size(182, 20);
@@ -223,7 +202,7 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(408, 483);
+            this.btnCancel.Location = new System.Drawing.Point(409, 440);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 34);
             this.btnCancel.TabIndex = 66;
@@ -237,7 +216,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(293, 483);
+            this.btnSave.Location = new System.Drawing.Point(294, 440);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 34);
             this.btnSave.TabIndex = 65;
@@ -251,7 +230,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(466, 483);
+            this.btnDelete.Location = new System.Drawing.Point(467, 440);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 34);
             this.btnDelete.TabIndex = 64;
@@ -265,7 +244,7 @@
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Location = new System.Drawing.Point(351, 483);
+            this.btnUpdate.Location = new System.Drawing.Point(352, 440);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 34);
             this.btnUpdate.TabIndex = 63;
@@ -279,7 +258,7 @@
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsert.Location = new System.Drawing.Point(236, 483);
+            this.btnInsert.Location = new System.Drawing.Point(237, 440);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(109, 34);
             this.btnInsert.TabIndex = 62;
@@ -325,7 +304,7 @@
             this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(515, 290);
+            this.flatLabel19.Location = new System.Drawing.Point(516, 239);
             this.flatLabel19.Name = "flatLabel19";
             this.flatLabel19.Size = new System.Drawing.Size(11, 17);
             this.flatLabel19.TabIndex = 58;
@@ -337,59 +316,11 @@
             this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel20.ForeColor = System.Drawing.Color.White;
-            this.flatLabel20.Location = new System.Drawing.Point(437, 290);
+            this.flatLabel20.Location = new System.Drawing.Point(438, 239);
             this.flatLabel20.Name = "flatLabel20";
             this.flatLabel20.Size = new System.Drawing.Size(42, 17);
             this.flatLabel20.TabIndex = 57;
             this.flatLabel20.Text = "Photo";
-            // 
-            // flatLabel17
-            // 
-            this.flatLabel17.AutoSize = true;
-            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel17.ForeColor = System.Drawing.Color.White;
-            this.flatLabel17.Location = new System.Drawing.Point(514, 261);
-            this.flatLabel17.Name = "flatLabel17";
-            this.flatLabel17.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel17.TabIndex = 55;
-            this.flatLabel17.Text = ":";
-            // 
-            // flatLabel18
-            // 
-            this.flatLabel18.AutoSize = true;
-            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel18.ForeColor = System.Drawing.Color.White;
-            this.flatLabel18.Location = new System.Drawing.Point(437, 261);
-            this.flatLabel18.Name = "flatLabel18";
-            this.flatLabel18.Size = new System.Drawing.Size(64, 17);
-            this.flatLabel18.TabIndex = 54;
-            this.flatLabel18.Text = "Password";
-            // 
-            // flatLabel15
-            // 
-            this.flatLabel15.AutoSize = true;
-            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(514, 235);
-            this.flatLabel15.Name = "flatLabel15";
-            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel15.TabIndex = 52;
-            this.flatLabel15.Text = ":";
-            // 
-            // flatLabel16
-            // 
-            this.flatLabel16.AutoSize = true;
-            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(437, 235);
-            this.flatLabel16.Name = "flatLabel16";
-            this.flatLabel16.Size = new System.Drawing.Size(67, 17);
-            this.flatLabel16.TabIndex = 51;
-            this.flatLabel16.Text = "Username";
             // 
             // flatLabel13
             // 
@@ -553,12 +484,6 @@
             this.Controls.Add(this.txtPhoto);
             this.Controls.Add(this.flatLabel19);
             this.Controls.Add(this.flatLabel20);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.flatLabel17);
-            this.Controls.Add(this.flatLabel18);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.flatLabel15);
-            this.Controls.Add(this.flatLabel16);
             this.Controls.Add(this.cboRole);
             this.Controls.Add(this.flatLabel13);
             this.Controls.Add(this.flatLabel14);
@@ -580,7 +505,7 @@
             this.Controls.Add(this.flatLabel4);
             this.Controls.Add(this.DgvEmployees);
             this.Name = "UclEmployees";
-            this.Size = new System.Drawing.Size(808, 536);
+            this.Size = new System.Drawing.Size(808, 497);
             this.Load += new System.EventHandler(this.UclEmployees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
@@ -611,12 +536,6 @@
         private FlatUI.FlatLabel flatLabel13;
         private FlatUI.FlatLabel flatLabel14;
         private System.Windows.Forms.ComboBox cboRole;
-        private System.Windows.Forms.TextBox txtUsername;
-        private FlatUI.FlatLabel flatLabel15;
-        private FlatUI.FlatLabel flatLabel16;
-        private System.Windows.Forms.TextBox txtPassword;
-        private FlatUI.FlatLabel flatLabel17;
-        private FlatUI.FlatLabel flatLabel18;
         private System.Windows.Forms.PictureBox photo;
         private System.Windows.Forms.Button btnBrowser;
         private System.Windows.Forms.TextBox txtPhoto;

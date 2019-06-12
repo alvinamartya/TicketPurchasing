@@ -20,7 +20,7 @@ namespace TicketPurchasing.MenuAdmin
         private Database database = new Database();
         private Validation validate = new Validation();
         private bool isInserting = false, isUpdating = false;
-        private string messege;
+        private string messege = "";
 
         public UclManageSchedules()
         {
@@ -52,7 +52,7 @@ namespace TicketPurchasing.MenuAdmin
 
         private void clear()
         {
-            txtFee.Clear();
+            txtFee.Value = 0;
             txtHour.Clear();
             txtMin.Clear();
             txtSearch.Clear();
@@ -73,7 +73,6 @@ namespace TicketPurchasing.MenuAdmin
             txtFee.Enabled = value;
             txtHour.Enabled = value;
             txtMin.Enabled = value;
-            txtSearch.Enabled = value;
             cmbAircraft.Enabled = value;
             cmbArrival.Enabled = value;
             cmbDepart.Enabled = value;
@@ -85,20 +84,28 @@ namespace TicketPurchasing.MenuAdmin
             dgvSch.Rows.Clear();
             dgvSch.Columns.Clear();
             dgvSch.Columns.Add("id", "ID");
-            dgvSch.Columns.Add("depCity", "Dep.  City");
+            dgvSch.Columns.Add("aircraftID", "Aircraft ID");
+            dgvSch.Columns.Add("aircraft", "Aircraft");
+            dgvSch.Columns.Add("depCityID", "Dep City ID");
+            dgvSch.Columns.Add("depCity", "Dep. City");
+            dgvSch.Columns.Add("arrCityID", "Arr. CItyID");
             dgvSch.Columns.Add("arrCity", "Arr. CIty");
             dgvSch.Columns.Add("date", "Date");
             dgvSch.Columns.Add("time", "Time");
             dgvSch.Columns.Add("flightTime", "Flight Duration");
+            dgvSch.Columns.Add("price", "Price");
             dgvSch.Columns.Add("fee", "Fee");
-            dgvSch.Columns.Add("aircraftID", "Aircraft");
-            dgvSch.Columns.Add("item", "item");
-            dgvSch.Columns[7].Visible = false;
+            dgvSch.Columns[0].Visible = false;
+            dgvSch.Columns[1].Visible = false;
+            dgvSch.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSch.Columns[3].Visible = false;
+            dgvSch.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSch.Columns[5].Visible = false;
+            dgvSch.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSch.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSch.Columns[10].Visible = false;
             dgvSch.HeaderForeColor = Color.White;
             dgvSch.HeaderBgColor = Color.Teal;
-            dgvSch.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvSch.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSch.Columns[8].Visible = false;
         }
 
         private void refreshDg(string search)
@@ -106,56 +113,34 @@ namespace TicketPurchasing.MenuAdmin
             dgvSch.Rows.Clear();
             List<Parameter> param = new List<Parameter>();
             DataSet data = database.getDataFromDatabase("sp_view_schedule", null);
-            DataSet city = database.getDataFromDatabase("sp_view_cities", null);
-            DataSet aircraft = database.getDataFromDatabase("sp_view_aircrafts", null);
-            var aircraftList = aircraft.Tables[0].AsEnumerable();
-            var cityList = city.Tables[0].AsEnumerable();
             var dsToList = data.Tables[0].AsEnumerable().Select(
                 x => new
                 {
                     id = x.Field<string>("ID"),
                     depDate = x.Field<DateTime>("DepartureDate"),
                     depTime = x.Field<TimeSpan>("DepartureTime"),
-                    fee = x.Field<Decimal>("Price"),
-                    flightTIme = x.Field<Int32>("FlightTime"),
-                    depCity = x.Field<string>("DepartureCityID"),
-                    arrCIty = x.Field<string>("ArrivalCityID"),
-                    aircraft = x.Field<string>("AircraftID")
+                    fee = x.Field<decimal>("Price"),
+                    flightTIme = x.Field<string>("FlightTime"),
+                    depCityID = x.Field<string>("DepartureCityID"),
+                    depCity = x.Field<string>("DepCity"),
+                    arrCItyID = x.Field<string>("ArrivalCityID"),
+                    arrCIty = x.Field<string>("ArrCity"),
+                    aircraftID = x.Field<string>("AircraftID"),
+                    aircraft = x.Field<string>("Aircraft")
                 }).ToList();
 
             if (search != null)
             {
-                dsToList = dsToList.Where(x => x.id.Contains(search) || x.depDate.ToString().Contains(search) ||
-                x.depTime.ToString().Contains(search) || x.fee == Convert.ToInt32(search) || x.flightTIme == Convert.ToInt32(search) ||
-                x.depCity.Contains(search) || x.arrCIty.Contains(search) || x.aircraft.Contains(search)).ToList();
+                dsToList = dsToList.Where(x => x.aircraft.Contains(search) || x.depCity.Contains(search) ||
+                    x.arrCIty.Contains(search) || x.depDate.ToString().Contains(search) || x.depTime.ToString().Contains(search) ||
+                    x.flightTIme.ToString().Contains(search) || x.fee.ToString().Contains(search)).ToList();
             }
 
-            foreach(var item in dsToList)
+            foreach (var item in dsToList)
             {
-                DataRow[] references = new DataRow[3];
-                references[0] = city.Tables[0].Select("ID = '" + item.depCity + "'").FirstOrDefault();
-                references[1] = city.Tables[0].Select("ID = '" + item.arrCIty + "'").FirstOrDefault();
-                references[2] = aircraft.Tables[0].Select("ID = '" + item.aircraft + "'").FirstOrDefault();
-
-                dgvSch.Rows.Add(item.id, references[0].Field<string>("Name"), references[1].Field<string>("Name"), item.depDate.ToString("dd-MMMM-yyyy"),
-                    item.depTime,item.flightTIme+" Min",item.fee.ToString("C2", CultureInfo.GetCultureInfo("id")),references[2].Field<string>("Name"),item.fee);
+                dgvSch.Rows.Add(item.id, item.aircraftID, item.aircraft, item.depCityID, item.depCity,
+                    item.arrCItyID, item.arrCIty, item.depDate.ToString("dd MMMM yyyy"), item.depTime, item.flightTIme,item.fee,item.fee.ToString("N"));
             }
-        }
-
-        private bool validation()
-        {
-            bool res = false;
-
-            DateTime firstDate = new DateTime(dtDeparture.Value.Year, dtDeparture.Value.Month, dtDeparture.Value.Day);
-            DateTime secondDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-
-            if (firstDate <= secondDate) messege = "Date Must Be in The Future";
-            else if (txtFee.Text == "" || txtHour.Text == "" || txtMin.Text == "" || cmbAircraft.SelectedValue == null ||
-                cmbArrival.SelectedValue == null || cmbDepart.SelectedValue == null || dtDeparture.Value == null)
-                messege = "Ensure you have fill all field";
-            else
-                res = true;
-            return res;
         }
 
         private void dgvSch_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -163,16 +148,16 @@ namespace TicketPurchasing.MenuAdmin
             if (!isInserting && !isUpdating)
             {
                 row = dgvSch.CurrentRow;
-                cmbDepart.Text = row.Cells[1].Value.ToString();
-                cmbArrival.Text = row.Cells[2].Value.ToString();
-                cmbAircraft.Text = row.Cells[7].Value.ToString();
-                DateTime date = Convert.ToDateTime(row.Cells[3].Value.ToString()+" "+row.Cells[4].Value.ToString());
+                cmbDepart.SelectedValue = row.Cells[3].Value.ToString();
+                cmbArrival.SelectedValue = row.Cells[5].Value.ToString();
+                cmbAircraft.SelectedValue = row.Cells[1].Value.ToString();
+                DateTime date = Convert.ToDateTime(row.Cells[7].Value.ToString() + " " + row.Cells[8].Value.ToString());
                 dtDeparture.Value = date;
-                int hour = Convert.ToInt16(Regex.Match(row.Cells[5].Value.ToString(), @"\d+").Value) / 60;
-                int min = Convert.ToInt16(Regex.Match(row.Cells[5].Value.ToString(), @"\d+").Value) % 60;
+                txtFee.Value = Convert.ToDecimal(row.Cells[10].Value.ToString());
+                int hour = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) / 60;
+                int min = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) % 60;
                 txtHour.Text = hour.ToString();
                 txtMin.Text = min.ToString();
-                txtFee.Text = Convert.ToInt32(row.Cells[8].Value).ToString();
             }
 
         }
@@ -222,14 +207,53 @@ namespace TicketPurchasing.MenuAdmin
             refreshDg(null);
         }
 
+        private bool Validation()
+        {
+            bool result = false;
+            DateTime date = new DateTime(dtDeparture.Value.Year, dtDeparture.Value.Month, dtDeparture.Value.Day,
+                dtDeparture.Value.Hour, dtDeparture.Value.Minute, 0);
+            DateTime date2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 7,
+                DateTime.Now.Hour, DateTime.Now.Minute, 0);
+            if (cmbAircraft.Text == "" || cmbArrival.Text == "" || cmbArrival.Text == "" ||
+                txtHour.Text == "" || txtMin.Text == "" || txtFee.Value <= 0)
+                messege = "Ensure you have filled all fields";
+            else if (date < date2)
+                messege = "Ensure Departure time must bigger 7 days than today";
+            else if (Convert.ToInt32(txtHour.Text) < 0 || Convert.ToInt32(txtHour.Text) > 23 ||
+                Convert.ToInt32(txtMin.Text) < 0 || Convert.ToInt32(txtMin.Text) > 59)
+                messege = "Format Flight time is not valid";
+            else result = true;
+            return result;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clear();
+            enableForm(false);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            refreshDg(txtSearch.Text);
+        }
+
+        private void txtFee_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || (int)e.KeyChar == (int)Keys.Back)
+            {
+                SendKeys.Send("{ENTER}");
+                txtFee.Select();
+                SendKeys.Send("{END}");
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string date = dtDeparture.Value.ToString("yyyy-MM-dd");
-            string time = dtDeparture.Value.ToString("hh:mm");
-            int duration = Convert.ToInt16(txtHour.Text) * 60 + Convert.ToInt16(txtMin.Text);
-            Console.WriteLine("Date: " + date + " time: " + time);
-            if (validation())
+            if (Validation())
             {
+                string date = dtDeparture.Value.ToString("yyyy-MM-dd");
+                string time = dtDeparture.Value.ToString("hh:mm");
+                int duration = Convert.ToInt16(txtHour.Text) * 60 + Convert.ToInt16(txtMin.Text);
                 int result = 0;
                 try
                 {
@@ -239,7 +263,7 @@ namespace TicketPurchasing.MenuAdmin
                         param.Add(new Parameter("@ID", database.autoGenerateID("S", "sp_last_schedule", 5)));
                         param.Add(new Parameter("@DepartureDate", date));
                         param.Add(new Parameter("@DepartureTime", time));
-                        param.Add(new Parameter("@price", txtFee.Text));
+                        param.Add(new Parameter("@price", txtFee.Value.ToString()));
                         param.Add(new Parameter("@FlightTime", duration.ToString()));
                         param.Add(new Parameter("@DepartureCityId", cmbDepart.SelectedValue.ToString()));
                         param.Add(new Parameter("@ArrivalCityId", cmbArrival.SelectedValue.ToString()));
@@ -252,7 +276,7 @@ namespace TicketPurchasing.MenuAdmin
                         param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
                         param.Add(new Parameter("@DepartureDate", date));
                         param.Add(new Parameter("@DepartureTime", time));
-                        param.Add(new Parameter("@price", txtFee.Text));
+                        param.Add(new Parameter("@price", txtFee.Value.ToString()));
                         param.Add(new Parameter("@FlightTime", duration.ToString()));
                         param.Add(new Parameter("@DepartureCityId", cmbDepart.SelectedValue.ToString()));
                         param.Add(new Parameter("@ArrivalCityId", cmbArrival.SelectedValue.ToString()));
@@ -268,11 +292,13 @@ namespace TicketPurchasing.MenuAdmin
                         refreshDg(null);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+                MessageBox.Show(messege, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

@@ -47,6 +47,9 @@
             this.pnlAircrafts = new System.Windows.Forms.Panel();
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flatLabel7 = new FlatUI.FlatLabel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pnlAmenities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlCompanies.SuspendLayout();
@@ -59,6 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlAircrafts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAmenities
@@ -66,7 +71,7 @@
             this.pnlAmenities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlAmenities.Controls.Add(this.flatLabel1);
             this.pnlAmenities.Controls.Add(this.pictureBox1);
-            this.pnlAmenities.Location = new System.Drawing.Point(30, 3);
+            this.pnlAmenities.Location = new System.Drawing.Point(24, 3);
             this.pnlAmenities.Name = "pnlAmenities";
             this.pnlAmenities.Size = new System.Drawing.Size(256, 233);
             this.pnlAmenities.TabIndex = 0;
@@ -101,7 +106,7 @@
             this.pnlCompanies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlCompanies.Controls.Add(this.flatLabel2);
             this.pnlCompanies.Controls.Add(this.pictureBox2);
-            this.pnlCompanies.Location = new System.Drawing.Point(292, 3);
+            this.pnlCompanies.Location = new System.Drawing.Point(286, 3);
             this.pnlCompanies.Name = "pnlCompanies";
             this.pnlCompanies.Size = new System.Drawing.Size(256, 233);
             this.pnlCompanies.TabIndex = 7;
@@ -136,7 +141,7 @@
             this.pnlAircraftTypes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlAircraftTypes.Controls.Add(this.flatLabel3);
             this.pnlAircraftTypes.Controls.Add(this.pictureBox3);
-            this.pnlAircraftTypes.Location = new System.Drawing.Point(554, 3);
+            this.pnlAircraftTypes.Location = new System.Drawing.Point(548, 3);
             this.pnlAircraftTypes.Name = "pnlAircraftTypes";
             this.pnlAircraftTypes.Size = new System.Drawing.Size(256, 233);
             this.pnlAircraftTypes.TabIndex = 7;
@@ -171,7 +176,7 @@
             this.pnlEmployees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlEmployees.Controls.Add(this.flatLabel4);
             this.pnlEmployees.Controls.Add(this.pictureBox4);
-            this.pnlEmployees.Location = new System.Drawing.Point(554, 242);
+            this.pnlEmployees.Location = new System.Drawing.Point(548, 242);
             this.pnlEmployees.Name = "pnlEmployees";
             this.pnlEmployees.Size = new System.Drawing.Size(256, 233);
             this.pnlEmployees.TabIndex = 10;
@@ -206,7 +211,7 @@
             this.pnlCities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlCities.Controls.Add(this.flatLabel5);
             this.pnlCities.Controls.Add(this.pictureBox5);
-            this.pnlCities.Location = new System.Drawing.Point(292, 242);
+            this.pnlCities.Location = new System.Drawing.Point(286, 242);
             this.pnlCities.Name = "pnlCities";
             this.pnlCities.Size = new System.Drawing.Size(256, 233);
             this.pnlCities.TabIndex = 9;
@@ -241,10 +246,11 @@
             this.pnlAircrafts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlAircrafts.Controls.Add(this.flatLabel6);
             this.pnlAircrafts.Controls.Add(this.pictureBox6);
-            this.pnlAircrafts.Location = new System.Drawing.Point(30, 242);
+            this.pnlAircrafts.Location = new System.Drawing.Point(24, 242);
             this.pnlAircrafts.Name = "pnlAircrafts";
             this.pnlAircrafts.Size = new System.Drawing.Size(256, 233);
             this.pnlAircrafts.TabIndex = 8;
+            this.pnlAircrafts.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAircrafts_Paint);
             this.pnlAircrafts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircrafts_CLick);
             // 
             // flatLabel6
@@ -271,11 +277,48 @@
             this.pictureBox6.TabStop = false;
             this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelAircrafts_CLick);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.flatLabel7);
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Location = new System.Drawing.Point(24, 481);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(256, 233);
+            this.panel1.TabIndex = 9;
+            this.panel1.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // flatLabel7
+            // 
+            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.flatLabel7.Location = new System.Drawing.Point(31, 153);
+            this.flatLabel7.Name = "flatLabel7";
+            this.flatLabel7.Size = new System.Drawing.Size(192, 23);
+            this.flatLabel7.TabIndex = 1;
+            this.flatLabel7.Text = "Seat Type";
+            this.flatLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.flatLabel7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(69, 56);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(103, 93);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
             // UclMenuSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlEmployees);
             this.Controls.Add(this.pnlAircraftTypes);
             this.Controls.Add(this.pnlCities);
@@ -283,7 +326,7 @@
             this.Controls.Add(this.pnlCompanies);
             this.Controls.Add(this.pnlAmenities);
             this.Name = "UclMenuSA";
-            this.Size = new System.Drawing.Size(835, 479);
+            this.Size = new System.Drawing.Size(835, 727);
             this.Load += new System.EventHandler(this.UclMenuSA_Load);
             this.pnlAmenities.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -297,6 +340,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnlAircrafts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +366,8 @@
         private System.Windows.Forms.Panel pnlAircrafts;
         private FlatUI.FlatLabel flatLabel6;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Panel panel1;
+        private FlatUI.FlatLabel flatLabel7;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

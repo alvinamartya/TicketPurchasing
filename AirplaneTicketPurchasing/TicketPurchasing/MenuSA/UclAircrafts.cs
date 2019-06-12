@@ -152,11 +152,9 @@ namespace TicketPurchasing.MenuSA
             dgvAircraftDetails.Columns.Clear();
             dgvAircraftDetails.Columns.Add("id", "ID");
             dgvAircraftDetails.Columns.Add("cabin", "Cabin");
-            dgvAircraftDetails.Columns.Add("price", "Price");
-            dgvAircraftDetails.Columns.Add("pricecurrency", "Price");
+            dgvAircraftDetails.Columns.Add("addPrice", "Additional Price");
             dgvAircraftDetails.Columns[0].Visible = false;
             dgvAircraftDetails.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvAircraftDetails.Columns[2].Visible = false;
             dgvAircraftDetails.ForeColor = Color.Black;
             dgvAircraftDetails.HeaderForeColor = Color.White;
             dgvAircraftDetails.HeaderBgColor = Color.Teal;
@@ -173,12 +171,12 @@ namespace TicketPurchasing.MenuSA
                 {
                     ID = dataRow.Field<int>("ID"),
                     CabinType = dataRow.Field<string>("CabinType"),
-                    Price = dataRow.Field<decimal>("Price")
+                    Price = dataRow.Field<double>("addPrice")
                 }).ToList();
 
             foreach (var item in convertDataSetToList)
             {
-                dgvAircraftDetails.Rows.Add(item.ID, item.CabinType, item.Price.ToString().Replace(".0000",""), Convert.ToDouble(item.Price.ToString().Replace(".0000", "")).ToString("N"));
+                dgvAircraftDetails.Rows.Add(item.ID, item.CabinType, item.Price.ToString().Replace(".0000",""));
             }
         }
         #endregion
@@ -446,7 +444,6 @@ namespace TicketPurchasing.MenuSA
 
                     row2.Cells[1].Value = cboCabinType.Text;
                     row2.Cells[2].Value = Convert.ToDouble(txtPrice.Value);
-                    row2.Cells[3].Value = Convert.ToDouble(txtPrice.Value).ToString("N");
                     process = "Edit";
                 }
 
@@ -645,14 +642,14 @@ namespace TicketPurchasing.MenuSA
                         {
                             param2.Add(new Parameter("@ID", item.ID.ToString()));
                             param2.Add(new Parameter("@CabinType", item.Cabin));
-                            param2.Add(new Parameter("@Price", item.Price.ToString()));
+                            param2.Add(new Parameter("@addPrice", item.Price.ToString()));
                             y = database.executeQuery("sp_update_aircraftdetail", param2, "Update");
                         }
                         else if (item.Status == 1)
                         {
                             param2.Add(new Parameter("@AircraftID", id));
                             param2.Add(new Parameter("@CabinType", item.Cabin));
-                            param2.Add(new Parameter("@Price", item.Price.ToString()));
+                            param2.Add(new Parameter("@addPrice", item.Price.ToString()));
                             y = database.executeQuery("sp_insert_aircraftdetail", param2, "Add");
                         }
                         else
@@ -702,16 +699,6 @@ namespace TicketPurchasing.MenuSA
             }
         }
 
-        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar) || (int)e.KeyChar == (int)Keys.Back)
-            {
-                SendKeys.Send("{ENTER}");
-                txtPrice.Select();
-                SendKeys.Send("{END}");
-            }
-        }
-
         private void dgvAircraftDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(!isEdittedDetail && isUpdateAircraftDetails)
@@ -735,6 +722,12 @@ namespace TicketPurchasing.MenuSA
         {
             if(!isEdittedAircraft)
             {
+                clearAircraftDetails();
+                dgvAircraftDetails.Rows.Clear();
+
+                clearAircraftsAmenities();
+                dgvAircraftAmenities.Rows.Clear();
+
                 row = dgvAircrafts.CurrentRow;
                 refreshDatagridAircraftsDetails(row.Cells[0].Value.ToString());
                 txtName.Text = row.Cells[1].Value.ToString();

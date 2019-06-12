@@ -91,6 +91,14 @@ namespace TicketPurchasing
             lblTitle.Text = "FLIGHTSI - TRANSACTION";
         }
 
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            btn = btnChangePassword;
+            buttonSelected();
+            UclChangePassword uclChangePassword = new UclChangePassword();
+            addControltoPanel(uclChangePassword);
+            lblTitle.Text = "FLIGHTSI - CHANGE PASSWORD";
+        }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -101,7 +109,6 @@ namespace TicketPurchasing
             lblTitle.Text = "FLIGHTSI - DASHBOARD";
         }
         #endregion
-
         #region Method
         public void addControltoPanel(UserControl control)
         {
@@ -113,6 +120,15 @@ namespace TicketPurchasing
         private void buttonSelected()
         {
             pnlButtonSelected.Top = btn.Top;
+        }
+
+        public void cancel()
+        {
+            btn = btnDashboard;
+            buttonSelected();
+            UclDashboard ucldashboard = new UclDashboard();
+            addControltoPanel(ucldashboard);
+            lblTitle.Text = "FLIGHTSI - DASHBOARD";
         }
         #endregion
     }

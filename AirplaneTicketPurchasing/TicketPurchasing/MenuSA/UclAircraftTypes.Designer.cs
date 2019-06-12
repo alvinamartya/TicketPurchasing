@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgvAircraftType = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtMakeModel = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -39,14 +39,17 @@
             this.txtSeat = new System.Windows.Forms.NumericUpDown();
             this.DgvAircraftTypeDetail = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboSeatType = new System.Windows.Forms.ComboBox();
+            this.flatLabel1 = new FlatUI.FlatLabel();
+            this.flatLabel2 = new FlatUI.FlatLabel();
             this.btnCancelDetail = new System.Windows.Forms.Button();
             this.btnSaveDetail = new System.Windows.Forms.Button();
             this.btnDeleteDetail = new System.Windows.Forms.Button();
             this.btnUpdateDetail = new System.Windows.Forms.Button();
             this.flatLabel8 = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
-            this.flatLabel10 = new FlatUI.FlatLabel();
             this.btnInsertDetail = new System.Windows.Forms.Button();
+            this.flatLabel10 = new FlatUI.FlatLabel();
             this.flatLabel9 = new FlatUI.FlatLabel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -73,19 +76,19 @@
             // 
             this.DgvAircraftType.AllowUserToAddRows = false;
             this.DgvAircraftType.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvAircraftType.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvAircraftType.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvAircraftType.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DgvAircraftType.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvAircraftType.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvAircraftType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvAircraftType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvAircraftType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvAircraftType.DoubleBuffered = true;
             this.DgvAircraftType.EnableHeadersVisualStyles = false;
@@ -98,7 +101,7 @@
             this.DgvAircraftType.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DgvAircraftType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvAircraftType.Size = new System.Drawing.Size(782, 198);
-            this.DgvAircraftType.TabIndex = 2;
+            this.DgvAircraftType.TabIndex = 1;
             this.DgvAircraftType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAircraftType_CellClick);
             // 
             // txtMakeModel
@@ -106,14 +109,14 @@
             this.txtMakeModel.Location = new System.Drawing.Point(130, 281);
             this.txtMakeModel.Name = "txtMakeModel";
             this.txtMakeModel.Size = new System.Drawing.Size(182, 20);
-            this.txtMakeModel.TabIndex = 4;
+            this.txtMakeModel.TabIndex = 3;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(131, 255);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(182, 20);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 2;
             // 
             // cboCabinType
             // 
@@ -126,11 +129,11 @@
             this.cboCabinType.Location = new System.Drawing.Point(342, 18);
             this.cboCabinType.Name = "cboCabinType";
             this.cboCabinType.Size = new System.Drawing.Size(120, 21);
-            this.cboCabinType.TabIndex = 1;
+            this.cboCabinType.TabIndex = 0;
             // 
             // txtSeat
             // 
-            this.txtSeat.Location = new System.Drawing.Point(342, 45);
+            this.txtSeat.Location = new System.Drawing.Point(342, 73);
             this.txtSeat.Maximum = new decimal(new int[] {
             276447232,
             23283,
@@ -144,19 +147,19 @@
             // 
             this.DgvAircraftTypeDetail.AllowUserToAddRows = false;
             this.DgvAircraftTypeDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvAircraftTypeDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvAircraftTypeDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DgvAircraftTypeDetail.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DgvAircraftTypeDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvAircraftTypeDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvAircraftTypeDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvAircraftTypeDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvAircraftTypeDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvAircraftTypeDetail.DoubleBuffered = true;
             this.DgvAircraftTypeDetail.EnableHeadersVisualStyles = false;
@@ -173,15 +176,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboSeatType);
+            this.groupBox1.Controls.Add(this.flatLabel1);
+            this.groupBox1.Controls.Add(this.flatLabel2);
             this.groupBox1.Controls.Add(this.btnCancelDetail);
             this.groupBox1.Controls.Add(this.btnSaveDetail);
             this.groupBox1.Controls.Add(this.btnDeleteDetail);
             this.groupBox1.Controls.Add(this.btnUpdateDetail);
             this.groupBox1.Controls.Add(this.DgvAircraftTypeDetail);
             this.groupBox1.Controls.Add(this.flatLabel8);
+            this.groupBox1.Controls.Add(this.flatLabel10);
             this.groupBox1.Controls.Add(this.flatLabel7);
             this.groupBox1.Controls.Add(this.cboCabinType);
-            this.groupBox1.Controls.Add(this.flatLabel10);
             this.groupBox1.Controls.Add(this.btnInsertDetail);
             this.groupBox1.Controls.Add(this.flatLabel9);
             this.groupBox1.Controls.Add(this.txtSeat);
@@ -189,10 +195,47 @@
             this.groupBox1.Location = new System.Drawing.Point(333, 247);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(474, 142);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Aircraft Type Details";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // cboSeatType
+            // 
+            this.cboSeatType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSeatType.FormattingEnabled = true;
+            this.cboSeatType.Items.AddRange(new object[] {
+            "Kilogram",
+            "Piece",
+            "Package"});
+            this.cboSeatType.Location = new System.Drawing.Point(342, 45);
+            this.cboSeatType.Name = "cboSeatType";
+            this.cboSeatType.Size = new System.Drawing.Size(120, 21);
+            this.cboSeatType.TabIndex = 1;
+            // 
+            // flatLabel1
+            // 
+            this.flatLabel1.AutoSize = true;
+            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel1.ForeColor = System.Drawing.Color.White;
+            this.flatLabel1.Location = new System.Drawing.Point(239, 45);
+            this.flatLabel1.Name = "flatLabel1";
+            this.flatLabel1.Size = new System.Drawing.Size(64, 17);
+            this.flatLabel1.TabIndex = 3;
+            this.flatLabel1.Text = "Seat Type";
+            // 
+            // flatLabel2
+            // 
+            this.flatLabel2.AutoSize = true;
+            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel2.ForeColor = System.Drawing.Color.White;
+            this.flatLabel2.Location = new System.Drawing.Point(324, 45);
+            this.flatLabel2.Name = "flatLabel2";
+            this.flatLabel2.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel2.TabIndex = 49;
+            this.flatLabel2.Text = ":";
             // 
             // btnCancelDetail
             // 
@@ -200,10 +243,10 @@
             this.btnCancelDetail.FlatAppearance.BorderSize = 0;
             this.btnCancelDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelDetail.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancelDetail.Location = new System.Drawing.Point(352, 99);
+            this.btnCancelDetail.Location = new System.Drawing.Point(352, 104);
             this.btnCancelDetail.Name = "btnCancelDetail";
             this.btnCancelDetail.Size = new System.Drawing.Size(65, 22);
-            this.btnCancelDetail.TabIndex = 7;
+            this.btnCancelDetail.TabIndex = 6;
             this.btnCancelDetail.Text = "Cancel";
             this.btnCancelDetail.UseVisualStyleBackColor = false;
             this.btnCancelDetail.Click += new System.EventHandler(this.btnCancelDetail_Click);
@@ -214,10 +257,10 @@
             this.btnSaveDetail.FlatAppearance.BorderSize = 0;
             this.btnSaveDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveDetail.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSaveDetail.Location = new System.Drawing.Point(270, 99);
+            this.btnSaveDetail.Location = new System.Drawing.Point(270, 104);
             this.btnSaveDetail.Name = "btnSaveDetail";
             this.btnSaveDetail.Size = new System.Drawing.Size(65, 22);
-            this.btnSaveDetail.TabIndex = 6;
+            this.btnSaveDetail.TabIndex = 4;
             this.btnSaveDetail.Text = "Save";
             this.btnSaveDetail.UseVisualStyleBackColor = false;
             this.btnSaveDetail.Click += new System.EventHandler(this.btnSaveDetail_Click);
@@ -228,10 +271,10 @@
             this.btnDeleteDetail.FlatAppearance.BorderSize = 0;
             this.btnDeleteDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteDetail.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteDetail.Location = new System.Drawing.Point(390, 99);
+            this.btnDeleteDetail.Location = new System.Drawing.Point(390, 104);
             this.btnDeleteDetail.Name = "btnDeleteDetail";
             this.btnDeleteDetail.Size = new System.Drawing.Size(65, 22);
-            this.btnDeleteDetail.TabIndex = 5;
+            this.btnDeleteDetail.TabIndex = 7;
             this.btnDeleteDetail.Text = "Delete";
             this.btnDeleteDetail.UseVisualStyleBackColor = false;
             this.btnDeleteDetail.Click += new System.EventHandler(this.btnDeleteDetail_Click);
@@ -242,10 +285,10 @@
             this.btnUpdateDetail.FlatAppearance.BorderSize = 0;
             this.btnUpdateDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateDetail.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdateDetail.Location = new System.Drawing.Point(319, 99);
+            this.btnUpdateDetail.Location = new System.Drawing.Point(319, 104);
             this.btnUpdateDetail.Name = "btnUpdateDetail";
             this.btnUpdateDetail.Size = new System.Drawing.Size(65, 22);
-            this.btnUpdateDetail.TabIndex = 4;
+            this.btnUpdateDetail.TabIndex = 5;
             this.btnUpdateDetail.Text = "Update";
             this.btnUpdateDetail.UseVisualStyleBackColor = false;
             this.btnUpdateDetail.Click += new System.EventHandler(this.btnUpdateDetail_Click);
@@ -259,7 +302,7 @@
             this.flatLabel8.Location = new System.Drawing.Point(237, 18);
             this.flatLabel8.Name = "flatLabel8";
             this.flatLabel8.Size = new System.Drawing.Size(72, 17);
-            this.flatLabel8.TabIndex = 43;
+            this.flatLabel8.TabIndex = 1;
             this.flatLabel8.Text = "Cabin Type";
             // 
             // flatLabel7
@@ -274,25 +317,13 @@
             this.flatLabel7.TabIndex = 44;
             this.flatLabel7.Text = ":";
             // 
-            // flatLabel10
-            // 
-            this.flatLabel10.AutoSize = true;
-            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(237, 44);
-            this.flatLabel10.Name = "flatLabel10";
-            this.flatLabel10.Size = new System.Drawing.Size(33, 17);
-            this.flatLabel10.TabIndex = 46;
-            this.flatLabel10.Text = "Seat";
-            // 
             // btnInsertDetail
             // 
             this.btnInsertDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnInsertDetail.FlatAppearance.BorderSize = 0;
             this.btnInsertDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertDetail.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsertDetail.Location = new System.Drawing.Point(248, 99);
+            this.btnInsertDetail.Location = new System.Drawing.Point(248, 104);
             this.btnInsertDetail.Name = "btnInsertDetail";
             this.btnInsertDetail.Size = new System.Drawing.Size(65, 22);
             this.btnInsertDetail.TabIndex = 3;
@@ -300,13 +331,25 @@
             this.btnInsertDetail.UseVisualStyleBackColor = false;
             this.btnInsertDetail.Click += new System.EventHandler(this.btnInsertDetail_Click);
             // 
+            // flatLabel10
+            // 
+            this.flatLabel10.AutoSize = true;
+            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel10.ForeColor = System.Drawing.Color.White;
+            this.flatLabel10.Location = new System.Drawing.Point(237, 72);
+            this.flatLabel10.Name = "flatLabel10";
+            this.flatLabel10.Size = new System.Drawing.Size(33, 17);
+            this.flatLabel10.TabIndex = 46;
+            this.flatLabel10.Text = "Seat";
+            // 
             // flatLabel9
             // 
             this.flatLabel9.AutoSize = true;
             this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(324, 44);
+            this.flatLabel9.Location = new System.Drawing.Point(324, 72);
             this.flatLabel9.Name = "flatLabel9";
             this.flatLabel9.Size = new System.Drawing.Size(11, 17);
             this.flatLabel9.TabIndex = 47;
@@ -321,7 +364,7 @@
             this.btnCancel.Location = new System.Drawing.Point(421, 417);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 34);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -335,7 +378,7 @@
             this.btnSave.Location = new System.Drawing.Point(306, 417);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 34);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -349,7 +392,7 @@
             this.btnDelete.Location = new System.Drawing.Point(478, 417);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 34);
-            this.btnDelete.TabIndex = 9;
+            this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -377,7 +420,7 @@
             this.btnInsert.Location = new System.Drawing.Point(248, 417);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(109, 34);
-            this.btnInsert.TabIndex = 7;
+            this.btnInsert.TabIndex = 6;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
@@ -492,7 +535,7 @@
             this.txtTotalSeat.Location = new System.Drawing.Point(130, 307);
             this.txtTotalSeat.Name = "txtTotalSeat";
             this.txtTotalSeat.Size = new System.Drawing.Size(114, 20);
-            this.txtTotalSeat.TabIndex = 90;
+            this.txtTotalSeat.TabIndex = 4;
             // 
             // UclAircraftTypes
             // 
@@ -564,5 +607,8 @@
         private FlatUI.FlatLabel flatLabel21;
         private FlatUI.FlatLabel flatLabel22;
         private System.Windows.Forms.TextBox txtTotalSeat;
+        private FlatUI.FlatLabel flatLabel1;
+        private FlatUI.FlatLabel flatLabel2;
+        private System.Windows.Forms.ComboBox cboSeatType;
     }
 }

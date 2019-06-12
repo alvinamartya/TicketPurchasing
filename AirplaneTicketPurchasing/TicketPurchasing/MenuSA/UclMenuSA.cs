@@ -77,5 +77,17 @@ namespace TicketPurchasing.MenuSA
             support.panelMouse(pnlEmployees);
         }
         #endregion
+
+        private void pnlAircrafts_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            UclSeat seat = new UclSeat();
+            ((FrmMenuAdmin)Support.frm).addControltoPanel(seat);
+            ((FrmMenuAdmin)Support.frm).lblTitle.Text = "FLIGHTSI - MANAGE [Seat Type]";
+        }
     }
 }

@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.cmbAircraft = new System.Windows.Forms.ComboBox();
             this.cmbDepart = new System.Windows.Forms.ComboBox();
             this.cmbArrival = new System.Windows.Forms.ComboBox();
             this.dtDeparture = new System.Windows.Forms.DateTimePicker();
-            this.txtFee = new System.Windows.Forms.TextBox();
             this.txtHour = new System.Windows.Forms.TextBox();
             this.txtMin = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -61,35 +60,39 @@
             this.flatLabel4 = new FlatUI.FlatLabel();
             this.flatLabel13 = new FlatUI.FlatLabel();
             this.flatLabel14 = new FlatUI.FlatLabel();
+            this.txtFee = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFee)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSch
             // 
             this.dgvSch.AllowUserToAddRows = false;
             this.dgvSch.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvSch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvSch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSch.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvSch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSch.DoubleBuffered = true;
             this.dgvSch.EnableHeadersVisualStyles = false;
             this.dgvSch.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.dgvSch.HeaderForeColor = System.Drawing.Color.SeaGreen;
             this.dgvSch.Location = new System.Drawing.Point(20, 45);
+            this.dgvSch.MultiSelect = false;
             this.dgvSch.Name = "dgvSch";
             this.dgvSch.ReadOnly = true;
             this.dgvSch.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSch.Size = new System.Drawing.Size(770, 172);
             this.dgvSch.TabIndex = 3;
             this.dgvSch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSch_CellClick);
@@ -130,14 +133,6 @@
             this.dtDeparture.Size = new System.Drawing.Size(200, 20);
             this.dtDeparture.TabIndex = 62;
             // 
-            // txtFee
-            // 
-            this.txtFee.Location = new System.Drawing.Point(412, 347);
-            this.txtFee.Name = "txtFee";
-            this.txtFee.Size = new System.Drawing.Size(131, 20);
-            this.txtFee.TabIndex = 68;
-            this.txtFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFee_KeyPress);
-            // 
             // txtHour
             // 
             this.txtHour.Location = new System.Drawing.Point(379, 373);
@@ -160,12 +155,13 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(410, 454);
+            this.btnCancel.Location = new System.Drawing.Point(411, 422);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 34);
             this.btnCancel.TabIndex = 80;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -173,7 +169,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(295, 454);
+            this.btnSave.Location = new System.Drawing.Point(296, 422);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 34);
             this.btnSave.TabIndex = 79;
@@ -187,7 +183,7 @@
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Location = new System.Drawing.Point(468, 414);
+            this.btnDelete.Location = new System.Drawing.Point(468, 422);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 34);
             this.btnDelete.TabIndex = 78;
@@ -201,7 +197,7 @@
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Location = new System.Drawing.Point(353, 414);
+            this.btnUpdate.Location = new System.Drawing.Point(353, 422);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 34);
             this.btnUpdate.TabIndex = 77;
@@ -215,7 +211,7 @@
             this.btnInsert.FlatAppearance.BorderSize = 0;
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsert.Location = new System.Drawing.Point(238, 414);
+            this.btnInsert.Location = new System.Drawing.Point(238, 422);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(109, 34);
             this.btnInsert.TabIndex = 76;
@@ -229,6 +225,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(170, 20);
             this.txtSearch.TabIndex = 90;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // flatLabel22
             // 
@@ -434,11 +431,26 @@
             this.flatLabel14.TabIndex = 51;
             this.flatLabel14.Text = "Aircraft";
             // 
+            // txtFee
+            // 
+            this.txtFee.Location = new System.Drawing.Point(412, 347);
+            this.txtFee.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.txtFee.Name = "txtFee";
+            this.txtFee.Size = new System.Drawing.Size(120, 20);
+            this.txtFee.TabIndex = 91;
+            this.txtFee.ThousandsSeparator = true;
+            this.txtFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFee_KeyPress_1);
+            // 
             // UclManageSchedules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.txtFee);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.flatLabel22);
             this.Controls.Add(this.flatLabel23);
@@ -454,7 +466,6 @@
             this.Controls.Add(this.flatLabel16);
             this.Controls.Add(this.flatLabel17);
             this.Controls.Add(this.flatLabel15);
-            this.Controls.Add(this.txtFee);
             this.Controls.Add(this.flatLabel11);
             this.Controls.Add(this.flatLabel12);
             this.Controls.Add(this.dtDeparture);
@@ -471,8 +482,9 @@
             this.Controls.Add(this.flatLabel14);
             this.Controls.Add(this.dgvSch);
             this.Name = "UclManageSchedules";
-            this.Size = new System.Drawing.Size(808, 529);
+            this.Size = new System.Drawing.Size(808, 484);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,7 +505,6 @@
         private System.Windows.Forms.DateTimePicker dtDeparture;
         private FlatUI.FlatLabel flatLabel7;
         private FlatUI.FlatLabel flatLabel8;
-        private System.Windows.Forms.TextBox txtFee;
         private FlatUI.FlatLabel flatLabel11;
         private FlatUI.FlatLabel flatLabel12;
         private FlatUI.FlatLabel flatLabel15;
@@ -511,5 +522,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private FlatUI.FlatLabel flatLabel22;
         private FlatUI.FlatLabel flatLabel23;
+        private System.Windows.Forms.NumericUpDown txtFee;
     }
 }

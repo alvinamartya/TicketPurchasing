@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -188,17 +188,12 @@
             // 
             // txtPrice
             // 
+            this.txtPrice.DecimalPlaces = 1;
             this.txtPrice.Location = new System.Drawing.Point(343, 45);
-            this.txtPrice.Maximum = new decimal(new int[] {
-            276447232,
-            23283,
-            0,
-            0});
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(120, 20);
             this.txtPrice.TabIndex = 9;
             this.txtPrice.ThousandsSeparator = true;
-            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // groupBox3
             // 
@@ -225,7 +220,7 @@
             this.btnCancelAmenities.FlatAppearance.BorderSize = 0;
             this.btnCancelAmenities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelAmenities.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancelAmenities.Location = new System.Drawing.Point(355, 69);
+            this.btnCancelAmenities.Location = new System.Drawing.Point(355, 63);
             this.btnCancelAmenities.Name = "btnCancelAmenities";
             this.btnCancelAmenities.Size = new System.Drawing.Size(65, 22);
             this.btnCancelAmenities.TabIndex = 6;
@@ -239,7 +234,7 @@
             this.btnSaveAmenities.FlatAppearance.BorderSize = 0;
             this.btnSaveAmenities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveAmenities.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSaveAmenities.Location = new System.Drawing.Point(284, 69);
+            this.btnSaveAmenities.Location = new System.Drawing.Point(284, 63);
             this.btnSaveAmenities.Name = "btnSaveAmenities";
             this.btnSaveAmenities.Size = new System.Drawing.Size(65, 22);
             this.btnSaveAmenities.TabIndex = 5;
@@ -253,7 +248,7 @@
             this.btnDeleteAmenities.FlatAppearance.BorderSize = 0;
             this.btnDeleteAmenities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAmenities.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteAmenities.Location = new System.Drawing.Point(355, 69);
+            this.btnDeleteAmenities.Location = new System.Drawing.Point(355, 63);
             this.btnDeleteAmenities.Name = "btnDeleteAmenities";
             this.btnDeleteAmenities.Size = new System.Drawing.Size(65, 22);
             this.btnDeleteAmenities.TabIndex = 4;
@@ -265,19 +260,19 @@
             // 
             this.dgvAircraftAmenities.AllowUserToAddRows = false;
             this.dgvAircraftAmenities.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvAircraftAmenities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAircraftAmenities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAircraftAmenities.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvAircraftAmenities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAircraftAmenities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAircraftAmenities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAircraftAmenities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAircraftAmenities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAircraftAmenities.DoubleBuffered = true;
             this.dgvAircraftAmenities.EnableHeadersVisualStyles = false;
@@ -289,7 +284,7 @@
             this.dgvAircraftAmenities.ReadOnly = true;
             this.dgvAircraftAmenities.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAircraftAmenities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAircraftAmenities.Size = new System.Drawing.Size(225, 79);
+            this.dgvAircraftAmenities.Size = new System.Drawing.Size(205, 79);
             this.dgvAircraftAmenities.TabIndex = 0;
             this.dgvAircraftAmenities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAircraftAmenities_CellClick);
             // 
@@ -297,9 +292,9 @@
             // 
             this.cboAmenities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAmenities.FormattingEnabled = true;
-            this.cboAmenities.Location = new System.Drawing.Point(342, 18);
+            this.cboAmenities.Location = new System.Drawing.Point(334, 18);
             this.cboAmenities.Name = "cboAmenities";
-            this.cboAmenities.Size = new System.Drawing.Size(113, 21);
+            this.cboAmenities.Size = new System.Drawing.Size(120, 21);
             this.cboAmenities.TabIndex = 1;
             // 
             // btnInsertAmenities
@@ -308,7 +303,7 @@
             this.btnInsertAmenities.FlatAppearance.BorderSize = 0;
             this.btnInsertAmenities.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertAmenities.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInsertAmenities.Location = new System.Drawing.Point(284, 69);
+            this.btnInsertAmenities.Location = new System.Drawing.Point(284, 63);
             this.btnInsertAmenities.Name = "btnInsertAmenities";
             this.btnInsertAmenities.Size = new System.Drawing.Size(65, 22);
             this.btnInsertAmenities.TabIndex = 2;
@@ -334,19 +329,19 @@
             // 
             this.dgvAircraftDetails.AllowUserToAddRows = false;
             this.dgvAircraftDetails.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvAircraftDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAircraftDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAircraftDetails.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvAircraftDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAircraftDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAircraftDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAircraftDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAircraftDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAircraftDetails.DoubleBuffered = true;
             this.dgvAircraftDetails.EnableHeadersVisualStyles = false;
@@ -358,7 +353,7 @@
             this.dgvAircraftDetails.ReadOnly = true;
             this.dgvAircraftDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAircraftDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAircraftDetails.Size = new System.Drawing.Size(225, 94);
+            this.dgvAircraftDetails.Size = new System.Drawing.Size(213, 94);
             this.dgvAircraftDetails.TabIndex = 0;
             this.dgvAircraftDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAircraftDetails_CellClick);
             // 
@@ -451,19 +446,19 @@
             // 
             this.dgvAircrafts.AllowUserToAddRows = false;
             this.dgvAircrafts.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvAircrafts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvAircrafts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAircrafts.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvAircrafts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAircrafts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAircrafts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAircrafts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAircrafts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAircrafts.DoubleBuffered = true;
             this.dgvAircrafts.EnableHeadersVisualStyles = false;
@@ -559,7 +554,7 @@
             this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(237, 18);
+            this.flatLabel19.Location = new System.Drawing.Point(229, 18);
             this.flatLabel19.Name = "flatLabel19";
             this.flatLabel19.Size = new System.Drawing.Size(64, 17);
             this.flatLabel19.TabIndex = 1;
@@ -571,7 +566,7 @@
             this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel20.ForeColor = System.Drawing.Color.White;
-            this.flatLabel20.Location = new System.Drawing.Point(324, 18);
+            this.flatLabel20.Location = new System.Drawing.Point(316, 18);
             this.flatLabel20.Name = "flatLabel20";
             this.flatLabel20.Size = new System.Drawing.Size(11, 17);
             this.flatLabel20.TabIndex = 2;
@@ -583,7 +578,7 @@
             this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel18.ForeColor = System.Drawing.Color.White;
-            this.flatLabel18.Location = new System.Drawing.Point(237, 18);
+            this.flatLabel18.Location = new System.Drawing.Point(227, 18);
             this.flatLabel18.Name = "flatLabel18";
             this.flatLabel18.Size = new System.Drawing.Size(72, 17);
             this.flatLabel18.TabIndex = 1;
@@ -631,11 +626,11 @@
             this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(237, 44);
+            this.flatLabel16.Location = new System.Drawing.Point(227, 44);
             this.flatLabel16.Name = "flatLabel16";
-            this.flatLabel16.Size = new System.Drawing.Size(36, 17);
+            this.flatLabel16.Size = new System.Drawing.Size(99, 17);
             this.flatLabel16.TabIndex = 4;
-            this.flatLabel16.Text = "Price";
+            this.flatLabel16.Text = "Additional Price";
             // 
             // flatLabel10
             // 

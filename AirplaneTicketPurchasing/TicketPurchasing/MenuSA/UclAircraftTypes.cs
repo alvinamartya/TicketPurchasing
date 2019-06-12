@@ -120,6 +120,7 @@ namespace TicketPurchasing.MenuSA
                         {
                             param2.Add(new Parameter("@ID", item.ID.ToString()));
                             param2.Add(new Parameter("@Seat", item.Seat.ToString()));
+                            param2.Add(new Parameter("@SeatTypeID", item.SeatTypeID));
                             y = database.executeQuery("sp_update_aircrafttypedetails", param2, "Update");
                         }
                         else if(item.Status == 1)
@@ -127,6 +128,7 @@ namespace TicketPurchasing.MenuSA
                             param2.Add(new Parameter("@Seat", item.Seat.ToString()));
                             param2.Add(new Parameter("@CabinType", item.Cabin));
                             param2.Add(new Parameter("@AircraftTypeID", id));
+                            param2.Add(new Parameter("@SeatTypeID", item.SeatTypeID));
                             y = database.executeQuery("sp_insert_aircrafttypedetails", param2, "Add");
                         }
                         else
@@ -178,6 +180,10 @@ namespace TicketPurchasing.MenuSA
             enableFrmDetail(false);
             enableFrmDetail2(false);
             cboCabinType.SelectedIndex = 0;
+            DataSet getDataSeatType = database.getDataFromDatabase("sp_view_seattype_Cmb", null);
+            cboSeatType.DataSource = getDataSeatType.Tables[0];
+            cboSeatType.ValueMember = "ID";
+            cboSeatType.DisplayMember = "Name";
         }
         #endregion
         #region Detail
@@ -220,7 +226,7 @@ namespace TicketPurchasing.MenuSA
                         listAircraftTypes.Add(new AircraftType(
                             Convert.ToInt32(row2.Cells[0].Value.ToString()),
                             cboCabinType.Text,
-                            Convert.ToInt32(txtSeat.Value), 3));
+                            Convert.ToInt32(txtSeat.Value), cboSeatType.SelectedValue.ToString() ,3));
                     }
                     DgvAircraftTypeDetail.Rows.Remove(row2);
                     MessageBox.Show("Delete data has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -242,7 +248,6 @@ namespace TicketPurchasing.MenuSA
                 string process = "";
                 if (!isUpdateDetail)
                 {
-                    
                     DataGridViewRow hasDataDetail = DgvAircraftTypeDetail.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == cboCabinType.Text).FirstOrDefault();
                     if(hasDataDetail != null)
                     {
@@ -260,7 +265,7 @@ namespace TicketPurchasing.MenuSA
                     }
                     else
                     {
-                        listAircraftTypes.Add(new AircraftType(cboCabinType.Text, Convert.ToInt32(txtSeat.Value), 1));
+                        listAircraftTypes.Add(new AircraftType(cboCabinType.Text, Convert.ToInt32(txtSeat.Value),cboSeatType.SelectedValue.ToString(), 1));
                         DgvAircraftTypeDetail.Rows.Add("", cboCabinType.Text, Convert.ToInt32(txtSeat.Value));
                     }
 
@@ -279,15 +284,18 @@ namespace TicketPurchasing.MenuSA
                     {
                         aircrafttype.Seat = Convert.ToInt32(txtSeat.Value);
                         aircrafttype.Cabin = cboCabinType.Text;
+                        aircrafttype.SeatTypeID = cboSeatType.SelectedValue.ToString();
                     }
                     else
                         listAircraftTypes.Add(new AircraftType(
                             Convert.ToInt32(row2.Cells[0].Value.ToString()),
                             cboCabinType.Text, 
-                            Convert.ToInt32(txtSeat.Value), 2));
+                            Convert.ToInt32(txtSeat.Value),cboSeatType.SelectedValue.ToString(), 2));
                     
                     row2.Cells[1].Value = cboCabinType.Text;
-                    row2.Cells[2].Value = Convert.ToInt32(txtSeat.Value);
+                    row2.Cells[2].Value = cboSeatType.SelectedValue.ToString();
+                    row2.Cells[3].Value = cboSeatType.Text;
+                    row2.Cells[4].Value = Convert.ToInt32(txtSeat.Value);
                     process = "Edit";
                 }
 
@@ -423,7 +431,7 @@ namespace TicketPurchasing.MenuSA
             int totalSeat = 0;
             foreach(DataGridViewRow itemRow in DgvAircraftTypeDetail.Rows.Cast<DataGridViewRow>().ToList())
             {
-                totalSeat = totalSeat + Convert.ToInt32(itemRow.Cells[2].Value.ToString());
+                totalSeat = totalSeat + Convert.ToInt32(itemRow.Cells[4].Value.ToString());
             }
             txtTotalSeat.Text = totalSeat.ToString();
         }
@@ -431,6 +439,7 @@ namespace TicketPurchasing.MenuSA
         private void clearDetail()
         {
             cboCabinType.SelectedIndex = 0;
+            cboSeatType.SelectedIndex = 0;
             txtSeat.Value = 0;
             isUpdateDetail = true;
             row2 = null;
@@ -438,8 +447,14 @@ namespace TicketPurchasing.MenuSA
 
         private bool validationdetail()
         {
+            List<Parameter> param = new List<Parameter>();
+            param.Add(new Parameter("@ID", cboSeatType.SelectedValue.ToString()));
+            DataSet getSingleDataSeatType = database.getDataFromDatabase("sp_view_seattype_single", param);
+            int maxseatincol = Convert.ToInt32(getSingleDataSeatType.Tables[0].Rows[0][0]);
+
             bool result = false;
             if (txtSeat.Value <= 0) message = "Ensure seat must bigger than now";
+            else if (txtSeat.Value % maxseatincol != 0) message = "Ensure total seat must correct";
             else result = true;
             return result;
         }
@@ -448,6 +463,7 @@ namespace TicketPurchasing.MenuSA
         private void enableFrmDetail(bool value)
         {
             cboCabinType.Enabled = value;
+            cboSeatType.Enabled = value;
             txtSeat.Enabled = value;
             btnInsertDetail.Visible = !value;
             btnUpdateDetail.Visible = !value;
@@ -463,7 +479,8 @@ namespace TicketPurchasing.MenuSA
             {
                 row2 = DgvAircraftTypeDetail.CurrentRow;
                 cboCabinType.Text = row2.Cells[1].Value.ToString();
-                txtSeat.Value = Convert.ToInt32(row2.Cells[2].Value.ToString());
+                cboSeatType.SelectedValue = row2.Cells[2].Value.ToString();
+                txtSeat.Value = Convert.ToInt32(row2.Cells[4].Value.ToString());
             }
         }
 
@@ -498,8 +515,11 @@ namespace TicketPurchasing.MenuSA
             DgvAircraftTypeDetail.Columns.Clear();
             DgvAircraftTypeDetail.Columns.Add("id", "ID");
             DgvAircraftTypeDetail.Columns.Add("cabintype", "Cabin Type");
+            DgvAircraftTypeDetail.Columns.Add("seattypeid", "SeatTypeID");
+            DgvAircraftTypeDetail.Columns.Add("seattype", "SeatType");
             DgvAircraftTypeDetail.Columns.Add("seat", "Seat");
             DgvAircraftTypeDetail.Columns[0].Visible = false;
+            DgvAircraftTypeDetail.Columns[2].Visible = false;
             DgvAircraftTypeDetail.ForeColor = Color.Black;
             DgvAircraftTypeDetail.HeaderForeColor = Color.White;
             DgvAircraftTypeDetail.HeaderBgColor = Color.Teal;
@@ -516,12 +536,14 @@ namespace TicketPurchasing.MenuSA
                 {
                     ID = dataRow.Field<int>("ID"),
                     Seat = dataRow.Field<int>("Seat"),
-                    CabinType = dataRow.Field<string>("CabinType")
+                    CabinType = dataRow.Field<string>("CabinType"),
+                    SeatTypeID = dataRow.Field<string>("seattypeID"),
+                    SeatType = dataRow.Field<string>("SeatType")
                 }).ToList();
 
             foreach (var item in convertDataSetToList)
             {
-                DgvAircraftTypeDetail.Rows.Add(item.ID, item.CabinType,item.Seat);
+                DgvAircraftTypeDetail.Rows.Add(item.ID, item.CabinType,item.SeatTypeID,item.SeatType,item.Seat);
             }
         }
         #endregion

@@ -7,7 +7,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
-using System.Drawing;
 using System.Drawing.Drawing2D;
 
 namespace TicketPurchasing

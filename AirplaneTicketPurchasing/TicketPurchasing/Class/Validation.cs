@@ -28,7 +28,7 @@ namespace TicketPurchasing
 
         public bool regexAlphaNumberic(string input)
         {
-            Regex regex = new Regex("^[A-Z0-9]+$");
+            Regex regex = new Regex("^[A-Za-z0-9]+$");
             if (regex.IsMatch(input)) return true;
             return false;
         }

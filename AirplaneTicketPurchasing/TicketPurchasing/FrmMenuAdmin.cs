@@ -106,6 +106,15 @@ namespace TicketPurchasing
             pnlButtonSelected.Top = b.Top;
         }
 
+        public void cancel()
+        {
+            btn = btnDashboard;
+            buttonSeleted(btn);
+            lblTitle.Text = "FLIGHTSI - DASHBOARD";
+            UclDashboard uclReport = new UclDashboard();
+            addControltoPanel(uclReport);
+        }
+
         public void addControltoPanel(UserControl control)
         {
             pnlContent.Controls.Clear();
@@ -113,5 +122,14 @@ namespace TicketPurchasing
             support.DragandDropForm(this);
         }
         #endregion
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            btn = btnChangePassword;
+            buttonSeleted(btn);
+            UclChangePassword uclChangePassword = new UclChangePassword();
+            addControltoPanel(uclChangePassword);
+            lblTitle.Text = "FLIGHTSI - CHANGE PASSWORD";
+        }
     }
 }

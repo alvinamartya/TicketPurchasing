@@ -36,7 +36,6 @@
             this.flatClose1 = new FlatUI.FlatClose();
             this.lblTitle = new FlatUI.FlatLabel();
             this.pnlNavbar = new System.Windows.Forms.Panel();
-            this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.lblPosition = new FlatUI.FlatLabel();
             this.lblName = new FlatUI.FlatLabel();
             this.photo = new System.Windows.Forms.PictureBox();
@@ -45,6 +44,8 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.pnlButtonSelected = new System.Windows.Forms.Panel();
             this.pnlHeader.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,6 +129,7 @@
             // 
             this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.pnlNavbar.Controls.Add(this.pnlButtonSelected);
+            this.pnlNavbar.Controls.Add(this.btnChangePassword);
             this.pnlNavbar.Controls.Add(this.lblPosition);
             this.pnlNavbar.Controls.Add(this.lblName);
             this.pnlNavbar.Controls.Add(this.photo);
@@ -140,14 +142,6 @@
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Size = new System.Drawing.Size(170, 479);
             this.pnlNavbar.TabIndex = 3;
-            // 
-            // pnlButtonSelected
-            // 
-            this.pnlButtonSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.pnlButtonSelected.Location = new System.Drawing.Point(12, 202);
-            this.pnlButtonSelected.Name = "pnlButtonSelected";
-            this.pnlButtonSelected.Size = new System.Drawing.Size(5, 37);
-            this.pnlButtonSelected.TabIndex = 12;
             // 
             // lblPosition
             // 
@@ -187,7 +181,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnLogout.Location = new System.Drawing.Point(0, 311);
+            this.btnLogout.Location = new System.Drawing.Point(0, 350);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(170, 37);
             this.btnLogout.TabIndex = 8;
@@ -247,6 +241,28 @@
             this.pnlContent.Size = new System.Drawing.Size(835, 479);
             this.pnlContent.TabIndex = 4;
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnChangePassword.Location = new System.Drawing.Point(0, 313);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(170, 37);
+            this.btnChangePassword.TabIndex = 14;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
+            // pnlButtonSelected
+            // 
+            this.pnlButtonSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.pnlButtonSelected.Location = new System.Drawing.Point(12, 202);
+            this.pnlButtonSelected.Name = "pnlButtonSelected";
+            this.pnlButtonSelected.Size = new System.Drawing.Size(5, 37);
+            this.pnlButtonSelected.TabIndex = 15;
+            // 
             // FrmMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,9 +300,10 @@
         private FlatUI.FlatLabel lblPosition;
         private System.Windows.Forms.Panel pnlContent;
         public FlatUI.FlatLabel lblTitle;
-        private System.Windows.Forms.Panel pnlButtonSelected;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Panel pnlButtonSelected;
     }
 }

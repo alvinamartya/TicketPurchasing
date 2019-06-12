@@ -157,6 +157,12 @@
       <DependentUpon>UclMenuSA.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\Parameter.cs" />
+    <Compile Include="MenuSA\UclSeat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuSA\UclSeat.Designer.cs">
+      <DependentUpon>UclSeat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Saneki\FlatAlertBox.cs">
@@ -232,6 +238,12 @@
     <Compile Include="Saneki\Helpers.cs" />
     <Compile Include="Saneki\MouseState.cs" />
     <Compile Include="Class\Support.cs" />
+    <Compile Include="UclChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UclChangePassword.Designer.cs">
+      <DependentUpon>UclChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="UclDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -299,6 +311,9 @@
     <EmbeddedResource Include="MenuSA\UclMenuSA.resx">
       <DependentUpon>UclMenuSA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuSA\UclSeat.resx">
+      <DependentUpon>UclSeat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -308,6 +323,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UclChangePassword.resx">
+      <DependentUpon>UclChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UclDashboard.resx">
       <DependentUpon>UclDashboard.cs</DependentUpon>
     </EmbeddedResource>
