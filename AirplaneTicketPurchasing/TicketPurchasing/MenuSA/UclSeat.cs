@@ -102,6 +102,9 @@ namespace TicketPurchasing.MenuSA
                 (txtLeft.Value > 0 && txtMid.Value <= 0 && txtRight.Value <= 0) ||
                 (txtLeft.Value <= 0 && txtMid.Value <= 0 && txtRight.Value > 0))
                 message = "Ensure format seat must correct";
+            else if (txtLeft.Value + txtMid.Value + txtRight.Value > 8) message = "Invalid count seat";
+            else if (txtLeft.Value != txtRight.Value) message = "Ensure left seat must same with right seat";
+            else if (txtMid.Value == 1) message = "Ensure mid must bigger than now";
             else result = true;
             return result;
         }
@@ -255,6 +258,7 @@ namespace TicketPurchasing.MenuSA
                 txtRight.Value = Convert.ToInt32(row.Cells[4].Value.ToString());
             }
         }
+
 
         private void UclSeat_Load(object sender, EventArgs e)
         {

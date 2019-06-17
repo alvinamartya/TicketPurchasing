@@ -92,9 +92,14 @@ namespace TicketPurchasing
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (isAuthentic(txtUsername.Text, txtPassword.Text))
+            if(username == "" && password == "")
             {
-                GenericIdentity myIdentity = new GenericIdentity(txtUsername.Text);
+                MessageBox.Show("Ensure you have filled username and password", "Warning", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (isAuthentic(username, password))
+            {
+                GenericIdentity myIdentity = new GenericIdentity(username);
                 DataSet getAllRoles = database.getDataFromDatabase("sp_login_getallroles", null);
                 string[] myRole = new string[getAllRoles.Tables[0].Rows.Count];
                 for(int i =0; i< getAllRoles.Tables[0].Rows.Count; i++)
@@ -107,7 +112,7 @@ namespace TicketPurchasing
 
                 // simpan dalam thread principal
                 Thread.CurrentPrincipal = myPrincipal;
-                string role = getRole(txtUsername.Text);
+                string role = getRole(username);
 
                 if(role == "sa")
                 {

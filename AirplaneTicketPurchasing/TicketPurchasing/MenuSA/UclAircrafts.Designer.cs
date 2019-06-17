@@ -46,16 +46,26 @@
             this.btnSaveAmenities = new System.Windows.Forms.Button();
             this.btnDeleteAmenities = new System.Windows.Forms.Button();
             this.dgvAircraftAmenities = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.flatLabel19 = new FlatUI.FlatLabel();
+            this.flatLabel20 = new FlatUI.FlatLabel();
             this.cboAmenities = new System.Windows.Forms.ComboBox();
             this.btnInsertAmenities = new System.Windows.Forms.Button();
             this.btnCancelDetails = new System.Windows.Forms.Button();
             this.dgvAircraftDetails = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnSaveDetails = new System.Windows.Forms.Button();
+            this.flatLabel18 = new FlatUI.FlatLabel();
             this.btnDeleteDetails = new System.Windows.Forms.Button();
+            this.flatLabel17 = new FlatUI.FlatLabel();
+            this.flatLabel8 = new FlatUI.FlatLabel();
             this.btnUpdateDetails = new System.Windows.Forms.Button();
             this.cboCabinType = new System.Windows.Forms.ComboBox();
+            this.flatLabel7 = new FlatUI.FlatLabel();
+            this.flatLabel16 = new FlatUI.FlatLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.flatLabel10 = new FlatUI.FlatLabel();
+            this.flatLabel15 = new FlatUI.FlatLabel();
             this.btnInsertDetail = new System.Windows.Forms.Button();
+            this.flatLabel9 = new FlatUI.FlatLabel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.dgvAircrafts = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.cboCompany = new System.Windows.Forms.ComboBox();
@@ -65,16 +75,6 @@
             this.flatLabel22 = new FlatUI.FlatLabel();
             this.flatLabel11 = new FlatUI.FlatLabel();
             this.flatLabel12 = new FlatUI.FlatLabel();
-            this.flatLabel19 = new FlatUI.FlatLabel();
-            this.flatLabel20 = new FlatUI.FlatLabel();
-            this.flatLabel18 = new FlatUI.FlatLabel();
-            this.flatLabel17 = new FlatUI.FlatLabel();
-            this.flatLabel8 = new FlatUI.FlatLabel();
-            this.flatLabel7 = new FlatUI.FlatLabel();
-            this.flatLabel16 = new FlatUI.FlatLabel();
-            this.flatLabel10 = new FlatUI.FlatLabel();
-            this.flatLabel15 = new FlatUI.FlatLabel();
-            this.flatLabel9 = new FlatUI.FlatLabel();
             this.flatLabel5 = new FlatUI.FlatLabel();
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel3 = new FlatUI.FlatLabel();
@@ -288,6 +288,30 @@
             this.dgvAircraftAmenities.TabIndex = 0;
             this.dgvAircraftAmenities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAircraftAmenities_CellClick);
             // 
+            // flatLabel19
+            // 
+            this.flatLabel19.AutoSize = true;
+            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel19.ForeColor = System.Drawing.Color.White;
+            this.flatLabel19.Location = new System.Drawing.Point(229, 18);
+            this.flatLabel19.Name = "flatLabel19";
+            this.flatLabel19.Size = new System.Drawing.Size(64, 17);
+            this.flatLabel19.TabIndex = 1;
+            this.flatLabel19.Text = "Amenities";
+            // 
+            // flatLabel20
+            // 
+            this.flatLabel20.AutoSize = true;
+            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel20.ForeColor = System.Drawing.Color.White;
+            this.flatLabel20.Location = new System.Drawing.Point(316, 18);
+            this.flatLabel20.Name = "flatLabel20";
+            this.flatLabel20.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel20.TabIndex = 2;
+            this.flatLabel20.Text = ":";
+            // 
             // cboAmenities
             // 
             this.cboAmenities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -371,6 +395,18 @@
             this.btnSaveDetails.UseVisualStyleBackColor = false;
             this.btnSaveDetails.Click += new System.EventHandler(this.btnSaveDetails_Click);
             // 
+            // flatLabel18
+            // 
+            this.flatLabel18.AutoSize = true;
+            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel18.ForeColor = System.Drawing.Color.White;
+            this.flatLabel18.Location = new System.Drawing.Point(227, 18);
+            this.flatLabel18.Name = "flatLabel18";
+            this.flatLabel18.Size = new System.Drawing.Size(72, 17);
+            this.flatLabel18.TabIndex = 1;
+            this.flatLabel18.Text = "Cabin Type";
+            // 
             // btnDeleteDetails
             // 
             this.btnDeleteDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
@@ -384,6 +420,30 @@
             this.btnDeleteDetails.Text = "Delete";
             this.btnDeleteDetails.UseVisualStyleBackColor = false;
             this.btnDeleteDetails.Click += new System.EventHandler(this.btnDeleteDetails_Click);
+            // 
+            // flatLabel17
+            // 
+            this.flatLabel17.AutoSize = true;
+            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel17.ForeColor = System.Drawing.Color.White;
+            this.flatLabel17.Location = new System.Drawing.Point(324, 18);
+            this.flatLabel17.Name = "flatLabel17";
+            this.flatLabel17.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel17.TabIndex = 2;
+            this.flatLabel17.Text = ":";
+            // 
+            // flatLabel8
+            // 
+            this.flatLabel8.AutoSize = true;
+            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel8.ForeColor = System.Drawing.Color.White;
+            this.flatLabel8.Location = new System.Drawing.Point(237, 18);
+            this.flatLabel8.Name = "flatLabel8";
+            this.flatLabel8.Size = new System.Drawing.Size(72, 17);
+            this.flatLabel8.TabIndex = 1;
+            this.flatLabel8.Text = "Cabin Type";
             // 
             // btnUpdateDetails
             // 
@@ -405,12 +465,36 @@
             this.cboCabinType.FormattingEnabled = true;
             this.cboCabinType.Items.AddRange(new object[] {
             "Economy Class",
-            "First Class",
-            "Business Class"});
+            "Business Class",
+            "First Class"});
             this.cboCabinType.Location = new System.Drawing.Point(342, 18);
             this.cboCabinType.Name = "cboCabinType";
             this.cboCabinType.Size = new System.Drawing.Size(120, 21);
             this.cboCabinType.TabIndex = 1;
+            // 
+            // flatLabel7
+            // 
+            this.flatLabel7.AutoSize = true;
+            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
+            this.flatLabel7.Location = new System.Drawing.Point(324, 18);
+            this.flatLabel7.Name = "flatLabel7";
+            this.flatLabel7.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel7.TabIndex = 2;
+            this.flatLabel7.Text = ":";
+            // 
+            // flatLabel16
+            // 
+            this.flatLabel16.AutoSize = true;
+            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel16.ForeColor = System.Drawing.Color.White;
+            this.flatLabel16.Location = new System.Drawing.Point(227, 44);
+            this.flatLabel16.Name = "flatLabel16";
+            this.flatLabel16.Size = new System.Drawing.Size(99, 17);
+            this.flatLabel16.TabIndex = 4;
+            this.flatLabel16.Text = "Additional Price";
             // 
             // comboBox1
             // 
@@ -420,6 +504,30 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 1;
+            // 
+            // flatLabel10
+            // 
+            this.flatLabel10.AutoSize = true;
+            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel10.ForeColor = System.Drawing.Color.White;
+            this.flatLabel10.Location = new System.Drawing.Point(237, 44);
+            this.flatLabel10.Name = "flatLabel10";
+            this.flatLabel10.Size = new System.Drawing.Size(36, 17);
+            this.flatLabel10.TabIndex = 4;
+            this.flatLabel10.Text = "Price";
+            // 
+            // flatLabel15
+            // 
+            this.flatLabel15.AutoSize = true;
+            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel15.ForeColor = System.Drawing.Color.White;
+            this.flatLabel15.Location = new System.Drawing.Point(324, 44);
+            this.flatLabel15.Name = "flatLabel15";
+            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel15.TabIndex = 5;
+            this.flatLabel15.Text = ":";
             // 
             // btnInsertDetail
             // 
@@ -434,6 +542,18 @@
             this.btnInsertDetail.Text = "Insert";
             this.btnInsertDetail.UseVisualStyleBackColor = false;
             this.btnInsertDetail.Click += new System.EventHandler(this.btnInsertDetail_Click);
+            // 
+            // flatLabel9
+            // 
+            this.flatLabel9.AutoSize = true;
+            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel9.ForeColor = System.Drawing.Color.White;
+            this.flatLabel9.Location = new System.Drawing.Point(324, 44);
+            this.flatLabel9.Name = "flatLabel9";
+            this.flatLabel9.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel9.TabIndex = 5;
+            this.flatLabel9.Text = ":";
             // 
             // txtName
             // 
@@ -547,126 +667,6 @@
             this.flatLabel12.Size = new System.Drawing.Size(35, 17);
             this.flatLabel12.TabIndex = 12;
             this.flatLabel12.Text = "Type";
-            // 
-            // flatLabel19
-            // 
-            this.flatLabel19.AutoSize = true;
-            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(229, 18);
-            this.flatLabel19.Name = "flatLabel19";
-            this.flatLabel19.Size = new System.Drawing.Size(64, 17);
-            this.flatLabel19.TabIndex = 1;
-            this.flatLabel19.Text = "Amenities";
-            // 
-            // flatLabel20
-            // 
-            this.flatLabel20.AutoSize = true;
-            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel20.ForeColor = System.Drawing.Color.White;
-            this.flatLabel20.Location = new System.Drawing.Point(316, 18);
-            this.flatLabel20.Name = "flatLabel20";
-            this.flatLabel20.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel20.TabIndex = 2;
-            this.flatLabel20.Text = ":";
-            // 
-            // flatLabel18
-            // 
-            this.flatLabel18.AutoSize = true;
-            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel18.ForeColor = System.Drawing.Color.White;
-            this.flatLabel18.Location = new System.Drawing.Point(227, 18);
-            this.flatLabel18.Name = "flatLabel18";
-            this.flatLabel18.Size = new System.Drawing.Size(72, 17);
-            this.flatLabel18.TabIndex = 1;
-            this.flatLabel18.Text = "Cabin Type";
-            // 
-            // flatLabel17
-            // 
-            this.flatLabel17.AutoSize = true;
-            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel17.ForeColor = System.Drawing.Color.White;
-            this.flatLabel17.Location = new System.Drawing.Point(324, 18);
-            this.flatLabel17.Name = "flatLabel17";
-            this.flatLabel17.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel17.TabIndex = 2;
-            this.flatLabel17.Text = ":";
-            // 
-            // flatLabel8
-            // 
-            this.flatLabel8.AutoSize = true;
-            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel8.ForeColor = System.Drawing.Color.White;
-            this.flatLabel8.Location = new System.Drawing.Point(237, 18);
-            this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(72, 17);
-            this.flatLabel8.TabIndex = 1;
-            this.flatLabel8.Text = "Cabin Type";
-            // 
-            // flatLabel7
-            // 
-            this.flatLabel7.AutoSize = true;
-            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(324, 18);
-            this.flatLabel7.Name = "flatLabel7";
-            this.flatLabel7.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel7.TabIndex = 2;
-            this.flatLabel7.Text = ":";
-            // 
-            // flatLabel16
-            // 
-            this.flatLabel16.AutoSize = true;
-            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(227, 44);
-            this.flatLabel16.Name = "flatLabel16";
-            this.flatLabel16.Size = new System.Drawing.Size(99, 17);
-            this.flatLabel16.TabIndex = 4;
-            this.flatLabel16.Text = "Additional Price";
-            // 
-            // flatLabel10
-            // 
-            this.flatLabel10.AutoSize = true;
-            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(237, 44);
-            this.flatLabel10.Name = "flatLabel10";
-            this.flatLabel10.Size = new System.Drawing.Size(36, 17);
-            this.flatLabel10.TabIndex = 4;
-            this.flatLabel10.Text = "Price";
-            // 
-            // flatLabel15
-            // 
-            this.flatLabel15.AutoSize = true;
-            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(324, 44);
-            this.flatLabel15.Name = "flatLabel15";
-            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel15.TabIndex = 5;
-            this.flatLabel15.Text = ":";
-            // 
-            // flatLabel9
-            // 
-            this.flatLabel9.AutoSize = true;
-            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(324, 44);
-            this.flatLabel9.Name = "flatLabel9";
-            this.flatLabel9.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel9.TabIndex = 5;
-            this.flatLabel9.Text = ":";
             // 
             // flatLabel5
             // 

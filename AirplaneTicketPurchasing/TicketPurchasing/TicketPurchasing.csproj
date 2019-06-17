@@ -90,6 +90,12 @@
     <Compile Include="MenuAdmin\UclMenuAdmin.Designer.cs">
       <DependentUpon>UclMenuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuAgency\ButtonSeat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MenuAgency\ButtonSeat.Designer.cs">
+      <DependentUpon>ButtonSeat.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAgency\UclCustomer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     </Compile>
     <Compile Include="MenuAgency\UclRefund.Designer.cs">
       <DependentUpon>UclRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgency\UclSeat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAgency\UclSeat.Designer.cs">
+      <DependentUpon>UclSeat.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAgency\UclTicket.cs">
       <SubType>UserControl</SubType>
@@ -289,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAgency\UclRefund.resx">
       <DependentUpon>UclRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgency\UclSeat.resx">
+      <DependentUpon>UclSeat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAgency\UclTicket.resx">
       <DependentUpon>UclTicket.cs</DependentUpon>

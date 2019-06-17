@@ -121,10 +121,16 @@ namespace TicketPurchasing.MenuSA
 
         private bool validation()
         {
+            DataSet dsAircraftTypeDetails = database
+                .getDataFromDatabase("sp_view_aircrafttypedetails", 
+                new List<Parameter>() { new Parameter("@AircraftTypeID", 
+                aircraftTypeid[cboType.SelectedIndex]) });
+            int cabinAircraftCount = dsAircraftTypeDetails.Tables[0].Rows.Count;
             bool result = false;
             if (txtName.Text == "") message = "Ensure you have filled aircraft name";
             else if (dgvAircraftDetails.RowCount <= 0) message = "Ensure you have filled aircraft details";
             else if (isEdittedDetail == true) message = "Ensure does not have process in aircraft details";
+            else if (cabinAircraftCount != dgvAircraftDetails.Rows.Count) message = "Ensure you have added all of cabin in this aircraft";
             else result = true;
             return result;
         }
@@ -183,7 +189,7 @@ namespace TicketPurchasing.MenuSA
         private bool validationdetail()
         {
             bool result = false;
-            if (txtPrice.Value <= 0) message = "Ensure price must greater than 0";
+            if (txtPrice.Value < 0) message = "Ensure price must bigger or equals than 0";
             else if (dgvAircraftAmenities.Rows.Count <= 0) message = "Ensure you have add amenities for this cabin type";
             else if (isEdittedAmenities) message = "Ensure does not have process in amenities";
             else result = true;
@@ -722,6 +728,9 @@ namespace TicketPurchasing.MenuSA
         {
             if(!isEdittedAircraft)
             {
+                detailTypes = new List<AircraftDetails>();
+                amenities = new List<AircraftAmenities>();
+
                 clearAircraftDetails();
                 dgvAircraftDetails.Rows.Clear();
 

@@ -125,7 +125,6 @@ D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
@@ -177,3 +176,5 @@ C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\Ticket
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclChangePassword.resources
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclSeat.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeat.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
