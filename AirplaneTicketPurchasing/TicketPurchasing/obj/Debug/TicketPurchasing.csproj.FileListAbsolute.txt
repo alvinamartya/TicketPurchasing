@@ -178,3 +178,34 @@ D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclSeat.resources
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeat.resources
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeat.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclTicket.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclSeat.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclChangePassword.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclDashboard.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache

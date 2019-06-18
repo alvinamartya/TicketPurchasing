@@ -226,7 +226,7 @@ namespace TicketPurchasing.MenuSA
                         listAircraftTypes.Add(new AircraftType(
                             Convert.ToInt32(row2.Cells[0].Value.ToString()),
                             cboCabinType.Text,
-                            Convert.ToInt32(txtSeat.Value), cboSeatType.SelectedValue.ToString() ,3));
+                            Convert.ToInt32(txtSeat.Value), cboSeatType.SelectedValue.ToString(), cboSeatType.Text ,3));
                     }
                     DgvAircraftTypeDetail.Rows.Remove(row2);
                     MessageBox.Show("Delete data has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -261,12 +261,12 @@ namespace TicketPurchasing.MenuSA
                         aircrafttype.Seat = Convert.ToInt32(txtSeat.Value);
                         if (aircrafttype.ID > 0) aircrafttype.Status = 2;
                         else aircrafttype.Status = 1;
-                        DgvAircraftTypeDetail.Rows.Add(aircrafttype.ID, aircrafttype.Cabin, aircrafttype.Seat);
+                        DgvAircraftTypeDetail.Rows.Add(aircrafttype.ID, aircrafttype.Cabin, aircrafttype.SeatTypeID, aircrafttype.SeatType, aircrafttype.Seat);
                     }
                     else
                     {
-                        listAircraftTypes.Add(new AircraftType(cboCabinType.Text, Convert.ToInt32(txtSeat.Value),cboSeatType.SelectedValue.ToString(), 1));
-                        DgvAircraftTypeDetail.Rows.Add("", cboCabinType.Text, Convert.ToInt32(txtSeat.Value));
+                        listAircraftTypes.Add(new AircraftType(cboCabinType.Text, Convert.ToInt32(txtSeat.Value),cboSeatType.SelectedValue.ToString(),cboSeatType.Text, 1));
+                        DgvAircraftTypeDetail.Rows.Add("", cboCabinType.Text, cboSeatType.SelectedValue.ToString(),cboSeatType.Text, Convert.ToInt32(txtSeat.Value));
                     }
 
                     process = "Add";
@@ -290,7 +290,7 @@ namespace TicketPurchasing.MenuSA
                         listAircraftTypes.Add(new AircraftType(
                             Convert.ToInt32(row2.Cells[0].Value.ToString()),
                             cboCabinType.Text, 
-                            Convert.ToInt32(txtSeat.Value),cboSeatType.SelectedValue.ToString(), 2));
+                            Convert.ToInt32(txtSeat.Value),cboSeatType.SelectedValue.ToString(), cboSeatType.Text, 2));
                     
                     row2.Cells[1].Value = cboCabinType.Text;
                     row2.Cells[2].Value = cboSeatType.SelectedValue.ToString();
@@ -515,11 +515,11 @@ namespace TicketPurchasing.MenuSA
             DgvAircraftTypeDetail.Columns.Clear();
             DgvAircraftTypeDetail.Columns.Add("id", "ID");
             DgvAircraftTypeDetail.Columns.Add("cabintype", "Cabin Type");
-            DgvAircraftTypeDetail.Columns.Add("seattypeid", "SeatTypeID");
             DgvAircraftTypeDetail.Columns.Add("seattype", "SeatType");
+            DgvAircraftTypeDetail.Columns.Add("seattypeid", "SeatTypeID");
             DgvAircraftTypeDetail.Columns.Add("seat", "Seat");
             DgvAircraftTypeDetail.Columns[0].Visible = false;
-            DgvAircraftTypeDetail.Columns[2].Visible = false;
+            DgvAircraftTypeDetail.Columns[3].Visible = false;
             DgvAircraftTypeDetail.ForeColor = Color.Black;
             DgvAircraftTypeDetail.HeaderForeColor = Color.White;
             DgvAircraftTypeDetail.HeaderBgColor = Color.Teal;

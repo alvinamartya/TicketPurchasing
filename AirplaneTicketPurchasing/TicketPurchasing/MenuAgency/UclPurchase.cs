@@ -283,7 +283,7 @@ namespace TicketPurchasing.MenuAgency
                 row = dgvFlightSchedule.CurrentRow;
                 lblDepartureCity.Text = row.Cells[2].Value.ToString();
                 lblArrivalCity.Text = row.Cells[4].Value.ToString();
-                string[] dateArray = row.Cells[5].Value.ToString().Split('/');
+                string[] dateArray = row.Cells[5].Value.ToString().Split('-');
                 lblDepartureDate.Text = (new DateTime(Convert.ToInt32(dateArray[2]), 
                     Convert.ToInt32(dateArray[1]), Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy");
                 lblDepartureTime.Text = row.Cells[6].Value.ToString();
