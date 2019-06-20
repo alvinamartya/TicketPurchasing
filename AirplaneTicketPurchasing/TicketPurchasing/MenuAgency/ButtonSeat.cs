@@ -48,7 +48,7 @@ namespace TicketPurchasing.MenuAgency
                 }
                 else if(condition == 3)
                 {
-                    BackColor = ColorTranslator.FromHtml("#a30000");
+                    BackColor = ColorTranslator.FromHtml("#1976d2");
                     Enabled = false;
                 }
             }
