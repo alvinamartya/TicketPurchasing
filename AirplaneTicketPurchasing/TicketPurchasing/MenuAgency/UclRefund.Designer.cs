@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
@@ -46,15 +46,40 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSeat = new System.Windows.Forms.FlowLayoutPanel();
+            this.flightGroup = new System.Windows.Forms.GroupBox();
+            this.lblFirstPrice = new FlatUI.FlatLabel();
+            this.lblBusinessPrice = new FlatUI.FlatLabel();
+            this.lblEconomyPrice = new FlatUI.FlatLabel();
+            this.lblAircraft = new FlatUI.FlatLabel();
+            this.lblDepartureTime = new FlatUI.FlatLabel();
+            this.lblDepartureDate = new FlatUI.FlatLabel();
+            this.lblArrivalCity = new FlatUI.FlatLabel();
+            this.lblDepartureCity = new FlatUI.FlatLabel();
+            this.flatLabel27 = new FlatUI.FlatLabel();
+            this.flatLabel28 = new FlatUI.FlatLabel();
+            this.flatLabel17 = new FlatUI.FlatLabel();
+            this.flatLabel18 = new FlatUI.FlatLabel();
+            this.flatLabel20 = new FlatUI.FlatLabel();
+            this.flatLabel22 = new FlatUI.FlatLabel();
+            this.flatLabel24 = new FlatUI.FlatLabel();
+            this.flatLabel26 = new FlatUI.FlatLabel();
+            this.flatLabel19 = new FlatUI.FlatLabel();
+            this.flatLabel21 = new FlatUI.FlatLabel();
+            this.flatLabel11 = new FlatUI.FlatLabel();
+            this.photo = new System.Windows.Forms.PictureBox();
+            this.flatLabel12 = new FlatUI.FlatLabel();
+            this.flatLabel16 = new FlatUI.FlatLabel();
+            this.flatLabel13 = new FlatUI.FlatLabel();
+            this.flatLabel15 = new FlatUI.FlatLabel();
+            this.flatLabel14 = new FlatUI.FlatLabel();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.flightGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -111,7 +136,7 @@
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.flatLabel8);
             this.groupBox4.Controls.Add(this.flatLabel7);
-            this.groupBox4.Location = new System.Drawing.Point(11, 484);
+            this.groupBox4.Location = new System.Drawing.Point(12, 533);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(795, 63);
             this.groupBox4.TabIndex = 66;
@@ -214,13 +239,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.panelSeat);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.bunifuCustomDataGrid2);
-            this.groupBox3.Controls.Add(this.panel2);
             this.groupBox3.Controls.Add(this.flatLabel3);
             this.groupBox3.Controls.Add(this.flatLabel4);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(11, 147);
+            this.groupBox3.Location = new System.Drawing.Point(12, 196);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(795, 331);
             this.groupBox3.TabIndex = 67;
@@ -240,19 +265,19 @@
             // 
             this.bunifuCustomDataGrid2.AllowUserToAddRows = false;
             this.bunifuCustomDataGrid2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.bunifuCustomDataGrid2.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid2.DoubleBuffered = true;
             this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
@@ -264,13 +289,6 @@
             this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(393, 300);
             this.bunifuCustomDataGrid2.TabIndex = 80;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(17, 46);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(367, 273);
-            this.panel2.TabIndex = 68;
             // 
             // flatLabel3
             // 
@@ -296,45 +314,352 @@
             this.flatLabel4.TabIndex = 65;
             this.flatLabel4.Text = "Customer Name";
             // 
-            // groupBox2
+            // panelSeat
             // 
-            this.groupBox2.Controls.Add(this.panel1);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(11, 44);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(795, 97);
-            this.groupBox2.TabIndex = 65;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Flight Schedule";
-            this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox3_Paint);
+            this.panelSeat.AutoScroll = true;
+            this.panelSeat.Location = new System.Drawing.Point(9, 55);
+            this.panelSeat.Name = "panelSeat";
+            this.panelSeat.Size = new System.Drawing.Size(371, 264);
+            this.panelSeat.TabIndex = 84;
             // 
-            // panel1
+            // flightGroup
             // 
-            this.panel1.Location = new System.Drawing.Point(6, 19);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 72);
-            this.panel1.TabIndex = 0;
+            this.flightGroup.Controls.Add(this.lblFirstPrice);
+            this.flightGroup.Controls.Add(this.lblBusinessPrice);
+            this.flightGroup.Controls.Add(this.lblEconomyPrice);
+            this.flightGroup.Controls.Add(this.lblAircraft);
+            this.flightGroup.Controls.Add(this.lblDepartureTime);
+            this.flightGroup.Controls.Add(this.lblDepartureDate);
+            this.flightGroup.Controls.Add(this.lblArrivalCity);
+            this.flightGroup.Controls.Add(this.lblDepartureCity);
+            this.flightGroup.Controls.Add(this.flatLabel27);
+            this.flightGroup.Controls.Add(this.flatLabel28);
+            this.flightGroup.Controls.Add(this.flatLabel17);
+            this.flightGroup.Controls.Add(this.flatLabel18);
+            this.flightGroup.Controls.Add(this.flatLabel20);
+            this.flightGroup.Controls.Add(this.flatLabel22);
+            this.flightGroup.Controls.Add(this.flatLabel24);
+            this.flightGroup.Controls.Add(this.flatLabel26);
+            this.flightGroup.Controls.Add(this.flatLabel19);
+            this.flightGroup.Controls.Add(this.flatLabel21);
+            this.flightGroup.Controls.Add(this.flatLabel11);
+            this.flightGroup.Controls.Add(this.photo);
+            this.flightGroup.Controls.Add(this.flatLabel12);
+            this.flightGroup.Controls.Add(this.flatLabel16);
+            this.flightGroup.Controls.Add(this.flatLabel13);
+            this.flightGroup.Controls.Add(this.flatLabel15);
+            this.flightGroup.Controls.Add(this.flatLabel14);
+            this.flightGroup.ForeColor = System.Drawing.Color.White;
+            this.flightGroup.Location = new System.Drawing.Point(12, 55);
+            this.flightGroup.Name = "flightGroup";
+            this.flightGroup.Size = new System.Drawing.Size(795, 135);
+            this.flightGroup.TabIndex = 68;
+            this.flightGroup.TabStop = false;
+            this.flightGroup.Text = "Flight Schedule";
+            // 
+            // lblFirstPrice
+            // 
+            this.lblFirstPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblFirstPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstPrice.ForeColor = System.Drawing.Color.White;
+            this.lblFirstPrice.Location = new System.Drawing.Point(651, 83);
+            this.lblFirstPrice.Name = "lblFirstPrice";
+            this.lblFirstPrice.Size = new System.Drawing.Size(134, 17);
+            this.lblFirstPrice.TabIndex = 91;
+            // 
+            // lblBusinessPrice
+            // 
+            this.lblBusinessPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblBusinessPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusinessPrice.ForeColor = System.Drawing.Color.White;
+            this.lblBusinessPrice.Location = new System.Drawing.Point(651, 62);
+            this.lblBusinessPrice.Name = "lblBusinessPrice";
+            this.lblBusinessPrice.Size = new System.Drawing.Size(134, 17);
+            this.lblBusinessPrice.TabIndex = 90;
+            // 
+            // lblEconomyPrice
+            // 
+            this.lblEconomyPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblEconomyPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEconomyPrice.ForeColor = System.Drawing.Color.White;
+            this.lblEconomyPrice.Location = new System.Drawing.Point(651, 40);
+            this.lblEconomyPrice.Name = "lblEconomyPrice";
+            this.lblEconomyPrice.Size = new System.Drawing.Size(134, 17);
+            this.lblEconomyPrice.TabIndex = 89;
+            // 
+            // lblAircraft
+            // 
+            this.lblAircraft.BackColor = System.Drawing.Color.Transparent;
+            this.lblAircraft.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAircraft.ForeColor = System.Drawing.Color.White;
+            this.lblAircraft.Location = new System.Drawing.Point(651, 19);
+            this.lblAircraft.Name = "lblAircraft";
+            this.lblAircraft.Size = new System.Drawing.Size(134, 17);
+            this.lblAircraft.TabIndex = 88;
+            // 
+            // lblDepartureTime
+            // 
+            this.lblDepartureTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepartureTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartureTime.ForeColor = System.Drawing.Color.White;
+            this.lblDepartureTime.Location = new System.Drawing.Point(386, 83);
+            this.lblDepartureTime.Name = "lblDepartureTime";
+            this.lblDepartureTime.Size = new System.Drawing.Size(134, 17);
+            this.lblDepartureTime.TabIndex = 86;
+            // 
+            // lblDepartureDate
+            // 
+            this.lblDepartureDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepartureDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartureDate.ForeColor = System.Drawing.Color.White;
+            this.lblDepartureDate.Location = new System.Drawing.Point(386, 60);
+            this.lblDepartureDate.Name = "lblDepartureDate";
+            this.lblDepartureDate.Size = new System.Drawing.Size(134, 17);
+            this.lblDepartureDate.TabIndex = 85;
+            // 
+            // lblArrivalCity
+            // 
+            this.lblArrivalCity.BackColor = System.Drawing.Color.Transparent;
+            this.lblArrivalCity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArrivalCity.ForeColor = System.Drawing.Color.White;
+            this.lblArrivalCity.Location = new System.Drawing.Point(386, 40);
+            this.lblArrivalCity.Name = "lblArrivalCity";
+            this.lblArrivalCity.Size = new System.Drawing.Size(134, 17);
+            this.lblArrivalCity.TabIndex = 84;
+            // 
+            // lblDepartureCity
+            // 
+            this.lblDepartureCity.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepartureCity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartureCity.ForeColor = System.Drawing.Color.White;
+            this.lblDepartureCity.Location = new System.Drawing.Point(386, 19);
+            this.lblDepartureCity.Name = "lblDepartureCity";
+            this.lblDepartureCity.Size = new System.Drawing.Size(134, 17);
+            this.lblDepartureCity.TabIndex = 83;
+            // 
+            // flatLabel27
+            // 
+            this.flatLabel27.AutoSize = true;
+            this.flatLabel27.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel27.ForeColor = System.Drawing.Color.White;
+            this.flatLabel27.Location = new System.Drawing.Point(526, 83);
+            this.flatLabel27.Name = "flatLabel27";
+            this.flatLabel27.Size = new System.Drawing.Size(64, 17);
+            this.flatLabel27.TabIndex = 81;
+            this.flatLabel27.Text = "First Price";
+            // 
+            // flatLabel28
+            // 
+            this.flatLabel28.AutoSize = true;
+            this.flatLabel28.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel28.ForeColor = System.Drawing.Color.White;
+            this.flatLabel28.Location = new System.Drawing.Point(634, 83);
+            this.flatLabel28.Name = "flatLabel28";
+            this.flatLabel28.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel28.TabIndex = 82;
+            this.flatLabel28.Text = ":";
+            // 
+            // flatLabel17
+            // 
+            this.flatLabel17.AutoSize = true;
+            this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel17.ForeColor = System.Drawing.Color.White;
+            this.flatLabel17.Location = new System.Drawing.Point(526, 62);
+            this.flatLabel17.Name = "flatLabel17";
+            this.flatLabel17.Size = new System.Drawing.Size(89, 17);
+            this.flatLabel17.TabIndex = 79;
+            this.flatLabel17.Text = "Business Price";
+            // 
+            // flatLabel18
+            // 
+            this.flatLabel18.AutoSize = true;
+            this.flatLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel18.ForeColor = System.Drawing.Color.White;
+            this.flatLabel18.Location = new System.Drawing.Point(634, 62);
+            this.flatLabel18.Name = "flatLabel18";
+            this.flatLabel18.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel18.TabIndex = 80;
+            this.flatLabel18.Text = ":";
+            // 
+            // flatLabel20
+            // 
+            this.flatLabel20.AutoSize = true;
+            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel20.ForeColor = System.Drawing.Color.White;
+            this.flatLabel20.Location = new System.Drawing.Point(634, 39);
+            this.flatLabel20.Name = "flatLabel20";
+            this.flatLabel20.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel20.TabIndex = 78;
+            this.flatLabel20.Text = ":";
+            // 
+            // flatLabel22
+            // 
+            this.flatLabel22.AutoSize = true;
+            this.flatLabel22.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel22.ForeColor = System.Drawing.Color.White;
+            this.flatLabel22.Location = new System.Drawing.Point(526, 39);
+            this.flatLabel22.Name = "flatLabel22";
+            this.flatLabel22.Size = new System.Drawing.Size(93, 17);
+            this.flatLabel22.TabIndex = 77;
+            this.flatLabel22.Text = "Economy Price";
+            // 
+            // flatLabel24
+            // 
+            this.flatLabel24.AutoSize = true;
+            this.flatLabel24.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel24.ForeColor = System.Drawing.Color.White;
+            this.flatLabel24.Location = new System.Drawing.Point(634, 19);
+            this.flatLabel24.Name = "flatLabel24";
+            this.flatLabel24.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel24.TabIndex = 76;
+            this.flatLabel24.Text = ":";
+            // 
+            // flatLabel26
+            // 
+            this.flatLabel26.AutoSize = true;
+            this.flatLabel26.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel26.ForeColor = System.Drawing.Color.White;
+            this.flatLabel26.Location = new System.Drawing.Point(526, 19);
+            this.flatLabel26.Name = "flatLabel26";
+            this.flatLabel26.Size = new System.Drawing.Size(50, 17);
+            this.flatLabel26.TabIndex = 75;
+            this.flatLabel26.Text = "Aircraft";
+            // 
+            // flatLabel19
+            // 
+            this.flatLabel19.AutoSize = true;
+            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel19.ForeColor = System.Drawing.Color.White;
+            this.flatLabel19.Location = new System.Drawing.Point(261, 83);
+            this.flatLabel19.Name = "flatLabel19";
+            this.flatLabel19.Size = new System.Drawing.Size(99, 17);
+            this.flatLabel19.TabIndex = 71;
+            this.flatLabel19.Text = "Departure Time";
+            // 
+            // flatLabel21
+            // 
+            this.flatLabel21.AutoSize = true;
+            this.flatLabel21.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel21.ForeColor = System.Drawing.Color.White;
+            this.flatLabel21.Location = new System.Drawing.Point(369, 83);
+            this.flatLabel21.Name = "flatLabel21";
+            this.flatLabel21.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel21.TabIndex = 72;
+            this.flatLabel21.Text = ":";
+            // 
+            // flatLabel11
+            // 
+            this.flatLabel11.AutoSize = true;
+            this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel11.ForeColor = System.Drawing.Color.White;
+            this.flatLabel11.Location = new System.Drawing.Point(369, 60);
+            this.flatLabel11.Name = "flatLabel11";
+            this.flatLabel11.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel11.TabIndex = 70;
+            this.flatLabel11.Text = ":";
+            // 
+            // photo
+            // 
+            this.photo.Location = new System.Drawing.Point(12, 26);
+            this.photo.Name = "photo";
+            this.photo.Size = new System.Drawing.Size(240, 90);
+            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.photo.TabIndex = 65;
+            this.photo.TabStop = false;
+            // 
+            // flatLabel12
+            // 
+            this.flatLabel12.AutoSize = true;
+            this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel12.ForeColor = System.Drawing.Color.White;
+            this.flatLabel12.Location = new System.Drawing.Point(261, 60);
+            this.flatLabel12.Name = "flatLabel12";
+            this.flatLabel12.Size = new System.Drawing.Size(98, 17);
+            this.flatLabel12.TabIndex = 69;
+            this.flatLabel12.Text = "Departure Date";
+            // 
+            // flatLabel16
+            // 
+            this.flatLabel16.AutoSize = true;
+            this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel16.ForeColor = System.Drawing.Color.White;
+            this.flatLabel16.Location = new System.Drawing.Point(261, 19);
+            this.flatLabel16.Name = "flatLabel16";
+            this.flatLabel16.Size = new System.Drawing.Size(92, 17);
+            this.flatLabel16.TabIndex = 65;
+            this.flatLabel16.Text = "Departure City";
+            // 
+            // flatLabel13
+            // 
+            this.flatLabel13.AutoSize = true;
+            this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel13.ForeColor = System.Drawing.Color.White;
+            this.flatLabel13.Location = new System.Drawing.Point(369, 40);
+            this.flatLabel13.Name = "flatLabel13";
+            this.flatLabel13.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel13.TabIndex = 68;
+            this.flatLabel13.Text = ":";
+            // 
+            // flatLabel15
+            // 
+            this.flatLabel15.AutoSize = true;
+            this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel15.ForeColor = System.Drawing.Color.White;
+            this.flatLabel15.Location = new System.Drawing.Point(369, 19);
+            this.flatLabel15.Name = "flatLabel15";
+            this.flatLabel15.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel15.TabIndex = 66;
+            this.flatLabel15.Text = ":";
+            // 
+            // flatLabel14
+            // 
+            this.flatLabel14.AutoSize = true;
+            this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel14.ForeColor = System.Drawing.Color.White;
+            this.flatLabel14.Location = new System.Drawing.Point(261, 40);
+            this.flatLabel14.Name = "flatLabel14";
+            this.flatLabel14.Size = new System.Drawing.Size(70, 17);
+            this.flatLabel14.TabIndex = 67;
+            this.flatLabel14.Text = "Arrival City";
             // 
             // UclRefund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.flightGroup);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.flatLabel2);
             this.Controls.Add(this.flatLabel1);
             this.Name = "UclRefund";
-            this.Size = new System.Drawing.Size(819, 554);
+            this.Size = new System.Drawing.Size(819, 610);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            this.flightGroup.ResumeLayout(false);
+            this.flightGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,13 +680,37 @@
         private FlatUI.FlatLabel flatLabel7;
         private System.Windows.Forms.GroupBox groupBox3;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid2;
-        private System.Windows.Forms.Panel panel2;
         private FlatUI.FlatLabel flatLabel3;
         private FlatUI.FlatLabel flatLabel4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox2;
         private FlatUI.FlatLabel flatLabel10;
         private FlatUI.FlatLabel flatLabel9;
+        private System.Windows.Forms.FlowLayoutPanel panelSeat;
+        private System.Windows.Forms.GroupBox flightGroup;
+        private FlatUI.FlatLabel lblFirstPrice;
+        private FlatUI.FlatLabel lblBusinessPrice;
+        private FlatUI.FlatLabel lblEconomyPrice;
+        private FlatUI.FlatLabel lblAircraft;
+        private FlatUI.FlatLabel lblDepartureTime;
+        private FlatUI.FlatLabel lblDepartureDate;
+        private FlatUI.FlatLabel lblArrivalCity;
+        private FlatUI.FlatLabel lblDepartureCity;
+        private FlatUI.FlatLabel flatLabel27;
+        private FlatUI.FlatLabel flatLabel28;
+        private FlatUI.FlatLabel flatLabel17;
+        private FlatUI.FlatLabel flatLabel18;
+        private FlatUI.FlatLabel flatLabel20;
+        private FlatUI.FlatLabel flatLabel22;
+        private FlatUI.FlatLabel flatLabel24;
+        private FlatUI.FlatLabel flatLabel26;
+        private FlatUI.FlatLabel flatLabel19;
+        private FlatUI.FlatLabel flatLabel21;
+        private FlatUI.FlatLabel flatLabel11;
+        private System.Windows.Forms.PictureBox photo;
+        private FlatUI.FlatLabel flatLabel12;
+        private FlatUI.FlatLabel flatLabel16;
+        private FlatUI.FlatLabel flatLabel13;
+        private FlatUI.FlatLabel flatLabel15;
+        private FlatUI.FlatLabel flatLabel14;
     }
 }

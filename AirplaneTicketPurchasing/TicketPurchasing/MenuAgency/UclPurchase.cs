@@ -48,6 +48,12 @@ namespace TicketPurchasing.MenuAgency
             }
         }
 
+        public ButtonSeat buttonSeat
+        {
+            get { return button_seat; }
+            set { button_seat = value; }
+        }
+
         private void defaultFrm(bool value)
         {
             flightGroup.Visible = value;
@@ -283,7 +289,7 @@ namespace TicketPurchasing.MenuAgency
                 row = dgvFlightSchedule.CurrentRow;
                 lblDepartureCity.Text = row.Cells[2].Value.ToString();
                 lblArrivalCity.Text = row.Cells[4].Value.ToString();
-                string[] dateArray = row.Cells[5].Value.ToString().Split('-');
+                string[] dateArray = row.Cells[5].Value.ToString().Split('/');
                 lblDepartureDate.Text = (new DateTime(Convert.ToInt32(dateArray[2]), 
                     Convert.ToInt32(dateArray[1]), Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy");
                 lblDepartureTime.Text = row.Cells[6].Value.ToString();
@@ -324,13 +330,6 @@ namespace TicketPurchasing.MenuAgency
             refreshDatagridSchedule(false);
             buttonSeat = null;
         }
-        
-        public ButtonSeat buttonSeat
-        {
-            get { return button_seat; }
-            set { button_seat = value; }
-        }
-        #endregion
 
         private void btnAddPassenger_Click(object sender, EventArgs e)
         {
@@ -338,5 +337,12 @@ namespace TicketPurchasing.MenuAgency
             Console.WriteLine("Seat Number: " + buttonSeat.SeatNumber);
             Console.WriteLine("Text: " + buttonSeat.Text);
         }
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            FrmPopUp popup = new FrmPopUp();
+            popup.Show();
+        }
+        #endregion
     }
 }

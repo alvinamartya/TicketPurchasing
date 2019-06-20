@@ -581,6 +581,7 @@
             this.btnAddCustomer.TabIndex = 81;
             this.btnAddCustomer.Text = "Add";
             this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // dgvCustomer
             // 

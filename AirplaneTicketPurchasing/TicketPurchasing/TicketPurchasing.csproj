@@ -78,6 +78,12 @@
     <Compile Include="FrmMenuAgency.Designer.cs">
       <DependentUpon>FrmMenuAgency.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopUp.Designer.cs">
+      <DependentUpon>FrmPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAdmin\UclManageSchedules.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuAgency.resx">
       <DependentUpon>FrmMenuAgency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPopUp.resx">
+      <DependentUpon>FrmPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAdmin\UclManageSchedules.resx">
       <DependentUpon>UclManageSchedules.cs</DependentUpon>

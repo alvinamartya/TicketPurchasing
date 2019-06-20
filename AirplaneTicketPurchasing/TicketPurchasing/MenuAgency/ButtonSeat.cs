@@ -46,6 +46,11 @@ namespace TicketPurchasing.MenuAgency
                     BackColor = ColorTranslator.FromHtml("#a30000");
                     Enabled = false;
                 }
+                else if(condition == 3)
+                {
+                    BackColor = ColorTranslator.FromHtml("#a30000");
+                    Enabled = false;
+                }
             }
         }
 
