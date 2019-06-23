@@ -14,13 +14,20 @@ namespace TicketPurchasing
     {
         #region Declaration
         private Support support = new Support();
+        private FrmMenuAgency agency;
         #endregion
-
         #region Constructor
         public FrmPopUp()
         {
             InitializeComponent();
             support.DragandDropForm(this);
+        }
+
+        public FrmPopUp(FrmMenuAgency agency)
+        {
+            InitializeComponent();
+            support.DragandDropForm(this);
+            this.agency = agency;
         }
         #endregion
 
@@ -29,6 +36,11 @@ namespace TicketPurchasing
         {
             MenuAgency.UclCustomer customer = new MenuAgency.UclCustomer();
             pnlFlight.Controls.Add(customer);
+        }
+        private void flatClose1_Click(object sender, EventArgs e)
+        {
+            agency.enabledFrm(true);
+            Hide();
         }
         #endregion
     }

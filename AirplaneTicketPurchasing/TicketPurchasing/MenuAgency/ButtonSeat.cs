@@ -36,10 +36,12 @@ namespace TicketPurchasing.MenuAgency
                 if(condition == 0)
                 {
                     BackColor = ColorTranslator.FromHtml("#2e7d32");
+                    Enabled = true;
                 }
                 else if(condition == 1)
                 {
                     BackColor = ColorTranslator.FromHtml("#ff6f00");
+                    Enabled = true;
                 }
                 else if(condition == 2)
                 {
@@ -49,6 +51,11 @@ namespace TicketPurchasing.MenuAgency
                 else if(condition == 3)
                 {
                     BackColor = ColorTranslator.FromHtml("#1976d2");
+                    Enabled = false;
+                }
+                else if (condition == 4)
+                {
+                    BackColor = ColorTranslator.FromHtml("#81d4fa");
                     Enabled = false;
                 }
             }

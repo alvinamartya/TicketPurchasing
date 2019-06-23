@@ -31,19 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuAgency));
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlNavbar = new System.Windows.Forms.Panel();
+            this.pnlButtonSelected = new System.Windows.Forms.Panel();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.lblPosition = new FlatUI.FlatLabel();
+            this.lblName = new FlatUI.FlatLabel();
             this.photo = new System.Windows.Forms.PictureBox();
             this.btnReport = new System.Windows.Forms.Button();
-            this.btnManageCustomer = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnTransac = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnChangePassword = new System.Windows.Forms.Button();
-            this.pnlButtonSelected = new System.Windows.Forms.Panel();
-            this.lblPosition = new FlatUI.FlatLabel();
-            this.lblName = new FlatUI.FlatLabel();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatClose1 = new FlatUI.FlatClose();
             this.lblTitle = new FlatUI.FlatLabel();
@@ -74,7 +73,6 @@
             this.pnlNavbar.Controls.Add(this.lblName);
             this.pnlNavbar.Controls.Add(this.photo);
             this.pnlNavbar.Controls.Add(this.btnReport);
-            this.pnlNavbar.Controls.Add(this.btnManageCustomer);
             this.pnlNavbar.Controls.Add(this.btnDashboard);
             this.pnlNavbar.Controls.Add(this.btnTransac);
             this.pnlNavbar.Dock = System.Windows.Forms.DockStyle.Left;
@@ -83,19 +81,63 @@
             this.pnlNavbar.Size = new System.Drawing.Size(170, 479);
             this.pnlNavbar.TabIndex = 6;
             // 
+            // pnlButtonSelected
+            // 
+            this.pnlButtonSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.pnlButtonSelected.Location = new System.Drawing.Point(12, 202);
+            this.pnlButtonSelected.Name = "pnlButtonSelected";
+            this.pnlButtonSelected.Size = new System.Drawing.Size(5, 37);
+            this.pnlButtonSelected.TabIndex = 16;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.btnChangePassword.Location = new System.Drawing.Point(1, 312);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(170, 37);
+            this.btnChangePassword.TabIndex = 15;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnLogout.Location = new System.Drawing.Point(0, 384);
+            this.btnLogout.Location = new System.Drawing.Point(0, 349);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(170, 37);
             this.btnLogout.TabIndex = 11;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblPosition.Location = new System.Drawing.Point(12, 153);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(152, 18);
+            this.lblPosition.TabIndex = 10;
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
+            this.lblName.Location = new System.Drawing.Point(12, 135);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(152, 18);
+            this.lblName.TabIndex = 9;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // photo
             // 
@@ -113,27 +155,13 @@
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 310);
+            this.btnReport.Location = new System.Drawing.Point(0, 275);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(170, 37);
             this.btnReport.TabIndex = 8;
             this.btnReport.Text = "Report";
             this.btnReport.UseVisualStyleBackColor = false;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
-            // 
-            // btnManageCustomer
-            // 
-            this.btnManageCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.btnManageCustomer.FlatAppearance.BorderSize = 0;
-            this.btnManageCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnManageCustomer.Location = new System.Drawing.Point(0, 275);
-            this.btnManageCustomer.Name = "btnManageCustomer";
-            this.btnManageCustomer.Size = new System.Drawing.Size(170, 37);
-            this.btnManageCustomer.TabIndex = 7;
-            this.btnManageCustomer.Text = "Manage Customers";
-            this.btnManageCustomer.UseVisualStyleBackColor = false;
-            this.btnManageCustomer.Click += new System.EventHandler(this.btnManageCustomer_Click);
             // 
             // btnDashboard
             // 
@@ -197,50 +225,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.btnChangePassword.FlatAppearance.BorderSize = 0;
-            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.btnChangePassword.Location = new System.Drawing.Point(1, 347);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(170, 37);
-            this.btnChangePassword.TabIndex = 15;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.UseVisualStyleBackColor = false;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
-            // pnlButtonSelected
-            // 
-            this.pnlButtonSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.pnlButtonSelected.Location = new System.Drawing.Point(12, 202);
-            this.pnlButtonSelected.Name = "pnlButtonSelected";
-            this.pnlButtonSelected.Size = new System.Drawing.Size(5, 37);
-            this.pnlButtonSelected.TabIndex = 16;
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosition.Font = new System.Drawing.Font("Segoe UI Light", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblPosition.Location = new System.Drawing.Point(12, 153);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(152, 18);
-            this.lblPosition.TabIndex = 10;
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(213)))), ((int)(((byte)(216)))));
-            this.lblName.Location = new System.Drawing.Point(12, 135);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(152, 18);
-            this.lblName.TabIndex = 9;
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // flatMini1
             // 
             this.flatMini1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -266,6 +250,7 @@
             this.flatClose1.TabIndex = 2;
             this.flatClose1.Text = "flatClose1";
             this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatClose1.Click += new System.EventHandler(this.flatClose1_Click);
             // 
             // lblTitle
             // 
@@ -308,7 +293,6 @@
         private FlatUI.FlatLabel lblName;
         private System.Windows.Forms.PictureBox photo;
         private System.Windows.Forms.Button btnReport;
-        private System.Windows.Forms.Button btnManageCustomer;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel pnlHeader;
         private FlatUI.FlatMini flatMini1;

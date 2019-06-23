@@ -43,6 +43,11 @@ namespace TicketPurchasing
             return 0;
         }
 
+        public string getConnectionString()
+        {
+            return connectionString;
+        }
+
         public string autoGenerateID(string firstLetter, string sp, int length)
         {
             int num = 1;

@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPopUp));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flatClose1 = new FlatUI.FlatClose();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flatMini1 = new FlatUI.FlatMini();
-            this.flatClose1 = new FlatUI.FlatClose();
             this.flatLabel1 = new FlatUI.FlatLabel();
             this.pnlFlight = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -44,15 +44,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel1.Controls.Add(this.flatClose1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.flatMini1);
-            this.panel1.Controls.Add(this.flatClose1);
             this.panel1.Controls.Add(this.flatLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(835, 34);
             this.panel1.TabIndex = 1;
+            // 
+            // flatClose1
+            // 
+            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flatClose1.BackColor = System.Drawing.Color.White;
+            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
+            this.flatClose1.Location = new System.Drawing.Point(810, 7);
+            this.flatClose1.Name = "flatClose1";
+            this.flatClose1.Size = new System.Drawing.Size(18, 18);
+            this.flatClose1.TabIndex = 7;
+            this.flatClose1.Text = "flatClose1";
+            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatClose1.Click += new System.EventHandler(this.flatClose1_Click);
             // 
             // panel2
             // 
@@ -87,19 +101,6 @@
             this.flatMini1.TabIndex = 4;
             this.flatMini1.Text = "flatMini1";
             this.flatMini1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            // 
-            // flatClose1
-            // 
-            this.flatClose1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatClose1.BackColor = System.Drawing.Color.White;
-            this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
-            this.flatClose1.Location = new System.Drawing.Point(810, 7);
-            this.flatClose1.Name = "flatClose1";
-            this.flatClose1.Size = new System.Drawing.Size(18, 18);
-            this.flatClose1.TabIndex = 2;
-            this.flatClose1.Text = "flatClose1";
-            this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
             // flatLabel1
             // 
@@ -148,8 +149,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FlatUI.FlatMini flatMini1;
-        private FlatUI.FlatClose flatClose1;
         private FlatUI.FlatLabel flatLabel1;
         private System.Windows.Forms.Panel pnlFlight;
+        private FlatUI.FlatClose flatClose1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TicketPurchasing.MenuAgency
 {
-    partial class UclTicket
+    partial class UclSaveToPDF
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,6 +35,7 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TicketPurchasing.Report.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(21, 13);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ShowBackButton = false;
@@ -66,10 +67,11 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 29);
             this.button1.TabIndex = 68;
-            this.button1.Text = "Send to Email";
+            this.button1.Text = "Save to PDF";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // UclTicket
+            // UclSaveToPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,8 +79,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "UclTicket";
+            this.Name = "UclSaveToPDF";
             this.Size = new System.Drawing.Size(835, 479);
+            this.Load += new System.EventHandler(this.UclSaveToPDF_Load);
             this.ResumeLayout(false);
 
         }

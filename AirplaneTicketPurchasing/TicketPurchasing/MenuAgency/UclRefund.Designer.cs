@@ -28,27 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flatLabel2 = new FlatUI.FlatLabel();
-            this.flatLabel1 = new FlatUI.FlatLabel();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.finalGroup = new System.Windows.Forms.GroupBox();
             this.flatLabel10 = new FlatUI.FlatLabel();
             this.flatLabel9 = new FlatUI.FlatLabel();
-            this.flatLabel5 = new FlatUI.FlatLabel();
+            this.lblRefund = new FlatUI.FlatLabel();
             this.flatLabel6 = new FlatUI.FlatLabel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flatLabel8 = new FlatUI.FlatLabel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnRefund = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.flatLabel3 = new FlatUI.FlatLabel();
-            this.flatLabel4 = new FlatUI.FlatLabel();
+            this.customerGroup = new System.Windows.Forms.GroupBox();
             this.panelSeat = new System.Windows.Forms.FlowLayoutPanel();
+            this.dgvCust = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.flightGroup = new System.Windows.Forms.GroupBox();
             this.lblFirstPrice = new FlatUI.FlatLabel();
             this.lblBusinessPrice = new FlatUI.FlatLabel();
@@ -75,73 +70,52 @@
             this.flatLabel13 = new FlatUI.FlatLabel();
             this.flatLabel15 = new FlatUI.FlatLabel();
             this.flatLabel14 = new FlatUI.FlatLabel();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
+            this.flatLabel2 = new FlatUI.FlatLabel();
+            this.flatLabel1 = new FlatUI.FlatLabel();
+            this.finalGroup.SuspendLayout();
+            this.customerGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCust)).BeginInit();
             this.flightGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 33;
+            this.txtSearch.Location = new System.Drawing.Point(150, 18);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(131, 20);
+            this.txtSearch.TabIndex = 33;
             // 
-            // flatLabel2
+            // btnSearch
             // 
-            this.flatLabel2.AutoSize = true;
-            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel2.ForeColor = System.Drawing.Color.White;
-            this.flatLabel2.Location = new System.Drawing.Point(133, 18);
-            this.flatLabel2.Name = "flatLabel2";
-            this.flatLabel2.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel2.TabIndex = 32;
-            this.flatLabel2.Text = ":";
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.Location = new System.Drawing.Point(287, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(58, 20);
+            this.btnSearch.TabIndex = 61;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // flatLabel1
+            // finalGroup
             // 
-            this.flatLabel1.AutoSize = true;
-            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(9, 18);
-            this.flatLabel1.Name = "flatLabel1";
-            this.flatLabel1.Size = new System.Drawing.Size(117, 17);
-            this.flatLabel1.TabIndex = 31;
-            this.flatLabel1.Text = "Booking Reference";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.Location = new System.Drawing.Point(287, 18);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(58, 20);
-            this.btnLogin.TabIndex = 61;
-            this.btnLogin.Text = "Search";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.flatLabel10);
-            this.groupBox4.Controls.Add(this.flatLabel9);
-            this.groupBox4.Controls.Add(this.flatLabel5);
-            this.groupBox4.Controls.Add(this.flatLabel6);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.flatLabel8);
-            this.groupBox4.Controls.Add(this.flatLabel7);
-            this.groupBox4.Location = new System.Drawing.Point(12, 533);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(795, 63);
-            this.groupBox4.TabIndex = 66;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox3_Paint);
+            this.finalGroup.Controls.Add(this.flatLabel10);
+            this.finalGroup.Controls.Add(this.flatLabel9);
+            this.finalGroup.Controls.Add(this.lblRefund);
+            this.finalGroup.Controls.Add(this.flatLabel6);
+            this.finalGroup.Controls.Add(this.btnCancel);
+            this.finalGroup.Controls.Add(this.btnRefund);
+            this.finalGroup.Controls.Add(this.lblTotalPrice);
+            this.finalGroup.Controls.Add(this.flatLabel7);
+            this.finalGroup.Location = new System.Drawing.Point(12, 533);
+            this.finalGroup.Name = "finalGroup";
+            this.finalGroup.Size = new System.Drawing.Size(795, 63);
+            this.finalGroup.TabIndex = 66;
+            this.finalGroup.TabStop = false;
+            this.finalGroup.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox3_Paint);
             // 
             // flatLabel10
             // 
@@ -167,15 +141,15 @@
             this.flatLabel9.TabIndex = 86;
             this.flatLabel9.Text = ":";
             // 
-            // flatLabel5
+            // lblRefund
             // 
-            this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel5.ForeColor = System.Drawing.Color.Black;
-            this.flatLabel5.Location = new System.Drawing.Point(133, 34);
-            this.flatLabel5.Name = "flatLabel5";
-            this.flatLabel5.Size = new System.Drawing.Size(225, 17);
-            this.flatLabel5.TabIndex = 85;
+            this.lblRefund.BackColor = System.Drawing.Color.Transparent;
+            this.lblRefund.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRefund.ForeColor = System.Drawing.Color.White;
+            this.lblRefund.Location = new System.Drawing.Point(133, 34);
+            this.lblRefund.Name = "lblRefund";
+            this.lblRefund.Size = new System.Drawing.Size(225, 17);
+            this.lblRefund.TabIndex = 85;
             // 
             // flatLabel6
             // 
@@ -189,41 +163,43 @@
             this.flatLabel6.TabIndex = 84;
             this.flatLabel6.Text = "Total Refund";
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(617, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 28);
-            this.button2.TabIndex = 83;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.Location = new System.Drawing.Point(617, 20);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 28);
+            this.btnCancel.TabIndex = 83;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button1
+            // btnRefund
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(703, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 28);
-            this.button1.TabIndex = 81;
-            this.button1.Text = "Refund";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRefund.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnRefund.FlatAppearance.BorderSize = 0;
+            this.btnRefund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefund.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRefund.Location = new System.Drawing.Point(703, 20);
+            this.btnRefund.Name = "btnRefund";
+            this.btnRefund.Size = new System.Drawing.Size(80, 28);
+            this.btnRefund.TabIndex = 81;
+            this.btnRefund.Text = "Refund";
+            this.btnRefund.UseVisualStyleBackColor = false;
+            this.btnRefund.Click += new System.EventHandler(this.btnRefund_Click);
             // 
-            // flatLabel8
+            // lblTotalPrice
             // 
-            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel8.ForeColor = System.Drawing.Color.Black;
-            this.flatLabel8.Location = new System.Drawing.Point(133, 12);
-            this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(225, 17);
-            this.flatLabel8.TabIndex = 82;
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPrice.Location = new System.Drawing.Point(133, 12);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(225, 17);
+            this.lblTotalPrice.TabIndex = 82;
             // 
             // flatLabel7
             // 
@@ -237,90 +213,56 @@
             this.flatLabel7.TabIndex = 81;
             this.flatLabel7.Text = "Total Transaction";
             // 
-            // groupBox3
+            // customerGroup
             // 
-            this.groupBox3.Controls.Add(this.panelSeat);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.bunifuCustomDataGrid2);
-            this.groupBox3.Controls.Add(this.flatLabel3);
-            this.groupBox3.Controls.Add(this.flatLabel4);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(12, 196);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(795, 331);
-            this.groupBox3.TabIndex = 67;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Customer";
-            this.groupBox3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox3_Paint);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(139, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(219, 20);
-            this.textBox2.TabIndex = 81;
-            // 
-            // bunifuCustomDataGrid2
-            // 
-            this.bunifuCustomDataGrid2.AllowUserToAddRows = false;
-            this.bunifuCustomDataGrid2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.bunifuCustomDataGrid2.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid2.DoubleBuffered = true;
-            this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid2.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid2.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(390, 19);
-            this.bunifuCustomDataGrid2.Name = "bunifuCustomDataGrid2";
-            this.bunifuCustomDataGrid2.ReadOnly = true;
-            this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(393, 300);
-            this.bunifuCustomDataGrid2.TabIndex = 80;
-            // 
-            // flatLabel3
-            // 
-            this.flatLabel3.AutoSize = true;
-            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(122, 19);
-            this.flatLabel3.Name = "flatLabel3";
-            this.flatLabel3.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel3.TabIndex = 66;
-            this.flatLabel3.Text = ":";
-            // 
-            // flatLabel4
-            // 
-            this.flatLabel4.AutoSize = true;
-            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(14, 19);
-            this.flatLabel4.Name = "flatLabel4";
-            this.flatLabel4.Size = new System.Drawing.Size(103, 17);
-            this.flatLabel4.TabIndex = 65;
-            this.flatLabel4.Text = "Customer Name";
+            this.customerGroup.Controls.Add(this.panelSeat);
+            this.customerGroup.Controls.Add(this.dgvCust);
+            this.customerGroup.ForeColor = System.Drawing.Color.White;
+            this.customerGroup.Location = new System.Drawing.Point(12, 196);
+            this.customerGroup.Name = "customerGroup";
+            this.customerGroup.Size = new System.Drawing.Size(795, 331);
+            this.customerGroup.TabIndex = 67;
+            this.customerGroup.TabStop = false;
+            this.customerGroup.Text = "Customer";
+            this.customerGroup.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox3_Paint);
             // 
             // panelSeat
             // 
             this.panelSeat.AutoScroll = true;
-            this.panelSeat.Location = new System.Drawing.Point(9, 55);
+            this.panelSeat.Location = new System.Drawing.Point(9, 19);
             this.panelSeat.Name = "panelSeat";
-            this.panelSeat.Size = new System.Drawing.Size(371, 264);
+            this.panelSeat.Size = new System.Drawing.Size(371, 300);
             this.panelSeat.TabIndex = 84;
+            // 
+            // dgvCust
+            // 
+            this.dgvCust.AllowUserToAddRows = false;
+            this.dgvCust.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCust.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCust.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvCust.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCust.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCust.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCust.DoubleBuffered = true;
+            this.dgvCust.EnableHeadersVisualStyles = false;
+            this.dgvCust.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgvCust.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.dgvCust.Location = new System.Drawing.Point(390, 19);
+            this.dgvCust.Name = "dgvCust";
+            this.dgvCust.ReadOnly = true;
+            this.dgvCust.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCust.Size = new System.Drawing.Size(393, 300);
+            this.dgvCust.TabIndex = 80;
+            this.dgvCust.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCust_CellContentClick);
             // 
             // flightGroup
             // 
@@ -638,25 +580,48 @@
             this.flatLabel14.TabIndex = 67;
             this.flatLabel14.Text = "Arrival City";
             // 
+            // flatLabel2
+            // 
+            this.flatLabel2.AutoSize = true;
+            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel2.ForeColor = System.Drawing.Color.White;
+            this.flatLabel2.Location = new System.Drawing.Point(133, 18);
+            this.flatLabel2.Name = "flatLabel2";
+            this.flatLabel2.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel2.TabIndex = 32;
+            this.flatLabel2.Text = ":";
+            // 
+            // flatLabel1
+            // 
+            this.flatLabel1.AutoSize = true;
+            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel1.ForeColor = System.Drawing.Color.White;
+            this.flatLabel1.Location = new System.Drawing.Point(9, 18);
+            this.flatLabel1.Name = "flatLabel1";
+            this.flatLabel1.Size = new System.Drawing.Size(117, 17);
+            this.flatLabel1.TabIndex = 31;
+            this.flatLabel1.Text = "Booking Reference";
+            // 
             // UclRefund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
             this.Controls.Add(this.flightGroup);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.finalGroup);
+            this.Controls.Add(this.customerGroup);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.flatLabel2);
             this.Controls.Add(this.flatLabel1);
             this.Name = "UclRefund";
             this.Size = new System.Drawing.Size(819, 610);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
+            this.finalGroup.ResumeLayout(false);
+            this.finalGroup.PerformLayout();
+            this.customerGroup.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCust)).EndInit();
             this.flightGroup.ResumeLayout(false);
             this.flightGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
@@ -667,22 +632,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private FlatUI.FlatLabel flatLabel2;
         private FlatUI.FlatLabel flatLabel1;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private FlatUI.FlatLabel flatLabel5;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.GroupBox finalGroup;
+        private FlatUI.FlatLabel lblRefund;
         private FlatUI.FlatLabel flatLabel6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private FlatUI.FlatLabel flatLabel8;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnRefund;
+        private FlatUI.FlatLabel lblTotalPrice;
         private FlatUI.FlatLabel flatLabel7;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid2;
-        private FlatUI.FlatLabel flatLabel3;
-        private FlatUI.FlatLabel flatLabel4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox customerGroup;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvCust;
         private FlatUI.FlatLabel flatLabel10;
         private FlatUI.FlatLabel flatLabel9;
         private System.Windows.Forms.FlowLayoutPanel panelSeat;

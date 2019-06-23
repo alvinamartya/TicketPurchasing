@@ -38,6 +38,26 @@
             this.dgvFlightSchedule = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.flightGroup = new System.Windows.Forms.GroupBox();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.photo = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.customerGroup = new System.Windows.Forms.GroupBox();
+            this.btnDeletePassenger = new System.Windows.Forms.Button();
+            this.btnAddPassenger = new System.Windows.Forms.Button();
+            this.panelSeat = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefreshCustomer = new System.Windows.Forms.Button();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.dgvCustomer = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.cboCustomer = new System.Windows.Forms.ComboBox();
+            this.FinalGroup = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelCustomer = new System.Windows.Forms.Button();
+            this.lblTotalTransaction = new FlatUI.FlatLabel();
+            this.flatLabel7 = new FlatUI.FlatLabel();
+            this.flatLabel3 = new FlatUI.FlatLabel();
+            this.flatLabel4 = new FlatUI.FlatLabel();
             this.lblFirstPrice = new FlatUI.FlatLabel();
             this.lblBusinessPrice = new FlatUI.FlatLabel();
             this.lblEconomyPrice = new FlatUI.FlatLabel();
@@ -57,30 +77,11 @@
             this.flatLabel19 = new FlatUI.FlatLabel();
             this.flatLabel21 = new FlatUI.FlatLabel();
             this.flatLabel9 = new FlatUI.FlatLabel();
-            this.photo = new System.Windows.Forms.PictureBox();
             this.flatLabel10 = new FlatUI.FlatLabel();
             this.flatLabel16 = new FlatUI.FlatLabel();
             this.flatLabel11 = new FlatUI.FlatLabel();
             this.flatLabel15 = new FlatUI.FlatLabel();
             this.flatLabel12 = new FlatUI.FlatLabel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.customerGroup = new System.Windows.Forms.GroupBox();
-            this.btnDeletePassenger = new System.Windows.Forms.Button();
-            this.btnAddPassenger = new System.Windows.Forms.Button();
-            this.panelSeat = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnRefreshCustomer = new System.Windows.Forms.Button();
-            this.btnAddCustomer = new System.Windows.Forms.Button();
-            this.dgvCustomer = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.cboCustomer = new System.Windows.Forms.ComboBox();
-            this.flatLabel3 = new FlatUI.FlatLabel();
-            this.flatLabel4 = new FlatUI.FlatLabel();
-            this.FinalGroup = new System.Windows.Forms.GroupBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.flatLabel8 = new FlatUI.FlatLabel();
-            this.flatLabel7 = new FlatUI.FlatLabel();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flatLabel5 = new FlatUI.FlatLabel();
             this.flatLabel6 = new FlatUI.FlatLabel();
             this.flatLabel1 = new FlatUI.FlatLabel();
@@ -205,6 +206,284 @@
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // photo
+            // 
+            this.photo.Location = new System.Drawing.Point(12, 26);
+            this.photo.Name = "photo";
+            this.photo.Size = new System.Drawing.Size(240, 90);
+            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.photo.TabIndex = 65;
+            this.photo.TabStop = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSearch.Location = new System.Drawing.Point(276, 84);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(49, 23);
+            this.btnSearch.TabIndex = 63;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // customerGroup
+            // 
+            this.customerGroup.Controls.Add(this.btnCancelCustomer);
+            this.customerGroup.Controls.Add(this.btnDeletePassenger);
+            this.customerGroup.Controls.Add(this.btnAddPassenger);
+            this.customerGroup.Controls.Add(this.panelSeat);
+            this.customerGroup.Controls.Add(this.btnRefreshCustomer);
+            this.customerGroup.Controls.Add(this.btnAddCustomer);
+            this.customerGroup.Controls.Add(this.dgvCustomer);
+            this.customerGroup.Controls.Add(this.cboCustomer);
+            this.customerGroup.Controls.Add(this.flatLabel3);
+            this.customerGroup.Controls.Add(this.flatLabel4);
+            this.customerGroup.ForeColor = System.Drawing.Color.White;
+            this.customerGroup.Location = new System.Drawing.Point(12, 327);
+            this.customerGroup.Name = "customerGroup";
+            this.customerGroup.Size = new System.Drawing.Size(795, 308);
+            this.customerGroup.TabIndex = 64;
+            this.customerGroup.TabStop = false;
+            this.customerGroup.Text = "Customer";
+            this.customerGroup.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // btnDeletePassenger
+            // 
+            this.btnDeletePassenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnDeletePassenger.FlatAppearance.BorderSize = 0;
+            this.btnDeletePassenger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletePassenger.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnDeletePassenger.Location = new System.Drawing.Point(163, 276);
+            this.btnDeletePassenger.Name = "btnDeletePassenger";
+            this.btnDeletePassenger.Size = new System.Drawing.Size(89, 26);
+            this.btnDeletePassenger.TabIndex = 84;
+            this.btnDeletePassenger.Text = "Delete";
+            this.btnDeletePassenger.UseVisualStyleBackColor = false;
+            this.btnDeletePassenger.Click += new System.EventHandler(this.btnDeletePassenger_Click);
+            // 
+            // btnAddPassenger
+            // 
+            this.btnAddPassenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnAddPassenger.FlatAppearance.BorderSize = 0;
+            this.btnAddPassenger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPassenger.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddPassenger.Location = new System.Drawing.Point(68, 276);
+            this.btnAddPassenger.Name = "btnAddPassenger";
+            this.btnAddPassenger.Size = new System.Drawing.Size(89, 26);
+            this.btnAddPassenger.TabIndex = 75;
+            this.btnAddPassenger.Text = "Add";
+            this.btnAddPassenger.UseVisualStyleBackColor = false;
+            this.btnAddPassenger.Click += new System.EventHandler(this.btnAddPassenger_Click);
+            // 
+            // panelSeat
+            // 
+            this.panelSeat.AutoScroll = true;
+            this.panelSeat.Location = new System.Drawing.Point(12, 45);
+            this.panelSeat.Name = "panelSeat";
+            this.panelSeat.Size = new System.Drawing.Size(371, 222);
+            this.panelSeat.TabIndex = 83;
+            // 
+            // btnRefreshCustomer
+            // 
+            this.btnRefreshCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnRefreshCustomer.FlatAppearance.BorderSize = 0;
+            this.btnRefreshCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRefreshCustomer.Location = new System.Drawing.Point(331, 17);
+            this.btnRefreshCustomer.Name = "btnRefreshCustomer";
+            this.btnRefreshCustomer.Size = new System.Drawing.Size(53, 22);
+            this.btnRefreshCustomer.TabIndex = 82;
+            this.btnRefreshCustomer.Text = "Refresh";
+            this.btnRefreshCustomer.UseVisualStyleBackColor = false;
+            this.btnRefreshCustomer.Click += new System.EventHandler(this.btnRefreshCustomer_Click);
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
+            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddCustomer.Location = new System.Drawing.Point(291, 17);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(36, 22);
+            this.btnAddCustomer.TabIndex = 81;
+            this.btnAddCustomer.Text = "Add";
+            this.btnAddCustomer.UseVisualStyleBackColor = false;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            // 
+            // dgvCustomer
+            // 
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCustomer.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.DoubleBuffered = true;
+            this.dgvCustomer.EnableHeadersVisualStyles = false;
+            this.dgvCustomer.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.dgvCustomer.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.dgvCustomer.Location = new System.Drawing.Point(392, 17);
+            this.dgvCustomer.MultiSelect = false;
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCustomer.Size = new System.Drawing.Size(393, 276);
+            this.dgvCustomer.TabIndex = 80;
+            this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
+            // 
+            // cboCustomer
+            // 
+            this.cboCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCustomer.FormattingEnabled = true;
+            this.cboCustomer.Location = new System.Drawing.Point(140, 17);
+            this.cboCustomer.Name = "cboCustomer";
+            this.cboCustomer.Size = new System.Drawing.Size(145, 21);
+            this.cboCustomer.TabIndex = 67;
+            this.cboCustomer.MouseHover += new System.EventHandler(this.cboCustomer_MouseHover);
+            // 
+            // FinalGroup
+            // 
+            this.FinalGroup.Controls.Add(this.btnCancel);
+            this.FinalGroup.Controls.Add(this.btnSave);
+            this.FinalGroup.Controls.Add(this.lblTotalTransaction);
+            this.FinalGroup.Controls.Add(this.flatLabel7);
+            this.FinalGroup.Location = new System.Drawing.Point(12, 641);
+            this.FinalGroup.Name = "FinalGroup";
+            this.FinalGroup.Size = new System.Drawing.Size(795, 44);
+            this.FinalGroup.TabIndex = 63;
+            this.FinalGroup.TabStop = false;
+            this.FinalGroup.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancel.Location = new System.Drawing.Point(619, 8);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(80, 28);
+            this.btnCancel.TabIndex = 83;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(705, 8);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(80, 28);
+            this.btnSave.TabIndex = 81;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRefresh.Location = new System.Drawing.Point(201, 136);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(63, 23);
+            this.btnRefresh.TabIndex = 85;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
+            this.groupBox1.Controls.Add(this.dgvFlightSchedule);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(343, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(464, 165);
+            this.groupBox1.TabIndex = 61;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Flight Schedule";
+            this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
+            // 
+            // btnCancelCustomer
+            // 
+            this.btnCancelCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnCancelCustomer.FlatAppearance.BorderSize = 0;
+            this.btnCancelCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancelCustomer.Location = new System.Drawing.Point(258, 276);
+            this.btnCancelCustomer.Name = "btnCancelCustomer";
+            this.btnCancelCustomer.Size = new System.Drawing.Size(89, 26);
+            this.btnCancelCustomer.TabIndex = 85;
+            this.btnCancelCustomer.Text = "Cancel";
+            this.btnCancelCustomer.UseVisualStyleBackColor = false;
+            this.btnCancelCustomer.Click += new System.EventHandler(this.btnCancelCustomer_Click);
+            // 
+            // lblTotalTransaction
+            // 
+            this.lblTotalTransaction.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalTransaction.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTransaction.ForeColor = System.Drawing.Color.White;
+            this.lblTotalTransaction.Location = new System.Drawing.Point(120, 13);
+            this.lblTotalTransaction.Name = "lblTotalTransaction";
+            this.lblTotalTransaction.Size = new System.Drawing.Size(225, 24);
+            this.lblTotalTransaction.TabIndex = 82;
+            // 
+            // flatLabel7
+            // 
+            this.flatLabel7.AutoSize = true;
+            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel7.ForeColor = System.Drawing.Color.White;
+            this.flatLabel7.Location = new System.Drawing.Point(6, 16);
+            this.flatLabel7.Name = "flatLabel7";
+            this.flatLabel7.Size = new System.Drawing.Size(113, 17);
+            this.flatLabel7.TabIndex = 81;
+            this.flatLabel7.Text = "Total Transaction: ";
+            // 
+            // flatLabel3
+            // 
+            this.flatLabel3.AutoSize = true;
+            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel3.ForeColor = System.Drawing.Color.White;
+            this.flatLabel3.Location = new System.Drawing.Point(122, 17);
+            this.flatLabel3.Name = "flatLabel3";
+            this.flatLabel3.Size = new System.Drawing.Size(11, 17);
+            this.flatLabel3.TabIndex = 66;
+            this.flatLabel3.Text = ":";
+            // 
+            // flatLabel4
+            // 
+            this.flatLabel4.AutoSize = true;
+            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel4.ForeColor = System.Drawing.Color.White;
+            this.flatLabel4.Location = new System.Drawing.Point(14, 17);
+            this.flatLabel4.Name = "flatLabel4";
+            this.flatLabel4.Size = new System.Drawing.Size(103, 17);
+            this.flatLabel4.TabIndex = 65;
+            this.flatLabel4.Text = "Customer Name";
             // 
             // lblFirstPrice
             // 
@@ -418,15 +697,6 @@
             this.flatLabel9.TabIndex = 70;
             this.flatLabel9.Text = ":";
             // 
-            // photo
-            // 
-            this.photo.Location = new System.Drawing.Point(12, 26);
-            this.photo.Name = "photo";
-            this.photo.Size = new System.Drawing.Size(240, 90);
-            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.photo.TabIndex = 65;
-            this.photo.TabStop = false;
-            // 
             // flatLabel10
             // 
             this.flatLabel10.AutoSize = true;
@@ -486,254 +756,6 @@
             this.flatLabel12.Size = new System.Drawing.Size(70, 17);
             this.flatLabel12.TabIndex = 67;
             this.flatLabel12.Text = "Arrival City";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSearch.Location = new System.Drawing.Point(276, 84);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(49, 23);
-            this.btnSearch.TabIndex = 63;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // customerGroup
-            // 
-            this.customerGroup.Controls.Add(this.btnDeletePassenger);
-            this.customerGroup.Controls.Add(this.btnAddPassenger);
-            this.customerGroup.Controls.Add(this.panelSeat);
-            this.customerGroup.Controls.Add(this.btnRefreshCustomer);
-            this.customerGroup.Controls.Add(this.btnAddCustomer);
-            this.customerGroup.Controls.Add(this.dgvCustomer);
-            this.customerGroup.Controls.Add(this.cboCustomer);
-            this.customerGroup.Controls.Add(this.flatLabel3);
-            this.customerGroup.Controls.Add(this.flatLabel4);
-            this.customerGroup.ForeColor = System.Drawing.Color.White;
-            this.customerGroup.Location = new System.Drawing.Point(12, 327);
-            this.customerGroup.Name = "customerGroup";
-            this.customerGroup.Size = new System.Drawing.Size(795, 308);
-            this.customerGroup.TabIndex = 64;
-            this.customerGroup.TabStop = false;
-            this.customerGroup.Text = "Customer";
-            this.customerGroup.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
-            // 
-            // btnDeletePassenger
-            // 
-            this.btnDeletePassenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnDeletePassenger.FlatAppearance.BorderSize = 0;
-            this.btnDeletePassenger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletePassenger.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDeletePassenger.Location = new System.Drawing.Point(200, 274);
-            this.btnDeletePassenger.Name = "btnDeletePassenger";
-            this.btnDeletePassenger.Size = new System.Drawing.Size(89, 26);
-            this.btnDeletePassenger.TabIndex = 84;
-            this.btnDeletePassenger.Text = "Delete";
-            this.btnDeletePassenger.UseVisualStyleBackColor = false;
-            // 
-            // btnAddPassenger
-            // 
-            this.btnAddPassenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnAddPassenger.FlatAppearance.BorderSize = 0;
-            this.btnAddPassenger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPassenger.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAddPassenger.Location = new System.Drawing.Point(105, 274);
-            this.btnAddPassenger.Name = "btnAddPassenger";
-            this.btnAddPassenger.Size = new System.Drawing.Size(89, 26);
-            this.btnAddPassenger.TabIndex = 75;
-            this.btnAddPassenger.Text = "Add";
-            this.btnAddPassenger.UseVisualStyleBackColor = false;
-            this.btnAddPassenger.Click += new System.EventHandler(this.btnAddPassenger_Click);
-            // 
-            // panelSeat
-            // 
-            this.panelSeat.AutoScroll = true;
-            this.panelSeat.Location = new System.Drawing.Point(12, 45);
-            this.panelSeat.Name = "panelSeat";
-            this.panelSeat.Size = new System.Drawing.Size(371, 222);
-            this.panelSeat.TabIndex = 83;
-            // 
-            // btnRefreshCustomer
-            // 
-            this.btnRefreshCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnRefreshCustomer.FlatAppearance.BorderSize = 0;
-            this.btnRefreshCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRefreshCustomer.Location = new System.Drawing.Point(331, 17);
-            this.btnRefreshCustomer.Name = "btnRefreshCustomer";
-            this.btnRefreshCustomer.Size = new System.Drawing.Size(53, 22);
-            this.btnRefreshCustomer.TabIndex = 82;
-            this.btnRefreshCustomer.Text = "Refresh";
-            this.btnRefreshCustomer.UseVisualStyleBackColor = false;
-            // 
-            // btnAddCustomer
-            // 
-            this.btnAddCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnAddCustomer.FlatAppearance.BorderSize = 0;
-            this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAddCustomer.Location = new System.Drawing.Point(291, 17);
-            this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(36, 22);
-            this.btnAddCustomer.TabIndex = 81;
-            this.btnAddCustomer.Text = "Add";
-            this.btnAddCustomer.UseVisualStyleBackColor = false;
-            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
-            // 
-            // dgvCustomer
-            // 
-            this.dgvCustomer.AllowUserToAddRows = false;
-            this.dgvCustomer.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCustomer.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCustomer.DoubleBuffered = true;
-            this.dgvCustomer.EnableHeadersVisualStyles = false;
-            this.dgvCustomer.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dgvCustomer.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.dgvCustomer.Location = new System.Drawing.Point(392, 17);
-            this.dgvCustomer.Name = "dgvCustomer";
-            this.dgvCustomer.ReadOnly = true;
-            this.dgvCustomer.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCustomer.Size = new System.Drawing.Size(393, 276);
-            this.dgvCustomer.TabIndex = 80;
-            // 
-            // cboCustomer
-            // 
-            this.cboCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCustomer.FormattingEnabled = true;
-            this.cboCustomer.Location = new System.Drawing.Point(140, 17);
-            this.cboCustomer.Name = "cboCustomer";
-            this.cboCustomer.Size = new System.Drawing.Size(145, 21);
-            this.cboCustomer.TabIndex = 67;
-            // 
-            // flatLabel3
-            // 
-            this.flatLabel3.AutoSize = true;
-            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(122, 17);
-            this.flatLabel3.Name = "flatLabel3";
-            this.flatLabel3.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel3.TabIndex = 66;
-            this.flatLabel3.Text = ":";
-            // 
-            // flatLabel4
-            // 
-            this.flatLabel4.AutoSize = true;
-            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(14, 17);
-            this.flatLabel4.Name = "flatLabel4";
-            this.flatLabel4.Size = new System.Drawing.Size(103, 17);
-            this.flatLabel4.TabIndex = 65;
-            this.flatLabel4.Text = "Customer Name";
-            // 
-            // FinalGroup
-            // 
-            this.FinalGroup.Controls.Add(this.btnCancel);
-            this.FinalGroup.Controls.Add(this.btnSave);
-            this.FinalGroup.Controls.Add(this.flatLabel8);
-            this.FinalGroup.Controls.Add(this.flatLabel7);
-            this.FinalGroup.Location = new System.Drawing.Point(12, 641);
-            this.FinalGroup.Name = "FinalGroup";
-            this.FinalGroup.Size = new System.Drawing.Size(795, 44);
-            this.FinalGroup.TabIndex = 63;
-            this.FinalGroup.TabStop = false;
-            this.FinalGroup.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancel.Location = new System.Drawing.Point(619, 11);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 28);
-            this.btnCancel.TabIndex = 83;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(705, 11);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 28);
-            this.btnSave.TabIndex = 81;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // flatLabel8
-            // 
-            this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel8.ForeColor = System.Drawing.Color.Black;
-            this.flatLabel8.Location = new System.Drawing.Point(120, 15);
-            this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(225, 17);
-            this.flatLabel8.TabIndex = 82;
-            // 
-            // flatLabel7
-            // 
-            this.flatLabel7.AutoSize = true;
-            this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(6, 16);
-            this.flatLabel7.Name = "flatLabel7";
-            this.flatLabel7.Size = new System.Drawing.Size(113, 17);
-            this.flatLabel7.TabIndex = 81;
-            this.flatLabel7.Text = "Total Transaction: ";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRefresh.Location = new System.Drawing.Point(201, 136);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(63, 23);
-            this.btnRefresh.TabIndex = 85;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnRefresh);
-            this.groupBox1.Controls.Add(this.dgvFlightSchedule);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(343, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(464, 165);
-            this.groupBox1.TabIndex = 61;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Flight Schedule";
-            this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             // 
             // flatLabel5
             // 
@@ -865,7 +887,7 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvCustomer;
         private System.Windows.Forms.Button btnAddPassenger;
         private System.Windows.Forms.GroupBox FinalGroup;
-        private FlatUI.FlatLabel flatLabel8;
+        private FlatUI.FlatLabel lblTotalTransaction;
         private FlatUI.FlatLabel flatLabel7;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
@@ -901,5 +923,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel panelSeat;
         private System.Windows.Forms.Button btnDeletePassenger;
+        private System.Windows.Forms.Button btnCancelCustomer;
     }
 }

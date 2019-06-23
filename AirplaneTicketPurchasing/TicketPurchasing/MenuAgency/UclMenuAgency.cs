@@ -13,13 +13,20 @@ namespace TicketPurchasing.MenuAgency
     public partial class UclMenuAgency : UserControl
     {
         #region Declaration
-        Support support = new Support();
+        private Support support = new Support();
+        private FrmMenuAgency agency;
         #endregion
 
         #region Constructor
         public UclMenuAgency()
         {
             InitializeComponent();
+        }
+
+        public UclMenuAgency(FrmMenuAgency agency)
+        {
+            InitializeComponent();
+            this.agency = agency;
         }
         #endregion
         #region Events
@@ -31,7 +38,7 @@ namespace TicketPurchasing.MenuAgency
 
         private void pnlPurchase_Click(object sender, EventArgs e)
         {
-            UclPurchase purchase = new UclPurchase();
+            UclPurchase purchase = new UclPurchase(agency);
             ((FrmMenuAgency)Support.frm).addControltoPanel(purchase);
             ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase]";
         }

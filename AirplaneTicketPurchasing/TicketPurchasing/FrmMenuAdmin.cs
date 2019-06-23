@@ -28,6 +28,19 @@ namespace TicketPurchasing
         }
         #endregion
         #region Events
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            btn = btnChangePassword;
+            buttonSeleted(btn);
+            UclChangePassword uclChangePassword = new UclChangePassword();
+            addControltoPanel(uclChangePassword);
+            lblTitle.Text = "FLIGHTSI - CHANGE PASSWORD";
+        }
+
+        private void flatClose1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
         private void FrmMenuSA_Load(object sender, EventArgs e)
         {
             List<Parameter> param = new List<Parameter>();
@@ -122,14 +135,5 @@ namespace TicketPurchasing
             support.DragandDropForm(this);
         }
         #endregion
-
-        private void btnChangePassword_Click(object sender, EventArgs e)
-        {
-            btn = btnChangePassword;
-            buttonSeleted(btn);
-            UclChangePassword uclChangePassword = new UclChangePassword();
-            addControltoPanel(uclChangePassword);
-            lblTitle.Text = "FLIGHTSI - CHANGE PASSWORD";
-        }
     }
 }

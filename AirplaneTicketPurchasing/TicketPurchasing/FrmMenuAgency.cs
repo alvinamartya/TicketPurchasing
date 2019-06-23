@@ -19,15 +19,17 @@ namespace TicketPurchasing
         private Support support = new Support();
         private Database database = new Database();
         #endregion
-
         #region Constructor
         public FrmMenuAgency()
         {
             InitializeComponent();
         }
         #endregion
-
         #region Events
+        private void flatClose1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -36,15 +38,6 @@ namespace TicketPurchasing
                 login.Show();
                 this.Close();
             }
-        }
-
-        private void btnManageCustomer_Click(object sender, EventArgs e)
-        {
-            btn = btnManageCustomer;
-            buttonSelected();
-            UclCustomer uclCustomer = new UclCustomer();
-            addControltoPanel(uclCustomer);
-            lblTitle.Text = "FLIGHTSI - MANAGE [Customers]";
         }
 
         private void FrmMenuAgency_Load(object sender, EventArgs e)
@@ -86,7 +79,7 @@ namespace TicketPurchasing
         {
             btn = btnTransac;
             buttonSelected();
-            UclMenuAgency menuagency = new UclMenuAgency();
+            UclMenuAgency menuagency = new UclMenuAgency(this);
             addControltoPanel(menuagency);
             lblTitle.Text = "FLIGHTSI - TRANSACTION";
         }
@@ -110,6 +103,11 @@ namespace TicketPurchasing
         }
         #endregion
         #region Method
+        public void enabledFrm(bool value)
+        {
+            Enabled = value;
+        }
+
         public void addControltoPanel(UserControl control)
         {
             pnlContent.Controls.Clear();

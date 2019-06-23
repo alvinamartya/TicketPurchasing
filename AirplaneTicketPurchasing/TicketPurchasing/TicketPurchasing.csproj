@@ -132,6 +132,12 @@
     <Compile Include="MenuAgency\UclSeat.Designer.cs">
       <DependentUpon>UclSeat.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuAgency\UclSeatRefund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAgency\UclSeatRefund.Designer.cs">
+      <DependentUpon>UclSeatRefund.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuAgency\UclTicket.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -256,6 +262,14 @@
     <Compile Include="Saneki\Helpers.cs" />
     <Compile Include="Saneki\MouseState.cs" />
     <Compile Include="Class\Support.cs" />
+    <Compile Include="TicketDataSet.cs">
+      <DependentUpon>TicketDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TicketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicketDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UclChangePassword.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -314,6 +328,9 @@
     <EmbeddedResource Include="MenuAgency\UclSeat.resx">
       <DependentUpon>UclSeat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgency\UclSeatRefund.resx">
+      <DependentUpon>UclSeatRefund.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuAgency\UclTicket.resx">
       <DependentUpon>UclTicket.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,6 +364,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\Report1.rdlc" />
     <EmbeddedResource Include="UclChangePassword.resx">
       <DependentUpon>UclChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +386,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TicketDataSet.xsc">
+      <DependentUpon>TicketDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TicketDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TicketDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TicketDataSet.xss">
+      <DependentUpon>TicketDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

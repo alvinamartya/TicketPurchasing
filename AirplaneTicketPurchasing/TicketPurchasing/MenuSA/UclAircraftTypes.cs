@@ -497,6 +497,12 @@ namespace TicketPurchasing.MenuSA
             }
         }
 
+        private void txtSeat_MouseUp(object sender, MouseEventArgs e)
+        {
+            ToolTip tip = new ToolTip();
+            tip.SetToolTip(txtSeat, "Message");
+        }
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             refreshDatagrid(txtSearch.Text);

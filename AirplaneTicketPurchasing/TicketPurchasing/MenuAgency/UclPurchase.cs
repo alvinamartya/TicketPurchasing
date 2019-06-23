@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace TicketPurchasing.MenuAgency
 {
@@ -17,15 +19,46 @@ namespace TicketPurchasing.MenuAgency
         private bool isSelected = false;
         private DataGridViewRow row = null;
         private Support support = new Support();
-        private ButtonSeat button_seat = null;
+        private ButtonSeat button_seat = null, button_seat_selected = null;
+        private FrmMenuAgency agency;
+        private DataGridViewRow row2;
+        private List<ButtonSeat> btnList = new List<ButtonSeat>();
+        private int posButton = 0;
+        private decimal totalTransaction = 0;
+        private TicketDataSet ticketdataset = new TicketDataSet();
         #endregion
         #region Constructor
         public UclPurchase()
         {
             InitializeComponent();
         }
+
+        public UclPurchase(FrmMenuAgency agency)
+        {
+            InitializeComponent();
+            this.agency = agency;
+        }
         #endregion
         #region Method
+        private void createTable()
+        {
+            dgvCustomer.Rows.Clear();
+            dgvCustomer.Columns.Clear();
+            dgvCustomer.Columns.Add("customerID", "CustomerID");
+            dgvCustomer.Columns.Add("customerName", "Customer Name");
+            dgvCustomer.Columns.Add("realSeatNumber", "Real Seat Number");
+            dgvCustomer.Columns.Add("seatNumber", "Seat Number");
+            dgvCustomer.Columns.Add("cabinType", "Cabin Type");
+            dgvCustomer.Columns.Add("price", "Price");
+            dgvCustomer.Columns[0].Visible = false;
+            dgvCustomer.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCustomer.Columns[2].Visible = false;
+            dgvCustomer.Columns[5].Visible = false;
+            dgvCustomer.HeaderBgColor = Color.Teal;
+            dgvCustomer.HeaderForeColor = Color.White;
+            dgvCustomer.ForeColor = Color.Black;
+        }
+
         private void DrawGroupBox(GroupBox box, Graphics g, Color textColor, Color borderColor)
         {
             if (box != null)
@@ -262,15 +295,140 @@ namespace TicketPurchasing.MenuAgency
             DrawGroupBox(box, e.Graphics, Color.White, Color.Gray);
         }
 
+        private string getBookingRef()
+        {
+            string bookingref = "";
+            char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".ToCharArray();
+            bool isSuccessed = false;
+            Random rand = new Random();
+            do
+            {
+                isSuccessed = true;
+                bookingref = "";
+                for(int i = 0; i < 6; i++)
+                {
+                    int x = rand.Next(alphabet.Length - 1);
+                    Console.WriteLine(x);
+                    bookingref += alphabet[x];
+                }
+
+
+                SqlConnection conn = new SqlConnection(database.getConnectionString());
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("sp_check_bookingRef", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@BookingRef", bookingref);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        isSuccessed = false;
+                    }
+                    else
+                    {
+                        isSuccessed = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    if (conn != null)
+                    {
+                        conn.Close();
+                    }
+                }
+            } while (!isSuccessed);
+
+            return bookingref;
+        }
+
+        private string getID()
+        {
+            string id = "";
+            List<Parameter> param = new List<Parameter>();
+            param.Add(new Parameter("@Username", Thread.CurrentPrincipal.Identity.Name));
+            DataSet ds = database.getDataFromDatabase("sp_get_id_employees", param);
+            if (ds.Tables.Count > 0)
+            {
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    id = ds.Tables[0].Rows[0][0].ToString();
+                }
+            }
+            return id;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            UclTicket ticket = new UclTicket();
-            ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
-            ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
+            ticketdataset = new TicketDataSet();
+            ticketdataset.DataTable1.Clear();
+            if (dgvCustomer.Rows.Count > 0)
+            {
+                string bookingref = getBookingRef();
+                string id = DateTime.Now.ToString("ddMMyyyyhhmmss");
+                List<Parameter> param = new List<Parameter>();
+                param.Add(new Parameter("@ID", id));
+                param.Add(new Parameter("@TransactionDate", DateTime.Now.ToString("yyyy-MM-dd")));
+                param.Add(new Parameter("@BookingRef", bookingref));
+                param.Add(new Parameter("@Status", "P"));
+                param.Add(new Parameter("@EmployeeID", getID()));
+                param.Add(new Parameter("@Schedule", row.Cells[0].Value.ToString()));
+                param.Add(new Parameter("@TotalPrice", totalTransaction.ToString()));
+                int result = database.executeQuery("sp_insert_tickets", param, "Add");
+
+                if (result > 0)
+                {
+                    for (int i = 0; i < dgvCustomer.Rows.Count; i++)
+                    {
+                        List<Parameter> param2 = new List<Parameter>();
+                        param2.Add(new Parameter("@SeatNumber", dgvCustomer.Rows[i].Cells[2].Value.ToString()));
+                        param2.Add(new Parameter("@Price", dgvCustomer.Rows[i].Cells[5].Value.ToString()));
+                        param2.Add(new Parameter("@CabinType", dgvCustomer.Rows[i].Cells[4].Value.ToString()));
+                        param2.Add(new Parameter("@TicketID", id));
+                        param2.Add(new Parameter("@CustomerID", dgvCustomer.Rows[i].Cells[0].Value.ToString()));
+
+                        ticketdataset.DataTable1.AddDataTable1Row(
+                            dgvCustomer.Rows[i].Cells[1].Value.ToString(),
+                            dgvCustomer.Rows[i].Cells[3].Value.ToString(),
+                            dgvCustomer.Rows[i].Cells[4].Value.ToString());
+                        int x = database.executeQuery("sp_insert_detailtickets", param2, "Add");
+                    }
+
+                    MessageBox.Show("Purchase ticket has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string[] dateArray = row.Cells[5].Value.ToString().Split('/');
+                    string base64string = row.Cells[10].Value.ToString();
+                    string extension = base64string.Substring(base64string.IndexOf('/'),
+                        base64string.IndexOf(';') - base64string.IndexOf('/'));
+                    string path = base64string.Substring(base64string.IndexOf(',') + 2,
+                        base64string.Length - (base64string.IndexOf(',') + 2));
+                    UclSaveToPDF ticket = new UclSaveToPDF(path, bookingref,
+                        row.Cells[8].Value.ToString(), row.Cells[2].Value.ToString(),
+                        row.Cells[4].Value.ToString(), (new DateTime(Convert.ToInt32(dateArray[2]),
+                        Convert.ToInt32(dateArray[1]),
+                        Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy"),
+                        row.Cells[6].Value.ToString(), ticketdataset);
+                    ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
+                    ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
+                }
+                else
+                {
+                    MessageBox.Show("Purchase ticket is failed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ensure you have customer in list passenger", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void UclPurchase_Load(object sender, EventArgs e)
         {
+            btnList = new List<ButtonSeat>();
+            createTable();
             defaultFrm(false);
             fillcboCity();
             fillCboCustomer();
@@ -326,23 +484,138 @@ namespace TicketPurchasing.MenuAgency
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            btnList = new List<ButtonSeat>();
+            createTable();
             defaultFrm(false);
             refreshDatagridSchedule(false);
             buttonSeat = null;
+            row2 = null;
+            posButton = 0;
+            totalTransaction = 0;
         }
 
         private void btnAddPassenger_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Cabin Type: " + buttonSeat.CabinType);
-            Console.WriteLine("Seat Number: " + buttonSeat.SeatNumber);
-            Console.WriteLine("Text: " + buttonSeat.Text);
+            try
+            {
+                DataGridViewRow row = dgvCustomer.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[0].Value.ToString() == cboCustomer.SelectedValue.ToString()).FirstOrDefault();
+                if(row != null)
+                {
+                    MessageBox.Show("Passenger already exists in customer list", "Warning", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (button_seat_selected != null)
+                {
+                    MessageBox.Show("Ensure you don't chose selected seat", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                totalTransaction += buttonSeat.Price;
+                Console.WriteLine("Price: " + buttonSeat.Price);
+                btnList.Add(buttonSeat);
+                dgvCustomer.Rows.Add(cboCustomer.SelectedValue.ToString(),
+                    cboCustomer.Text, buttonSeat.SeatNumber, buttonSeat.Text,
+                    buttonSeat.CabinType, buttonSeat.Price);
+                buttonSeat.Condition = 3;
+                buttonSeat = null;
+                lblTotalTransaction.Text = "Rp. " + totalTransaction.ToString("N");
+                MessageBox.Show("Add passenger has been success", "Information", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            FrmPopUp popup = new FrmPopUp();
+            FrmPopUp popup = new FrmPopUp(agency);
             popup.Show();
+            agency.enabledFrm(false);
         }
         #endregion
+
+        private void btnRefreshCustomer_Click(object sender, EventArgs e)
+        {
+            fillCboCustomer();
+        }
+
+        private void cboCustomer_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tip = new ToolTip();
+            tip.SetToolTip(cboCustomer, "Message");
+        }
+
+        private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (isSelected)
+                {
+                    if(row2 != null)
+                        btnList[row2.Index].Condition = 3;
+                    row2 = dgvCustomer.CurrentRow;
+                    posButton = e.RowIndex;
+                    btnList[posButton].Condition = 4;
+                    button_seat_selected = btnList[posButton];
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Ensure you have add passenger", 
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            } 
+        }
+
+        private void btnDeletePassenger_Click(object sender, EventArgs e)
+        {
+            if(button_seat != null)
+            {
+                MessageBox.Show("Ensure you don't choose seat", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (row2 != null && button_seat_selected != null)
+            {
+                if(MessageBox.Show("Are you sure?","Delete Data",
+                    MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dgvCustomer.Rows.Remove(row2);
+                    btnList[posButton].Condition = 0;
+                    btnList[posButton].Clicked = false;
+                    totalTransaction -= btnList[posButton].Price;
+                    lblTotalTransaction.Text = "Rp. " + totalTransaction.ToString("N");
+                    btnList.Remove(btnList[posButton]);
+                    MessageBox.Show("Remove Passenger has been success", "Information", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    row2 = null;
+                }
+            }
+            else
+                MessageBox.Show("Ensure you have selected customer",
+                    "Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        }
+
+        private void btnCancelCustomer_Click(object sender, EventArgs e)
+        {
+
+            if(buttonSeat != null)
+            {
+                buttonSeat.Condition = 0;
+                buttonSeat.Clicked = false;
+            }
+
+            if(btnList[posButton] != null)
+            {
+                btnList[posButton].Condition = 3;
+            }
+
+            button_seat = null;
+            button_seat_selected = null;
+        }
     }
 }

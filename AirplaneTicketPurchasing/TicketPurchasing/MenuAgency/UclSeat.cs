@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TicketPurchasing.Class;
 
 namespace TicketPurchasing.MenuAgency
 {
@@ -21,8 +22,8 @@ namespace TicketPurchasing.MenuAgency
             InitializeComponent();
         }
 
-        public UclSeat(string scheduleID, string cabintype, int left, 
-            int mid, int right,int totalSeat, int start, decimal price, UclPurchase purchase)
+        public UclSeat(string scheduleID, string cabintype, int left,
+            int mid, int right, int totalSeat, int start, decimal price, UclPurchase purchase)
         {
             InitializeComponent();
             lblTitle.Text = cabintype.ToUpper();
@@ -35,7 +36,7 @@ namespace TicketPurchasing.MenuAgency
         {
             int totalColumn = left + mid + right;
             DataSet passengers = 
-                database.getDataFromDatabase("sp_view_transaction_checkPassenger",
+                database.getDataFromDatabase("sp_get_passenger",
                 new List<Parameter>()
                 {
                     new Parameter("@ScheduleID",scheduleID),
