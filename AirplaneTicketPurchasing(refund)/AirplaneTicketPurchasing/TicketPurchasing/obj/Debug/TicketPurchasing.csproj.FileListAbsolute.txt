@@ -1,0 +1,213 @@
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+C:\Users\ELIXER\Downloads\Documents\Tugas Kampus\Pemrograman 2\TicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+D:\AAA\TicketPurchasing1\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+D:\AAA\TicketPurchasing1\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+D:\AAA\TicketPurchasing1\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+D:\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+D:\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+D:\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+C:\Users\RICO\Documents\GitHub\TicketPurchasing\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclTicket.resources
+D:\Project\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclDashboard.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclTicket.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclDashboard.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclTicket.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclDashboard.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclChangePassword.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclSeat.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeat.resources
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe.config
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.exe
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.exe
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\TicketPurchasing.pdb
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csprojResolveAssemblyReference.cache
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmLogin.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAdmin.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmMenuAgency.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclManageSchedules.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAdmin.UclMenuAdmin.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclCustomer.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeat.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclTicket.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAmenities.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclCities.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclMenuSA.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclSeat.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.Properties.Resources.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclChangePassword.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclDashboard.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclEmployees.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclReport.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.csproj.GenerateResource.Cache
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmPopUp.resources
+C:\Users\RICO\Desktop\PROJ\C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmPopUp.resources
