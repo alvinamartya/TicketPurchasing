@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSch = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.cmbAircraft = new System.Windows.Forms.ComboBox();
             this.cmbDepart = new System.Windows.Forms.ComboBox();
@@ -61,6 +61,8 @@
             this.flatLabel13 = new FlatUI.FlatLabel();
             this.flatLabel14 = new FlatUI.FlatLabel();
             this.txtFee = new System.Windows.Forms.NumericUpDown();
+            this.flatLabel1 = new FlatUI.FlatLabel();
+            this.cbofilterby = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFee)).BeginInit();
             this.SuspendLayout();
@@ -69,19 +71,19 @@
             // 
             this.dgvSch.AllowUserToAddRows = false;
             this.dgvSch.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvSch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvSch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSch.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvSch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSch.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSch.DoubleBuffered = true;
             this.dgvSch.EnableHeadersVisualStyles = false;
@@ -95,7 +97,7 @@
             this.dgvSch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSch.Size = new System.Drawing.Size(770, 172);
             this.dgvSch.TabIndex = 3;
-            this.dgvSch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSch_CellClick);
+            this.dgvSch.SelectionChanged += new System.EventHandler(this.dgvSch_SelectionChanged);
             // 
             // cmbAircraft
             // 
@@ -445,11 +447,38 @@
             this.txtFee.ThousandsSeparator = true;
             this.txtFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFee_KeyPress_1);
             // 
+            // flatLabel1
+            // 
+            this.flatLabel1.AutoSize = true;
+            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatLabel1.ForeColor = System.Drawing.Color.White;
+            this.flatLabel1.Location = new System.Drawing.Point(609, 16);
+            this.flatLabel1.Name = "flatLabel1";
+            this.flatLabel1.Size = new System.Drawing.Size(54, 17);
+            this.flatLabel1.TabIndex = 92;
+            this.flatLabel1.Text = "Filter by";
+            // 
+            // cbofilterby
+            // 
+            this.cbofilterby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbofilterby.FormattingEnabled = true;
+            this.cbofilterby.Items.AddRange(new object[] {
+            "Newest",
+            "Oldest"});
+            this.cbofilterby.Location = new System.Drawing.Point(669, 15);
+            this.cbofilterby.Name = "cbofilterby";
+            this.cbofilterby.Size = new System.Drawing.Size(121, 21);
+            this.cbofilterby.TabIndex = 93;
+            this.cbofilterby.SelectedIndexChanged += new System.EventHandler(this.cbofilterby_SelectedIndexChanged);
+            // 
             // UclManageSchedules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.cbofilterby);
+            this.Controls.Add(this.flatLabel1);
             this.Controls.Add(this.txtFee);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.flatLabel22);
@@ -483,6 +512,7 @@
             this.Controls.Add(this.dgvSch);
             this.Name = "UclManageSchedules";
             this.Size = new System.Drawing.Size(808, 484);
+            this.Load += new System.EventHandler(this.UclManageSchedules_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFee)).EndInit();
             this.ResumeLayout(false);
@@ -523,5 +553,7 @@
         private FlatUI.FlatLabel flatLabel22;
         private FlatUI.FlatLabel flatLabel23;
         private System.Windows.Forms.NumericUpDown txtFee;
+        private FlatUI.FlatLabel flatLabel1;
+        private System.Windows.Forms.ComboBox cbofilterby;
     }
 }

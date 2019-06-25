@@ -216,6 +216,7 @@ namespace TicketPurchasing.MenuAgency
         private void setSeat(string scheduleID,string aircraftID, 
             decimal economy, decimal business, decimal firstclass)
         {
+            double pos = 0;
             panelSeat.Controls.Clear();
 
             // First Class
@@ -235,7 +236,8 @@ namespace TicketPurchasing.MenuAgency
                     int mid = Convert.ToInt32(dsFirst.Tables[0].Rows[0][3].ToString());
                     int right = Convert.ToInt32(dsFirst.Tables[0].Rows[0][4].ToString());
                     UclSeat seatFlight = new UclSeat(scheduleID, cabintype,
-                                            left, mid, right, seat, 0, firstclass,this);
+                                            left, mid, right, seat, (int)pos, firstclass,this);
+                    pos = (double)seat / (double)(left + mid + right);
                     seatFlight.Margin = new Padding(0, 5, 0, 5);
                     panelSeat.Controls.Add(seatFlight);
                 }
@@ -257,8 +259,10 @@ namespace TicketPurchasing.MenuAgency
                     int left = Convert.ToInt32(dsBusiness.Tables[0].Rows[0][2].ToString());
                     int mid = Convert.ToInt32(dsBusiness.Tables[0].Rows[0][3].ToString());
                     int right = Convert.ToInt32(dsBusiness.Tables[0].Rows[0][4].ToString());
+                    if (pos.ToString().Split('.').Length == 2) pos = Convert.ToDouble(pos.ToString().Split('.')[0]) + 1;
                     UclSeat seatFlight = new UclSeat(scheduleID, cabintype,
-                                            left, mid, right, seat, 0, business,this);
+                                            left, mid, right, seat, (int)pos, business,this);
+                    pos += (double)seat / (double)(left + mid + right);
                     seatFlight.Margin = new Padding(0, 5, 0, 5);
                     panelSeat.Controls.Add(seatFlight);
                 }
@@ -280,8 +284,9 @@ namespace TicketPurchasing.MenuAgency
                     int left = Convert.ToInt32(dsEconomy.Tables[0].Rows[0][2].ToString());
                     int mid = Convert.ToInt32(dsEconomy.Tables[0].Rows[0][3].ToString());
                     int right = Convert.ToInt32(dsEconomy.Tables[0].Rows[0][4].ToString());
+                    if (pos.ToString().Split('.').Length == 2) pos = Convert.ToDouble(pos.ToString().Split('.')[0]) + 1;
                     UclSeat seatFlight = new UclSeat(scheduleID, cabintype, 
-                        left, mid, right, seat, 0, economy,this);
+                        left, mid, right, seat, (int)pos, economy,this);
                     seatFlight.Margin = new Padding(0, 5, 0, 5);
                     panelSeat.Controls.Add(seatFlight);
                 }

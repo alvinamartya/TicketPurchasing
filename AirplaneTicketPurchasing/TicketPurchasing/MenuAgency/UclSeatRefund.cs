@@ -29,11 +29,11 @@ namespace TicketPurchasing.MenuAgency
             lblTitle.Text = cabintype.ToUpper();
             this.refund = refund;
             this.ticketID = ticketID;
-            makeSeat(scheduleID, cabintype, left, mid, right, totalSeat, start, price,bookingref);
+            makeSeat(scheduleID, cabintype, left, mid, right, start, totalSeat, price,bookingref);
         }
 
         public void makeSeat(string scheduleID, string cabintype, int left,
-            int mid, int right, int totalSeat, int start, decimal price,string bookingref)
+            int mid, int right,int start, int totalSeat, decimal price,string bookingref)
         {
             int totalColumn = left + mid + right;
 

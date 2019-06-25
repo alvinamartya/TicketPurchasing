@@ -28,7 +28,7 @@ namespace TicketPurchasing.MenuAdmin
             enableForm(false);
             clear();
             createTable();
-            refreshDg(txtSearch.Text);
+            refreshDg(txtSearch.Text,cbofilterby.Text);
             initCmb();
             Console.Write(DateTime.Now);
         }
@@ -108,11 +108,12 @@ namespace TicketPurchasing.MenuAdmin
             dgvSch.HeaderBgColor = Color.Teal;
         }
 
-        private void refreshDg(string search)
+        private void refreshDg(string search,string status)
         {
             dgvSch.Rows.Clear();
             List<Parameter> param = new List<Parameter>();
-            DataSet data = database.getDataFromDatabase("sp_view_schedule", null);
+            param.Add(new Parameter("@status", status));
+            DataSet data = database.getDataFromDatabase("sp_view_schedule", param);
             var dsToList = data.Tables[0].AsEnumerable().Select(
                 x => new
                 {
@@ -141,25 +142,6 @@ namespace TicketPurchasing.MenuAdmin
                 dgvSch.Rows.Add(item.id, item.aircraftID, item.aircraft, item.depCityID, item.depCity,
                     item.arrCItyID, item.arrCIty, item.depDate.ToString("dd MMMM yyyy"), item.depTime, item.flightTIme,item.fee,item.fee.ToString("N"));
             }
-        }
-
-        private void dgvSch_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!isInserting && !isUpdating)
-            {
-                row = dgvSch.CurrentRow;
-                cmbDepart.SelectedValue = row.Cells[3].Value.ToString();
-                cmbArrival.SelectedValue = row.Cells[5].Value.ToString();
-                cmbAircraft.SelectedValue = row.Cells[1].Value.ToString();
-                DateTime date = Convert.ToDateTime(row.Cells[7].Value.ToString() + " " + row.Cells[8].Value.ToString());
-                dtDeparture.Value = date;
-                txtFee.Value = Convert.ToDecimal(row.Cells[10].Value.ToString());
-                int hour = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) / 60;
-                int min = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) % 60;
-                txtHour.Text = hour.ToString();
-                txtMin.Text = min.ToString();
-            }
-
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -204,7 +186,7 @@ namespace TicketPurchasing.MenuAdmin
             }
             clear();
             enableForm(false);
-            refreshDg(null);
+            refreshDg(null,cbofilterby.Text);
         }
 
         private bool Validation()
@@ -234,7 +216,7 @@ namespace TicketPurchasing.MenuAdmin
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            refreshDg(txtSearch.Text);
+            refreshDg(txtSearch.Text,cbofilterby.Text);
         }
 
         private void txtFee_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -244,6 +226,48 @@ namespace TicketPurchasing.MenuAdmin
                 SendKeys.Send("{ENTER}");
                 txtFee.Select();
                 SendKeys.Send("{END}");
+            }
+        }
+
+        private void UclManageSchedules_Load(object sender, EventArgs e)
+        {
+            cbofilterby.SelectedIndex = 0;
+        }
+
+        private void cbofilterby_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                refreshDg(txtSearch.Text,cbofilterby.Text);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void dgvSch_SelectionChanged(object sender, EventArgs e)
+        {
+            if (!isInserting && !isUpdating && dgvSch.Rows.Count > 0)
+            {
+                try
+                {
+                    row = dgvSch.CurrentRow;
+                    cmbDepart.SelectedValue = row.Cells[3].Value.ToString();
+                    cmbArrival.SelectedValue = row.Cells[5].Value.ToString();
+                    cmbAircraft.SelectedValue = row.Cells[1].Value.ToString();
+                    DateTime date = Convert.ToDateTime(row.Cells[7].Value.ToString() + " " + row.Cells[8].Value.ToString());
+                    dtDeparture.Value = date;
+                    txtFee.Value = Convert.ToDecimal(row.Cells[10].Value.ToString());
+                    int hour = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) / 60;
+                    int min = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) % 60;
+                    txtHour.Text = hour.ToString();
+                    txtMin.Text = min.ToString();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -289,7 +313,7 @@ namespace TicketPurchasing.MenuAdmin
                         MessageBox.Show("Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();
                         enableForm(false);
-                        refreshDg(null);
+                        refreshDg(null,cbofilterby.Text);
                     }
                 }
                 catch (Exception ex)
