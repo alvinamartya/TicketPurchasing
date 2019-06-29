@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Collections;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using System.Data.SqlClient;
 
 namespace TicketPurchasing.MenuAdmin
 {
@@ -30,7 +31,6 @@ namespace TicketPurchasing.MenuAdmin
             createTable();
             refreshDg(txtSearch.Text,cbofilterby.Text);
             initCmb();
-            Console.Write(DateTime.Now);
         }
 
         private void initCmb()
@@ -61,6 +61,7 @@ namespace TicketPurchasing.MenuAdmin
             cmbDepart.SelectedItem = null;
             isInserting = false;
             isUpdating = false;
+            dtDeparture.Value = DateTime.Now;
         }
 
         private void enableForm(bool value)
@@ -192,19 +193,60 @@ namespace TicketPurchasing.MenuAdmin
         private bool Validation()
         {
             bool result = false;
-            DateTime date = new DateTime(dtDeparture.Value.Year, dtDeparture.Value.Month, dtDeparture.Value.Day,
-                dtDeparture.Value.Hour, dtDeparture.Value.Minute, 0);
-            DateTime date2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 7,
-                DateTime.Now.Hour, DateTime.Now.Minute, 0);
-            if (cmbAircraft.Text == "" || cmbArrival.Text == "" || cmbArrival.Text == "" ||
-                txtHour.Text == "" || txtMin.Text == "" || txtFee.Value <= 0)
-                messege = "Ensure you have filled all fields";
-            else if (date < date2)
-                messege = "Ensure Departure time must bigger 7 days than today";
-            else if (Convert.ToInt32(txtHour.Text) < 0 || Convert.ToInt32(txtHour.Text) > 23 ||
-                Convert.ToInt32(txtMin.Text) < 0 || Convert.ToInt32(txtMin.Text) > 59)
-                messege = "Format Flight time is not valid";
-            else result = true;
+            try
+            {
+                DateTime date = new DateTime(dtDeparture.Value.Year, dtDeparture.Value.Month, dtDeparture.Value.Day, dtDeparture.Value.Hour, dtDeparture.Value.Minute, 0);
+                DateTime date2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                    DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                date2.AddDays(6);
+                Console.WriteLine(date + " " + date2);
+                if (cmbAircraft.Text == "" || cmbArrival.Text == "" || cmbArrival.Text == "" ||
+                    txtHour.Text == "" || txtMin.Text == "" || txtFee.Value <= 0)
+                    messege = "Ensure you have filled all fields";
+                else if (date < date2)
+                    messege = "Ensure Departure time must bigger 7 days than today";
+                else if (Convert.ToInt32(txtHour.Text) < 0 || Convert.ToInt32(txtHour.Text) > 23 ||
+                    Convert.ToInt32(txtMin.Text) < 0 || Convert.ToInt32(txtMin.Text) > 59)
+                    messege = "Format Flight time is not valid";
+                else
+                {
+                    SqlConnection conn = new SqlConnection(database.getConnectionString());
+                    try
+                    {
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("sp_check_flight", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@DepartureDate", dtDeparture.Value.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@DepartureTime", dtDeparture.Value.ToString("hh:mm"));
+                        cmd.Parameters.AddWithValue("@DepartureCityID", cmbDepart.SelectedValue.ToString());
+                        cmd.Parameters.AddWithValue("@ArrivalCityID", cmbArrival.SelectedValue.ToString());
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            messege = "Flight already exists on " + dtDeparture.Value.ToString("dd-MM-yyyy") + " " + dtDeparture.Value.ToString("hh:mm");
+                        }
+                        else
+                        {
+                            result = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    finally
+                    {
+                        if (conn != null)
+                        {
+                            conn.Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             return result;
         }
 
@@ -248,26 +290,33 @@ namespace TicketPurchasing.MenuAdmin
 
         private void dgvSch_SelectionChanged(object sender, EventArgs e)
         {
-            if (!isInserting && !isUpdating && dgvSch.Rows.Count > 0)
+            try
             {
-                try
+                if (!isInserting && !isUpdating && dgvSch.Rows.Count > 0)
                 {
-                    row = dgvSch.CurrentRow;
-                    cmbDepart.SelectedValue = row.Cells[3].Value.ToString();
-                    cmbArrival.SelectedValue = row.Cells[5].Value.ToString();
-                    cmbAircraft.SelectedValue = row.Cells[1].Value.ToString();
-                    DateTime date = Convert.ToDateTime(row.Cells[7].Value.ToString() + " " + row.Cells[8].Value.ToString());
-                    dtDeparture.Value = date;
-                    txtFee.Value = Convert.ToDecimal(row.Cells[10].Value.ToString());
-                    int hour = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) / 60;
-                    int min = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) % 60;
-                    txtHour.Text = hour.ToString();
-                    txtMin.Text = min.ToString();
+                    try
+                    {
+                        row = dgvSch.CurrentRow;
+                        cmbDepart.SelectedValue = row.Cells[3].Value.ToString();
+                        cmbArrival.SelectedValue = row.Cells[5].Value.ToString();
+                        cmbAircraft.SelectedValue = row.Cells[1].Value.ToString();
+                        DateTime date = Convert.ToDateTime(row.Cells[7].Value.ToString() + " " + row.Cells[8].Value.ToString());
+                        dtDeparture.Value = date;
+                        txtFee.Value = Convert.ToDecimal(row.Cells[10].Value.ToString());
+                        int hour = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) / 60;
+                        int min = Convert.ToInt16(Regex.Match(row.Cells[9].Value.ToString().Split(' ')[0], @"\d+").Value) % 60;
+                        txtHour.Text = hour.ToString();
+                        txtMin.Text = min.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -296,6 +345,16 @@ namespace TicketPurchasing.MenuAdmin
                     }
                     else
                     {
+                        DateTime departureDate = new DateTime(dtDeparture.Value.Year, dtDeparture.Value.Month, dtDeparture.Value.Day, dtDeparture.Value.Hour, dtDeparture.Value.Minute, 0);
+                        DateTime lastUpdateDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
+                            DateTime.Now.Hour, DateTime.Now.Minute, 0);
+                        lastUpdateDate.AddDays(-7);
+                        if (departureDate < lastUpdateDate)
+                        {
+                            MessageBox.Show("You can't change fixed date", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
                         List<Parameter> param = new List<Parameter>();
                         param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
                         param.Add(new Parameter("@DepartureDate", date));

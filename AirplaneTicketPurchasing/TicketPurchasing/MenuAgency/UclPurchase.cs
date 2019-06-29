@@ -373,56 +373,70 @@ namespace TicketPurchasing.MenuAgency
             ticketdataset.DataTable1.Clear();
             if (dgvCustomer.Rows.Count > 0)
             {
-                string bookingref = getBookingRef();
-                string id = DateTime.Now.ToString("ddMMyyyyhhmmss");
-                List<Parameter> param = new List<Parameter>();
-                param.Add(new Parameter("@ID", id));
-                param.Add(new Parameter("@TransactionDate", DateTime.Now.ToString("yyyy-MM-dd")));
-                param.Add(new Parameter("@BookingRef", bookingref));
-                param.Add(new Parameter("@Status", "P"));
-                param.Add(new Parameter("@EmployeeID", getID()));
-                param.Add(new Parameter("@Schedule", row.Cells[0].Value.ToString()));
-                param.Add(new Parameter("@TotalPrice", totalTransaction.ToString()));
-                int result = database.executeQuery("sp_insert_tickets", param, "Add");
-
-                if (result > 0)
+                try
                 {
-                    for (int i = 0; i < dgvCustomer.Rows.Count; i++)
+                    string bookingref = getBookingRef();
+                    string id = DateTime.Now.ToString("ddMMyyyyhhmmss");
+                    List<Parameter> param = new List<Parameter>();
+                    param.Add(new Parameter("@ID", id));
+                    param.Add(new Parameter("@TransactionDate", DateTime.Now.ToString("yyyy-MM-dd")));
+                    param.Add(new Parameter("@BookingRef", bookingref));
+                    param.Add(new Parameter("@Status", "P"));
+                    param.Add(new Parameter("@EmployeeID", getID()));
+                    param.Add(new Parameter("@Schedule", row.Cells[0].Value.ToString()));
+                    param.Add(new Parameter("@TotalPrice", totalTransaction.ToString()));
+                    int result = database.executeQuery("sp_insert_tickets", param, "Add");
+
+                    if (result > 0)
                     {
-                        List<Parameter> param2 = new List<Parameter>();
-                        param2.Add(new Parameter("@SeatNumber", dgvCustomer.Rows[i].Cells[2].Value.ToString()));
-                        param2.Add(new Parameter("@Price", dgvCustomer.Rows[i].Cells[5].Value.ToString()));
-                        param2.Add(new Parameter("@CabinType", dgvCustomer.Rows[i].Cells[4].Value.ToString()));
-                        param2.Add(new Parameter("@TicketID", id));
-                        param2.Add(new Parameter("@CustomerID", dgvCustomer.Rows[i].Cells[0].Value.ToString()));
+                        for (int i = 0; i < dgvCustomer.Rows.Count; i++)
+                        {
+                            List<Parameter> param2 = new List<Parameter>();
+                            param2.Add(new Parameter("@SeatNumber", dgvCustomer.Rows[i].Cells[2].Value.ToString()));
+                            param2.Add(new Parameter("@Price", dgvCustomer.Rows[i].Cells[5].Value.ToString()));
+                            param2.Add(new Parameter("@CabinType", dgvCustomer.Rows[i].Cells[4].Value.ToString()));
+                            param2.Add(new Parameter("@TicketID", id));
+                            param2.Add(new Parameter("@CustomerID", dgvCustomer.Rows[i].Cells[0].Value.ToString()));
 
-                        ticketdataset.DataTable1.AddDataTable1Row(
-                            dgvCustomer.Rows[i].Cells[1].Value.ToString(),
-                            dgvCustomer.Rows[i].Cells[3].Value.ToString(),
-                            dgvCustomer.Rows[i].Cells[4].Value.ToString());
-                        int x = database.executeQuery("sp_insert_detailtickets", param2, "Add");
+                            ticketdataset.DataTable1.AddDataTable1Row(
+                                dgvCustomer.Rows[i].Cells[1].Value.ToString(),
+                                dgvCustomer.Rows[i].Cells[3].Value.ToString(),
+                                dgvCustomer.Rows[i].Cells[4].Value.ToString());
+                            int x = database.executeQuery("sp_insert_detailtickets", param2, "Add");
+                        }
+
+                        MessageBox.Show("Purchase ticket has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string[] dateArray = new string[3];
+                        try
+                        {
+                            dateArray = row.Cells[5].Value.ToString().Split('/');
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                            dateArray = row.Cells[5].Value.ToString().Split('-');
+                        }
+
+                        UclSaveToPDF ticket = new UclSaveToPDF(bookingref,
+                           "Aircraft: " + row.Cells[8].Value.ToString(), 
+                           row.Cells[2].Value.ToString(), row.Cells[4].Value.ToString(), 
+                            "Departure Date: " + (new DateTime(Convert.ToInt32(dateArray[2]),
+                            Convert.ToInt32(dateArray[1]),
+                            Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy"),
+                            "Departure Time: " + row.Cells[6].Value.ToString(), ticketdataset, "Transaction Date: " + DateTime.Now.ToString("dd MMMM yyyy"));
+                        ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
+                        ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
                     }
-
-                    MessageBox.Show("Purchase ticket has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    string[] dateArray = row.Cells[5].Value.ToString().Split('/');
-                    string base64string = row.Cells[10].Value.ToString();
-                    string extension = base64string.Substring(base64string.IndexOf('/'),
-                        base64string.IndexOf(';') - base64string.IndexOf('/'));
-                    string path = base64string.Substring(base64string.IndexOf(',') + 2,
-                        base64string.Length - (base64string.IndexOf(',') + 2));
-                    UclSaveToPDF ticket = new UclSaveToPDF(path, bookingref,
-                        row.Cells[8].Value.ToString(), row.Cells[2].Value.ToString(),
-                        row.Cells[4].Value.ToString(), (new DateTime(Convert.ToInt32(dateArray[2]),
-                        Convert.ToInt32(dateArray[1]),
-                        Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy"),
-                        row.Cells[6].Value.ToString(), ticketdataset);
-                    ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
-                    ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
+                    else
+                    {
+                        MessageBox.Show("Purchase ticket is failed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Purchase ticket is failed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Console.WriteLine(ex.Message);
                 }
+                
             }
             else
             {
@@ -447,29 +461,45 @@ namespace TicketPurchasing.MenuAgency
 
         private void dgvFlightSchedule_SelectionChanged(object sender, EventArgs e)
         {
-            if (!isSelected && dgvFlightSchedule.RowCount > 0)
+            try
             {
-                row = dgvFlightSchedule.CurrentRow;
-                lblDepartureCity.Text = row.Cells[2].Value.ToString();
-                lblArrivalCity.Text = row.Cells[4].Value.ToString();
-                string[] dateArray = row.Cells[5].Value.ToString().Split('/');
-                lblDepartureDate.Text = (new DateTime(Convert.ToInt32(dateArray[2]), 
-                    Convert.ToInt32(dateArray[1]), Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy");
-                lblDepartureTime.Text = row.Cells[6].Value.ToString();
-                lblAircraft.Text = row.Cells[8].Value.ToString();
-                lblEconomyPrice.Text = "Rp. " + row.Cells[12].Value.ToString();
-                lblBusinessPrice.Text = "Rp. " + row.Cells[14].Value.ToString();
-                lblFirstPrice.Text = "Rp. " + row.Cells[16].Value.ToString();
-                flightGroup.Visible = true;
-                btnSelect.Visible = true;
+                if (!isSelected && dgvFlightSchedule.RowCount > 0)
+                {
+                    row = dgvFlightSchedule.CurrentRow;
+                    lblDepartureCity.Text = row.Cells[2].Value.ToString();
+                    lblArrivalCity.Text = row.Cells[4].Value.ToString();
+                    string[] dateArray = new string[3];
+                    try
+                    {
+                        dateArray = row.Cells[5].Value.ToString().Split('/');
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        dateArray = row.Cells[5].Value.ToString().Split('-');
+                    }
+                    lblDepartureDate.Text = (new DateTime(Convert.ToInt32(dateArray[2]),
+                        Convert.ToInt32(dateArray[1]), Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy");
+                    lblDepartureTime.Text = row.Cells[6].Value.ToString();
+                    lblAircraft.Text = row.Cells[8].Value.ToString();
+                    lblEconomyPrice.Text = "Rp. " + row.Cells[12].Value.ToString();
+                    lblBusinessPrice.Text = "Rp. " + row.Cells[14].Value.ToString();
+                    lblFirstPrice.Text = "Rp. " + row.Cells[16].Value.ToString();
+                    flightGroup.Visible = true;
+                    btnSelect.Visible = true;
 
-                string base64string = row.Cells[10].Value.ToString();
-                string extension = base64string.Substring(base64string.IndexOf('/'),
-                    base64string.IndexOf(';') - base64string.IndexOf('/'));
-                string path = base64string.Substring(base64string.IndexOf(',') + 2,
-                    base64string.Length - (base64string.IndexOf(',') + 2));
-                byte[] image = Convert.FromBase64String(path);
-                photo.Image = support.byteArrayToImage(image);
+                    string base64string = row.Cells[10].Value.ToString();
+                    string extension = base64string.Substring(base64string.IndexOf('/'),
+                        base64string.IndexOf(';') - base64string.IndexOf('/'));
+                    string path = base64string.Substring(base64string.IndexOf(',') + 2,
+                        base64string.Length - (base64string.IndexOf(',') + 2));
+                    byte[] image = Convert.FromBase64String(path);
+                    photo.Image = support.byteArrayToImage(image);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -497,10 +527,60 @@ namespace TicketPurchasing.MenuAgency
             row2 = null;
             posButton = 0;
             totalTransaction = 0;
+            try
+            {
+                cboCustomer.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void btnAddPassenger_Click(object sender, EventArgs e)
         {
+            SqlConnection conn = new SqlConnection(database.getConnectionString());
+            try
+            {
+                string[] dateArray = new string[3];
+                try
+                {
+                    dateArray = row.Cells[5].Value.ToString().Split('/');
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    dateArray = row.Cells[5].Value.ToString().Split('-');
+                }
+                DateTime departureDate = new DateTime(Convert.ToInt32(dateArray[2]),
+                    Convert.ToInt32(dateArray[1]), Convert.ToInt32(dateArray[0]));
+
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("sp_check_passenger", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CustomerID", cboCustomer.SelectedValue.ToString());
+                cmd.Parameters.AddWithValue("@DepartureDate", departureDate.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@DepartureTime", row.Cells[6].Value.ToString());
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    MessageBox.Show("Customer " + cboCustomer.Text + " is already flight on " + 
+                        departureDate.ToString("dd-MMM-yyyyy") + " " + row.Cells[6].Value.ToString(), "Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+
             try
             {
                 DataGridViewRow row = dgvCustomer.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[0].Value.ToString() == cboCustomer.SelectedValue.ToString()).FirstOrDefault();
@@ -572,8 +652,6 @@ namespace TicketPurchasing.MenuAgency
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                MessageBox.Show("Ensure you have add passenger", 
-                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             } 
         }
 

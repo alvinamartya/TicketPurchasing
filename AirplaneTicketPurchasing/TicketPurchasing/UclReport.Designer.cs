@@ -28,70 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboReport = new System.Windows.Forms.ComboBox();
-            this.txtStartDatePeriod = new System.Windows.Forms.DateTimePicker();
-            this.txtEndPeriodDate = new System.Windows.Forms.DateTimePicker();
-            this.cboStartPeriod = new System.Windows.Forms.ComboBox();
-            this.cboEndPeriod = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TicketDataSet = new TicketPurchasing.TicketDataSet();
+            this.cmbReport = new System.Windows.Forms.ComboBox();
+            this.dateStart = new System.Windows.Forms.DateTimePicker();
+            this.dateEnd = new System.Windows.Forms.DateTimePicker();
             this.btnShow = new System.Windows.Forms.Button();
-            this.dataReport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvPeriod = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.cmbYear1 = new System.Windows.Forms.ComboBox();
+            this.cmbYear2 = new System.Windows.Forms.ComboBox();
+            this.btnSaveToPDF = new System.Windows.Forms.Button();
             this.flatLabel1 = new FlatUI.FlatLabel();
             this.lblEndPeriod = new FlatUI.FlatLabel();
             this.flatLabel5 = new FlatUI.FlatLabel();
             this.lblStartPeriod = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
             this.flatLabel8 = new FlatUI.FlatLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // cboReport
+            // DataTable1BindingSource
             // 
-            this.cboReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboReport.FormattingEnabled = true;
-            this.cboReport.Items.AddRange(new object[] {
-            "Period",
-            "Month",
-            "Year"});
-            this.cboReport.Location = new System.Drawing.Point(152, 22);
-            this.cboReport.Name = "cboReport";
-            this.cboReport.Size = new System.Drawing.Size(143, 21);
-            this.cboReport.TabIndex = 51;
-            this.cboReport.SelectedIndexChanged += new System.EventHandler(this.cboReport_SelectedIndexChanged);
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.TicketDataSet;
             // 
-            // txtStartDatePeriod
+            // TicketDataSet
             // 
-            this.txtStartDatePeriod.CustomFormat = "dddd, dd MMMM yyyy";
-            this.txtStartDatePeriod.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtStartDatePeriod.Location = new System.Drawing.Point(152, 49);
-            this.txtStartDatePeriod.Name = "txtStartDatePeriod";
-            this.txtStartDatePeriod.Size = new System.Drawing.Size(200, 20);
-            this.txtStartDatePeriod.TabIndex = 54;
+            this.TicketDataSet.DataSetName = "TicketDataSet";
+            this.TicketDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtEndPeriodDate
+            // cmbReport
             // 
-            this.txtEndPeriodDate.CustomFormat = "dddd, dd MMMM yyyy";
-            this.txtEndPeriodDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtEndPeriodDate.Location = new System.Drawing.Point(152, 75);
-            this.txtEndPeriodDate.Name = "txtEndPeriodDate";
-            this.txtEndPeriodDate.Size = new System.Drawing.Size(200, 20);
-            this.txtEndPeriodDate.TabIndex = 57;
+            this.cmbReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReport.FormattingEnabled = true;
+            this.cmbReport.Items.AddRange(new object[] {
+            "Daily",
+            "Monthly",
+            "Yearly"});
+            this.cmbReport.Location = new System.Drawing.Point(152, 22);
+            this.cmbReport.Name = "cmbReport";
+            this.cmbReport.Size = new System.Drawing.Size(143, 21);
+            this.cmbReport.TabIndex = 51;
+            this.cmbReport.SelectedIndexChanged += new System.EventHandler(this.cboReport_SelectedIndexChanged);
             // 
-            // cboStartPeriod
+            // dateStart
             // 
-            this.cboStartPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboStartPeriod.FormattingEnabled = true;
-            this.cboStartPeriod.Location = new System.Drawing.Point(152, 48);
-            this.cboStartPeriod.Name = "cboStartPeriod";
-            this.cboStartPeriod.Size = new System.Drawing.Size(143, 21);
-            this.cboStartPeriod.TabIndex = 58;
+            this.dateStart.CustomFormat = "dddd, dd MMMM yyyy";
+            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateStart.Location = new System.Drawing.Point(152, 49);
+            this.dateStart.Name = "dateStart";
+            this.dateStart.Size = new System.Drawing.Size(200, 20);
+            this.dateStart.TabIndex = 54;
             // 
-            // cboEndPeriod
+            // dateEnd
             // 
-            this.cboEndPeriod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEndPeriod.FormattingEnabled = true;
-            this.cboEndPeriod.Location = new System.Drawing.Point(152, 74);
-            this.cboEndPeriod.Name = "cboEndPeriod";
-            this.cboEndPeriod.Size = new System.Drawing.Size(143, 21);
-            this.cboEndPeriod.TabIndex = 59;
+            this.dateEnd.CustomFormat = "dddd, dd MMMM yyyy";
+            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateEnd.Location = new System.Drawing.Point(152, 75);
+            this.dateEnd.Name = "dateEnd";
+            this.dateEnd.Size = new System.Drawing.Size(200, 20);
+            this.dateEnd.TabIndex = 57;
             // 
             // btnShow
             // 
@@ -105,15 +104,68 @@
             this.btnShow.TabIndex = 92;
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
-            // dataReport
+            // rvPeriod
             // 
-            this.dataReport.Location = new System.Drawing.Point(19, 104);
-            this.dataReport.Name = "dataReport";
-            this.dataReport.ShowBackButton = false;
-            this.dataReport.ShowFindControls = false;
-            this.dataReport.Size = new System.Drawing.Size(794, 356);
-            this.dataReport.TabIndex = 93;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DataTable1BindingSource;
+            this.rvPeriod.LocalReport.DataSources.Add(reportDataSource1);
+            this.rvPeriod.LocalReport.ReportEmbeddedResource = "TicketPurchasing.Report.Report2.rdlc";
+            this.rvPeriod.Location = new System.Drawing.Point(19, 104);
+            this.rvPeriod.Name = "rvPeriod";
+            this.rvPeriod.ShowBackButton = false;
+            this.rvPeriod.ShowExportButton = false;
+            this.rvPeriod.ShowFindControls = false;
+            this.rvPeriod.ShowPageNavigationControls = false;
+            this.rvPeriod.ShowPrintButton = false;
+            this.rvPeriod.ShowRefreshButton = false;
+            this.rvPeriod.ShowStopButton = false;
+            this.rvPeriod.ShowZoomControl = false;
+            this.rvPeriod.Size = new System.Drawing.Size(794, 356);
+            this.rvPeriod.TabIndex = 93;
+            // 
+            // cmbYear1
+            // 
+            this.cmbYear1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYear1.FormattingEnabled = true;
+            this.cmbYear1.Items.AddRange(new object[] {
+            "Period",
+            "Month",
+            "Year"});
+            this.cmbYear1.Location = new System.Drawing.Point(152, 49);
+            this.cmbYear1.Name = "cmbYear1";
+            this.cmbYear1.Size = new System.Drawing.Size(143, 21);
+            this.cmbYear1.TabIndex = 94;
+            this.cmbYear1.Visible = false;
+            // 
+            // cmbYear2
+            // 
+            this.cmbYear2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbYear2.FormattingEnabled = true;
+            this.cmbYear2.Items.AddRange(new object[] {
+            "Period",
+            "Month",
+            "Year"});
+            this.cmbYear2.Location = new System.Drawing.Point(152, 75);
+            this.cmbYear2.Name = "cmbYear2";
+            this.cmbYear2.Size = new System.Drawing.Size(143, 21);
+            this.cmbYear2.TabIndex = 95;
+            this.cmbYear2.Visible = false;
+            // 
+            // btnSaveToPDF
+            // 
+            this.btnSaveToPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnSaveToPDF.FlatAppearance.BorderSize = 0;
+            this.btnSaveToPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveToPDF.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSaveToPDF.Location = new System.Drawing.Point(365, 479);
+            this.btnSaveToPDF.Name = "btnSaveToPDF";
+            this.btnSaveToPDF.Size = new System.Drawing.Size(104, 25);
+            this.btnSaveToPDF.TabIndex = 96;
+            this.btnSaveToPDF.Text = "Save to PDF";
+            this.btnSaveToPDF.UseVisualStyleBackColor = false;
+            this.btnSaveToPDF.Click += new System.EventHandler(this.btnSaveToPDF_Click);
             // 
             // flatLabel1
             // 
@@ -192,22 +244,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.dataReport);
+            this.Controls.Add(this.btnSaveToPDF);
+            this.Controls.Add(this.cmbYear2);
+            this.Controls.Add(this.cmbYear1);
+            this.Controls.Add(this.rvPeriod);
             this.Controls.Add(this.btnShow);
-            this.Controls.Add(this.cboEndPeriod);
-            this.Controls.Add(this.cboStartPeriod);
-            this.Controls.Add(this.txtEndPeriodDate);
+            this.Controls.Add(this.dateEnd);
             this.Controls.Add(this.flatLabel1);
             this.Controls.Add(this.lblEndPeriod);
-            this.Controls.Add(this.txtStartDatePeriod);
+            this.Controls.Add(this.dateStart);
             this.Controls.Add(this.flatLabel5);
             this.Controls.Add(this.lblStartPeriod);
-            this.Controls.Add(this.cboReport);
+            this.Controls.Add(this.cmbReport);
             this.Controls.Add(this.flatLabel7);
             this.Controls.Add(this.flatLabel8);
             this.Name = "UclReport";
-            this.Size = new System.Drawing.Size(835, 479);
+            this.Size = new System.Drawing.Size(835, 524);
             this.Load += new System.EventHandler(this.UclReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,16 +272,19 @@
 
         private FlatUI.FlatLabel flatLabel7;
         private FlatUI.FlatLabel flatLabel8;
-        private System.Windows.Forms.ComboBox cboReport;
-        private System.Windows.Forms.DateTimePicker txtStartDatePeriod;
+        private System.Windows.Forms.ComboBox cmbReport;
+        private System.Windows.Forms.DateTimePicker dateStart;
         private FlatUI.FlatLabel flatLabel5;
         private FlatUI.FlatLabel lblStartPeriod;
-        private System.Windows.Forms.DateTimePicker txtEndPeriodDate;
+        private System.Windows.Forms.DateTimePicker dateEnd;
         private FlatUI.FlatLabel flatLabel1;
         private FlatUI.FlatLabel lblEndPeriod;
-        private System.Windows.Forms.ComboBox cboStartPeriod;
-        private System.Windows.Forms.ComboBox cboEndPeriod;
         private System.Windows.Forms.Button btnShow;
-        private Microsoft.Reporting.WinForms.ReportViewer dataReport;
+        private Microsoft.Reporting.WinForms.ReportViewer rvPeriod;
+        private System.Windows.Forms.BindingSource DataTable1BindingSource;
+        private TicketDataSet TicketDataSet;
+        private System.Windows.Forms.ComboBox cmbYear1;
+        private System.Windows.Forms.ComboBox cmbYear2;
+        private System.Windows.Forms.Button btnSaveToPDF;
     }
 }

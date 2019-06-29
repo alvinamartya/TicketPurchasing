@@ -438,11 +438,18 @@ namespace TicketPurchasing.MenuSA
 
         private void clearDetail()
         {
-            cboCabinType.SelectedIndex = 0;
-            cboSeatType.SelectedIndex = 0;
-            txtSeat.Value = 0;
-            isUpdateDetail = true;
-            row2 = null;
+            try
+            {
+                cboCabinType.SelectedIndex = 0;
+                cboSeatType.SelectedIndex = 0;
+                txtSeat.Value = 0;
+                isUpdateDetail = true;
+                row2 = null;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private bool validationdetail()
@@ -475,25 +482,39 @@ namespace TicketPurchasing.MenuSA
 
         private void DgvAircraftTypeDetail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!isDetail)
+            try
             {
-                row2 = DgvAircraftTypeDetail.CurrentRow;
-                cboCabinType.Text = row2.Cells[1].Value.ToString();
-                cboSeatType.SelectedValue = row2.Cells[2].Value.ToString();
-                txtSeat.Value = Convert.ToInt32(row2.Cells[4].Value.ToString());
+                if (!isDetail && DgvAircraftTypeDetail.RowCount > 0)
+                {
+                    row2 = DgvAircraftTypeDetail.CurrentRow;
+                    cboCabinType.Text = row2.Cells[1].Value.ToString();
+                    cboSeatType.SelectedValue = row2.Cells[2].Value.ToString();
+                    txtSeat.Value = Convert.ToInt32(row2.Cells[4].Value.ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
         private void DgvAircraftType_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (isUpdate && !isDetail && !isEnable)
+            try
             {
-                clearDetail();
-                row = DgvAircraftType.CurrentRow;
-                refreshDatagridDetails(row.Cells[0].Value.ToString());
-                txtName.Text = row.Cells[1].Value.ToString();
-                txtMakeModel.Text = row.Cells[2].Value.ToString();
-                txtTotalSeat.Text = row.Cells[3].Value.ToString();
+                if (isUpdate && !isDetail && !isEnable && DgvAircraftType.RowCount > 0)
+                {
+                    clearDetail();
+                    row = DgvAircraftType.CurrentRow;
+                    refreshDatagridDetails(row.Cells[0].Value.ToString());
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    txtMakeModel.Text = row.Cells[2].Value.ToString();
+                    txtTotalSeat.Text = row.Cells[3].Value.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -521,11 +542,11 @@ namespace TicketPurchasing.MenuSA
             DgvAircraftTypeDetail.Columns.Clear();
             DgvAircraftTypeDetail.Columns.Add("id", "ID");
             DgvAircraftTypeDetail.Columns.Add("cabintype", "Cabin Type");
-            DgvAircraftTypeDetail.Columns.Add("seattype", "SeatType");
             DgvAircraftTypeDetail.Columns.Add("seattypeid", "SeatTypeID");
+            DgvAircraftTypeDetail.Columns.Add("seattype", "SeatType");
             DgvAircraftTypeDetail.Columns.Add("seat", "Seat");
             DgvAircraftTypeDetail.Columns[0].Visible = false;
-            DgvAircraftTypeDetail.Columns[3].Visible = false;
+            DgvAircraftTypeDetail.Columns[2].Visible = false;
             DgvAircraftTypeDetail.ForeColor = Color.Black;
             DgvAircraftTypeDetail.HeaderForeColor = Color.White;
             DgvAircraftTypeDetail.HeaderBgColor = Color.Teal;

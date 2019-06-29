@@ -93,6 +93,14 @@ namespace TicketPurchasing.MenuSA
         {
             if (validation())
             {
+                if(DgvAmenities.Rows.Cast<DataGridViewRow>().Where(z =>
+                z.Cells[1].Value.ToString() ==  txtName.Text &&
+                z.Cells[2].Value.ToString() == txtQty.Value.ToString()).FirstOrDefault() != null)
+                {
+                    MessageBox.Show("Amenities already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 int x = 0;
                 string process = "";
                 if (!isUpdate)
@@ -134,12 +142,19 @@ namespace TicketPurchasing.MenuSA
 
         private void DgvAmenities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = DgvAmenities.CurrentRow;
-            if (isUpdate&&!isEnable)
+            try
             {
-                txtName.Text = row.Cells[1].Value.ToString();
-                txtQty.Value = Convert.ToInt32(row.Cells[2].Value.ToString());
-                cboUnit.SelectedItem = row.Cells[3].Value.ToString();
+                if (isUpdate && !isEnable && DgvAmenities.RowCount > 0)
+                {
+                    row = DgvAmenities.CurrentRow;
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    txtQty.Value = Convert.ToInt32(row.Cells[2].Value.ToString());
+                    cboUnit.SelectedItem = row.Cells[3].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

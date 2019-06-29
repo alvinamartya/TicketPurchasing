@@ -291,6 +291,8 @@ namespace TicketPurchasing {
             
             private global::System.Data.DataColumn columntotalCleanIncome;
             
+            private global::System.Data.DataColumn columntotalCleanIncome2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblReportDataTable() {
@@ -374,6 +376,14 @@ namespace TicketPurchasing {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn totalCleanIncome2Column {
+                get {
+                    return this.columntotalCleanIncome2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace TicketPurchasing {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblReportRow AddtblReportRow(string date, string ticketPurchased, string ticketRefunded, string totalIncome, string totalRefunded, string totalCleanIncome) {
+            public tblReportRow AddtblReportRow(string date, string ticketPurchased, string ticketRefunded, string totalIncome, string totalRefunded, string totalCleanIncome, int totalCleanIncome2) {
                 tblReportRow rowtblReportRow = ((tblReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         date,
@@ -417,7 +427,8 @@ namespace TicketPurchasing {
                         ticketRefunded,
                         totalIncome,
                         totalRefunded,
-                        totalCleanIncome};
+                        totalCleanIncome,
+                        totalCleanIncome2};
                 rowtblReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblReportRow);
                 return rowtblReportRow;
@@ -446,6 +457,7 @@ namespace TicketPurchasing {
                 this.columntotalIncome = base.Columns["totalIncome"];
                 this.columntotalRefunded = base.Columns["totalRefunded"];
                 this.columntotalCleanIncome = base.Columns["totalCleanIncome"];
+                this.columntotalCleanIncome2 = base.Columns["totalCleanIncome2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,6 +475,8 @@ namespace TicketPurchasing {
                 base.Columns.Add(this.columntotalRefunded);
                 this.columntotalCleanIncome = new global::System.Data.DataColumn("totalCleanIncome", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotalCleanIncome);
+                this.columntotalCleanIncome2 = new global::System.Data.DataColumn("totalCleanIncome2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalCleanIncome2);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -701,6 +715,22 @@ namespace TicketPurchasing {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int totalCleanIncome2 {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblReport.totalCleanIncome2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalCleanIncome2\' in table \'tblReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblReport.totalCleanIncome2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdateNull() {
                 return this.IsNull(this.tabletblReport.dateColumn);
             }
@@ -769,6 +799,18 @@ namespace TicketPurchasing {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettotalCleanIncomeNull() {
                 this[this.tabletblReport.totalCleanIncomeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstotalCleanIncome2Null() {
+                return this.IsNull(this.tabletblReport.totalCleanIncome2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettotalCleanIncome2Null() {
+                this[this.tabletblReport.totalCleanIncome2Column] = global::System.Convert.DBNull;
             }
         }
         

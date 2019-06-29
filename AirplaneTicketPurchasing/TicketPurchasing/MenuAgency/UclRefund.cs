@@ -171,22 +171,26 @@ namespace TicketPurchasing.MenuAgency
 
         private void dgvCust_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = dgvCust.Rows[e.RowIndex];
+            try
+            {
+                if (dgvCust.RowCount > 0)
+                    row = dgvCust.Rows[e.RowIndex];
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private string SeatNumber(int pos, int column, int seat,string cabintype)
         {
             char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
             double reduce = seat / column;
-            Console.WriteLine("Reduce: " + reduce);
-            Console.WriteLine("Seat: " + seat + " " + column);
             int reducePos = (reduce.ToString().Split('.').Length > 2) ? Convert.ToInt32(reduce.ToString().Split('.')[0]) : (int)reduce;
             if (reducePos > 0) reducePos = reducePos - 1;
             double getPos = pos + (seat / column);
-            Console.WriteLine("Get Pos: " + getPos + " pos: " + pos + " Seat: " + seat + " Column: " + column);
             int realSeat = (getPos.ToString().Split('.').Length > 2) ? Convert.ToInt32(getPos.ToString().Split('.')[0]) + 1 : (int)getPos;
             int numb = (seat % column) == 0 ? column : (seat % column);
-            Console.WriteLine("realSeat: " + realSeat + " reducePos: " + reducePos);
             if(cabintype.Equals("Economy Class"))
                 return alphabet[realSeat] + numb.ToString();
             else
@@ -325,23 +329,26 @@ namespace TicketPurchasing.MenuAgency
 
         private void btnRefund_Click(object sender, EventArgs e)
         {
-            DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            if(deptDate < date)
+            if(MessageBox.Show("Are you sure?","Refund",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Ensure departure date must bigger than today", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                int res = database.executeQuery("sp_update_tickets", new List<Parameter> {
-                new Parameter ("@ticketID", this.sch["ticketID"].ToString()) }, "Refund");
-
-                if (res > 0)
+                DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                if (deptDate < date)
                 {
-                    MessageBox.Show("Tickets Successfuly Refunded!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    defaultForm(false);
+                    MessageBox.Show("Ensure departure date must bigger than today", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                    MessageBox.Show("Refund ticket is failed", "Warning", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                {
+                    int res = database.executeQuery("sp_update_tickets", new List<Parameter> {
+                new Parameter ("@ticketID", this.sch["ticketID"].ToString()) }, "Refund");
+
+                    if (res > 0)
+                    {
+                        MessageBox.Show("Tickets Successfuly Refunded!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        defaultForm(false);
+                    }
+                    else
+                        MessageBox.Show("Refund ticket is failed", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 

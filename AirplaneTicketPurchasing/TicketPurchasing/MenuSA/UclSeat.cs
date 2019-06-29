@@ -250,12 +250,19 @@ namespace TicketPurchasing.MenuSA
 
         private void DgvSeatType_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = DgvSeatType.CurrentRow;
-            if (isUpdate && !isEnable)
+            try
             {
-                txtLeft.Value = Convert.ToInt32(row.Cells[2].Value.ToString());
-                txtMid.Value = Convert.ToInt32(row.Cells[3].Value.ToString());
-                txtRight.Value = Convert.ToInt32(row.Cells[4].Value.ToString());
+                if (isUpdate && !isEnable && DgvSeatType.RowCount > 0)
+                {
+                    row = DgvSeatType.CurrentRow;
+                    txtLeft.Value = Convert.ToInt32(row.Cells[2].Value.ToString());
+                    txtMid.Value = Convert.ToInt32(row.Cells[3].Value.ToString());
+                    txtRight.Value = Convert.ToInt32(row.Cells[4].Value.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

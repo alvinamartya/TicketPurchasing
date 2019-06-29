@@ -14,13 +14,13 @@ namespace TicketPurchasing.MenuAgency
 {
     public partial class UclSaveToPDF : UserControl
     {
-        private string image = "";
         private string bookingref = "";
         private string aircraft = "";
         private string departurecity = "";
         private string arrivalcity = "";
         private string departuredate = "";
         private string departuretime = "";
+        private string transactiondate = "";
         private TicketDataSet ticketdataset;
         #region Constructor
         public UclSaveToPDF()
@@ -28,12 +28,11 @@ namespace TicketPurchasing.MenuAgency
             InitializeComponent();
         }
 
-        public UclSaveToPDF(string image, string bookingref, string aircraft,
+        public UclSaveToPDF(string bookingref, string aircraft,
             string departurecity, string arrivalcity, string departuredate, string departuretime,
-            TicketDataSet ticketdataset)
+            TicketDataSet ticketdataset, string transactiondate)
         {
             InitializeComponent();
-            this.image = image;
             this.bookingref = bookingref;
             this.aircraft = aircraft;
             this.departurecity = departurecity;
@@ -41,6 +40,7 @@ namespace TicketPurchasing.MenuAgency
             this.departuredate = departuredate;
             this.departuretime = departuretime;
             this.ticketdataset = ticketdataset;
+            this.transactiondate = transactiondate;
         }
         #endregion
 
@@ -57,13 +57,13 @@ namespace TicketPurchasing.MenuAgency
         {
             ReportParameter[] reportParameter =
             {
-                new ReportParameter("imageUrl",image),
                 new ReportParameter("bookingref",bookingref),
                 new ReportParameter("Aircraft",aircraft),
                 new ReportParameter("DepartureCity",departurecity),
                 new ReportParameter("ArrivalCity",arrivalcity),
                 new ReportParameter("DepartureDate",departuredate),
-                new ReportParameter("DepartureTime",departuretime)
+                new ReportParameter("DepartureTime",departuretime),
+                new ReportParameter("transactionDate",transactiondate)
             };
 
             Console.WriteLine("Size: " + ticketdataset.DataTable1.Rows.Count);
@@ -96,6 +96,7 @@ namespace TicketPurchasing.MenuAgency
                 {
                     fs.Write(bytes, 0, bytes.Length);
                 }
+                MessageBox.Show("Success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -39,7 +39,13 @@
             this.reportViewer1.Location = new System.Drawing.Point(21, 13);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ShowBackButton = false;
+            this.reportViewer1.ShowExportButton = false;
             this.reportViewer1.ShowFindControls = false;
+            this.reportViewer1.ShowPageNavigationControls = false;
+            this.reportViewer1.ShowPrintButton = false;
+            this.reportViewer1.ShowRefreshButton = false;
+            this.reportViewer1.ShowStopButton = false;
+            this.reportViewer1.ShowZoomControl = false;
             this.reportViewer1.Size = new System.Drawing.Size(789, 414);
             this.reportViewer1.TabIndex = 66;
             // 

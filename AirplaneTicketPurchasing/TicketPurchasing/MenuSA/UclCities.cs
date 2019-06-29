@@ -115,11 +115,18 @@ namespace TicketPurchasing.MenuSA
 
         private void DgvCities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = DgvCities.CurrentRow;
-            if (!isUpdate&&!isInserting)
+            try
             {
-                txtName.Text = row.Cells[1].Value.ToString();
-                cbCountry.Text = row.Cells[2].Value.ToString();
+                if (!isUpdate && !isInserting && DgvCities.RowCount > 0)
+                {
+                    row = DgvCities.CurrentRow;
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    cbCountry.Text = row.Cells[2].Value.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

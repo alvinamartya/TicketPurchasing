@@ -40,6 +40,7 @@ namespace TicketPurchasing.MenuAgency
             txtEmail.Clear();
             txtAddress.Clear();
             txtSearch.Clear();
+            txtDate.Value = DateTime.Now;
         }
 
         private void enableFrm(bool value)
@@ -124,23 +125,30 @@ namespace TicketPurchasing.MenuAgency
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!isUpdate && !isEditted)
+            try
             {
-                row = dgvCustomers.CurrentRow;
-                txtName.Text = row.Cells[1].Value.ToString();
-                txtIdentity.Text = row.Cells[2].Value.ToString();
-                txtPassport.Text = row.Cells[3].Value.ToString();
-                string[] dateArr = row.Cells[4].Value.ToString().Split('-');
-                DateTime dob = new DateTime(Convert.ToInt32(dateArr[2]), Convert.ToInt32(dateArr[1]), Convert.ToInt32(dateArr[0]));
-                txtDate.Value = dob;
-                if (row.Cells[5].Value.ToString() == "Male")
-                    rbMale.Checked = true;
-                else
-                    rbFemale.Checked = true;
-                txtAddress.Text = row.Cells[6].Value.ToString();
-                txtPhone.Text = row.Cells[7].Value.ToString();
-                txtEmail.Text = row.Cells[8].Value.ToString();
-                cbCountry.Text = row.Cells[9].Value.ToString();
+                if (!isUpdate && !isEditted && dgvCustomers.RowCount > 0)
+                {
+                    row = dgvCustomers.CurrentRow;
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    txtIdentity.Text = row.Cells[2].Value.ToString();
+                    txtPassport.Text = row.Cells[3].Value.ToString();
+                    string[] dateArr = row.Cells[4].Value.ToString().Split('-');
+                    DateTime dob = new DateTime(Convert.ToInt32(dateArr[2]), Convert.ToInt32(dateArr[1]), Convert.ToInt32(dateArr[0]));
+                    txtDate.Value = dob;
+                    if (row.Cells[5].Value.ToString() == "Male")
+                        rbMale.Checked = true;
+                    else
+                        rbFemale.Checked = true;
+                    txtAddress.Text = row.Cells[6].Value.ToString();
+                    txtPhone.Text = row.Cells[7].Value.ToString();
+                    txtEmail.Text = row.Cells[8].Value.ToString();
+                    cbCountry.Text = row.Cells[9].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

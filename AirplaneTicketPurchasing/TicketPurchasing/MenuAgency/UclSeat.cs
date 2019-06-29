@@ -93,7 +93,16 @@ namespace TicketPurchasing.MenuAgency
                 }
                 else
                 {
-                    if(left + mid + right == 6)
+                    if (left + mid + right == 4)
+                    {
+                        if (pos == 1)
+                            buttonSeat.Margin = new Padding(20, 3, 3, 0);
+                        if (pos == left + 1)
+                            buttonSeat.Margin = new Padding(70, 3, 3, 0);
+                        if (pos == left + mid + 1)
+                            buttonSeat.Margin = new Padding(70, 3, 3, 0);
+                    }
+                    else if(left + mid + right == 6)
                     {
                         if (pos == 1)
                             buttonSeat.Margin = new Padding(15, 3, 3, 0);

@@ -49,7 +49,7 @@ namespace TicketPurchasing
                 else
                 {
                     MessageBox.Show("Ensure you have selected valid image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    photo.ImageLocation = null;
+                    photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
                 }
             }
         }
@@ -65,40 +65,47 @@ namespace TicketPurchasing
 
         private void DgvEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            row = DgvEmployees.CurrentRow;
-            if (!isUpdate&&!isInserting)
+            try
             {
-                txtName.Text = row.Cells[1].Value.ToString();
-
-                string[] dayArray = row.Cells[2].Value.ToString().Split('-');
-                DateTime date = new DateTime(Convert.ToInt32(dayArray[2]), Convert.ToInt32(dayArray[1]), Convert.ToInt32(dayArray[0]));
-                txtDateofBirth.Value = date;
-
-                if (row.Cells[3].Value.ToString() == "Male")
-                    rbMale.Checked = true;
-                else
-                    rbFemale.Checked = true;
-                txtAddress.Text = row.Cells[4].Value.ToString();
-                txtPhoneNumber.Text = row.Cells[5].Value.ToString();
-                cboRole.Text = row.Cells[6].Value.ToString();
-
-                if (row.Cells[7].Value.ToString() != "")
+                if (!isUpdate && !isInserting && DgvEmployees.RowCount > 0)
                 {
-                    base64string = row.Cells[7].Value.ToString();
-                    string extension = base64string.Substring(base64string.IndexOf('/'),
-                                                 base64string.IndexOf(';') - base64string.IndexOf('/'));
-                    txtPhoto.Text = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
-                    string path = base64string.Substring(base64string.IndexOf(',') + 2,
-                        base64string.Length - (base64string.IndexOf(',') + 2));
-                    byte[] image = Convert.FromBase64String(path);
-                    photo.Image = support.byteArrayToImage(image);
-                }
-                else
-                {
-                    txtPhoto.Text = "";
-                    photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
-                }
+                    row = DgvEmployees.CurrentRow;
+                    txtName.Text = row.Cells[1].Value.ToString();
 
+                    string[] dayArray = row.Cells[2].Value.ToString().Split('-');
+                    DateTime date = new DateTime(Convert.ToInt32(dayArray[2]), Convert.ToInt32(dayArray[1]), Convert.ToInt32(dayArray[0]));
+                    txtDateofBirth.Value = date;
+
+                    if (row.Cells[3].Value.ToString() == "Male")
+                        rbMale.Checked = true;
+                    else
+                        rbFemale.Checked = true;
+                    txtAddress.Text = row.Cells[4].Value.ToString();
+                    txtPhoneNumber.Text = row.Cells[5].Value.ToString();
+                    cboRole.Text = row.Cells[6].Value.ToString();
+
+                    if (row.Cells[7].Value.ToString() != "")
+                    {
+                        base64string = row.Cells[7].Value.ToString();
+                        string extension = base64string.Substring(base64string.IndexOf('/'),
+                                                     base64string.IndexOf(';') - base64string.IndexOf('/'));
+                        txtPhoto.Text = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
+                        string path = base64string.Substring(base64string.IndexOf(',') + 2,
+                            base64string.Length - (base64string.IndexOf(',') + 2));
+                        byte[] image = Convert.FromBase64String(path);
+                        photo.Image = support.byteArrayToImage(image);
+                    }
+                    else
+                    {
+                        txtPhoto.Text = "";
+                        photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -187,6 +194,8 @@ namespace TicketPurchasing
                         enableFrm(false);
                         refreshDatagrid("");
                     }
+
+                    MessageBox.Show(process + " has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

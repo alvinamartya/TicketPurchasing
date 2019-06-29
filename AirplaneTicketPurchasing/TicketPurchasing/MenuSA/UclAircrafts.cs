@@ -707,41 +707,55 @@ namespace TicketPurchasing.MenuSA
 
         private void dgvAircraftDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(!isEdittedDetail && isUpdateAircraftDetails)
+            try
             {
-                row2 = dgvAircraftDetails.CurrentRow;
-                if (row != null) refreshDatagridAircraftsAmenities(row.Cells[0].Value.ToString(), row2.Cells[1].Value.ToString());
-                cboCabinType.Text = row2.Cells[1].Value.ToString();
-                txtPrice.Value = Convert.ToDecimal(row2.Cells[2].Value.ToString());
-                if (amenities.Count > 0)
+                if (!isEdittedDetail && isUpdateAircraftDetails && dgvAircraftDetails.RowCount > 0)
                 {
-                    foreach (AircraftAmenities item in amenities.Where(x=>x.Status == 1 && x.Cabin == row2.Cells[1].Value.ToString()))
+                    row2 = dgvAircraftDetails.CurrentRow;
+                    if (row != null) refreshDatagridAircraftsAmenities(row.Cells[0].Value.ToString(), row2.Cells[1].Value.ToString());
+                    cboCabinType.Text = row2.Cells[1].Value.ToString();
+                    txtPrice.Value = Convert.ToDecimal(row2.Cells[2].Value.ToString());
+                    if (amenities.Count > 0)
                     {
-                        DataGridViewRow amenitieRow = dgvAircraftAmenities.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == item.AmenitiesID).FirstOrDefault();
-                        if (amenitieRow == null) dgvAircraftAmenities.Rows.Add("", item.AmenitiesID, item.Amenities);
+                        foreach (AircraftAmenities item in amenities.Where(x => x.Status == 1 && x.Cabin == row2.Cells[1].Value.ToString()))
+                        {
+                            DataGridViewRow amenitieRow = dgvAircraftAmenities.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[1].Value.ToString() == item.AmenitiesID).FirstOrDefault();
+                            if (amenitieRow == null) dgvAircraftAmenities.Rows.Add("", item.AmenitiesID, item.Amenities);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
         private void dgvAircrafts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(!isEdittedAircraft)
+            try
             {
-                detailTypes = new List<AircraftDetails>();
-                amenities = new List<AircraftAmenities>();
+                if (!isEdittedAircraft && dgvAircrafts.RowCount > 0)
+                {
+                    detailTypes = new List<AircraftDetails>();
+                    amenities = new List<AircraftAmenities>();
 
-                clearAircraftDetails();
-                dgvAircraftDetails.Rows.Clear();
+                    clearAircraftDetails();
+                    dgvAircraftDetails.Rows.Clear();
 
-                clearAircraftsAmenities();
-                dgvAircraftAmenities.Rows.Clear();
+                    clearAircraftsAmenities();
+                    dgvAircraftAmenities.Rows.Clear();
 
-                row = dgvAircrafts.CurrentRow;
-                refreshDatagridAircraftsDetails(row.Cells[0].Value.ToString());
-                txtName.Text = row.Cells[1].Value.ToString();
-                cboCompany.SelectedValue = row.Cells[2].Value.ToString();
-                cboType.SelectedValue = aircraftTypeid.FindIndex(x => x == row.Cells[4].Value.ToString());
+                    row = dgvAircrafts.CurrentRow;
+                    refreshDatagridAircraftsDetails(row.Cells[0].Value.ToString());
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    cboCompany.SelectedValue = row.Cells[2].Value.ToString();
+                    cboType.SelectedValue = aircraftTypeid.FindIndex(x => x == row.Cells[4].Value.ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -782,10 +796,17 @@ namespace TicketPurchasing.MenuSA
 
         private void dgvAircraftAmenities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!isEdittedAmenities)
+            try
             {
-                row3 = dgvAircraftAmenities.CurrentRow;
-                cboAmenities.SelectedIndex = aircraftamenitiesid.FindIndex(x => x.Equals(row3.Cells[1].Value.ToString()));
+                if (!isEdittedAmenities && dgvAircraftAmenities.RowCount > 0)
+                {
+                    row3 = dgvAircraftAmenities.CurrentRow;
+                    cboAmenities.SelectedIndex = aircraftamenitiesid.FindIndex(x => x.Equals(row3.Cells[1].Value.ToString()));
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
         #endregion

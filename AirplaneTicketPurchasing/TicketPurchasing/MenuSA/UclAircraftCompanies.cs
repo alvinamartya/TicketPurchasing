@@ -147,7 +147,8 @@ namespace TicketPurchasing.MenuSA
                 else
                 {
                     MessageBox.Show("Ensure you have selected valid image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    photo.ImageLocation = null;
+                    if(txtPathPhoto.Text == "")
+                        photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
                 }
             }
         }
@@ -263,23 +264,30 @@ namespace TicketPurchasing.MenuSA
 
         private void DgvCompanies_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (isUpdate&&!isEnable)
+            try
             {
-                row = DgvCompanies.CurrentRow;
-                txtName.Text = row.Cells[1].Value.ToString();
-                txtPhone.Text = row.Cells[2].Value.ToString();
-                txtCompanyCode.Text = row.Cells[3].Value.ToString();
-                txtAddress.Text = row.Cells[4].Value.ToString();
+                if (isUpdate && !isEnable && DgvCompanies.RowCount > 0)
+                {
+                    row = DgvCompanies.CurrentRow;
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    txtPhone.Text = row.Cells[2].Value.ToString();
+                    txtCompanyCode.Text = row.Cells[3].Value.ToString();
+                    txtAddress.Text = row.Cells[4].Value.ToString();
 
-                // get image from database then show to picturebox
-                base64string = row.Cells[5].Value.ToString();
-                string extension = base64string.Substring(base64string.IndexOf('/'),
-                    base64string.IndexOf(';') - base64string.IndexOf('/'));
-                txtPathPhoto.Text = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ','-') + "." + extension.Remove(0,1);
-                string path = base64string.Substring(base64string.IndexOf(',') + 2, 
-                    base64string.Length - (base64string.IndexOf(',') + 2));
-                byte[] image = Convert.FromBase64String(path);
-                photo.Image = support.byteArrayToImage(image);
+                    // get image from database then show to picturebox
+                    base64string = row.Cells[5].Value.ToString();
+                    string extension = base64string.Substring(base64string.IndexOf('/'),
+                        base64string.IndexOf(';') - base64string.IndexOf('/'));
+                    txtPathPhoto.Text = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
+                    string path = base64string.Substring(base64string.IndexOf(',') + 2,
+                        base64string.Length - (base64string.IndexOf(',') + 2));
+                    byte[] image = Convert.FromBase64String(path);
+                    photo.Image = support.byteArrayToImage(image);
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
