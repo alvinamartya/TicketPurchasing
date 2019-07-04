@@ -52,15 +52,15 @@ namespace TicketPurchasing
         {
             if (report.Equals("Daily"))
             {
+                lblStartPeriod.Text = "Start Period";
+                lblEndPeriod.Text = "End Period";
+                lblEndPeriod.Visible = true;
                 cmbYear1.Visible = false;
                 cmbYear2.Visible = false;
                 dateStart.Visible = true;
                 dateEnd.Visible = true;
                 lblEndPeriod.Visible = true;
                 btnShow.Location = new Point(358, 73);
-                lblStartPeriod.Text = "Start Period";
-                lblEndPeriod.Text = "End Period";
-                lblEndPeriod.Visible = true;
                 flatLabel1.Visible = true;
                 rvPeriod.Size = new Size(794, 356);
                 rvPeriod.Location = new Point(19, 104);

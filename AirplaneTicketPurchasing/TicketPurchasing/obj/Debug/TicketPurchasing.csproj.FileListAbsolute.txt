@@ -135,7 +135,6 @@ C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\Ticket
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclMenuAgency.resources
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclPurchase.resources
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclRefund.resources
-C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclTicket.resources
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftCompanies.resources
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircrafts.resources
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclAircraftTypes.resources
@@ -213,3 +212,11 @@ D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\RdlCompile.cache
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\RdlCompile.compiled
 D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeatRefund.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.FrmPopUp.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeat.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSeatRefund.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuAgency.UclSaveToPDF.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MenuSA.UclSeat.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclChangePassword.resources
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\RdlCompile.cache
+C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\RdlCompile.compiled

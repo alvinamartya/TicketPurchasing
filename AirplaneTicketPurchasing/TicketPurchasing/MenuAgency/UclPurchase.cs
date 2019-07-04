@@ -410,22 +410,30 @@ namespace TicketPurchasing.MenuAgency
                         try
                         {
                             dateArray = row.Cells[5].Value.ToString().Split('/');
+                            UclSaveToPDF ticket = new UclSaveToPDF(bookingref,
+                           "Aircraft: " + row.Cells[8].Value.ToString(),
+                           row.Cells[2].Value.ToString(), row.Cells[4].Value.ToString(),
+                            "Departure Date: " + (new DateTime(Convert.ToInt32(dateArray[2]),
+                            Convert.ToInt32(dateArray[1]),
+                            Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy"),
+                            "Departure Time: " + row.Cells[6].Value.ToString(), ticketdataset, "Transaction Date: " + DateTime.Now.ToString("dd MMMM yyyy"));
+                            ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
+                            ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
                         }
                         catch (Exception ex)
                         {
                             Console.WriteLine(ex.Message);
                             dateArray = row.Cells[5].Value.ToString().Split('-');
-                        }
-
-                        UclSaveToPDF ticket = new UclSaveToPDF(bookingref,
-                           "Aircraft: " + row.Cells[8].Value.ToString(), 
-                           row.Cells[2].Value.ToString(), row.Cells[4].Value.ToString(), 
+                            UclSaveToPDF ticket = new UclSaveToPDF(bookingref,
+                           "Aircraft: " + row.Cells[8].Value.ToString(),
+                           row.Cells[2].Value.ToString(), row.Cells[4].Value.ToString(),
                             "Departure Date: " + (new DateTime(Convert.ToInt32(dateArray[2]),
                             Convert.ToInt32(dateArray[1]),
                             Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy"),
                             "Departure Time: " + row.Cells[6].Value.ToString(), ticketdataset, "Transaction Date: " + DateTime.Now.ToString("dd MMMM yyyy"));
-                        ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
-                        ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
+                            ((FrmMenuAgency)Support.frm).addControltoPanel(ticket);
+                            ((FrmMenuAgency)Support.frm).lblTitle.Text = "FLIGHTSI - TRANSACTION [Purchase - Ticket]";
+                        }
                     }
                     else
                     {
@@ -472,14 +480,16 @@ namespace TicketPurchasing.MenuAgency
                     try
                     {
                         dateArray = row.Cells[5].Value.ToString().Split('/');
+                        lblDepartureDate.Text = (new DateTime(Convert.ToInt32(dateArray[2]),
+                        Convert.ToInt32(dateArray[1]), Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy");
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine(ex.Message);
                         dateArray = row.Cells[5].Value.ToString().Split('-');
-                    }
-                    lblDepartureDate.Text = (new DateTime(Convert.ToInt32(dateArray[2]),
+                        lblDepartureDate.Text = (new DateTime(Convert.ToInt32(dateArray[2]),
                         Convert.ToInt32(dateArray[1]), Convert.ToInt32(dateArray[0]))).ToString("dd MMMM yyyy");
+                    }
                     lblDepartureTime.Text = row.Cells[6].Value.ToString();
                     lblAircraft.Text = row.Cells[8].Value.ToString();
                     lblEconomyPrice.Text = "Rp. " + row.Cells[12].Value.ToString();
