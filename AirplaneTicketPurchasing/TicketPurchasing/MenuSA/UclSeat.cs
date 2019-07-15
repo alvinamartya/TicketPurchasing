@@ -193,6 +193,15 @@ namespace TicketPurchasing.MenuSA
                 string process = "";
                 if (!isUpdate)
                 {
+                    if (DgvSeatType.Rows.Cast<DataGridViewRow>().Where(z =>
+                    z.Cells[2].Value.ToString() == txtLeft.Value.ToString() &&
+                    z.Cells[3].Value.ToString() == txtMid.Value.ToString() &&
+                    z.Cells[4].Value.ToString() == txtRight.Value.ToString()).FirstOrDefault() != null)
+                    {
+                        MessageBox.Show("Seat type already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     var seatType = convertDataSetToList.Where(z => z.Name.Equals(realName)).FirstOrDefault();
                     if(seatType != null)
                     {
@@ -210,6 +219,19 @@ namespace TicketPurchasing.MenuSA
                     }
                     else
                     {
+                        DataGridViewRow row2 = DgvSeatType.Rows.Cast<DataGridViewRow>().Where(z =>
+                    z.Cells[2].Value.ToString().Equals(txtLeft.Value) &&
+                    z.Cells[3].Value.ToString().Equals(txtMid.Value) &&
+                    z.Cells[4].Value.ToString().Equals(txtRight.Value)).FirstOrDefault();
+                        if (row2 != null)
+                        {
+                            Console.WriteLine("Ada");
+                            if (row != row2)
+                            {
+                                MessageBox.Show("Amenity already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
                         List<Parameter> param = new List<Parameter>();
                         param.Add(new Parameter("@ID", database.autoGenerateID("S", "sp_last_seattype", 5)));
                         param.Add(new Parameter("@Name", realName));

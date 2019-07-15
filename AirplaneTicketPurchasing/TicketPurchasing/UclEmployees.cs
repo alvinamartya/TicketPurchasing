@@ -190,12 +190,14 @@ namespace TicketPurchasing
                             MessageBox.Show(process + " successful\nYour username: " + username, "Information",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        else
+                        {
+                            MessageBox.Show(process + " has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         clear();
                         enableFrm(false);
                         refreshDatagrid("");
                     }
-
-                    MessageBox.Show(process + " has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

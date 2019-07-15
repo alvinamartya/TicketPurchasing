@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCustomers = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtIdentity = new System.Windows.Forms.TextBox();
@@ -74,51 +74,51 @@
             // 
             this.dgvCustomers.AllowUserToAddRows = false;
             this.dgvCustomers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCustomers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCustomers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCustomers.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomers.DoubleBuffered = true;
             this.dgvCustomers.EnableHeadersVisualStyles = false;
             this.dgvCustomers.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.dgvCustomers.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.dgvCustomers.Location = new System.Drawing.Point(32, 42);
+            this.dgvCustomers.Location = new System.Drawing.Point(22, 42);
             this.dgvCustomers.MultiSelect = false;
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
             this.dgvCustomers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.Size = new System.Drawing.Size(770, 174);
+            this.dgvCustomers.Size = new System.Drawing.Size(796, 174);
             this.dgvCustomers.TabIndex = 3;
             this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(160, 230);
+            this.txtName.Location = new System.Drawing.Point(222, 228);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(182, 20);
             this.txtName.TabIndex = 39;
             // 
             // txtIdentity
             // 
-            this.txtIdentity.Location = new System.Drawing.Point(160, 256);
+            this.txtIdentity.Location = new System.Drawing.Point(222, 254);
             this.txtIdentity.Name = "txtIdentity";
             this.txtIdentity.Size = new System.Drawing.Size(182, 20);
             this.txtIdentity.TabIndex = 42;
             // 
             // txtPassport
             // 
-            this.txtPassport.Location = new System.Drawing.Point(160, 282);
+            this.txtPassport.Location = new System.Drawing.Point(222, 280);
             this.txtPassport.Name = "txtPassport";
             this.txtPassport.Size = new System.Drawing.Size(182, 20);
             this.txtPassport.TabIndex = 45;
@@ -324,7 +324,7 @@
             "Yemen",
             "Zambia",
             "Zimbabwe"});
-            this.cbCountry.Location = new System.Drawing.Point(160, 308);
+            this.cbCountry.Location = new System.Drawing.Point(222, 306);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(182, 21);
             this.cbCountry.TabIndex = 53;
@@ -333,7 +333,7 @@
             // 
             this.txtDate.CustomFormat = "dddd, dd MMMM yyyy";
             this.txtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDate.Location = new System.Drawing.Point(160, 335);
+            this.txtDate.Location = new System.Drawing.Point(222, 333);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(200, 20);
             this.txtDate.TabIndex = 56;
@@ -342,7 +342,7 @@
             // 
             this.rbFemale.AutoSize = true;
             this.rbFemale.ForeColor = System.Drawing.Color.White;
-            this.rbFemale.Location = new System.Drawing.Point(649, 230);
+            this.rbFemale.Location = new System.Drawing.Point(708, 230);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(59, 17);
             this.rbFemale.TabIndex = 60;
@@ -354,7 +354,7 @@
             // 
             this.rbMale.AutoSize = true;
             this.rbMale.ForeColor = System.Drawing.Color.White;
-            this.rbMale.Location = new System.Drawing.Point(577, 229);
+            this.rbMale.Location = new System.Drawing.Point(636, 229);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(48, 17);
             this.rbMale.TabIndex = 59;
@@ -364,21 +364,21 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(577, 252);
+            this.txtPhone.Location = new System.Drawing.Point(636, 252);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(182, 20);
             this.txtPhone.TabIndex = 63;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(577, 278);
+            this.txtEmail.Location = new System.Drawing.Point(636, 278);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(182, 20);
             this.txtEmail.TabIndex = 66;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(577, 304);
+            this.txtAddress.Location = new System.Drawing.Point(636, 304);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(182, 51);
@@ -492,7 +492,7 @@
             this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(559, 304);
+            this.flatLabel19.Location = new System.Drawing.Point(618, 304);
             this.flatLabel19.Name = "flatLabel19";
             this.flatLabel19.Size = new System.Drawing.Size(11, 17);
             this.flatLabel19.TabIndex = 68;
@@ -516,7 +516,7 @@
             this.flatLabel17.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel17.ForeColor = System.Drawing.Color.White;
-            this.flatLabel17.Location = new System.Drawing.Point(559, 278);
+            this.flatLabel17.Location = new System.Drawing.Point(618, 278);
             this.flatLabel17.Name = "flatLabel17";
             this.flatLabel17.Size = new System.Drawing.Size(11, 17);
             this.flatLabel17.TabIndex = 65;
@@ -530,9 +530,9 @@
             this.flatLabel18.ForeColor = System.Drawing.Color.White;
             this.flatLabel18.Location = new System.Drawing.Point(451, 278);
             this.flatLabel18.Name = "flatLabel18";
-            this.flatLabel18.Size = new System.Drawing.Size(39, 17);
+            this.flatLabel18.Size = new System.Drawing.Size(101, 17);
             this.flatLabel18.TabIndex = 64;
-            this.flatLabel18.Text = "Email";
+            this.flatLabel18.Text = "Email (Optional)";
             // 
             // flatLabel15
             // 
@@ -540,7 +540,7 @@
             this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(559, 252);
+            this.flatLabel15.Location = new System.Drawing.Point(618, 252);
             this.flatLabel15.Name = "flatLabel15";
             this.flatLabel15.Size = new System.Drawing.Size(11, 17);
             this.flatLabel15.TabIndex = 62;
@@ -554,9 +554,9 @@
             this.flatLabel16.ForeColor = System.Drawing.Color.White;
             this.flatLabel16.Location = new System.Drawing.Point(451, 252);
             this.flatLabel16.Name = "flatLabel16";
-            this.flatLabel16.Size = new System.Drawing.Size(96, 17);
+            this.flatLabel16.Size = new System.Drawing.Size(158, 17);
             this.flatLabel16.TabIndex = 61;
-            this.flatLabel16.Text = "Phone Number";
+            this.flatLabel16.Text = "Phone Number (Optional)";
             // 
             // flatLabel11
             // 
@@ -564,7 +564,7 @@
             this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel11.ForeColor = System.Drawing.Color.White;
-            this.flatLabel11.Location = new System.Drawing.Point(559, 229);
+            this.flatLabel11.Location = new System.Drawing.Point(618, 229);
             this.flatLabel11.Name = "flatLabel11";
             this.flatLabel11.Size = new System.Drawing.Size(11, 17);
             this.flatLabel11.TabIndex = 58;
@@ -588,7 +588,7 @@
             this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(142, 335);
+            this.flatLabel9.Location = new System.Drawing.Point(196, 333);
             this.flatLabel9.Name = "flatLabel9";
             this.flatLabel9.Size = new System.Drawing.Size(11, 17);
             this.flatLabel9.TabIndex = 55;
@@ -600,7 +600,7 @@
             this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(34, 335);
+            this.flatLabel10.Location = new System.Drawing.Point(24, 333);
             this.flatLabel10.Name = "flatLabel10";
             this.flatLabel10.Size = new System.Drawing.Size(81, 17);
             this.flatLabel10.TabIndex = 54;
@@ -612,7 +612,7 @@
             this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel13.ForeColor = System.Drawing.Color.White;
-            this.flatLabel13.Location = new System.Drawing.Point(142, 308);
+            this.flatLabel13.Location = new System.Drawing.Point(196, 306);
             this.flatLabel13.Name = "flatLabel13";
             this.flatLabel13.Size = new System.Drawing.Size(11, 17);
             this.flatLabel13.TabIndex = 52;
@@ -624,7 +624,7 @@
             this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel14.ForeColor = System.Drawing.Color.White;
-            this.flatLabel14.Location = new System.Drawing.Point(34, 308);
+            this.flatLabel14.Location = new System.Drawing.Point(24, 306);
             this.flatLabel14.Name = "flatLabel14";
             this.flatLabel14.Size = new System.Drawing.Size(53, 17);
             this.flatLabel14.TabIndex = 51;
@@ -636,7 +636,7 @@
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(142, 282);
+            this.flatLabel7.Location = new System.Drawing.Point(196, 280);
             this.flatLabel7.Name = "flatLabel7";
             this.flatLabel7.Size = new System.Drawing.Size(11, 17);
             this.flatLabel7.TabIndex = 44;
@@ -648,11 +648,11 @@
             this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel8.ForeColor = System.Drawing.Color.White;
-            this.flatLabel8.Location = new System.Drawing.Point(34, 282);
+            this.flatLabel8.Location = new System.Drawing.Point(24, 280);
             this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(111, 17);
+            this.flatLabel8.Size = new System.Drawing.Size(173, 17);
             this.flatLabel8.TabIndex = 43;
-            this.flatLabel8.Text = "Passport Number";
+            this.flatLabel8.Text = "Passport Number (Optional)";
             // 
             // flatLabel5
             // 
@@ -660,7 +660,7 @@
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel5.ForeColor = System.Drawing.Color.White;
-            this.flatLabel5.Location = new System.Drawing.Point(142, 256);
+            this.flatLabel5.Location = new System.Drawing.Point(196, 254);
             this.flatLabel5.Name = "flatLabel5";
             this.flatLabel5.Size = new System.Drawing.Size(11, 17);
             this.flatLabel5.TabIndex = 41;
@@ -672,11 +672,11 @@
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel6.ForeColor = System.Drawing.Color.White;
-            this.flatLabel6.Location = new System.Drawing.Point(34, 256);
+            this.flatLabel6.Location = new System.Drawing.Point(24, 254);
             this.flatLabel6.Name = "flatLabel6";
-            this.flatLabel6.Size = new System.Drawing.Size(102, 17);
+            this.flatLabel6.Size = new System.Drawing.Size(164, 17);
             this.flatLabel6.TabIndex = 40;
-            this.flatLabel6.Text = "Identity Number";
+            this.flatLabel6.Text = "Identity Number (Optional)";
             // 
             // flatLabel3
             // 
@@ -684,7 +684,7 @@
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(142, 230);
+            this.flatLabel3.Location = new System.Drawing.Point(196, 228);
             this.flatLabel3.Name = "flatLabel3";
             this.flatLabel3.Size = new System.Drawing.Size(11, 17);
             this.flatLabel3.TabIndex = 38;
@@ -696,7 +696,7 @@
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(34, 230);
+            this.flatLabel4.Location = new System.Drawing.Point(24, 228);
             this.flatLabel4.Name = "flatLabel4";
             this.flatLabel4.Size = new System.Drawing.Size(43, 17);
             this.flatLabel4.TabIndex = 37;

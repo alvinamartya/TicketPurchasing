@@ -34,6 +34,7 @@ namespace TicketPurchasing.MenuSA
             txtSearch.Text = null;
             isUpdate = false;
             if (isInserting) isInserting = false;
+            row = null;
         }
 
         private void enableFrm(bool value)
@@ -108,7 +109,7 @@ namespace TicketPurchasing.MenuSA
             }
             else
             {
-                MessageBox.Show("Ensure you have selected cities", "Warning",
+                MessageBox.Show("Ensure you have selected a city", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -152,7 +153,7 @@ namespace TicketPurchasing.MenuSA
             }
             else
             {
-                MessageBox.Show("Ensure you have selected cities", "Warning",
+                MessageBox.Show("Ensure you have selected a city", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -176,6 +177,14 @@ namespace TicketPurchasing.MenuSA
                 string proc = "";
                 if (!isUpdate)
                 {
+                    if (DgvCities.Rows.Cast<DataGridViewRow>().Where(z =>
+                    z.Cells[1].Value.ToString() == txtName.Text &&
+                    z.Cells[2].Value.ToString() == cbCountry.Text).FirstOrDefault() != null)
+                    {
+                        MessageBox.Show("City already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     List<Parameter> param = new List<Parameter>();
                     param.Add(new Parameter("@ID", database.autoGenerateID("C", "sp_last_cities", 5)));
                     param.Add(new Parameter("@Name", txtName.Text));
@@ -185,6 +194,19 @@ namespace TicketPurchasing.MenuSA
                 }
                 else
                 {
+                    DataGridViewRow row2 = DgvCities.Rows.Cast<DataGridViewRow>().Where(z =>
+                    z.Cells[1].Value.ToString() == txtName.Text &&
+                    z.Cells[2].Value.ToString() == cbCountry.Text).FirstOrDefault();
+
+                    if (row2 != null)
+                    {
+                        if (row != row2)
+                        {
+                            MessageBox.Show("City already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
                     List<Parameter> param = new List<Parameter>();
                     param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
                     param.Add(new Parameter("@Name", txtName.Text));

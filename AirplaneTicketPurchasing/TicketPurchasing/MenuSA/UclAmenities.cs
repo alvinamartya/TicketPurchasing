@@ -51,7 +51,7 @@ namespace TicketPurchasing.MenuSA
             }
             else
             {
-                MessageBox.Show("Ensure you have selected amenities", "Warning",
+                MessageBox.Show("Ensure you have selected a amenity", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -78,7 +78,7 @@ namespace TicketPurchasing.MenuSA
             }
             else
             {
-                MessageBox.Show("Ensure you have selected amenities", "Warning",
+                MessageBox.Show("Ensure you have selected a amenity", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -93,18 +93,18 @@ namespace TicketPurchasing.MenuSA
         {
             if (validation())
             {
-                if(DgvAmenities.Rows.Cast<DataGridViewRow>().Where(z =>
-                z.Cells[1].Value.ToString() ==  txtName.Text &&
-                z.Cells[2].Value.ToString() == txtQty.Value.ToString()).FirstOrDefault() != null)
-                {
-                    MessageBox.Show("Amenities already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 int x = 0;
                 string process = "";
                 if (!isUpdate)
                 {
+                    if (DgvAmenities.Rows.Cast<DataGridViewRow>().Where(z =>
+                        z.Cells[1].Value.ToString() == txtName.Text &&
+                        z.Cells[2].Value.ToString() == txtQty.Value.ToString()).FirstOrDefault() != null)
+                    {
+                        MessageBox.Show("Amenity already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     List<Parameter> param = new List<Parameter>();
                     param.Add(new Parameter("@ID", database.autoGenerateID("A", "sp_last_amenities", 5)));
                     param.Add(new Parameter("@Name", txtName.Text));
@@ -116,6 +116,19 @@ namespace TicketPurchasing.MenuSA
                 }
                 else
                 {
+                    DataGridViewRow row2 = DgvAmenities.Rows.Cast<DataGridViewRow>().Where(z =>
+                        z.Cells[1].Value.ToString() == txtName.Text &&
+                        z.Cells[2].Value.ToString() == txtQty.Value.ToString()).FirstOrDefault();
+
+                    if (row2 != null)
+                    {
+                        if(row != row2)
+                        {
+                            MessageBox.Show("Amenity already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
                     List<Parameter> param = new List<Parameter>();
                     param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
                     param.Add(new Parameter("@Name", txtName.Text));
