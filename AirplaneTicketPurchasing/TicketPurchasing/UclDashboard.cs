@@ -102,9 +102,7 @@ namespace TicketPurchasing
             columnChart.Series[0].Points.Clear();
             columnChart.Series.Clear();
             columnChart.Series.Add("Revenue");
-            columnchart2.Series[0].Points.Clear();
-            columnchart2.Series.Clear();
-            columnchart2.Series.Add("Count");
+
             piechart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             DataSet dsTopDestination = database.getDataFromDatabase("sp_view_dashboard_arrival_city", null);
             if(dsTopDestination.Tables.Count > 0)
@@ -128,7 +126,6 @@ namespace TicketPurchasing
                     DataPoint datapoint = piechart.Series[0].Points[0];
                     selectPieData(datapoint, 0);
                     fillsubChart(dsTopDestination.Tables[0].Rows[0][0].ToString());
-                    fillsubChart2(dsTopDestination.Tables[0].Rows[0][0].ToString());
                 }
             }
         }
@@ -150,33 +147,8 @@ namespace TicketPurchasing
                     for (int i = 0; i < dsDepartureCity.Tables[0].Rows.Count; i++)
                     {
                         columnChart.Series[0].Points.AddXY(
-                            dsDepartureCity.Tables[0].Rows[0][0].ToString(),
-                            dsDepartureCity.Tables[0].Rows[0][1].ToString()
-                            );
-                    }
-                }
-            }
-        }
-
-        private void fillsubChart2(string cityID)
-        {
-            columnchart2.Titles.Clear();
-            columnchart2.Titles.Add("Count departure city");
-            columnchart2.Series[0].Points.Clear();
-            columnchart2.Series.Clear();
-            columnchart2.Series.Add("Count");
-            DataSet dsDepartureCity = database.getDataFromDatabase(
-                "sp_view_dashboard_dpearture_city2",
-                new List<Parameter> { new Parameter("@cityID", cityID) });
-            if (dsDepartureCity.Tables.Count > 0)
-            {
-                if (dsDepartureCity.Tables[0].Rows.Count > 0)
-                {
-                    for (int i = 0; i < dsDepartureCity.Tables[0].Rows.Count; i++)
-                    {
-                        columnchart2.Series[0].Points.AddXY(
-                            dsDepartureCity.Tables[0].Rows[0][0].ToString(),
-                            dsDepartureCity.Tables[0].Rows[0][1].ToString()
+                            dsDepartureCity.Tables[0].Rows[i][0].ToString(),
+                            dsDepartureCity.Tables[0].Rows[i][1].ToString()
                             );
                     }
                 }
@@ -227,7 +199,6 @@ namespace TicketPurchasing
             haspoint = true;
             getpoint = index;
             fillsubChart(dgvTopCities.Rows[index].Cells[0].Value.ToString());
-            fillsubChart2(dgvTopCities.Rows[index].Cells[0].Value.ToString());
         }
 
         private void piechart_MouseMove(object sender, MouseEventArgs e)

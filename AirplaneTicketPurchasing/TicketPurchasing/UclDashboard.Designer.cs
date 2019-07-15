@@ -36,19 +36,14 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.piechart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvTopCities = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.columnChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.columnchart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.piechart)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopCities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.columnChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.columnchart2)).BeginInit();
             this.SuspendLayout();
             // 
             // piechart
@@ -118,36 +113,20 @@
             this.columnChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.columnChart.Legends.Add(legend2);
-            this.columnChart.Location = new System.Drawing.Point(20, 227);
+            this.columnChart.Location = new System.Drawing.Point(125, 227);
             this.columnChart.Name = "columnChart";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.columnChart.Series.Add(series2);
-            this.columnChart.Size = new System.Drawing.Size(399, 220);
+            this.columnChart.Size = new System.Drawing.Size(584, 220);
             this.columnChart.TabIndex = 3;
-            // 
-            // columnchart2
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.columnchart2.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.columnchart2.Legends.Add(legend3);
-            this.columnchart2.Location = new System.Drawing.Point(425, 227);
-            this.columnchart2.Name = "columnchart2";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.columnchart2.Series.Add(series3);
-            this.columnchart2.Size = new System.Drawing.Size(388, 220);
-            this.columnchart2.TabIndex = 4;
             // 
             // UclDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(76)))));
-            this.Controls.Add(this.columnchart2);
             this.Controls.Add(this.columnChart);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.piechart);
@@ -158,7 +137,6 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopCities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.columnChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.columnchart2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,6 +147,5 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataVisualization.Charting.Chart columnChart;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvTopCities;
-        private System.Windows.Forms.DataVisualization.Charting.Chart columnchart2;
     }
 }

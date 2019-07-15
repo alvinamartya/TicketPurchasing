@@ -693,6 +693,18 @@ namespace TicketPurchasing.MenuAgency
                     "Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
 
+        private void btnAddCustomer_MouseUp(object sender, MouseEventArgs e)
+        {
+            ToolTip tip = new ToolTip();
+            tip.Show("This is button for add new customer", this);
+        }
+
+        private void btnRefreshCustomer_MouseUp(object sender, MouseEventArgs e)
+        {
+            ToolTip tip = new ToolTip();
+            tip.Show("This is button use to refresh customer list", this);
+        }
+
         private void btnCancelCustomer_Click(object sender, EventArgs e)
         {
 

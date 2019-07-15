@@ -521,7 +521,13 @@ namespace TicketPurchasing.MenuSA
         private void txtSeat_MouseUp(object sender, MouseEventArgs e)
         {
             ToolTip tip = new ToolTip();
-            tip.SetToolTip(txtSeat, "Message");
+            tip.SetToolTip(txtSeat, "");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageFrm message = new MessageFrm("Ensure all column is filled with no excess");
+            message.Show();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

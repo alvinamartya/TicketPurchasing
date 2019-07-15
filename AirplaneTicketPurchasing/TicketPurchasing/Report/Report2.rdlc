@@ -430,8 +430,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>reportDS</DataSetName>
-        <Top>1.88752in</Top>
-        <Left>0.29482in</Left>
+        <Top>1.74976in</Top>
+        <Left>0.30644in</Left>
         <Height>0.5in</Height>
         <Width>8.97017in</Width>
         <Style>
@@ -452,17 +452,6 @@
           </RightBorder>
         </Style>
       </Tablix>
-      <Line Name="Line1">
-        <Top>0.01389in</Top>
-        <Height>0in</Height>
-        <Width>9.61917in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
       <Chart Name="Chart3">
         <ChartCategoryHierarchy>
           <ChartMembers>
@@ -606,9 +595,11 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
+                  <Format>'Rp'0.00;('Rp'0.00)</Format>
+                  <rd:FormatSymbolCulture>id-ID</rd:FormatSymbolCulture>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Total CleanIncome</Caption>
+                  <Caption />
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -708,11 +699,11 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>reportDS</DataSetName>
-        <Top>0.39434cm</Top>
-        <Left>4.62706cm</Left>
-        <Height>3.96812cm</Height>
+        <Top>1.75509cm</Top>
+        <Left>4.63449cm</Left>
+        <Height>2.51291cm</Height>
         <Width>15.14646cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -739,11 +730,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
-        <Top>6.06433cm</Top>
-        <Left>0.74884cm</Left>
+        <Top>5.71438cm</Top>
+        <Left>0.77841cm</Left>
         <Height>0.6cm</Height>
         <Width>18.2025cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -771,14 +762,84 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>6.06433cm</Top>
-        <Left>18.95134cm</Left>
+        <Top>5.71438cm</Top>
+        <Left>18.98088cm</Left>
         <Height>0.6cm</Height>
         <Width>4.5817cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox17">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!dateStart.Value +" to "+Parameters!dateEnd.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox17</rd:DefaultName>
+        <Top>0.30556in</Top>
+        <Left>0.00292in</Left>
+        <Height>0.31598in</Height>
+        <Width>9.61917in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PERIODICAL REPORT</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>0.05556in</Top>
+        <Left>0.00292in</Left>
+        <Height>0.25in</Height>
+        <Width>9.61917in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -801,38 +862,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.67931in</Top>
-        <Left>7.45248in</Left>
-        <Height>0.25in</Height>
-        <Width>1.8125in</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Signature,</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>2.97098in</Top>
-        <Left>7.45248in</Left>
+        <Top>2.52764in</Top>
+        <Left>7.4554in</Left>
         <Height>0.25in</Height>
         <Width>1.8125in</Width>
         <ZIndex>6</ZIndex>
@@ -853,7 +884,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Muhammad Wahyu Utama</Value>
+                <Value>(                                        )</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -863,8 +894,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>3.55084in</Top>
-        <Left>7.45248in</Left>
+        <Top>3.36681in</Top>
+        <Left>7.4554in</Left>
         <Height>0.25in</Height>
         <Width>1.8125in</Width>
         <ZIndex>7</ZIndex>
@@ -879,13 +910,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>9.90107cm</Height>
+    <Height>9.29253cm</Height>
     <Style />
   </Body>
-  <Width>24.4327cm</Width>
+  <Width>24.45491cm</Width>
   <Page>
     <PageHeader>
-      <Height>4.69758cm</Height>
+      <Height>3.05716cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -909,7 +940,15 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>PT. FLIGHTSI AEROSPACE INDONESIA
+                  <Value>PT. FLIGHTSI AEROSPACE INDONESIA</Value>
+                  <Style>
+                    <FontFamily>courier New</FontFamily>
+                    <FontSize>16pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>
 Jl. Ganggeng VII Sungai Bambu, Jakarta Utara 14330
 Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
                   <Style>
@@ -924,7 +963,7 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
           </Paragraphs>
           <rd:DefaultName>Textbox18</rd:DefaultName>
           <Top>0.14457in</Top>
-          <Left>1.4375in</Left>
+          <Left>1.44041in</Left>
           <Height>0.905in</Height>
           <Width>6.61917in</Width>
           <Style>
@@ -940,7 +979,7 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
           <Value>ID7b244dirgantara</Value>
           <Sizing>Fit</Sizing>
           <Top>0.36721cm</Top>
-          <Left>20.64034cm</Left>
+          <Left>20.64774cm</Left>
           <Height>2.31071cm</Height>
           <Width>2.34667cm</Width>
           <ZIndex>1</ZIndex>
@@ -955,7 +994,7 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
           <Value>flightsiLogo</Value>
           <Sizing>Fit</Sizing>
           <Top>0.3432cm</Top>
-          <Left>1.12819cm</Left>
+          <Left>1.13559cm</Left>
           <Height>2.32272cm</Height>
           <Width>2.34667cm</Width>
           <ZIndex>2</ZIndex>
@@ -965,74 +1004,18 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox19">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>PERIODICAL REPORT</Value>
-                  <Style>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox19</rd:DefaultName>
-          <Top>1.2118in</Top>
-          <Height>0.25in</Height>
+        <Line Name="Line1">
+          <Top>1.17013in</Top>
+          <Left>0.00291in</Left>
+          <Height>0in</Height>
           <Width>9.61917in</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
-              <Style>None</Style>
+              <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
-        </Textbox>
-        <Textbox Name="Textbox17">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Parameters!dateStart.Value +" to "+Parameters!dateEnd.Value</Value>
-                  <Style>
-                    <FontSize>13pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox17</rd:DefaultName>
-          <Top>1.53346in</Top>
-          <Height>0.31598in</Height>
-          <Width>9.61917in</Width>
-          <ZIndex>4</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -1041,10 +1024,21 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.0054cm</Height>
+      <Height>1.19062cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
+        <Line Name="Line2">
+          <Top>0.00001cm</Top>
+          <Left>0.00741cm</Left>
+          <Height>0cm</Height>
+          <Width>24.4475cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
         <Textbox Name="Textbox6">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1052,20 +1046,21 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Globals!PageNumber</Value>
+                  <Value>=Cstr(Globals!PageNumber) + " of " + Cstr(Globals!TotalPages)</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Right</TextAlign>
+                <TextAlign>Center</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>0.06944in</Top>
-          <Left>8.31045in</Left>
+          <Top>0.125in</Top>
+          <Left>0.30646in</Left>
           <Height>0.25in</Height>
-          <Width>0.95454in</Width>
+          <Width>8.97015in</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UclAircraftTypes));
             this.DgvAircraftType = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtMakeModel = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -66,6 +67,7 @@
             this.flatLabel3 = new FlatUI.FlatLabel();
             this.flatLabel4 = new FlatUI.FlatLabel();
             this.txtTotalSeat = new System.Windows.Forms.TextBox();
+            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAircraftType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvAircraftTypeDetail)).BeginInit();
@@ -76,19 +78,19 @@
             // 
             this.DgvAircraftType.AllowUserToAddRows = false;
             this.DgvAircraftType.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvAircraftType.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvAircraftType.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvAircraftType.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DgvAircraftType.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvAircraftType.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvAircraftType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvAircraftType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvAircraftType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvAircraftType.DoubleBuffered = true;
             this.DgvAircraftType.EnableHeadersVisualStyles = false;
@@ -140,7 +142,7 @@
             0,
             0});
             this.txtSeat.Name = "txtSeat";
-            this.txtSeat.Size = new System.Drawing.Size(120, 20);
+            this.txtSeat.Size = new System.Drawing.Size(88, 20);
             this.txtSeat.TabIndex = 2;
             this.txtSeat.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtSeat_MouseUp);
             // 
@@ -148,19 +150,19 @@
             // 
             this.DgvAircraftTypeDetail.AllowUserToAddRows = false;
             this.DgvAircraftTypeDetail.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvAircraftTypeDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvAircraftTypeDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvAircraftTypeDetail.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DgvAircraftTypeDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvAircraftTypeDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvAircraftTypeDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvAircraftTypeDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvAircraftTypeDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvAircraftTypeDetail.DoubleBuffered = true;
             this.DgvAircraftTypeDetail.EnableHeadersVisualStyles = false;
@@ -177,6 +179,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnHelp);
             this.groupBox1.Controls.Add(this.cboSeatType);
             this.groupBox1.Controls.Add(this.flatLabel1);
             this.groupBox1.Controls.Add(this.flatLabel2);
@@ -538,6 +541,17 @@
             this.txtTotalSeat.Size = new System.Drawing.Size(114, 20);
             this.txtTotalSeat.TabIndex = 4;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHelp.BackgroundImage")));
+            this.btnHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHelp.Location = new System.Drawing.Point(436, 70);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(26, 23);
+            this.btnHelp.TabIndex = 50;
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UclAircraftTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,5 +625,6 @@
         private FlatUI.FlatLabel flatLabel1;
         private FlatUI.FlatLabel flatLabel2;
         private System.Windows.Forms.ComboBox cboSeatType;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

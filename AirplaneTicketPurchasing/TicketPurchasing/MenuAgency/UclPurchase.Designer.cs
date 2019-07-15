@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboDepartureCity = new System.Windows.Forms.ComboBox();
             this.cboArrivalCity = new System.Windows.Forms.ComboBox();
             this.txtDepartureDate = new System.Windows.Forms.DateTimePicker();
@@ -41,6 +41,7 @@
             this.photo = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.customerGroup = new System.Windows.Forms.GroupBox();
+            this.btnCancelCustomer = new System.Windows.Forms.Button();
             this.btnDeletePassenger = new System.Windows.Forms.Button();
             this.btnAddPassenger = new System.Windows.Forms.Button();
             this.panelSeat = new System.Windows.Forms.FlowLayoutPanel();
@@ -53,7 +54,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancelCustomer = new System.Windows.Forms.Button();
             this.lblTotalTransaction = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
             this.flatLabel3 = new FlatUI.FlatLabel();
@@ -128,19 +128,19 @@
             // 
             this.dgvFlightSchedule.AllowUserToAddRows = false;
             this.dgvFlightSchedule.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvFlightSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvFlightSchedule.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFlightSchedule.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvFlightSchedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFlightSchedule.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFlightSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFlightSchedule.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFlightSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFlightSchedule.DoubleBuffered = true;
             this.dgvFlightSchedule.EnableHeadersVisualStyles = false;
@@ -251,6 +251,20 @@
             this.customerGroup.Text = "Customer";
             this.customerGroup.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
             // 
+            // btnCancelCustomer
+            // 
+            this.btnCancelCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.btnCancelCustomer.FlatAppearance.BorderSize = 0;
+            this.btnCancelCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelCustomer.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCancelCustomer.Location = new System.Drawing.Point(258, 276);
+            this.btnCancelCustomer.Name = "btnCancelCustomer";
+            this.btnCancelCustomer.Size = new System.Drawing.Size(89, 26);
+            this.btnCancelCustomer.TabIndex = 85;
+            this.btnCancelCustomer.Text = "Cancel";
+            this.btnCancelCustomer.UseVisualStyleBackColor = false;
+            this.btnCancelCustomer.Click += new System.EventHandler(this.btnCancelCustomer_Click);
+            // 
             // btnDeletePassenger
             // 
             this.btnDeletePassenger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
@@ -300,6 +314,7 @@
             this.btnRefreshCustomer.Text = "Refresh";
             this.btnRefreshCustomer.UseVisualStyleBackColor = false;
             this.btnRefreshCustomer.Click += new System.EventHandler(this.btnRefreshCustomer_Click);
+            this.btnRefreshCustomer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnRefreshCustomer_MouseUp);
             // 
             // btnAddCustomer
             // 
@@ -314,24 +329,25 @@
             this.btnAddCustomer.Text = "Add";
             this.btnAddCustomer.UseVisualStyleBackColor = false;
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
+            this.btnAddCustomer.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAddCustomer_MouseUp);
             // 
             // dgvCustomer
             // 
             this.dgvCustomer.AllowUserToAddRows = false;
             this.dgvCustomer.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCustomer.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomer.DoubleBuffered = true;
             this.dgvCustomer.EnableHeadersVisualStyles = false;
@@ -424,20 +440,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Flight Schedule";
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox1_Paint);
-            // 
-            // btnCancelCustomer
-            // 
-            this.btnCancelCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
-            this.btnCancelCustomer.FlatAppearance.BorderSize = 0;
-            this.btnCancelCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelCustomer.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancelCustomer.Location = new System.Drawing.Point(258, 276);
-            this.btnCancelCustomer.Name = "btnCancelCustomer";
-            this.btnCancelCustomer.Size = new System.Drawing.Size(89, 26);
-            this.btnCancelCustomer.TabIndex = 85;
-            this.btnCancelCustomer.Text = "Cancel";
-            this.btnCancelCustomer.UseVisualStyleBackColor = false;
-            this.btnCancelCustomer.Click += new System.EventHandler(this.btnCancelCustomer_Click);
             // 
             // lblTotalTransaction
             // 

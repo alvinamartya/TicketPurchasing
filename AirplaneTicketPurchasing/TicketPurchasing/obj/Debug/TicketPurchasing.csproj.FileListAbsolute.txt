@@ -220,3 +220,4 @@ C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\Ticket
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.UclChangePassword.resources
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\RdlCompile.cache
 C:\Users\RICO\Desktop\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\RdlCompile.compiled
+D:\Project\Project Akhir C#\AirplaneTicketPurchasing\TicketPurchasing\obj\Debug\TicketPurchasing.MessageFrm.resources

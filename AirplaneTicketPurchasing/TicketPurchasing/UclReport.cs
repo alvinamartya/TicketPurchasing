@@ -98,88 +98,103 @@ namespace TicketPurchasing
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            rvPeriod.Clear();
-            DateTime dtStart = dateStart.Value;
-            DateTime dtEnd = dateEnd.Value;
-
-            if ((dtStart > dtEnd && cmbReport.Text=="Daily") || (cmbReport.Text=="Yearly" && Convert.ToInt32(cmbYear1.Text) > Convert.ToInt32(cmbYear2.Text)))
+            try
             {
-                MessageBox.Show("Ensure Start Period Date is Before End Prdiod Date","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                return;
-            }
+                rvPeriod.Clear();
+                DateTime dtStart = dateStart.Value;
+                DateTime dtEnd = dateEnd.Value;
 
-            ReportParameterCollection rParam = new ReportParameterCollection();
-            DataSet dataset = new DataSet();
+                if ((dtStart > dtEnd && cmbReport.Text == "Daily") || (cmbReport.Text == "Yearly" && Convert.ToInt32(cmbYear1.Text) > Convert.ToInt32(cmbYear2.Text)))
+                {
+                    MessageBox.Show("Ensure Start Period Date is Before End Prdiod Date", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            reportdataset = new ReportDataSet();
-            reportdataset.tblReport.Clear();
+                ReportParameterCollection rParam = new ReportParameterCollection();
+                DataSet dataset = new DataSet();
 
-            string sp = "";
-            switch (cmbReport.Text)
-            {
-                case "Daily":
-                    sp = "sp_report_period_daily";
-                    rParam.Add(new ReportParameter("dateStart", dtStart.Date.ToString("dd MMMM yyyy")));
-                    rParam.Add(new ReportParameter("dateEnd", dtEnd.Date.ToString("dd MMMM yyyy")));
-                    dataset = database.getDataFromDatabase(sp, new List<Parameter>
+                reportdataset = new ReportDataSet();
+                reportdataset.tblReport.Clear();
+                string report_path = "";
+                string datasetName = "";
+
+                string sp = "";
+                switch (cmbReport.Text)
+                {
+                    case "Daily":
+                        sp = "sp_report_period_daily";
+                        rParam.Add(new ReportParameter("dateStart", dtStart.Date.ToString("dd MMMM yyyy")));
+                        rParam.Add(new ReportParameter("dateEnd", dtEnd.Date.ToString("dd MMMM yyyy")));
+                        dataset = database.getDataFromDatabase(sp, new List<Parameter>
                     {
                         new Parameter("dateStart", dtStart.ToString("yyyy-MM-dd")),
                         new Parameter("dateEnd", dtEnd.ToString("yyyy-MM-dd"))
                     });
-                    break;
+                        report_path = "TicketPurchasing.Report.Report2.rdlc";
+                        datasetName = "reportDS";
+                        break;
 
-                case "Monthly":
-                    sp = "sp_report_period_monthly";
-                    rParam.Add(new ReportParameter("dateStart", cmbYear1.Text));
-                    rParam.Add(new ReportParameter("dateEnd", Convert.ToString(Convert.ToInt32(cmbYear1.Text) + 1)));
-                    dataset = database.getDataFromDatabase(sp, new List<Parameter>
+                    case "Monthly":
+                        sp = "sp_report_period_monthly";
+                        rParam.Add(new ReportParameter("Year", cmbYear1.Text));
+                        dataset = database.getDataFromDatabase(sp, new List<Parameter>
                     {
-                        new Parameter("dateStart", cmbYear1.Text),
-                        new Parameter("dateEnd", "0")
+                        new Parameter("year", cmbYear1.Text)
                     });
-                    break;
-                case "Yearly":
-                    sp = "sp_report_period_yearly";
-                    rParam.Add(new ReportParameter("dateStart", cmbYear1.Text));
-                    rParam.Add(new ReportParameter("dateEnd", cmbYear2.Text));
-                    dataset = database.getDataFromDatabase(sp, new List<Parameter>
+                        report_path = "TicketPurchasing.Report.Report3.rdlc";
+                        datasetName = "DataSet1";
+                        break;
+                    case "Yearly":
+                        sp = "sp_report_period_yearly";
+                        rParam.Add(new ReportParameter("startYear", cmbYear1.Text));
+                        rParam.Add(new ReportParameter("endYear", cmbYear2.Text));
+                        dataset = database.getDataFromDatabase(sp, new List<Parameter>
                     {
                         new Parameter("dateStart", cmbYear1.Text),
                         new Parameter("dateEnd", cmbYear2.Text)
                     });
-                    break;
-            }
+                        report_path = "TicketPurchasing.Report.Report4.rdlc";
+                        datasetName = "DataSet1";
+                        break;
+                }
 
-            if(dataset.Tables.Count > 0)
-            {
-                if(dataset.Tables[0].Rows.Count > 0)
+                if (dataset.Tables.Count > 0)
                 {
-                    for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
+                    if (dataset.Tables[0].Rows.Count > 0)
                     {
-                        decimal total = Convert.ToDecimal(dataset.Tables[0].Rows[i][3].ToString());
-                        decimal refund = Convert.ToDecimal(dataset.Tables[0].Rows[i][4].ToString());
-                        decimal totalClean = Convert.ToDecimal(dataset.Tables[0].Rows[i][5].ToString());
-                        reportdataset.tblReport.AddtblReportRow(
-                            dataset.Tables[0].Rows[i][0].ToString(),
-                            dataset.Tables[0].Rows[i][1].ToString(),
-                            dataset.Tables[0].Rows[i][2].ToString(),
-                            "Rp. " + total.ToString("N"),
-                            "Rp. " + refund.ToString("N"),
-                            "Rp. " + totalClean.ToString("N"),
-                            Convert.ToInt32(totalClean));
+                        for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
+                        {
+                            decimal total = Convert.ToDecimal(dataset.Tables[0].Rows[i][3].ToString());
+                            decimal refund = Convert.ToDecimal(dataset.Tables[0].Rows[i][4].ToString());
+                            decimal totalClean = Convert.ToDecimal(dataset.Tables[0].Rows[i][5].ToString());
+                            reportdataset.tblReport.AddtblReportRow(
+                                dataset.Tables[0].Rows[i][0].ToString(),
+                                dataset.Tables[0].Rows[i][1].ToString(),
+                                dataset.Tables[0].Rows[i][2].ToString(),
+                                "Rp. " + total.ToString("N"),
+                                "Rp. " + refund.ToString("N"),
+                                "Rp. " + totalClean.ToString("N"),
+                                Convert.ToInt32(totalClean));
+                        }
+                        ReportDataSource reportDS = new ReportDataSource();
+                        reportDS.Name = datasetName;
+                        reportDS.Value = reportdataset.tblReport;
+                        rvPeriod.LocalReport.DataSources.Clear();
+                        rvPeriod.LocalReport.DataSources.Add(reportDS);
+                        rvPeriod.LocalReport.ReportEmbeddedResource = report_path;
+                        rvPeriod.LocalReport.SetParameters(rParam);
+                        rvPeriod.RefreshReport();
                     }
-                    ReportDataSource reportDS = new ReportDataSource();
-                    reportDS.Name = "reportDS";
-                    reportDS.Value = reportdataset.tblReport;
-                    rvPeriod.LocalReport.DataSources.Clear();
-                    rvPeriod.LocalReport.DataSources.Add(reportDS);
-                    rvPeriod.LocalReport.SetParameters(rParam);
-                    rvPeriod.RefreshReport();
+                    else
+                    {
+                        MessageBox.Show("No Record Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("No Record Found", "Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
