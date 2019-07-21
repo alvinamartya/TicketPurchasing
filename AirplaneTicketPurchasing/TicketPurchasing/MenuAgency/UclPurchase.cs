@@ -683,6 +683,7 @@ namespace TicketPurchasing.MenuAgency
                     totalTransaction -= btnList[posButton].Price;
                     lblTotalTransaction.Text = "Rp. " + totalTransaction.ToString("N");
                     btnList.Remove(btnList[posButton]);
+                    button_seat_selected = null;
                     MessageBox.Show("Remove Passenger has been success", "Information", 
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     row2 = null;
@@ -714,9 +715,12 @@ namespace TicketPurchasing.MenuAgency
                 buttonSeat.Clicked = false;
             }
 
-            if(btnList[posButton] != null)
+            if(btnList.Count > 0)
             {
-                btnList[posButton].Condition = 3;
+                if (btnList[posButton] != null)
+                {
+                    btnList[posButton].Condition = 3;
+                }
             }
 
             button_seat = null;

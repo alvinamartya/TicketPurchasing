@@ -40,7 +40,6 @@
             this.cboRole = new System.Windows.Forms.ComboBox();
             this.photo = new System.Windows.Forms.PictureBox();
             this.btnBrowser = new System.Windows.Forms.Button();
-            this.txtPhoto = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -49,8 +48,6 @@
             this.txsSearch = new System.Windows.Forms.TextBox();
             this.flatLabel21 = new FlatUI.FlatLabel();
             this.flatLabel22 = new FlatUI.FlatLabel();
-            this.flatLabel19 = new FlatUI.FlatLabel();
-            this.flatLabel20 = new FlatUI.FlatLabel();
             this.flatLabel13 = new FlatUI.FlatLabel();
             this.flatLabel14 = new FlatUI.FlatLabel();
             this.flatLabel11 = new FlatUI.FlatLabel();
@@ -167,7 +164,7 @@
             // 
             // photo
             // 
-            this.photo.Location = new System.Drawing.Point(533, 267);
+            this.photo.Location = new System.Drawing.Point(533, 239);
             this.photo.Name = "photo";
             this.photo.Size = new System.Drawing.Size(182, 140);
             this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,21 +177,13 @@
             this.btnBrowser.FlatAppearance.BorderSize = 0;
             this.btnBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBrowser.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBrowser.Location = new System.Drawing.Point(721, 239);
+            this.btnBrowser.Location = new System.Drawing.Point(583, 388);
             this.btnBrowser.Name = "btnBrowser";
-            this.btnBrowser.Size = new System.Drawing.Size(29, 20);
+            this.btnBrowser.Size = new System.Drawing.Size(88, 22);
             this.btnBrowser.TabIndex = 60;
-            this.btnBrowser.Text = "...";
+            this.btnBrowser.Text = "Choose Image";
             this.btnBrowser.UseVisualStyleBackColor = false;
             this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
-            // 
-            // txtPhoto
-            // 
-            this.txtPhoto.Location = new System.Drawing.Point(533, 239);
-            this.txtPhoto.Name = "txtPhoto";
-            this.txtPhoto.ReadOnly = true;
-            this.txtPhoto.Size = new System.Drawing.Size(182, 20);
-            this.txtPhoto.TabIndex = 59;
             // 
             // btnCancel
             // 
@@ -297,30 +286,6 @@
             this.flatLabel22.Size = new System.Drawing.Size(47, 17);
             this.flatLabel22.TabIndex = 88;
             this.flatLabel22.Text = "Search";
-            // 
-            // flatLabel19
-            // 
-            this.flatLabel19.AutoSize = true;
-            this.flatLabel19.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel19.ForeColor = System.Drawing.Color.White;
-            this.flatLabel19.Location = new System.Drawing.Point(516, 239);
-            this.flatLabel19.Name = "flatLabel19";
-            this.flatLabel19.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel19.TabIndex = 58;
-            this.flatLabel19.Text = ":";
-            // 
-            // flatLabel20
-            // 
-            this.flatLabel20.AutoSize = true;
-            this.flatLabel20.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel20.ForeColor = System.Drawing.Color.White;
-            this.flatLabel20.Location = new System.Drawing.Point(438, 239);
-            this.flatLabel20.Name = "flatLabel20";
-            this.flatLabel20.Size = new System.Drawing.Size(42, 17);
-            this.flatLabel20.TabIndex = 57;
-            this.flatLabel20.Text = "Photo";
             // 
             // flatLabel13
             // 
@@ -481,9 +446,6 @@
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.photo);
             this.Controls.Add(this.btnBrowser);
-            this.Controls.Add(this.txtPhoto);
-            this.Controls.Add(this.flatLabel19);
-            this.Controls.Add(this.flatLabel20);
             this.Controls.Add(this.cboRole);
             this.Controls.Add(this.flatLabel13);
             this.Controls.Add(this.flatLabel14);
@@ -538,9 +500,6 @@
         private System.Windows.Forms.ComboBox cboRole;
         private System.Windows.Forms.PictureBox photo;
         private System.Windows.Forms.Button btnBrowser;
-        private System.Windows.Forms.TextBox txtPhoto;
-        private FlatUI.FlatLabel flatLabel19;
-        private FlatUI.FlatLabel flatLabel20;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;

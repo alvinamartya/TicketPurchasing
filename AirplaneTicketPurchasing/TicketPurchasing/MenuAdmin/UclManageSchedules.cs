@@ -20,17 +20,17 @@ namespace TicketPurchasing.MenuAdmin
         private DataGridViewRow row = null;
         private Database database = new Database();
         private Validation validate = new Validation();
-        private bool isInserting = false, isUpdating = false;
+        private bool isInserting = false, isUpdating = false, isoldest = false;
         private string messege = "";
 
         public UclManageSchedules()
         {
             InitializeComponent();
             enableForm(false);
-            clear();
             createTable();
             refreshDg(txtSearch.Text,cbofilterby.Text);
             initCmb();
+            clear();
         }
 
         private void initCmb()
@@ -62,6 +62,7 @@ namespace TicketPurchasing.MenuAdmin
             isInserting = false;
             isUpdating = false;
             dtDeparture.Value = DateTime.Now;
+            row = null;
         }
 
         private void enableForm(bool value)
@@ -168,6 +169,12 @@ namespace TicketPurchasing.MenuAdmin
         {
             if (row != null)
             {
+                if(isoldest)
+                {
+                    MessageBox.Show("Can't edit old schedule", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (MessageBox.Show("Are you sure?", "Delete Data",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -198,24 +205,38 @@ namespace TicketPurchasing.MenuAdmin
                 DateTime date = new DateTime(dtDeparture.Value.Year, dtDeparture.Value.Month, dtDeparture.Value.Day, dtDeparture.Value.Hour, dtDeparture.Value.Minute, 0);
                 DateTime date2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,
                     DateTime.Now.Hour, DateTime.Now.Minute, 0);
-                date2.AddDays(6);
-                Console.WriteLine(date + " " + date2);
+                DateTime lastdate = date2.AddDays(6);
+                Console.WriteLine(date + " " + lastdate);
                 if (cmbAircraft.Text == "" || cmbArrival.Text == "" || cmbArrival.Text == "" ||
                     txtHour.Text == "" || txtMin.Text == "" || txtFee.Value <= 0)
                     messege = "Ensure you have filled all fields";
-                else if (date < date2)
+                else if (date < lastdate)
                     messege = "Ensure Departure time must bigger 7 days than today";
                 else if (Convert.ToInt32(txtHour.Text) < 0 || Convert.ToInt32(txtHour.Text) > 23 ||
                     Convert.ToInt32(txtMin.Text) < 0 || Convert.ToInt32(txtMin.Text) > 59)
                     messege = "Format Flight time is not valid";
+                else if(cmbDepart.Text.ToString() == cmbArrival.Text.ToString())
+                {
+                    messege = "Ensure departure city not same with arrival city";
+                }
+                else if (isoldest)
+                {
+                    messege = "Can't edit old schedule";
+                }
                 else
                 {
                     SqlConnection conn = new SqlConnection(database.getConnectionString());
                     try
                     {
                         conn.Open();
-                        SqlCommand cmd = new SqlCommand("sp_check_flight", conn);
+                        SqlCommand cmd;
+                        if(isInserting)
+                            cmd = new SqlCommand("sp_check_flight", conn);
+                        else
+                            cmd = new SqlCommand("sp_check_flight2", conn);
                         cmd.CommandType = CommandType.StoredProcedure;
+                        if(isUpdating)
+                            cmd.Parameters.AddWithValue("@ID", row.Cells[0].Value.ToString());
                         cmd.Parameters.AddWithValue("@DepartureDate", dtDeparture.Value.ToString("yyyy-MM-dd"));
                         cmd.Parameters.AddWithValue("@DepartureTime", dtDeparture.Value.ToString("hh:mm"));
                         cmd.Parameters.AddWithValue("@DepartureCityID", cmbDepart.SelectedValue.ToString());
@@ -280,7 +301,10 @@ namespace TicketPurchasing.MenuAdmin
         {
             try
             {
+                clear();
                 refreshDg(txtSearch.Text,cbofilterby.Text);
+                if (cbofilterby.Text.Equals("Oldest")) isoldest = true;
+                else isoldest = false;
             }
             catch(Exception ex)
             {
@@ -288,10 +312,11 @@ namespace TicketPurchasing.MenuAdmin
             }
         }
 
-        private void dgvSch_SelectionChanged(object sender, EventArgs e)
+        private void dgvSch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+
                 if (!isInserting && !isUpdating && dgvSch.Rows.Count > 0)
                 {
                     try
@@ -320,10 +345,16 @@ namespace TicketPurchasing.MenuAdmin
             }
         }
 
+        private void dgvSch_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (Validation())
             {
+                string proses = "";
                 string date = dtDeparture.Value.ToString("yyyy-MM-dd");
                 string time = dtDeparture.Value.ToString("hh:mm");
                 int duration = Convert.ToInt16(txtHour.Text) * 60 + Convert.ToInt16(txtMin.Text);
@@ -342,6 +373,7 @@ namespace TicketPurchasing.MenuAdmin
                         param.Add(new Parameter("@ArrivalCityId", cmbArrival.SelectedValue.ToString()));
                         param.Add(new Parameter("@AircraftId", cmbAircraft.SelectedValue.ToString()));
                         result = database.executeQuery("sp_insert_schedule", param, "Insertion");
+                        proses = "Add";
                     }
                     else
                     {
@@ -365,11 +397,12 @@ namespace TicketPurchasing.MenuAdmin
                         param.Add(new Parameter("@ArrivalCityId", cmbArrival.SelectedValue.ToString()));
                         param.Add(new Parameter("@AircraftId", cmbAircraft.SelectedValue.ToString()));
                         result = database.executeQuery("sp_update_schedule", param, "Update");
+                        proses = "Update";
                     }
 
                     if (result == 1)
                     {
-                        MessageBox.Show("Successful", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(proses+ " data has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         clear();
                         enableForm(false);
                         refreshDg(null,cbofilterby.Text);

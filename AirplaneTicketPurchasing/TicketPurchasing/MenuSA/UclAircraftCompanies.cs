@@ -20,6 +20,7 @@ namespace TicketPurchasing.MenuSA
         private Support support = new Support();
         private string base64string = "";
         private string message = "";
+        private string photoPath = "";
         private bool isUpdate = false,isEnable = false;
         #endregion
         #region Constructor
@@ -82,7 +83,6 @@ namespace TicketPurchasing.MenuSA
         private void clear()
         {
             txtName.Clear();
-            txtPathPhoto.Clear();
             txtPhone.Clear();
             txtCompanyCode.Clear();
             txtAddress.Clear();
@@ -91,6 +91,7 @@ namespace TicketPurchasing.MenuSA
             isUpdate = true;
             row = null;
             photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+            photoPath = "";
         }
 
         // enable and disable form
@@ -112,8 +113,8 @@ namespace TicketPurchasing.MenuSA
         private bool validation()
         {
             bool result = false;
-            if (txtName.Text == "" || txtPhone.Text == "" || txtCompanyCode.Text == "" || txtAddress.Text == "" ||
-                txtPathPhoto.Text == "") message = "Ensure you have filled all fields";
+            if (txtName.Text == "" || txtPhone.Text == "" || txtCompanyCode.Text == "" ||
+                txtAddress.Text == "" || photoPath == "") message = "Ensure you have filled all fields";
             else if (!valid.regexAlphabetic(txtName.Text)) message = "Ensure name must alphabetic";
             else if (!valid.regexAlphabetic(txtCompanyCode.Text)) message = "Ensure IATA must alphabetic";
             else if (!valid.regexNumberic(txtPhone.Text)) message = "Ensure telp number must numberic";
@@ -141,14 +142,12 @@ namespace TicketPurchasing.MenuSA
                 if (valid.validateImage(pathPhoto))
                 {
                     photo.ImageLocation = pathPhoto;
-                    txtPathPhoto.Text = pathPhoto;
+                    photoPath = pathPhoto;
                     base64string = "";
                 }
                 else
                 {
                     MessageBox.Show("Ensure you have selected valid image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    if(txtPathPhoto.Text == "")
-                        photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
                 }
             }
         }
@@ -210,7 +209,7 @@ namespace TicketPurchasing.MenuSA
                 if(base64string == "")
                 {
                     byte[] image = support.imgToByteArray(photo.Image);
-                    base64string = Class.MIME.GetMimeType(Path.GetExtension(txtPathPhoto.Text)) + ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
+                    base64string = Class.MIME.GetMimeType(Path.GetExtension(photoPath)) + ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
                 }
 
                 int x = 0;
@@ -278,9 +277,9 @@ namespace TicketPurchasing.MenuSA
                     base64string = row.Cells[5].Value.ToString();
                     string extension = base64string.Substring(base64string.IndexOf('/'),
                         base64string.IndexOf(';') - base64string.IndexOf('/'));
-                    txtPathPhoto.Text = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
                     string path = base64string.Substring(base64string.IndexOf(',') + 2,
                         base64string.Length - (base64string.IndexOf(',') + 2));
+                    photoPath = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
                     byte[] image = Convert.FromBase64String(path);
                     photo.Image = support.byteArrayToImage(image);
                 }
@@ -295,7 +294,6 @@ namespace TicketPurchasing.MenuSA
         {
             refreshDatagrid(txtSearch.Text);
         }
-        
         #endregion
     }
 }

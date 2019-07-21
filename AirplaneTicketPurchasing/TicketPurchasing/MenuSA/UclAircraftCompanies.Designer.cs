@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtPathPhoto = new System.Windows.Forms.TextBox();
             this.btnPath = new System.Windows.Forms.Button();
             this.pathDialog = new System.Windows.Forms.OpenFileDialog();
             this.photo = new System.Windows.Forms.PictureBox();
@@ -49,8 +48,6 @@
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatLabel21 = new FlatUI.FlatLabel();
             this.flatLabel22 = new FlatUI.FlatLabel();
-            this.flatLabel9 = new FlatUI.FlatLabel();
-            this.flatLabel10 = new FlatUI.FlatLabel();
             this.flatLabel7 = new FlatUI.FlatLabel();
             this.flatLabel8 = new FlatUI.FlatLabel();
             this.flatLabel5 = new FlatUI.FlatLabel();
@@ -83,31 +80,23 @@
             this.txtAddress.Size = new System.Drawing.Size(182, 34);
             this.txtAddress.TabIndex = 7;
             // 
-            // txtPathPhoto
-            // 
-            this.txtPathPhoto.Location = new System.Drawing.Point(534, 236);
-            this.txtPathPhoto.Name = "txtPathPhoto";
-            this.txtPathPhoto.ReadOnly = true;
-            this.txtPathPhoto.Size = new System.Drawing.Size(192, 20);
-            this.txtPathPhoto.TabIndex = 8;
-            // 
             // btnPath
             // 
             this.btnPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
             this.btnPath.FlatAppearance.BorderSize = 0;
             this.btnPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPath.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPath.Location = new System.Drawing.Point(732, 236);
+            this.btnPath.Location = new System.Drawing.Point(530, 358);
             this.btnPath.Name = "btnPath";
-            this.btnPath.Size = new System.Drawing.Size(29, 20);
+            this.btnPath.Size = new System.Drawing.Size(128, 25);
             this.btnPath.TabIndex = 9;
-            this.btnPath.Text = "...";
+            this.btnPath.Text = "Choose Image";
             this.btnPath.UseVisualStyleBackColor = false;
             this.btnPath.Click += new System.EventHandler(this.btnPath_Click);
             // 
             // photo
             // 
-            this.photo.Location = new System.Drawing.Point(442, 273);
+            this.photo.Location = new System.Drawing.Point(443, 234);
             this.photo.Name = "photo";
             this.photo.Size = new System.Drawing.Size(319, 118);
             this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -203,19 +192,19 @@
             // 
             this.DgvCompanies.AllowUserToAddRows = false;
             this.DgvCompanies.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DgvCompanies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DgvCompanies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvCompanies.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DgvCompanies.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DgvCompanies.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCompanies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCompanies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvCompanies.DoubleBuffered = true;
             this.DgvCompanies.EnableHeadersVisualStyles = false;
@@ -278,30 +267,6 @@
             this.flatLabel22.Size = new System.Drawing.Size(47, 17);
             this.flatLabel22.TabIndex = 0;
             this.flatLabel22.Text = "Search";
-            // 
-            // flatLabel9
-            // 
-            this.flatLabel9.AutoSize = true;
-            this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel9.ForeColor = System.Drawing.Color.White;
-            this.flatLabel9.Location = new System.Drawing.Point(517, 236);
-            this.flatLabel9.Name = "flatLabel9";
-            this.flatLabel9.Size = new System.Drawing.Size(11, 17);
-            this.flatLabel9.TabIndex = 18;
-            this.flatLabel9.Text = ":";
-            // 
-            // flatLabel10
-            // 
-            this.flatLabel10.AutoSize = true;
-            this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(439, 236);
-            this.flatLabel10.Name = "flatLabel10";
-            this.flatLabel10.Size = new System.Drawing.Size(42, 17);
-            this.flatLabel10.TabIndex = 17;
-            this.flatLabel10.Text = "Photo";
             // 
             // flatLabel7
             // 
@@ -394,9 +359,6 @@
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.photo);
             this.Controls.Add(this.btnPath);
-            this.Controls.Add(this.txtPathPhoto);
-            this.Controls.Add(this.flatLabel9);
-            this.Controls.Add(this.flatLabel10);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.flatLabel7);
             this.Controls.Add(this.flatLabel8);
@@ -427,9 +389,6 @@
         private System.Windows.Forms.TextBox txtAddress;
         private FlatUI.FlatLabel flatLabel7;
         private FlatUI.FlatLabel flatLabel8;
-        private FlatUI.FlatLabel flatLabel9;
-        private FlatUI.FlatLabel flatLabel10;
-        private System.Windows.Forms.TextBox txtPathPhoto;
         private System.Windows.Forms.Button btnPath;
         private System.Windows.Forms.OpenFileDialog pathDialog;
         private System.Windows.Forms.PictureBox photo;

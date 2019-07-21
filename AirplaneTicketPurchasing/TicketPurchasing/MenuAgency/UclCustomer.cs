@@ -41,6 +41,7 @@ namespace TicketPurchasing.MenuAgency
             txtAddress.Clear();
             txtSearch.Clear();
             txtDate.Value = DateTime.Now;
+            row = null;
         }
 
         private void enableFrm(bool value)
@@ -217,8 +218,13 @@ namespace TicketPurchasing.MenuAgency
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            enableFrm(true);
-            isUpdate = true;
+            if (row != null)
+            {
+                enableFrm(true);
+                isUpdate = true;
+            }
+            else
+                MessageBox.Show("No Customer Selected", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -261,6 +267,7 @@ namespace TicketPurchasing.MenuAgency
                         param.Add(new Parameter("@Country", cbCountry.Text));
                         result = database.executeQuery("sp_update_customers", param, "Update");
                         process = "Update";
+                        row = null;
                     }
                     if (result == 1)
                     {
@@ -298,7 +305,7 @@ namespace TicketPurchasing.MenuAgency
             }
             else
             {
-                MessageBox.Show("No Employee Selected", "Warning",
+                MessageBox.Show("No Customer Selected", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             clear();

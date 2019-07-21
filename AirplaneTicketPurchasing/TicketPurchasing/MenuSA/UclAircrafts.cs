@@ -67,7 +67,7 @@ namespace TicketPurchasing.MenuSA
             dgvAircrafts.Columns.Add("type", "Type");
             dgvAircrafts.Columns[0].Visible = false;
             dgvAircrafts.Columns[2].Visible = false;
-            dgvAircrafts.Columns[4].Visible = false;
+            dgvAircrafts.Columns[4].Visible = true;
             dgvAircrafts.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvAircrafts.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvAircrafts.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -160,7 +160,6 @@ namespace TicketPurchasing.MenuSA
             dgvAircraftDetails.Columns.Add("cabin", "Cabin");
             dgvAircraftDetails.Columns.Add("addPrice", "Additional Price");
             dgvAircraftDetails.Columns[0].Visible = false;
-            dgvAircraftDetails.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvAircraftDetails.ForeColor = Color.Black;
             dgvAircraftDetails.HeaderForeColor = Color.White;
             dgvAircraftDetails.HeaderBgColor = Color.Teal;
@@ -328,34 +327,43 @@ namespace TicketPurchasing.MenuSA
 
         private void UclAircrafts_Load(object sender, EventArgs e)
         {
-            cboCabinType.SelectedIndex = 0;
-            refreshDatagridAircrafts("");
-            createTableAircraftsAmenities();
-            createTableAircraftsDetails();
-            DataSet dsCompanies = database.getDataFromDatabase("sp_view_aircraftcompanies", null);
-            DataSet dsType = database.getDataFromDatabase("sp_view_aircrafttype", null);
-            DataSet dsAmenitites = database.getDataFromDatabase("sp_view_amenities", null);
-
-            cboCompany.DataSource = dsCompanies.Tables[0];
-            cboCompany.DisplayMember = "Name";
-            cboCompany.ValueMember = "ID";
-
-            for (int i = 0; i < dsType.Tables[0].Rows.Count; i++){
-                aircraftTypeid.Add(dsType.Tables[0].Rows[i][0].ToString());
-                cboType.Items.Add(dsType.Tables[0].Rows[i][1].ToString() + " (" + dsType.Tables[0].Rows[i][2].ToString() + ")");
-            }
-            cboType.SelectedIndex = 0;
-
-            for (int i = 0; i < dsAmenitites.Tables[0].Rows.Count; i++)
+            try
             {
-                aircraftamenitiesid.Add(dsAmenitites.Tables[0].Rows[i][0].ToString());
-                cboAmenities.Items.Add(dsAmenitites.Tables[0].Rows[i][1].ToString() + " (" + dsAmenitites.Tables[0].Rows[i][2].ToString() + " " + dsAmenitites.Tables[0].Rows[i][3].ToString() + ")");
+                cboCabinType.SelectedIndex = 0;
+                refreshDatagridAircrafts("");
+                createTableAircraftsAmenities();
+                createTableAircraftsDetails();
+                DataSet dsCompanies = database.getDataFromDatabase("sp_view_aircraftcompanies", null);
+                DataSet dsType = database.getDataFromDatabase("sp_view_aircrafttype", null);
+                DataSet dsAmenitites = database.getDataFromDatabase("sp_view_amenities", null);
+
+                cboCompany.DataSource = dsCompanies.Tables[0];
+                cboCompany.DisplayMember = "Name";
+                cboCompany.ValueMember = "ID";
+
+                for (int i = 0; i < dsType.Tables[0].Rows.Count; i++)
+                {
+                    Console.WriteLine(dsType.Tables[0].Rows[i][0].ToString());
+                    aircraftTypeid.Add(dsType.Tables[0].Rows[i][0].ToString());
+                    cboType.Items.Add(dsType.Tables[0].Rows[i][1].ToString() + " (" + dsType.Tables[0].Rows[i][2].ToString() + ")");
+                }
+                cboType.SelectedIndex = 0;
+
+                for (int i = 0; i < dsAmenitites.Tables[0].Rows.Count; i++)
+                {
+                    aircraftamenitiesid.Add(dsAmenitites.Tables[0].Rows[i][0].ToString());
+                    cboAmenities.Items.Add(dsAmenitites.Tables[0].Rows[i][1].ToString() + " (" + dsAmenitites.Tables[0].Rows[i][2].ToString() + " " + dsAmenitites.Tables[0].Rows[i][3].ToString() + ")");
+                }
+                cboAmenities.SelectedIndex = 0;
+
+                clear();
+                enableFrm(false);
             }
-            cboAmenities.SelectedIndex = 0;
-
-            clear();
-            enableFrm(false);
-
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -554,29 +562,41 @@ namespace TicketPurchasing.MenuSA
                             Convert.ToDouble(txtPrice.Value), 3));
                     }
 
+                    string id = row2.Cells[0].Value == null ? "" : row2.Cells[0].Value.ToString();
 
-                    List<Parameter> param2 = new List<Parameter>();
-                    param2.Add(new Parameter("@AircraftID", row.Cells[0].Value.ToString()));
-                    param2.Add(new Parameter("@CabinType", row2.Cells[1].Value.ToString()));
-                    DataSet getAmenitiesFromDatabase = database.getDataFromDatabase("sp_data_aircraftamenities", param2);
-                    if(getAmenitiesFromDatabase.Tables.Count > 0)
+                    if(row2.Cells[0].Value != null)
                     {
-                        for(int i = 0; i < getAmenitiesFromDatabase.Tables[0].Rows.Count; i++)
+                        List<Parameter> param2 = new List<Parameter>();
+                        param2.Add(new Parameter("@AircraftID", row2.Cells[0].Value.ToString()));
+                        param2.Add(new Parameter("@CabinType", row2.Cells[1].Value.ToString()));
+                        DataSet getAmenitiesFromDatabase = database.getDataFromDatabase("sp_data_aircraftamenities", param2);
+                        if (getAmenitiesFromDatabase.Tables.Count > 0)
                         {
-                            Console.WriteLine(getAmenitiesFromDatabase.Tables[0].Rows[i][0].ToString());
-                            amenities.Add(new AircraftAmenities(Convert.ToInt32(getAmenitiesFromDatabase.Tables[0].Rows[i][0].ToString()), getAmenitiesFromDatabase.Tables[0].Rows[i][1].ToString(), getAmenitiesFromDatabase.Tables[0].Rows[i][2].ToString(), row2.Cells[1].Value.ToString(), 2));
+                            for (int i = 0; i < getAmenitiesFromDatabase.Tables[0].Rows.Count; i++)
+                            {
+                                Console.WriteLine(getAmenitiesFromDatabase.Tables[0].Rows[i][0].ToString());
+                                amenities.Add(new AircraftAmenities(Convert.ToInt32(getAmenitiesFromDatabase.Tables[0].Rows[i][0].ToString()), getAmenitiesFromDatabase.Tables[0].Rows[i][1].ToString(), getAmenitiesFromDatabase.Tables[0].Rows[i][2].ToString(), row2.Cells[1].Value.ToString(), 2));
+                            }
                         }
+
+                        List<AircraftAmenities> deleteAmenities = amenities.Where(x => x.Cabin == row2.Cells[1].Value.ToString() && x.Status != 2).ToList();
+                        Console.WriteLine("Count: " + deleteAmenities.Count);
+                        foreach (AircraftAmenities x in deleteAmenities) x.Status = 2;
+                        List<AircraftAmenities> deletedAmenities = amenities.Where(x => x.Cabin == row2.Cells[1].Value.ToString() && x.Status == 2).ToList();
+                        foreach (AircraftAmenities x in deletedAmenities) Console.WriteLine("amenities: " + x.Amenities + "; cabin: " + x.Cabin);
+                        dgvAircraftDetails.Rows.Remove(row2);
+                        createTableAircraftsAmenities();
+                        MessageBox.Show("Delete data has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clearAircraftDetails();
+                    }
+                    else
+                    {
+                        clearAircraftDetails();
+                        createTableAircraftsAmenities();
+                        MessageBox.Show("Delete data has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    List<AircraftAmenities> deleteAmenities = amenities.Where(x => x.Cabin == row2.Cells[1].Value.ToString() && x.Status != 2).ToList();
-                    Console.WriteLine("Count: " + deleteAmenities.Count);
-                    foreach (AircraftAmenities x in deleteAmenities) x.Status = 2;
-                    List<AircraftAmenities> deletedAmenities = amenities.Where(x => x.Cabin == row2.Cells[1].Value.ToString() && x.Status == 2).ToList();
-                    foreach (AircraftAmenities x in deletedAmenities) Console.WriteLine("amenities: " + x.Amenities + "; cabin: " + x.Cabin);
-                    dgvAircraftDetails.Rows.Remove(row2);
-                    createTableAircraftsAmenities();
-                    MessageBox.Show("Delete data has been success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearAircraftDetails();
+                    
                 }
             }
             else
@@ -750,7 +770,7 @@ namespace TicketPurchasing.MenuSA
                     refreshDatagridAircraftsDetails(row.Cells[0].Value.ToString());
                     txtName.Text = row.Cells[1].Value.ToString();
                     cboCompany.SelectedValue = row.Cells[2].Value.ToString();
-                    cboType.SelectedValue = aircraftTypeid.FindIndex(x => x == row.Cells[4].Value.ToString());
+                    cboType.SelectedIndex = aircraftTypeid.FindIndex(x => x == row.Cells[4].Value.ToString());
                 }
             }
             catch(Exception ex)

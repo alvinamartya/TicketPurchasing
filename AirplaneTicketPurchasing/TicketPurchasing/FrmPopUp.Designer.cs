@@ -120,14 +120,14 @@
             this.pnlFlight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFlight.Location = new System.Drawing.Point(0, 34);
             this.pnlFlight.Name = "pnlFlight";
-            this.pnlFlight.Size = new System.Drawing.Size(835, 489);
+            this.pnlFlight.Size = new System.Drawing.Size(835, 459);
             this.pnlFlight.TabIndex = 2;
             // 
             // FrmPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 523);
+            this.ClientSize = new System.Drawing.Size(835, 493);
             this.Controls.Add(this.pnlFlight);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

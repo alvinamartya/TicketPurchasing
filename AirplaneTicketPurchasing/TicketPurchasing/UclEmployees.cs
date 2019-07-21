@@ -25,6 +25,7 @@ namespace TicketPurchasing
         private bool isUpdate = false, isInserting = false;
         private OpenFileDialog pathDialog = new OpenFileDialog();
         private string message = "",role = "";
+        private string photoPath = "";
         #endregion
         #region Constructor
         public UclEmployees()
@@ -43,7 +44,7 @@ namespace TicketPurchasing
                 if (valid.validateImage(pathPhoto))
                 {
                     photo.ImageLocation = pathPhoto;
-                    txtPhoto.Text = pathPhoto;
+                    photoPath = pathPhoto;
                     base64string = "";
                 }
                 else
@@ -89,15 +90,14 @@ namespace TicketPurchasing
                         base64string = row.Cells[7].Value.ToString();
                         string extension = base64string.Substring(base64string.IndexOf('/'),
                                                      base64string.IndexOf(';') - base64string.IndexOf('/'));
-                        txtPhoto.Text = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
                         string path = base64string.Substring(base64string.IndexOf(',') + 2,
                             base64string.Length - (base64string.IndexOf(',') + 2));
+                        photoPath = @".\sqlexpress\" + txtName.Text.ToLower().Replace(' ', '-') + "." + extension.Remove(0, 1);
                         byte[] image = Convert.FromBase64String(path);
                         photo.Image = support.byteArrayToImage(image);
                     }
                     else
                     {
-                        txtPhoto.Text = "";
                         photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
                     }
 
@@ -144,7 +144,7 @@ namespace TicketPurchasing
                 if (base64string == "" && photo.Image != null)
                 {
                     byte[] image = support.imgToByteArray(photo.Image);
-                    base64string = Class.MIME.GetMimeType(Path.GetExtension(txtPhoto.Text)) +
+                    base64string = Class.MIME.GetMimeType(Path.GetExtension(photoPath)) +
                         ";base64,/" + Convert.ToBase64String(image, 0, image.Length);
                 }
 
@@ -213,7 +213,7 @@ namespace TicketPurchasing
         {
             bool result = false;
             if (txtName.Text == "" || txtPhoneNumber.Text == "" ||
-                txtAddress.Text == "" || txtPhoto.Text == "" ||
+                txtAddress.Text == "" || photoPath == "" ||
                 (rbMale.Checked == false && rbFemale.Checked == false)) message = "Ensure you have filled all fiels";
             else if (!valid.regexAlphabetic(txtName.Text)) message = "Ensure name must alphabetic";
             else if (!valid.regexAddress(txtAddress.Text)) message = "Ensure address must alphabetic, numberic, and point symbol";
@@ -288,7 +288,7 @@ namespace TicketPurchasing
             cboRole.SelectedIndex = 0;
 
             photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
-            txtPhoto.Clear();
+            photoPath = "";
             isUpdate = false; isInserting = false;
             row = null;
 

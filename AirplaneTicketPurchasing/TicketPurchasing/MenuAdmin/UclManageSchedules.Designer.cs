@@ -97,7 +97,7 @@
             this.dgvSch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSch.Size = new System.Drawing.Size(770, 172);
             this.dgvSch.TabIndex = 3;
-            this.dgvSch.SelectionChanged += new System.EventHandler(this.dgvSch_SelectionChanged);
+            this.dgvSch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSch_CellClick);
             // 
             // cmbAircraft
             // 

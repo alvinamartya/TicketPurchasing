@@ -88,6 +88,14 @@ namespace TicketPurchasing.MenuSA
                 string process = "";
                 if (!isUpdate)
                 {
+                    if (DgvAircraftType.Rows.Cast<DataGridViewRow>().Where(z =>
+                    z.Cells[1].Value.ToString() == txtName.Text &&
+                    z.Cells[2].Value.ToString() == txtMakeModel.Text).FirstOrDefault() != null)
+                    {
+                        MessageBox.Show("Aircraft Type already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     List<Parameter> param = new List<Parameter>();
                     id = database.autoGenerateID("T", "sp_last_aircrafttypes", 5);
                     param.Add(new Parameter("@ID", id));
@@ -100,6 +108,19 @@ namespace TicketPurchasing.MenuSA
                 }
                 else
                 {
+                    DataGridViewRow row2 = DgvAircraftType.Rows.Cast<DataGridViewRow>().Where(z =>
+                    z.Cells[1].Value.ToString() == txtName.Text &&
+                    z.Cells[2].Value.ToString() == txtMakeModel.Text).FirstOrDefault();
+
+                    if (row2 != null)
+                    {
+                        if (row != row2)
+                        {
+                            MessageBox.Show("Aircraft Type already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
                     id = row.Cells[0].Value.ToString();
                     List<Parameter> param = new List<Parameter>();
                     param.Add(new Parameter("@ID", id));
@@ -153,16 +174,11 @@ namespace TicketPurchasing.MenuSA
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            if (isDetail == false)
-            {
-                clear();
-                clearDetail();
-                enableFrm(false);
-                enableFrmDetail2(false);
-                enableFrmDetail(false);
-            }
-            else
-                MessageBox.Show("Ensure you have finished add/update detail", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            clear();
+            clearDetail();
+            enableFrm(false);
+            enableFrmDetail2(false);
+            enableFrmDetail(false);
         }
 
         private void groupBox1_Paint(object sender, PaintEventArgs e)

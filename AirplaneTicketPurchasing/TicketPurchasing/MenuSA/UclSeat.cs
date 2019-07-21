@@ -219,19 +219,7 @@ namespace TicketPurchasing.MenuSA
                     }
                     else
                     {
-                        DataGridViewRow row2 = DgvSeatType.Rows.Cast<DataGridViewRow>().Where(z =>
-                    z.Cells[2].Value.ToString().Equals(txtLeft.Value) &&
-                    z.Cells[3].Value.ToString().Equals(txtMid.Value) &&
-                    z.Cells[4].Value.ToString().Equals(txtRight.Value)).FirstOrDefault();
-                        if (row2 != null)
-                        {
-                            Console.WriteLine("Ada");
-                            if (row != row2)
-                            {
-                                MessageBox.Show("Amenity already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                return;
-                            }
-                        }
+
                         List<Parameter> param = new List<Parameter>();
                         param.Add(new Parameter("@ID", database.autoGenerateID("S", "sp_last_seattype", 5)));
                         param.Add(new Parameter("@Name", realName));
@@ -245,6 +233,19 @@ namespace TicketPurchasing.MenuSA
                 }
                 else
                 {
+                    DataGridViewRow row2 = DgvSeatType.Rows.Cast<DataGridViewRow>().Where(z =>
+                    z.Cells[1].Value.ToString() == realName).FirstOrDefault();
+
+                    Console.WriteLine(realName);
+                    if (row2 != null)
+                    {
+                        if (row != row2)
+                        {
+                            MessageBox.Show("Seat type already exists!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
                     List<Parameter> param = new List<Parameter>();
                     param.Add(new Parameter("@ID", row.Cells[0].Value.ToString()));
                     param.Add(new Parameter("@Name", realName));

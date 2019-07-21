@@ -699,9 +699,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>reportDS</DataSetName>
-        <Top>1.75509cm</Top>
+        <Top>1.57871cm</Top>
         <Left>4.63449cm</Left>
-        <Height>2.51291cm</Height>
+        <Height>2.68929cm</Height>
         <Width>15.14646cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -862,7 +862,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.52764in</Top>
+        <Top>2.65264in</Top>
         <Left>7.4554in</Left>
         <Height>0.25in</Height>
         <Width>1.8125in</Width>
@@ -894,7 +894,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>3.36681in</Top>
+        <Top>3.49181in</Top>
         <Left>7.4554in</Left>
         <Height>0.25in</Height>
         <Width>1.8125in</Width>
@@ -910,7 +910,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>9.29253cm</Height>
+    <Height>9.61003cm</Height>
     <Style />
   </Body>
   <Width>24.45491cm</Width>
@@ -1028,17 +1028,6 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Line Name="Line2">
-          <Top>0.00001cm</Top>
-          <Left>0.00741cm</Left>
-          <Height>0cm</Height>
-          <Width>24.4475cm</Width>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
         <Textbox Name="Textbox6">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -1060,7 +1049,6 @@ Telp. (021) 6519435 Fax. 6511579 E-mail: sekretariat@flightsi.co.id</Value>
           <Left>0.30646in</Left>
           <Height>0.25in</Height>
           <Width>8.97015in</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
