@@ -50,7 +50,7 @@ namespace TicketPurchasing
                 else
                 {
                     MessageBox.Show("Ensure you have selected valid image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+                    photo.ImageLocation = Application.StartupPath + @"\noimage.jpg";
                 }
             }
         }
@@ -98,7 +98,7 @@ namespace TicketPurchasing
                     }
                     else
                     {
-                        photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+                        photo.ImageLocation = Application.StartupPath + @"\noimage.jpg";
                     }
 
                 }
@@ -287,7 +287,8 @@ namespace TicketPurchasing
             txtAddress.Clear();
             cboRole.SelectedIndex = 0;
 
-            photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+            photo.ImageLocation = Application.StartupPath + @"\noimage.jpg";
+            Console.WriteLine(Application.StartupPath + @"\noimage.jpg");
             photoPath = "";
             isUpdate = false; isInserting = false;
             row = null;

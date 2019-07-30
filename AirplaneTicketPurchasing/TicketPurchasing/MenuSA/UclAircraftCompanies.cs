@@ -90,7 +90,7 @@ namespace TicketPurchasing.MenuSA
             base64string = "";
             isUpdate = true;
             row = null;
-            photo.ImageLocation = Application.StartupPath + @"\img\noimage.jpg";
+            photo.ImageLocation = Application.StartupPath + @"\noimage.jpg";
             photoPath = "";
         }
 
@@ -148,6 +148,7 @@ namespace TicketPurchasing.MenuSA
                 else
                 {
                     MessageBox.Show("Ensure you have selected valid image", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    photo.ImageLocation = Application.StartupPath + @"\noimage.jpg";
                 }
             }
         }
